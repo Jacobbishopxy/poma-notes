@@ -1,0 +1,51 @@
+\PassOptionsToPackage{quiet}{fontspec}
+\documentclass[UTF8]{ctexart}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{subfiles}
+\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsthm,amssymb,amsmath}
+\usepackage{enumitem}
+\usepackage{xpatch}
+\usepackage{hyperref}
+
+% setting counters
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+
+% import & settings
+\graphicspath{\subfix{./images/}}
+\usepackage{./style}
+\lstset{style=mystyle}
+\input{commands}
+\renewcommand*{\proofname}{Proof}
+\xapptocmd{\proof}{\mbox{}\par\nobreak}{}{}
+
+\title{POMA Note}
+\author{Jacob Xie}
+\date{January 1, 2023}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{The Real and Complex Number Systems}
+\subfile{Ch1/The Real and Complex Number Systems}
+\newpage
+
+\section{Basic Topology}
+% \subfile{Ch2/Basic Topology}
+\newpage
+
+% TODO
+
+\end{document}

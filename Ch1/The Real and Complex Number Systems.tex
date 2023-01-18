@@ -1,0 +1,130 @@
+\documentclass[../poma-note.tex]{subfiles}
+
+\begin{document}
+
+\subsection*{Ordered Sets}
+
+\setcounter{definition}{7}
+\begin{definition}
+	Suppose S is an ordered set, $E \subset S$, and E is bounded above.
+	Suppose there exists an $\alpha \in S$ with the following properties:
+	\begin{enumerate}[label=(\roman*)]
+		\item $\alpha$ is an upper bound of E.
+		\item If $\gamma < \alpha$ the $\gamma$ is not an upper bound of E.
+	\end{enumerate}
+	Then $\alpha$ is called the \textit{least upper bound of E} or the \textit{supremum of E},
+	and we write \[ \alpha = \sup E \]
+	The \textit{greatest lower bound}, or \textit{infimum}, of a set E which is bounded below
+	is defined in the same manner: The statement \[ \alpha = \inf E \] means that $\alpha$ is
+	a lower bound of E and that no $\beta$ with $\beta > \alpha$ is a lower bound of E.
+\end{definition}
+
+\anote{}
+S 是有序集合的情况下，E 又是属于 S 的，并且 E 拥有上界。那么只会存在一个 $\alpha$ 是 E 的最小上界。
+同理如果是 E 拥有下界，只会存在一个 $\alpha$ 是 E 的最大下界。
+发音：Supremum [su:$'$pri:məm]；Infimum [$'$\i nfa\i məm]。
+
+\refstepcounter{definition}
+\begin{definition}
+	An ordered set S is said to have the \textit{least-upper-bound property} if the following
+	is true: If $E \subset S$, E is not empty, and E is bounded above, then $\sup E$ exists in S.
+\end{definition}
+
+\anote{}
+S 中存在 $E \subset S$，且 E 具有最小上界，那么 S 就具有最小上界性，反之亦然。
+
+\setcounter{theorem}{10}
+\begin{theorem}
+	Suppose S is an ordered set with the least-upper-bound property,
+	$B \subset S$, B is not empty, and B is bounded below.
+	Let L be the set of all lower bounds of B. Then $\alpha = \sup L$
+	exists in S, and $\alpha = \inf B$.
+	In particular, $\inf B$ exists in S.
+\end{theorem}
+
+\begin{proof}
+	因为 B 是有下界的，且 L 不为空。由于 L 包含了所有的 y（$y \in S$）且满足不等式 $y \leq x$（$x \in B$），
+	那么所有的 $x \in B$ 都是 L 的上界。因此 L 是有上界的。关于 S 的假设意为在 S 中有一个 L 的最小上界，
+	被称为 $\alpha$。
+
+	如果 $\gamma < \alpha$ 那么（根据定义 1.8）$\gamma$ 并不是 L 的一个上界，因此 $\gamma \notin B$。
+	对于所有的 $x \in B$ 都有 $\alpha \le x$。因此 $\alpha \in L$。
+
+	如果 $\alpha < \beta$ 那么 $\beta \notin L$，因为 $\alpha$ 是 L 的一个上界。
+
+	我们展示过了 $\alpha \in L$ 但是 $\beta \notin L$ 而 $\beta > \alpha$ 的情况。也就是说，$\alpha$
+	是 B 的一个下界，但是当 $\beta > \alpha$ 时 $\beta$ 却不是。这就意味着 $\alpha = \inf B$。
+\end{proof}
+
+\subsection*{Fields}
+
+\setcounter{definition}{11}
+\begin{definition}
+	A field is a set F with two operations, called \textit{addition} and \textit{multiplication},
+	which satisfy the following so-called "field axioms" (A), (M), and (D):
+
+	\begin{itemize}
+		\item[] \textbf{(A) Axioms for addition}
+			\begin{itemize}
+				\item[] (A1) If $x \in F$ and $y \in F$, then their sum $x + y$ is in F.
+				\item[] (A2) Addition is commutative: $x + y = y + x$ for all $x,y \in F$.
+				\item[] (A3) Addition is associative: $(x+y)+z=x+(y+z)$ for all $x,y,z \in F$.
+				\item[] (A4) F contains an element 0 such that $0+x=x$ for every $x \in F$.
+				\item[] (A5) To every $x \in F$ corresponds an element $-x \in F$ such that $x+(-x)=0$.
+			\end{itemize}
+		\item[] \textbf{(M) Axioms for multiplication}
+			\begin{itemize}
+				\item[] (M1) If $x \in F$ and $y \in F$, then their product $xy$ is in F.
+				\item[] (M2) Multiplication is commutative: $xy = yx$ for all $x,y \in F$.
+				\item[] (M3) Multiplication is associative: $(xy)z = x(yz)$ for all $x,y,z \in F$.
+				\item[] (M4) F contains an element $1 \ne 0$ such that $1x = x$ for every $x \in F$.
+				\item[] (M5) If $x \in F$ and $x \ne 0$ then there exists an element $\frac{1}{x} \in F$
+					such that $x \cdot (\frac{1}{x}) = 1$.
+			\end{itemize}
+		\item[] \textbf{(D) The distributive law}
+			\begin{itemize}
+				\item[] $x(y+z) = xy+xz$ holds for all $x,y,z \in F$.
+			\end{itemize}
+
+	\end{itemize}
+\end{definition}
+
+\anote{}
+域的定义：\href{https://en.wikipedia.org/wiki/Field_(mathematics)}{维基百科}。
+
+\setcounter{definition}{16}
+\begin{definition}
+	An \textit{ordered field} is a field F which is also an ordered set, such that:
+
+	\begin{enumerate}
+		\item $x+y<x+z$ if $x,y,z \in F$ and $y<z$,
+		\item $xy>0$ if $x \in F$, $y \in F$, $x>0$, and $y>0$.
+	\end{enumerate}
+\end{definition}
+
+如果 $x>0$，我们称 x 为 \textit{positive}；如果 $x<0$，x 则为 \textit{negative}。
+
+\subsection*{The Real Field}
+
+\setcounter{theorem}{18}
+\begin{theorem}
+	There exists an ordered field R which has the least-upper-bound property.
+	Moreover, R contains Q as a subfield.
+\end{theorem}
+
+第二个声明意味着 $Q \subset R$ 以及加法与乘法在 R 上的运算，当应用于 Q 的成员时，与有理数的通常操作重合；
+同样的，正有理数成员时 R 的正元素。
+
+R 的成员被称为 \textit{real numbers}，即实数。
+
+% TODO
+% \begin{proof}
+% \end{proof}
+
+\subsection*{The Extended Real Number System}
+
+\subsection*{The Complex Field}
+
+\subsection*{Euclidean Spaces}
+
+\end{document}
