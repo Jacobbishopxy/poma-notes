@@ -12,14 +12,16 @@
 		\item $\alpha$ is an upper bound of E.
 		\item If $\gamma < \alpha$ the $\gamma$ is not an upper bound of E.
 	\end{enumerate}
+
 	Then $\alpha$ is called the \textit{least upper bound of E} or the \textit{supremum of E},
-	and we write \[ \alpha = \sup E \]
+	and we write
+	\[ \alpha = \sup E \]
 	The \textit{greatest lower bound}, or \textit{infimum}, of a set E which is bounded below
 	is defined in the same manner: The statement \[ \alpha = \inf E \] means that $\alpha$ is
 	a lower bound of E and that no $\beta$ with $\beta > \alpha$ is a lower bound of E.
 \end{definition}
 
-\anote{}
+\anote
 S 是有序集合的情况下，E 又是属于 S 的，并且 E 拥有上界。那么只会存在一个 $\alpha$ 是 E 的最小上界。
 同理如果是 E 拥有下界，只会存在一个 $\alpha$ 是 E 的最大下界。
 发音：Supremum [su:$'$pri:məm]；Infimum [$'$\i nfa\i məm]。
@@ -30,7 +32,7 @@ S 是有序集合的情况下，E 又是属于 S 的，并且 E 拥有上界。�
 	is true: If $E \subset S$, E is not empty, and E is bounded above, then $\sup E$ exists in S.
 \end{definition}
 
-\anote{}
+\anote
 S 中存在 $E \subset S$，且 E 具有最小上界，那么 S 就具有最小上界性，反之亦然。
 
 \setcounter{theorem}{10}
@@ -85,11 +87,10 @@ S 中存在 $E \subset S$，且 E 具有最小上界，那么 S 就具有最小�
 			\begin{itemize}
 				\item[] $x(y+z) = xy+xz$ holds for all $x,y,z \in F$.
 			\end{itemize}
-
 	\end{itemize}
 \end{definition}
 
-\anote{}
+\anote
 域的定义：\href{https://en.wikipedia.org/wiki/Field_(mathematics)}{维基百科}。
 
 \setcounter{definition}{16}
@@ -113,7 +114,7 @@ S 中存在 $E \subset S$，且 E 具有最小上界，那么 S 就具有最小�
 \end{theorem}
 
 第二个声明意味着 $Q \subset R$ 以及加法与乘法在 R 上的运算，当应用于 Q 的成员时，与有理数的通常操作重合；
-同样的，正有理数成员时 R 的正元素。
+同样的，正有理数成员是 R 的正元素。
 
 R 的成员被称为 \textit{real numbers}，即实数。
 
@@ -121,10 +122,128 @@ R 的成员被称为 \textit{real numbers}，即实数。
 % \begin{proof}
 % \end{proof}
 
+\begin{theorem}
+	\leavevmode
+	\begin{enumerate}[label=(\alph*)]
+		\item If $x \in R$, $y \in R$, and $x>0$, then there is a positive integer n such that $nx>y$.
+		\item If $x \in R$, $y \in R$, and $x<y$, then there exists a $p \in Q$ such that $x<p<y$.
+	\end{enumerate}
+\end{theorem}
+
+对于 (a) 部分通常认为是 R 具有 \textit{archimedean property}，即阿基米德性质，
+详见\href{https://en.wikipedia.org/wiki/Archimedean_property}{维基百科}。
+(b) 部分则表明 Q 是在 R 中 \textit{dense}，即具有稠密性：在任意两个实数之间有一个有理数。
+
+\begin{proof}
+	\begin{enumerate}[label=(\alph*)]
+		\item 令 A 作为所有 nx 的集合，其中 n 为所有的正整数。如果 (a) 是错误的，那么 y 则会是 A 的一个上界。
+		      但是接着 A 会在 R 中拥有一个最小上界，即 $\alpha  = \sup A$。由于 $x>0$，$\alpha - x < \alpha$，
+		      以及 $\alpha - x$ 不是 A 的上界，因此 $\alpha - x < mx$ 对于某些正整数 m 成立。但是这样就会有
+		      $\alpha < (m+1)x \in A$，这是不可能的，因为 $\alpha$ 是 A 的上界。
+		\item 因为 $x<y$，$y-x>0$ 以及由 (a) 所知一个正整数 n 满足
+		      \[n(y-x)>1\]
+		      再次应用 (a)，获取正整数 $m_1$ 与 $m_2$ 满足 $m_1 > nx$，$m_2 > -nx$，那么
+		      \[-m_2 < nx < m_1\]
+		      因此会有一个整数 m（ $-m_2 \le m \le m_1$）满足
+		      \[m-1 \le nx \le m\]
+		      如果我们结合这些不等式，则会得到
+		      \[nx < m \le 1 + nx < ny\]
+		      因为 $n>0$，它遵循
+		      \[x < \frac{m}{n} < y\]
+		      通过 $p=\frac{m}{n}$ 证明了 (b)。
+	\end{enumerate}
+\end{proof}
+
+\anote
+(b) 的第一步将 $y-x$ 作为整体，将 (a) $nx > y$ 中的 $x$ 替换为 $y-x$，$y$ 替换为 1。同理对于整数
+$m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y$，而不等式左侧的 $x$ 视为 1，
+那么就有了 $m_1 \cdot 1 > nx$ 与 $m_2 \cdot 1 > -nx$。对于整数 m 的 $-m_2 \le m \le m_1$ 最坏的情况
+可将 $-m_2$ 与 $m_1$ 视为相邻的整数，比如说 1 和 2，那么当 m 取值为 2 时视为 $2 - 1 \le nx < 2$，
+满足 $m - 1 \le nx < m$。最后根据有理数的定义 $p=m/n$ $m,n \in Q$ 可以得出 x 与 y 之间一定存在一个有理数。
+
+\begin{theorem}
+	For every real $x>0$ and every integer $n>0$ there is one and only one positive real y such that
+	$y^n=x$.
+\end{theorem}
+
+这个 y 数可以被写作 $\sqrt[n]{x}$ 或是 $x^\frac{1}{n}$。
+
+\begin{proof}
+	对于至多存在一个 y 的论证很简单，因为 $0 < y_1 < y_2$ 意味着 $y^n_1 < y^n_2$。
+
+	令 E 为所有满足 $t^n < x$ 的正实数 t 的集合。
+
+	如果 $t = x/(1+x)$ 那么 $0 \le t < 1$，那么 $t^n \le t < x$。因此 $t \in E$，且 E 不为空。
+
+	如果 $t>1+x$ 那么 $t^n \ge t > x$，所以 $t \notin E$。因此 $1+x$ 是 E 的一个上界。
+
+	所以根据 Theorem 1.19 得出，存在一个
+	\[ y = \sup E\]
+
+	而证明 $y^n = x$ 我们需要展示不等式 $y^n < x$ 与 $y^n > x$ 皆会导致矛盾。
+
+	当  $0<a<b$ 时，等式 $b^n - a^n = (b-a)(b^{n-1} + b^{n-2}a + \dots + a^{n-1})$ 得出不等式
+	\[b^n - a^n < (b-a)nb^{n-1}\]
+
+	假设 $y^n<x$。选择 h 使得 $0<h<1$ 且
+	\[h < \frac{x-y^n}{n(y+1)^{n-1}}\]
+
+	令 $a=y$， $b=y+h$，那么就有
+	\[(y+h)^n-y^n < hn(y+h)^{n-1} < hn(y+1)^{n-1} < x-y^n\]
+
+	因此 $(y+h)^n < x$，且 $y+h \in E$。因为 $y+h>y$，这与 y 是 E 的一个上界相矛盾。
+
+	假设 $y^n>x$。令
+	\[k=\frac{y^n-x}{ny^{n-1}}\]
+
+	那么 $0<k<y$。如果 $t \ge y-k$，我们得出以下结论：
+	\[y^n - t^n \le y^n - (y - k)^n \le kny^{n-1} = y^n - x\]
+
+	因此 $t^n > x$，且 $t \notin E$。它遵循 $y - k$ 是 E 的一个上界。
+
+	但是因为 $y-k<y$，其与 y 是 E 的\textit{最小}上界的事实相矛盾。
+
+	因此 $y^n=x$，证明完成。
+\end{proof}
+
+\anote
+至多存在一个 y 换个角度也就是说但凡有第二个 y 使得 $y^n_1 = y^n_2$，那么 $y_1 = y_2$。\\
+等式
+\[b^n - a^n = (b-a)(b^{n-1} + b^{n-2}a + \dots + a^{n-1})\]
+左侧可以视为
+\[(b-a)(b^{n-1} + b^{n-1}\frac{a}{b} + \dots + b^{n-1}\frac{a}{b^{n-1}})\]
+提取 $b^{n-1}$ 后得
+\[(b-a)b^{n-1}(1 + \frac{a}{b} + \dots + \frac{a^{n-1}}{b^{n-1}})\]
+由于有 $0<a<b$ 这么一个前提，可以将第三项变为
+\[1 + \frac{a}{b} + \dots + \frac{a^{n-1}}{b^{n-1}} < 1 + 1 + \dots + 1 = n\]
+因此可得不等式
+\[b^n - a^n < (b-a)nb^{n-1}\]
+至于在证明 $y^n < x$ 不成立时，选择 h 的 $h<\frac{x-y^n}{n(y+1)^{n-1}}$ 分母为什么是 $n(y+1)^{n-1}$，
+是因为这是为了之后处理不等式而特意设置的消除项（这里利用了函数 $f(x)=x^n$ 是连续的事实，也就是说分母一定也是实数，
+那么就可以将 h 视为小于某实数）；同样的在证明 $y^n > x$ 时的 k 也是如此。
+
+\begin{corollary}
+	If a and b are positive real numbers and n is a positive integer, then
+	\[(ab)^{1/n} = a^{1/n}b^{1/n}\]
+\end{corollary}
+
+\begin{proof}
+	令 $\alpha = a^{1/n}$，$\beta = b^{1/n}$，那么有
+	\[ab = \alpha^n \beta^n = (\alpha\beta)^n\]
+	而乘法是符合交换律的，因此
+	\[(ab)^{1/n} = \alpha\beta = a^{1/n}b^{1/n}\]
+\end{proof}
+
 \subsection*{The Extended Real Number System}
+
+WIP
 
 \subsection*{The Complex Field}
 
+WIP
+
 \subsection*{Euclidean Spaces}
+
+WIP
 
 \end{document}
