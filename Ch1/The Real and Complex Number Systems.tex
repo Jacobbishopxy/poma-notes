@@ -236,7 +236,27 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 
 \subsection*{The Extended Real Number System}
 
-WIP
+% \setcounter{definition}{22}
+\begin{definition}
+	The extended real number system consists of the real field R and two symbols, $+\infty$ and $-\infty$.
+	We preserve the original order in R, and define
+	\[-\infty < x < +\infty\]
+	for every $x \in R$.
+\end{definition}
+
+可以清楚的知道 $+\infty$ 是所有衍生的实数系统子集的一个上界，且每个非空子集都有一个最小上界。
+如果 E 是一个实数的非空集合，且没有上界在 R 中，那么 $\sup E = + \infty$ 在衍生实数系统中。
+
+下界同理。
+
+衍生实数系统并不形成一个域，但它形成了一下惯例：
+
+\begin{enumerate}[label=(\alph*)]
+	\item 如果 x 是实数则
+	      \[x+\infty=+\infty,\atab x-\infty=-\infty,\atab \frac{x}{+\infty}=\frac{x}{-\infty}=0\]
+	\item 如果 $x>0$ 则 $x \cdot (+\infty) = +\infty,\atab[2mm] x \cdot (-\infty) = -\infty$
+	\item 如果 $x<0$ 则 $x \cdot (+\infty) = -\infty,\atab[2mm] x \cdot (-\infty) = +\infty$
+\end{enumerate}
 
 \subsection*{The Complex Field}
 

@@ -1,17 +1,20 @@
 
 % a new command which severs arbitrary section number
 \newcommand{\asection}[2]{
-    \setcounter{section}{#1}
-    \addtocounter{section}{-1}
-    \section{#2}
+	\setcounter{section}{#1}
+	\addtocounter{section}{-1}
+	\section{#2}
 }
 
 % a new command which simplify \lstinline
 \newcommand{\acode}[1]{
-    \lstinline[basicstyle=\ttfamily]{#1}
+	\lstinline[basicstyle=\ttfamily]{#1}
 }
 
 % a new command which denotes "note"
 \newcommand{\anote}{
-    \paragraph*{Note}
+	\paragraph*{Note}
 }
+
+% a new command which denotes "tab" key
+\newcommand\atab[1][1cm]{\hspace*{#1}}
