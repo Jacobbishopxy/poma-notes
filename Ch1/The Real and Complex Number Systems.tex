@@ -236,7 +236,7 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 
 \subsection*{The Extended Real Number System}
 
-% \setcounter{definition}{22}
+\setcounter{definition}{22}
 \begin{definition}
 	The extended real number system consists of the real field R and two symbols, $+\infty$ and $-\infty$.
 	We preserve the original order in R, and define
@@ -260,7 +260,105 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 
 \subsection*{The Complex Field}
 
-WIP
+\begin{definition}
+	A \textit{complex number} is an ordered pair (a, b) of real numbers. "Ordered" means that (a, b) and (b, a)
+	are regarded as distinct if $a \neq b$.
+\end{definition}
+
+令 $x=(a,b)$，$y=(c,d)$ 为两个复数。当且仅当 $a=c$ 以及 $b=d$ 时有 $x=y$。（注意改定义并非是完全不必要的；考虑有理数的等式，表现为整数的商。）
+我们定义
+\[x+y=(a+c,b+d)\]
+\[xy=(ac-bd,ad+bc)\]
+
+\setcounter{theorem}{24}
+\begin{theorem}
+	These definitions of addition and multiplication turn the set of all complex numbers into a field, with (0, 0)
+	and (1, 0) in the role of 0 and 1.
+\end{theorem}
+
+\begin{proof}
+	我们简单的验证一下域的公理（Definition 1.12），使用 R 的域结构。
+	令 $x=(a,b), y=(c,d), z=(e,f)$。
+	\begin{itemize}
+		\item[] (A1) 很清楚。
+		\item[] (A2) $x+y = (a+c,b+d) = (c+a,d+b) = y+x$
+		\item[] (A3)
+			\vspace{-26pt}
+			\begin{align*}
+				\mathcal (x+y)+z & = (a+c,b+d) + (e,f) \\
+				                 & = (a+c+e, b+d+f)    \\
+				                 & = (a,b) + (c+e,d+f) \\
+				                 & = x+(y+z)
+			\end{align*}
+		\item[] (A4) $x+0 = (a,b) + (0,0) = (a,b) = x$
+		\item[] (A5) 令 $-x = (-a,-b)$，那么 $x+(-x) = (0,0) = 0$
+		\item[] (M1) 很清楚。
+		\item[] (M2) $xy = (ac-bd,ad+bc) = (ca0dbmda+cb) = yx$
+		\item[] (M3)
+			\vspace{-26pt}
+			\begin{align*}
+				\mathcal (xy)z & = (ac-db,ad+bc)(e,f)                \\
+				               & = (ace-bde-adf-bef,acf-bdf+ade+bce) \\
+				               & = (a,b)(ce-df,cf+de)                \\
+				               & = x(yz)
+			\end{align*}
+		\item[] (M4) $1x  =(1,0)(a,b) = (a,b) = x$
+		\item[] (M5) 如果 $x \ne 0$ 那么 $(a,b) \ne (0,0)$，也就是说 a 和 b 至少有一个实数不等于 0。因此 $a^2+b^2>0$，根据 Proposition 1.18(d)，
+			我们可以定义
+			\[\frac{1}{x} = \bigl(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2}\bigr)\]
+			那么
+			\[x \cdot \frac{1}{x} = (a,b)\bigl(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2}\bigr) = (1,0) = 1\]
+		\item[] (D)
+			\vspace{-26pt}
+			\begin{align*}
+				\mathcal{} x(y+z) & = (a,b)(c+e,d+f)                \\
+				                  & = (ac+ae-bd-bf,ad+af+bc+be)     \\
+				                  & = (ac-bd,ad+bc) + (ae-bf,af+be) \\
+				                  & = xy + yz
+			\end{align*}
+	\end{itemize}
+\end{proof}
+
+\begin{theorem}
+	For any real numbers a and b we have
+	\[(a,0) + (b,0) = (a+b,0), \atab (a,0)(b,0) = (ab,0)\]
+\end{theorem}
+
+\setcounter{definition}{26}
+\begin{definition}
+	$i=(0,1)$
+\end{definition}
+
+\setcounter{theorem}{27}
+\begin{theorem}
+	$i^2=-1$
+\end{theorem}
+
+\begin{proof}
+	$i^2 = (0,1)(0,1) = (-1,0) = -1$
+\end{proof}
+
+\begin{theorem}
+	If a and b are real, then $(a,b)=a+bi$
+\end{theorem}
+
+\begin{proof}
+	\vspace{-26pt}
+	\begin{align*}
+		\mathcal{} a+bi & = (a,0) + (b,0)(0,1) \\
+		                & = (a,0) + (0,b)      \\
+		                & = (a,b)
+	\end{align*}
+\end{proof}
+
+\setcounter{definition}{29}
+\begin{definition}
+	If a, b are real and $z=a+bi$, then the complex number $\overline{z}=a-bi$ is called the \textit{conjugate} of z.
+	The numbers a and b are the \textit{real part} and the \textit{imaginary part} of z, respectively.
+	We shall occasionally write
+	\[ a = Re(z),\atab b=Im(z)\]
+\end{definition}
+
 
 \subsection*{Euclidean Spaces}
 
