@@ -14,15 +14,17 @@
 \usepackage{xpatch}
 \usepackage{hyperref}
 
-% setting theorem counter
-\newtheorem{theorem}{Theorem}[section]
+% setting theorem counter & style
+\newtheorem{poma}{PoMA}[section]
+\newtheorem{theorem}[poma]{Theorem}
 \newtheorem*{corollary}{Corollary}
-\newtheorem{proposition}[theorem]{proposition}
+\newtheorem{proposition}[poma]{proposition}
 \theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[poma]{Remark}
+\newtheorem{example}[poma]{Example}
 \theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
+\newtheorem{definition}[poma]{Definition}
+\newtheorem{notation}[poma]{Notation}
 
 % import & settings
 \graphicspath{\subfix{./images/}}

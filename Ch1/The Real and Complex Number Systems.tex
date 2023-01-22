@@ -4,7 +4,7 @@
 
 \subsection*{Ordered Sets}
 
-\setcounter{theorem}{6}
+\setcounter{poma}{6}
 \begin{definition}
 	Suppose S is an ordered set, $E \subset S$, and E is bounded above.
 	Suppose there exists an $\alpha \in S$ with the following properties:
@@ -26,7 +26,7 @@ S 是有序集合的情况下，E 又是属于 S 的，并且 E 拥有上界。�
 同理如果是 E 拥有下界，只会存在一个 $\alpha$ 是 E 的最大下界。
 发音：Supremum [su:$'$pri:məm]；Infimum [$'$\i nfa\i məm]。
 
-\setcounter{theorem}{9}
+\setcounter{poma}{9}
 \begin{definition}
 	An ordered set S is said to have the \textit{least-upper-bound property} if the following
 	is true: If $E \subset S$, E is not empty, and E is bounded above, then $\sup E$ exists in S.
@@ -91,7 +91,7 @@ S 中存在 $E \subset S$，且 E 具有最小上界，那么 S 就具有最小�
 \anote
 域的定义：\href{https://en.wikipedia.org/wiki/Field_(mathematics)}{维基百科}。
 
-\setcounter{theorem}{16}
+\setcounter{poma}{16}
 \begin{definition}
 	An \textit{ordered field} is a field F which is also an ordered set, such that:
 
@@ -105,7 +105,7 @@ S 中存在 $E \subset S$，且 E 具有最小上界，那么 S 就具有最小�
 
 \subsection*{The Real Field}
 
-\setcounter{theorem}{18}
+\setcounter{poma}{18}
 \begin{theorem}
 	There exists an ordered field R which has the least-upper-bound property.
 	Moreover, R contains Q as a subfield.
@@ -234,7 +234,7 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 
 \subsection*{The Extended Real Number System}
 
-\setcounter{theorem}{22}
+\setcounter{poma}{22}
 \begin{definition}
 	The extended real number system consists of the real field R and two symbols, $+\infty$ and $-\infty$.
 	We preserve the original order in R, and define
@@ -251,9 +251,9 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 
 \begin{enumerate}[label=(\alph*)]
 	\item 如果 x 是实数则
-	      \[x+\infty=+\infty,\atab x-\infty=-\infty,\atab \frac{x}{+\infty}=\frac{x}{-\infty}=0\]
-	\item 如果 $x>0$ 则 $x \cdot (+\infty) = +\infty,\atab[2mm] x \cdot (-\infty) = -\infty$
-	\item 如果 $x<0$ 则 $x \cdot (+\infty) = -\infty,\atab[2mm] x \cdot (-\infty) = +\infty$
+	      \[x+\infty=+\infty,\quad x-\infty=-\infty,\quad \frac{x}{+\infty}=\frac{x}{-\infty}=0\]
+	\item 如果 $x>0$ 则 $x \cdot (+\infty) = +\infty,\ x \cdot (-\infty) = -\infty$
+	\item 如果 $x<0$ 则 $x \cdot (+\infty) = -\infty,\ x \cdot (-\infty) = +\infty$
 \end{enumerate}
 
 \subsection*{The Complex Field}
@@ -268,7 +268,7 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 \[x+y=(a+c,b+d)\]
 \[xy=(ac-bd,ad+bc)\]
 
-\setcounter{theorem}{24}
+\setcounter{poma}{24}
 \begin{theorem}
 	These definitions of addition and multiplication turn the set of all complex numbers into a field, with (0, 0)
 	and (1, 0) in the role of 0 and 1.
@@ -319,14 +319,14 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 
 \begin{theorem}
 	For any real numbers a and b we have
-	\[(a,0) + (b,0) = (a+b,0), \atab (a,0)(b,0) = (ab,0)\]
+	\[(a,0) + (b,0) = (a+b,0), \quad (a,0)(b,0) = (ab,0)\]
 \end{theorem}
 
 \begin{definition}
 	$i=(0,1)$
 \end{definition}
 
-\setcounter{theorem}{27}
+\setcounter{poma}{27}
 \begin{theorem}
 	$i^2=-1$
 \end{theorem}
@@ -352,7 +352,7 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 	If a, b are real and $z=a+bi$, then the complex number $\overline{z}=a-bi$ is called the \textit{conjugate} of z.
 	The numbers a and b are the \textit{real part} and the \textit{imaginary part} of z, respectively.
 	We shall occasionally write
-	\[ a = Re(z),\atab b=Im(z)\]
+	\[ a = Re(z),\quad b=Im(z)\]
 \end{definition}
 
 \begin{theorem}
@@ -360,10 +360,78 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 	\begin{enumerate}[label=(\alph*)]
 		\item $\overline{z + w} = \overline{z} + \overline{w}$
 		\item $\overline{zw} = \overline{z} \cdot \overline{w}$
-		\item $z + \overline{z} = 2 \, Re(z), z - \overline{z} = 2i \, Im(z)$
+		\item $z + \overline{z} = 2 \, Re(z), \, z - \overline{z} = 2i \, Im(z)$
 		\item $z\overline{z}$ is real and positive (except when $z=0$)
 	\end{enumerate}
 \end{theorem}
+
+\begin{definition}
+	If z is a complex number, its absolute value $|z|$ is the non-negative square root of $z\overline{z}$; that is,
+	$|z| = (z\overline{z})^{1/2}$.
+\end{definition}
+
+$|z|$ 的存在（以及唯一性）遵循 Theorem 1.12 以及 Theorem 1.31 (d)。
+
+注意当 x 为实数时，那么 $\overline{x} = x$，因此 $|x| = \sqrt{x^2}$。所以如果 $x \ge 0$ 时 $|x| = x$，如果 $x<0$ 时 $|x| = -x$。
+
+\begin{theorem}
+	Let z and w be complex numbers. Then
+	\begin{enumerate}[label=(\alph*)]
+		\item $|z|>0$ unless $z=0,\,|0|=0$
+		\item $|\overline{z}|=|z|$
+		\item $|zw|=|z||w|$
+		\item $|Re \, z| \le |z|$
+		\item $|z+w| \le |z|+|w|$
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	(a) 与 (b) 不足为道。令 $z=a+bi,\,w=c+di$，其 $a,\,b,\,c,\,d$ 皆为实数。那么
+	\[|zw|^2 = (ac-bd)^2 + (ad+bc)^2 = (a^2+b^2)(c^2+d^2) = |z|^2|w|^2\]
+	即 $|zw|^2 = (|z||w|)^2$。(c) 遵循 Theorem 1.21 所声明的唯一性。
+
+	证明 (d)，有 $a^2 \le a^2 + b^2$，因此
+	\[|a| = \sqrt{a^2} \le \sqrt{a^2 + b^2}\]
+
+	证明 (e)，有 $\overline{z}w$ 与 $z\overline{w}$ 是共轭的，因此 $\overline{z}w + z\overline{w} = 2\, Re\,(z\overline{w})$。
+	因此
+	\begin{align*}
+		\mathcal |z+w|^2 & = (z+w)(\overline{z}+\overline{w})                              \\
+		                 & = z\overline{z} + z\overline{w} + \overline{z}w + w\overline{w} \\
+		                 & = |z|^2 + 2\,Re\,(z\overline{w}) + |w|^2                        \\
+		                 & \le |z|^2 + 2|z\overline{w}| + |w|^2                            \\
+		                 & = |z|^2 + 2|z||w| + |w|^2                                       \\
+		                 & = (|z|+|w|)^2
+	\end{align*}
+
+	两边开根号后即可得 (e)。
+\end{proof}
+
+\begin{notation}
+	If $x_1,\dots,x_n$ are complex numbers, we write
+	\[x_1 + x_2 + \cdots + x_n = \sum_{j=1}^{n} x_j\]
+\end{notation}
+
+我们用一个重要的不等式来结束本节，它通常被称为 \textit{Schwarz inequality}。
+
+\begin{theorem}
+	If $a_1,\dots,a_n$ and $b_1,\dots,b_n$ are complex numbers, then
+	\[\left|\sum_{j=1}^{n} a_j \overline{b}_j\right|^2 \le \sum_{j=1}^{n}|a_j|^2\sum_{j=1}^{n}|b_j|^2\]
+\end{theorem}
+
+\begin{proof}
+	令 $A=\sum|a_j|^2, \, B=\sum|b_j|^2, \, C=\sum a_j\overline{b}_j$，本证明中 j 取值 $1,\dots,n$。如果 $B=0$，那么就有
+	$b_1=\cdots=b_n=0$，那么结论很清楚。因此假设 $B>0$。根据 Theorem 1.31 有
+	\begin{align*}
+		\mathcal{} \sum|Ba_j - Cb_j|^2 & = \sum (Ba_j - Cb_j)(B\overline{a}_j - \overline{CB_j})                                              \\
+		                               & = B^2\sum|a_j|^2 - B\overline{C}\sum a_j\overline{b}_j - BC\sum\overline{a}_j b_j + |C|^2\sum|b_j|^2 \\
+		                               & = B^2A - B|C|^2                                                                                      \\
+		                               & = B(AB - |C|^2)
+	\end{align*}
+	因为在首次求和的每个项都是非负的，可以知道
+	\[B(AB-|C|^2)\ge0\]
+	又因为 $B>0$，它遵循 $AB-|C|^2\ge0$。它便是预期的不等式。
+\end{proof}
 
 \subsection*{Euclidean Spaces}
 
