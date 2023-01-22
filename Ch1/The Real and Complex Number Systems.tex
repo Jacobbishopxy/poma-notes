@@ -4,7 +4,7 @@
 
 \subsection*{Ordered Sets}
 
-\setcounter{definition}{7}
+\setcounter{theorem}{6}
 \begin{definition}
 	Suppose S is an ordered set, $E \subset S$, and E is bounded above.
 	Suppose there exists an $\alpha \in S$ with the following properties:
@@ -26,7 +26,7 @@ S 是有序集合的情况下，E 又是属于 S 的，并且 E 拥有上界。�
 同理如果是 E 拥有下界，只会存在一个 $\alpha$ 是 E 的最大下界。
 发音：Supremum [su:$'$pri:məm]；Infimum [$'$\i nfa\i məm]。
 
-\refstepcounter{definition}
+\setcounter{theorem}{9}
 \begin{definition}
 	An ordered set S is said to have the \textit{least-upper-bound property} if the following
 	is true: If $E \subset S$, E is not empty, and E is bounded above, then $\sup E$ exists in S.
@@ -35,7 +35,6 @@ S 是有序集合的情况下，E 又是属于 S 的，并且 E 拥有上界。�
 \anote
 S 中存在 $E \subset S$，且 E 具有最小上界，那么 S 就具有最小上界性，反之亦然。
 
-\setcounter{theorem}{10}
 \begin{theorem}
 	Suppose S is an ordered set with the least-upper-bound property,
 	$B \subset S$, B is not empty, and B is bounded below.
@@ -60,7 +59,6 @@ S 中存在 $E \subset S$，且 E 具有最小上界，那么 S 就具有最小�
 
 \subsection*{Fields}
 
-\setcounter{definition}{11}
 \begin{definition}
 	A field is a set F with two operations, called \textit{addition} and \textit{multiplication},
 	which satisfy the following so-called "field axioms" (A), (M), and (D):
@@ -93,7 +91,7 @@ S 中存在 $E \subset S$，且 E 具有最小上界，那么 S 就具有最小�
 \anote
 域的定义：\href{https://en.wikipedia.org/wiki/Field_(mathematics)}{维基百科}。
 
-\setcounter{definition}{16}
+\setcounter{theorem}{16}
 \begin{definition}
 	An \textit{ordered field} is a field F which is also an ordered set, such that:
 
@@ -236,7 +234,7 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 
 \subsection*{The Extended Real Number System}
 
-\setcounter{definition}{22}
+\setcounter{theorem}{22}
 \begin{definition}
 	The extended real number system consists of the real field R and two symbols, $+\infty$ and $-\infty$.
 	We preserve the original order in R, and define
@@ -324,7 +322,6 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 	\[(a,0) + (b,0) = (a+b,0), \atab (a,0)(b,0) = (ab,0)\]
 \end{theorem}
 
-\setcounter{definition}{26}
 \begin{definition}
 	$i=(0,1)$
 \end{definition}
@@ -351,7 +348,6 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 	\end{align*}
 \end{proof}
 
-\setcounter{definition}{29}
 \begin{definition}
 	If a, b are real and $z=a+bi$, then the complex number $\overline{z}=a-bi$ is called the \textit{conjugate} of z.
 	The numbers a and b are the \textit{real part} and the \textit{imaginary part} of z, respectively.
@@ -359,6 +355,15 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 	\[ a = Re(z),\atab b=Im(z)\]
 \end{definition}
 
+\begin{theorem}
+	If z and w are complex, then
+	\begin{enumerate}[label=(\alph*)]
+		\item $\overline{z + w} = \overline{z} + \overline{w}$
+		\item $\overline{zw} = \overline{z} \cdot \overline{w}$
+		\item $z + \overline{z} = 2 \, Re(z), z - \overline{z} = 2i \, Im(z)$
+		\item $z\overline{z}$ is real and positive (except when $z=0$)
+	\end{enumerate}
+\end{theorem}
 
 \subsection*{Euclidean Spaces}
 
