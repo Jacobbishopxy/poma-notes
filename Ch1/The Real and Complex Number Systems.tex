@@ -263,10 +263,116 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 	are regarded as distinct if $a \neq b$.
 \end{definition}
 
-令 $x=(a,b)$，$y=(c,d)$ 为两个复数。当且仅当 $a=c$ 以及 $b=d$ 时有 $x=y$。（注意改定义并非是完全不必要的；考虑有理数的等式，表现为整数的商。）
-我们定义
+令 $x=(a,b)$，$y=(c,d)$ 为两个复数。当且仅当 $a=c$ 以及 $b=d$ 时有 $x=y$。（注意该定义并非是完全不必要的；
+考虑有理数的等式，表现为整数的商。）我们定义：
 \[x+y=(a+c,b+d)\]
 \[xy=(ac-bd,ad+bc)\]
+
+\anote
+作为补充，对于任意两个复数 $x=(a,b),\ y=(c,d)$ 的四则运算：
+\begin{enumerate}[label=(\arabic*)]
+	\item $x+y=(a+c)+i(b+d)$
+	\item $x-y=(a-c)+i(b-d)$
+	\item $xy=(a+ib)(c+id)=ac-bd+i(ad+bc)$
+	\item $\frac{x}{y} = \frac{(a+ib)(c-id)}{(c+id)(c-id)} = \frac{(ac+bd)+i(bc-ad)}{c^2+d^2}$
+\end{enumerate}
+
+\anote
+对于任意一个复数 $z=a+ib$，可以用复平面上的一个点来表示，也可以用极坐标来表示：
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{center}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+		\begin{axis}[
+				x=0.8cm,y=0.8cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-0.5,
+				xmax=10.5,
+				ymin=-0.5,
+				ymax=10.5,
+				xtick={0,1,...,10},
+				ytick={0,1,...,10},]
+			\draw [line width=1.5pt,fill opacity=0.1] (0,0) -- (0:3) arc (0:26.565:3) -- cycle;
+			\draw [->,line width=1.5pt] (0,0) -- (10.5,0);
+			\draw [->,line width=1.5pt] (0,0) -- (0,10.5);
+			\draw (0.3,6) node[anchor=north west] {\LARGE Imaginary part as YAxis};
+			\draw (3.2,0.9) node[anchor=north west] {\LARGE Real part as XAxis};
+			\draw [line width=1.5pt] (0,0)-- (8,4);
+			\draw (8.7,4.45) node[anchor=north west] {\LARGE(x,y)};
+			\begin{scriptsize}
+				\draw [fill=black] (0,0) circle (3pt);
+				\draw[color=black] (10,0.8) node {\LARGE Re};
+				\draw[color=black] (0.7,10) node {\LARGE Im};
+				\draw [fill=black] (8,4) circle (2.5pt);
+				\draw[color=black] (8.5,4) node {\LARGE P};
+				\draw[color=black] (3.2,1) node {\LARGE $\theta$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+那么复数加法和减法可以通过向量来理解：
+\begin{center}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+		\begin{axis}[
+				x=0.8cm,y=0.8cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-0.5,
+				xmax=10.5,
+				ymin=-0.5,
+				ymax=10.5,
+				xtick={0,1,...,10},
+				ytick={0,1,...,10},]
+			\draw [->,line width=1.5pt] (0,0) -- (10.5,0);
+			\draw [->,line width=1.5pt] (0,0) -- (0,10.5);
+			\draw [->,line width=1.5pt] (0,0) -- (2,5);
+			\draw [->,line width=1.5pt] (0,0) -- (6,2);
+			\draw [->,line width=1.5pt,dash pattern=on 10pt off 10pt] (2,5) -- (7,7);
+			\draw [->,line width=1.5pt,color=red] (0,0) -- (7,7);
+			\begin{scriptsize}
+				\draw [fill=black] (0,0) circle (2pt);
+				\draw[color=black] (10,0.8) node {\LARGE Re};
+				\draw[color=black] (0.7,10) node {\LARGE Im};
+				\draw [fill=black] (2,5) circle (2.5pt);
+				\draw[color=black] (2.2,5.6) node {\LARGE A};
+				\draw [fill=black] (6,2) circle (2.5pt);
+				\draw[color=black] (6.2,2.6) node {\LARGE B};
+				\draw [fill=black] (7,7) circle (2.5pt);
+				\draw[color=black] (7.2,7.6) node {\LARGE C};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+\begin{center}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+		\begin{axis}[
+				x=0.8cm,y=0.8cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-0.5,
+				xmax=10.5,
+				ymin=-0.5,
+				ymax=10.5,
+				xtick={0,1,...,10},
+				ytick={0,1,...,10},]
+			\draw [->,line width=1.5pt] (0,0) -- (10.5,0);
+			\draw [->,line width=1.5pt] (0,0) -- (0,10.5);
+			\draw [->,line width=1.5pt] (0,0) -- (2,8);
+			\draw [->,line width=1.5pt] (0,0) -- (8,6);
+			\draw [->,line width=1.5pt,color=red] (8,6) -- (2,8);
+			\begin{scriptsize}
+				\draw [fill=black] (0,0) circle (2pt);
+				\draw[color=black] (10,0.8) node {\LARGE Re};
+				\draw[color=black] (0.7,10) node {\LARGE Im};
+				\draw[color=black] (2.2,8.7) node {\LARGE A};
+				\draw[color=black] (8.2,6.7) node {\LARGE B};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
 
 \setcounter{poma}{24}
 \begin{theorem}
