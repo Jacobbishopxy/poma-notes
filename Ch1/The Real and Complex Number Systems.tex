@@ -269,7 +269,8 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 \[xy=(ac-bd,ad+bc)\]
 
 \anote
-作为补充（详见\href{https://zhuanlan.zhihu.com/p/68763358}{该篇文章}），对于任意两个复数 $x=(a,b),\ y=(c,d)$ 的四则运算：
+作为补充（详见\href{https://zhuanlan.zhihu.com/p/68763358}{该篇文章}），
+对于任意两个复数 $x=(a,b),\ y=(c,d)$ 的四则运算：
 \begin{enumerate}[label=(\arabic*)]
 	\item $x+y=(a+c)+i(b+d)$
 	\item $x-y=(a-c)+i(b-d)$
@@ -419,7 +420,7 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 \end{align*}
 那么根据三角和差公式：
 \[z_1 z_2 = r_1 r_2 \big( \cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2) \big)\]
-可以发现 $z_1 \cdots z_2$ 计算后模为两个复数模的乘积 $|z_1||z_2|$，幅角为两个复数幅角之和 $\arg(z_1z_2)=\arg(z_1)+\arg(z_2)$。
+可以发现 $z_1 \cdot z_2$ 计算后模为两个复数模的乘积 $|z_1||z_2|$，幅角为两个复数幅角之和 $\arg(z_1z_2)=\arg(z_1)+\arg(z_2)$。
 因此复数的乘积可以理解为\textbf{拉伸与旋转}。例如：
 \begin{center}
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
@@ -479,8 +480,8 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 
 \setcounter{poma}{24}
 \begin{theorem}
-	These definitions of addition and multiplication turn the set of all complex numbers into a field, with (0, 0)
-	and (1, 0) in the role of 0 and 1.
+	These definitions of addition and multiplication turn the set of all complex numbers into a field,
+	with (0, 0) and (1, 0) in the role of 0 and 1.
 \end{theorem}
 
 \begin{proof}
@@ -500,7 +501,7 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 		\item[] (A4) $x+0 = (a,b) + (0,0) = (a,b) = x$
 		\item[] (A5) 令 $-x = (-a,-b)$，那么 $x+(-x) = (0,0) = 0$
 		\item[] (M1) 很清楚。
-		\item[] (M2) $xy = (ac-bd,ad+bc) = (ca0dbmda+cb) = yx$
+		\item[] (M2) $xy = (ac-bd,ad+bc) = (ca-db,da+cb) = yx$
 		\item[] (M3)
 			\vspace{-26pt}
 			\begin{align*}
@@ -510,8 +511,8 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 				               & = x(yz)
 			\end{align*}
 		\item[] (M4) $1x  =(1,0)(a,b) = (a,b) = x$
-		\item[] (M5) 如果 $x \ne 0$ 那么 $(a,b) \ne (0,0)$，也就是说 a 和 b 至少有一个实数不等于 0。因此 $a^2+b^2>0$，根据 Proposition 1.18(d)，
-			我们可以定义
+		\item[] (M5) 如果 $x \ne 0$ 那么 $(a,b) \ne (0,0)$，也就是说 a 和 b 至少有一个实数不等于 0。
+			因此 $a^2+b^2>0$，根据 Proposition 1.18(d)，我们可以定义
 			\[\frac{1}{x} = \bigl(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2}\bigr)\]
 			那么
 			\[x \cdot \frac{1}{x} = (a,b)\bigl(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2}\bigr) = (1,0) = 1\]
@@ -575,13 +576,14 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 \end{theorem}
 
 \begin{definition}
-	If z is a complex number, its absolute value $|z|$ is the non-negative square root of $z\overline{z}$; that is,
-	$|z| = (z\overline{z})^{1/2}$.
+	If z is a complex number, its absolute value $|z|$ is the non-negative square root of $z\overline{z}$;
+	that is, $|z| = (z\overline{z})^{1/2}$.
 \end{definition}
 
 $|z|$ 的存在（以及唯一性）遵循 Theorem 1.12 以及 Theorem 1.31 (d)。
 
-注意当 x 为实数时，那么 $\overline{x} = x$，因此 $|x| = \sqrt{x^2}$。所以如果 $x \ge 0$ 时 $|x| = x$，如果 $x<0$ 时 $|x| = -x$。
+注意当 x 为实数时，那么 $\overline{x} = x$，因此 $|x| = \sqrt{x^2}$。
+所以如果 $x \ge 0$ 时 $|x| = x$，如果 $x<0$ 时 $|x| = -x$。
 
 \begin{theorem}
 	Let z and w be complex numbers. Then
@@ -616,6 +618,12 @@ $|z|$ 的存在（以及唯一性）遵循 Theorem 1.12 以及 Theorem 1.31 (d)�
 	两边开根号后即可得 (e)。
 \end{proof}
 
+\anote
+计算中第一步的 $|z+w|^2 = (z+w)(\overline{z}+\overline{w})$ 是将 $z+w$ 视为整体，并使用了 Definition 1.32 中的
+$|z|=(z\overline{z})^{1/2}$ 转换为 $(z+w)(\overline{z+w})$，而又因为 Theorem 1.31 (a) 可将第二项变为
+$(\overline{z}+\overline{w})$；而第三步到第四步的不等式则利用了 Theorem 1.33 (d)，即 $|Re z| \le |z|$；
+第四步到第五步则使用了 Theorem 1.33 (c)，即 $|zw|=|z||w|$。
+
 \begin{notation}
 	If $x_1,\dots,x_n$ are complex numbers, we write
 	\[x_1 + x_2 + \cdots + x_n = \sum_{j=1}^{n} x_j\]
@@ -629,8 +637,8 @@ $|z|$ 的存在（以及唯一性）遵循 Theorem 1.12 以及 Theorem 1.31 (d)�
 \end{theorem}
 
 \begin{proof}
-	令 $A=\sum|a_j|^2, \, B=\sum|b_j|^2, \, C=\sum a_j\overline{b}_j$，本证明中 j 取值 $1,\dots,n$。如果 $B=0$，那么就有
-	$b_1=\cdots=b_n=0$，那么结论很清楚。因此假设 $B>0$。根据 Theorem 1.31 有
+	令 $A=\sum|a_j|^2, \, B=\sum|b_j|^2, \, C=\sum a_j\overline{b}_j$，本证明中 j 取值 $1,\dots,n$。
+	如果 $B=0$，那么就有 $b_1=\cdots=b_n=0$，那么结论很清楚。因此假设 $B>0$。根据 Theorem 1.31 有
 	\begin{align*}
 		\mathcal{} \sum|Ba_j - Cb_j|^2 & = \sum (Ba_j - Cb_j)(B\overline{a}_j - \overline{CB_j})                                              \\
 		                               & = B^2\sum|a_j|^2 - B\overline{C}\sum a_j\overline{b}_j - BC\sum\overline{a}_j b_j + |C|^2\sum|b_j|^2 \\
@@ -642,8 +650,68 @@ $|z|$ 的存在（以及唯一性）遵循 Theorem 1.12 以及 Theorem 1.31 (d)�
 	又因为 $B>0$，它遵循 $AB-|C|^2\ge0$。它便是预期的不等式。
 \end{proof}
 
+\anote
+$|Ba_j - Cb_j|^2$ 为构造项，将其中 $Ba_j - Cb_j$ 视为整体根据 Definition 1.32，可转换为 $(Ba_j - Cb_j)(\overline{Ba_j - Cb_j})$，
+而后者根据 Theorem 1.31 即可写为 $B\overline{a}_j - \overline{Cb_j}$（这里 $B=\sum|b_j|^2$ 的共轭还是其本身）；
+根据乘法分配律得出第二步后，将之前设定的 $A, B, C$ 带入即可得出 $B(AB - |C|^2)$；最后根据起始的构造项 $|Ba_j - Cb_j|^2$
+必然非负以及之前假设的 $B>0$ 可以得出 $AB-|C|^2 \ge 0$；将 $A, B, C$ 原本代表的值带入，
+即 $\sum|a_j|^2\sum|b_j|^2-|\sum a_j\overline{b}_j|\ge0$。
+
 \subsection*{Euclidean Spaces}
 
-WIP
+\begin{definition}
+	For each positive integer k, let $R^k$ be the set of all ordered k-tuples
+	\[\mathbf{x}=(x_1,x_2,\dots,x_k)\]
+	where $x_1,\dots,x_k$ are real numbers, called the \textit{coordintates} of $\mathbf{x}$. The elements of $R^k$
+	are called points, or vectors, especially when $k>1$. We shall denote vectors by boldfaced letters.
+	If $\mathbf{y}=(y_1,\dots,y_k)$ and if $\alpha$ is a real number, put
+	\[\mathbf{x}+\mathbf{y}=(x_1+y_1,\dots,x_k+y_k)\]
+	\[\alpha\mathbf{x}=(\alpha x_1,\dots,\alpha x_k)\]
+	so that $\mathbf{x}+\mathbf{y} \in R^k$ and $\alpha\mathbf{x} \in R^k$. This defines addition of vectors,
+	as well as multiplication of a vector by a real number (a scalar). These two operations satisfy the commutative,
+	associative, and distributive laws (the proof is trivial, in view of the analogous for the real numbers) and
+	make $R^k$ into a \textit{vector space over the real field}. The zero element of $R^k$ (sometimes called the
+	\textit{origin} or the \textit{null vector}) is the point $\mathbf{0}$, all of whose coordintates are 0.
+
+	We also define the so-called \say{inner product} (or scalar product) of $\mathbf{x}$ and $\mathbf{y}$ by
+	\[\mathbf{x}\cdot\mathbf{y}=\sum_{i=1}^{k}x_i y_i\]
+	and the \textit{norm} of $\mathbf{x}$ by
+	\[|\mathbf{x}| = (\mathbf{x}\cdot\mathbf{x})^{1/2} = \left(\sum_{1}^{k}x^2_i\right)^{1/2}\]
+
+	The structure now defined (the vector space $R^k$ with the above inner product and norm) is called
+	euclidean \textit{k}-space.
+\end{definition}
+
+\begin{theorem}
+	Suppose $\mathbf{x},\mathbf{y},\mathbf{z}\in R^k$, and $\alpha$ is real. Then
+	\begin{enumerate}[label=(\alph*)]
+		\item $|\mathbf{x}| \ge 0$;
+		\item $|\mathbf{x}| = 0$ if and only if $\mathbf{x} = \mathbf{0}$;
+		\item $|\alpha\mathbf{x}| = |\alpha||\mathbf{x}|$;
+		\item $|\mathbf{x}\cdot\mathbf{y}|\le|\mathbf{x}||\mathbf{y}|$;
+		\item $|\mathbf{x}+\mathbf{y}|\le|\mathbf{x}|+|\mathbf{y}|$;
+		\item $|\mathbf{x}-\mathbf{z}|\le|\mathbf{x}-\mathbf{y}|+|\mathbf{y}-\mathbf{z}|$
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	前三项不必赘述，而 (d) 是 Schwarz 不等式的间接结论。通过 (d) 可以有
+	\begin{align*}
+		\mathcal{} |\mathbf{x}+\mathbf{y}|^2 & = (\mathbf{x}+\mathbf{y})\cdot(\mathbf{x}+\mathbf{y})                               \\
+		                                     & =\mathbf{x}\cdot\mathbf{x} + 2\mathbf{x}\cdot\mathbf{y} + \mathbf{y}\cdot\mathbf{y} \\
+		                                     & \le |\mathbf{x}|^2 + 2|\mathbf{x}||\mathbf{y}| + |\mathbf{y}|^2                     \\
+		                                     & = (|\mathbf{x}|+|\mathbf{y}|)^2
+	\end{align*}
+	这样 (e) 就被证明了。最后替换 (e) 中的 $\mathbf{x}$ 为 $\mathbf{x}-\mathbf{y}$ 以及 $\mathbf{y}$ 为 $\mathbf{y}-\mathbf{z}$ (f)
+	可以得出 (f)。
+\end{proof}
+
+\begin{remark}
+	Theorem 1.37 (a), (b), and (f) will allow us (see Chap. 2) to regard $R^k$ as a metric space.
+
+	$R^1$ (the set of all real numbers) is usually called the line, or the real line. Likewise,
+	$R^2$ is called the plane, or the complex plane (compare Definitions 1.24 and 1.36).
+	In these two cases the norm is just the absolute value of the corresponding real or complex number.
+\end{remark}
 
 \end{document}
