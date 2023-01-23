@@ -4,7 +4,60 @@
 
 \subsection*{Finite, Countable, and Uncoutable Sets}
 
-WIP
+本节由函数概念的定义开始。
+
+\begin{definition}
+  Consider two sets $A$ and $B$, whose elements may be any objects whatsover, and suppose that with each
+  element $x$ of $A$ there is associated, in some manner, an element of $B$, which we denote by $f(x)$.
+  Then $f$ is said to be a \textit{function} from $A$ to $B$ (or a \textit{mapping} of $A$ into $B$).
+  The set $A$ is called the \textit{domain} of $f$ (we also say $f$ is defined on $A$), and the elements $f(x)$
+  are called the \textit{values} of $f$. The set of all values of $f$ is called the \textit{range} of $f$.
+\end{definition}
+
+\begin{definition}
+  Let $A$ and $B$ be two sets and let $f$ be a mapping of $A$ into $B$. If $E \subset A$, $f(E)$ is defined to
+  be the set of all elements $f(x)$, for $x \in E$. We call $f(E)$ the \textit{image} of $E$ under $f$.
+  In this notation, $f(A)$ is the range of $f$. It is clear that $f(A) \subset B$. If $f(A)=B$, we say that $f$
+  maps $A$ \textit{onto} $B$. (Note that, according to this usage, \textit{onto} is more specific than \textit{into}.)
+
+  If $E \subset B$, $f^{-1}(E)$ denotes the set of all $x \in A$ such that $f(x) \in E$. We call $f^{-1}(E)$ the
+  \textit{inverse image} of $E$ under $f$. If $y \in B$, $f^{-1}(y)$ is the set of all $x \in A$ such that
+  $f(x)=y$. If, for each $y \in B$, $f^{-1}(y)$ consists of at most one element of $A$, then $f$ is said to be
+  a 1-1 (\textit{one-to-one}) mapping of $A$ into $B$. This may also be expressed as follows: $f$ is a 1-1 mapping
+  of $A$ into $B$ provided that $f(x_1) \ne f(x_2)$ whenever $x_1 \ne x_2,\ x_1 \in A,\ x_2 \in A$.
+
+  (The notation $x_1 \ne x_2$ means that $x_1$ and $x_2$ are distinct elements; otherwise we write $x_1=x_2$.)
+\end{definition}
+
+\begin{definition}
+  If there exists a 1-1 mapping of $A$ \textit{onto} $B$, we say that $A$ and $B$ can be put in 1-1 \textit{correspondence},
+  or that $A$ and $B$ have the same \textit{cardinal number}, or, briefly, that $A$ and $B$ are \textit{equivalent},
+  and we write $A \sim B$. This relation clearly has the following properties:
+  \begin{itemize}
+    \item[] It is relexive: $A \sim A$.
+    \item[] It is symmetric: If $A \sim B$, then $B \sim A$.
+    \item[] It is transitive: If $A \sim B$ and $B \sim C$, then $A \sim C$.
+  \end{itemize}
+  Any relation with these three properties is called an \textit{equivalence relation}.
+\end{definition}
+
+\begin{definition}
+  For any positive integer $n$, let $J_n$ be the set whose elements are the integers $1,2,\dots,n$; let $J$ be
+  the set consisting of all positive integers. For any set $A$, we say:
+  \begin{enumerate}[label=(\alph*)]
+    \item $A$ is \textit{finite} if $A \sim J_n$ for some $n$ (the empty set is also considered to be finnite).
+    \item $A$ is \textit{} if $A$ is not finite.
+    \item $A$ is \textit{} if $A \sim J$.
+    \item $A$ is \textit{} if $A$ is neither finite nor countable.
+    \item $A$ is \textit{} if $A$ is finite or countable.
+  \end{enumerate}
+
+  Countable sets are sometimes called \textit{enumerable}, or \textit{denumerable}.
+
+  For two finite sets $A$ and $B$, we evidently have $A \sim B$ if and only if $A$ and $B$ contain the same number of
+  elements. For infinite sets, however, the idea of \say{having the same number of elements} becomes quite vague,
+  whereas the notion of 1-1 correspondence retains its clarity.
+\end{definition}
 
 \subsection*{Metric Spaces}
 
