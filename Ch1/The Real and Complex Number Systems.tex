@@ -269,7 +269,7 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 \[xy=(ac-bd,ad+bc)\]
 
 \anote
-作为补充，对于任意两个复数 $x=(a,b),\ y=(c,d)$ 的四则运算：
+作为补充（详见\href{https://zhuanlan.zhihu.com/p/68763358}{该篇文章}），对于任意两个复数 $x=(a,b),\ y=(c,d)$ 的四则运算：
 \begin{enumerate}[label=(\arabic*)]
 	\item $x+y=(a+c)+i(b+d)$
 	\item $x-y=(a-c)+i(b-d)$
@@ -278,8 +278,7 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 \end{enumerate}
 
 \anote
-对于任意一个复数 $z=a+ib$，可以用复平面上的一个点来表示，也可以用极坐标来表示：
-\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+首先，对于任意一个复数 $z=a+ib$，可以用复平面上的一个点来表示，那么复数加减法可以通过向量来理解：
 \begin{center}
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
 		\begin{axis}[
@@ -287,6 +286,69 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 				axis lines=middle,
 				ymajorgrids=true,
 				xmajorgrids=true,
+				xlabel=Re,
+				ylabel=Im,
+				xmin=-0.5,
+				xmax=10.5,
+				ymin=-0.5,
+				ymax=10.5,
+				xtick={0,1,...,10},
+				ytick={0,1,...,10},]
+			\draw [->,line width=1.5pt] (0,0) -- (2,5);
+			\draw [->,line width=1.5pt] (0,0) -- (6,2);
+			\draw [->,line width=1.5pt,dash pattern=on 10pt off 10pt] (2,5) -- (7,7);
+			\draw [->,line width=1.5pt,color=red] (0,0) -- (7,7);
+			\begin{scriptsize}
+				\draw [fill=black] (0,0) circle (2pt);
+				\draw [fill=black] (2,5) circle (2.5pt);
+				\draw[color=black] (2.2,5.6) node {\large A};
+				\draw [fill=black] (6,2) circle (2.5pt);
+				\draw[color=black] (6.2,2.6) node {\large B};
+				\draw [fill=black] (7,7) circle (2.5pt);
+				\draw[color=black] (7.2,7.6) node {\large C};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+\begin{center}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+		\begin{axis}[
+				x=0.8cm,y=0.8cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xlabel=Re,
+				ylabel=Im,
+				xmin=-0.5,
+				xmax=10.5,
+				ymin=-0.5,
+				ymax=10.5,
+				xtick={0,1,...,10},
+				ytick={0,1,...,10},]
+			\draw [->,line width=1.5pt] (0,0) -- (2,8);
+			\draw [->,line width=1.5pt,color=brown] (0,0) -- (8,6);
+			\draw [->,line width=1.5pt,color=red] (8,6) -- (2,8);
+			\draw (4,2.7) node[anchor=north west] {Reverse B's direction};
+			\begin{scriptsize}
+				\draw [fill=black] (0,0) circle (2pt);
+				\draw[color=black] (2.2,8.7) node {\large A};
+				\draw[color=black] (8.2,6.7) node {\large B};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+\anote
+而对于复数的乘除法，需要先引入复数在极坐标上的几何意义 -- 对于任意一个复数 $z=a+ib$ 用极坐标来表示：
+\begin{center}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+		\begin{axis}[
+				x=0.8cm,y=0.8cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xlabel=Re,
+				ylabel=Im,
 				xmin=-0.5,
 				xmax=10.5,
 				ymin=-0.5,
@@ -294,24 +356,21 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 				xtick={0,1,...,10},
 				ytick={0,1,...,10},]
 			\draw [line width=1.5pt,fill opacity=0.1] (0,0) -- (0:3) arc (0:26.565:3) -- cycle;
-			\draw [->,line width=1.5pt] (0,0) -- (10.5,0);
-			\draw [->,line width=1.5pt] (0,0) -- (0,10.5);
-			\draw (0.3,6) node[anchor=north west] {\LARGE Imaginary part as YAxis};
-			\draw (3.2,0.9) node[anchor=north west] {\LARGE Real part as XAxis};
+			\draw (0.3,6) node[anchor=north west] {Imaginary part as YAxis};
+			\draw (4,0.7) node[anchor=north west] {Real part as XAxis};
 			\draw [line width=1.5pt] (0,0)-- (8,4);
-			\draw (8.7,4.45) node[anchor=north west] {\LARGE(x,y)};
+			\draw (8.7,4.45) node[anchor=north west] {\large(x,y)};
 			\begin{scriptsize}
 				\draw [fill=black] (0,0) circle (3pt);
-				\draw[color=black] (10,0.8) node {\LARGE Re};
-				\draw[color=black] (0.7,10) node {\LARGE Im};
+				\draw[color=black] (0.35,0.55) node {\large O};
 				\draw [fill=black] (8,4) circle (2.5pt);
-				\draw[color=black] (8.5,4) node {\LARGE P};
-				\draw[color=black] (3.2,1) node {\LARGE $\theta$};
+				\draw[color=black] (8.5,4) node {\large P};
+				\draw[color=black] (3.2,1) node {\large $\theta$};
 			\end{scriptsize}
 		\end{axis}
 	\end{tikzpicture}
 \end{center}
-那么复数加法和减法可以通过向量来理解：
+那么复数的三角表示为：
 \begin{center}
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
 		\begin{axis}[
@@ -319,32 +378,49 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 				axis lines=middle,
 				ymajorgrids=true,
 				xmajorgrids=true,
+				xlabel=Re,
+				ylabel=Im,
 				xmin=-0.5,
 				xmax=10.5,
 				ymin=-0.5,
 				ymax=10.5,
 				xtick={0,1,...,10},
 				ytick={0,1,...,10},]
-			\draw [->,line width=1.5pt] (0,0) -- (10.5,0);
-			\draw [->,line width=1.5pt] (0,0) -- (0,10.5);
-			\draw [->,line width=1.5pt] (0,0) -- (2,5);
-			\draw [->,line width=1.5pt] (0,0) -- (6,2);
-			\draw [->,line width=1.5pt,dash pattern=on 10pt off 10pt] (2,5) -- (7,7);
-			\draw [->,line width=1.5pt,color=red] (0,0) -- (7,7);
+			\draw [line width=1.5pt,fill opacity=0.1] (0,0) -- (0:3) arc (0:26.565:3) -- cycle;
+			\draw [line width=1.5pt] (0,0)-- (8,4);
+			\draw (8.7,4.45) node[anchor=north west] {\large(x,y)};
+			\draw [line width=1pt ] (8,0)-- (8,4);
+			\draw [line width=1pt ] (7.5,0)-- (7.5,0.5);
+			\draw [line width=1pt ] (7.5,0.5)-- (8,0.5);
+			\draw (8.1,2) node[anchor=north west] {\large y};
+			\draw (5,0.6) node[anchor=north west] {\large x};
 			\begin{scriptsize}
-				\draw [fill=black] (0,0) circle (2pt);
-				\draw[color=black] (10,0.8) node {\LARGE Re};
-				\draw[color=black] (0.7,10) node {\LARGE Im};
-				\draw [fill=black] (2,5) circle (2.5pt);
-				\draw[color=black] (2.2,5.6) node {\LARGE A};
-				\draw [fill=black] (6,2) circle (2.5pt);
-				\draw[color=black] (6.2,2.6) node {\LARGE B};
-				\draw [fill=black] (7,7) circle (2.5pt);
-				\draw[color=black] (7.2,7.6) node {\LARGE C};
+				\draw [fill=black] (0,0) circle (3pt);
+				\draw[color=black] (0.35,0.55) node {\large O};
+				\draw [fill=black] (8,4) circle (2.5pt);
+				\draw[color=black] (8.5,4) node {\large P};
+				\draw[color=black] (3.2,1) node {\large $\theta$};
 			\end{scriptsize}
 		\end{axis}
 	\end{tikzpicture}
 \end{center}
+这里将 OP 的长度作为复数 z 的\textbf{模（Modulus）}，用 $|z|$ 表示；而角 $\theta$ 为复数 z 的\textbf{幅角（Argument）}，
+用 $\arg(z)$ 表示。那么复数的三角表示为：
+\[z = x+iy = r(\cos\theta + i\sin\theta), \quad r = \sqrt{x^2+y^2}, \quad \tan\theta = \frac{y}{x} \]
+接下来是复数乘法的几何意义，使用复数的三角形式计算下列两个复数的乘积：
+\begin{align*}
+	z_1 = r_1(\cos\theta_1 + i\sin\theta_1) \\
+	z_2 = r_2(\cos\theta_2 + i\sin\theta_2)
+\end{align*}
+那么有：
+\begin{align*}
+	\mathcal{} z_1 z_2 & = r_1 r_2(\cos\theta_1 + i\sin\theta_1)(\cos\theta_2 + i\sin\theta_2)                                                                  \\
+	                   & = r_1 r_2 \big( \cos\theta_1 \cos\theta_2 - \sin\theta_1 \sin\theta_2 + i(\sin\theta_1 \cos\theta_2 + \cos\theta_1 \sin\theta_2) \big)
+\end{align*}
+那么根据三角和差公式：
+\[z_1 z_2 = r_1 r_2 \big( \cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2) \big)\]
+可以发现 $z_1 \cdots z_2$ 计算后模为两个复数模的乘积 $|z_1||z_2|$，幅角为两个复数幅角之和 $\arg(z_1z_2)=\arg(z_1)+\arg(z_2)$。
+因此复数的乘积可以理解为\textbf{拉伸与旋转}。例如：
 \begin{center}
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
 		\begin{axis}[
@@ -352,27 +428,54 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 				axis lines=middle,
 				ymajorgrids=true,
 				xmajorgrids=true,
-				xmin=-0.5,
-				xmax=10.5,
-				ymin=-0.5,
-				ymax=10.5,
-				xtick={0,1,...,10},
-				ytick={0,1,...,10},]
-			\draw [->,line width=1.5pt] (0,0) -- (10.5,0);
-			\draw [->,line width=1.5pt] (0,0) -- (0,10.5);
-			\draw [->,line width=1.5pt] (0,0) -- (2,8);
-			\draw [->,line width=1.5pt] (0,0) -- (8,6);
-			\draw [->,line width=1.5pt,color=red] (8,6) -- (2,8);
+				xmin=-7.5,
+				xmax=7.5,
+				ymin=-1.5,
+				ymax=7.5,
+				xtick={-8,-7,...,7},
+				ytick={-1,0,...,8},]
+			\draw [line width=2pt] (0,0)-- (6,6);
+			\draw [line width=2pt,color=red] (0,0)-- (-6,6);
+			\draw [->,line width=2pt,dash pattern=on 10pt off 10pt,color=blue] (6,6) -- (-6,6);
+			\draw (3.5,3.7) node[anchor=north west] {\large $z_1 = 1 + i$};
+			\draw [line width=2pt] (0,0)-- (0,6);
+			\draw (0.1,4) node[anchor=north west] {\large $z_2 = i$};
+			\draw (-6.8,4.7) node[anchor=north west] {\large $z_1z_2 = (1+i)\cdot i = -1 + i$};
 			\begin{scriptsize}
 				\draw [fill=black] (0,0) circle (2pt);
-				\draw[color=black] (10,0.8) node {\LARGE Re};
-				\draw[color=black] (0.7,10) node {\LARGE Im};
-				\draw[color=black] (2.2,8.7) node {\LARGE A};
-				\draw[color=black] (8.2,6.7) node {\LARGE B};
+				\draw [fill=black] (6,6) circle (2.5pt);
+				\draw [fill=red] (-6,6) circle (2.5pt);
+				\draw [fill=black] (0,6) circle (2.5pt);
 			\end{scriptsize}
 		\end{axis}
 	\end{tikzpicture}
 \end{center}
+因为
+\[z_1=\sqrt{2}(\cos\frac{\pi}{4}+i\sin\frac{\pi}{4}),\quad z_2=1(\cos\frac{\pi}{2}+i\sin\frac{\pi}{2})\]
+所以 $z_1z_2$ 的模长为 $\sqrt{2}$ 且幅角为 $\frac{3\pi}{4}$。
+而复数的除法只需要将除法写成乘法形式即可
+\begin{align*}
+	\mathcal{} z^{-1} & = \big(r(\cos\theta+i\sin\theta)\big)^{-1}                                             \\
+	                  & = r^{-1}\frac{1}{\cos\theta+i\sin\theta}                                               \\
+	                  & =r^{-1}\frac{\cos\theta-i\sin\theta}{(\cos\theta+i\sin\theta)(\cos\theta-i\sin\theta)} \\
+	                  & =r^{-1}(\cos\theta-i\sin\theta)
+\end{align*}
+那么两个复数
+\begin{align*}
+	z_1 = r_1(\cos\theta_1 + i\sin\theta_1) \\
+	z_2 = r_2(\cos\theta_2 + i\sin\theta_2)
+\end{align*}
+的除法便是
+\begin{align*}
+	\mathcal{} \frac{z_1}{z_2} & = z_1{z_2}^{-1}                                                           \\
+	                           & = \frac{r_1}{r_2}(\cos\theta_1+i\sin\theta_2)(\cos\theta_1-i\sin\theta_2) \\
+	                           & = \frac{r_1}{r_2}(\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2))
+\end{align*}
+因此，$\frac{z_1}{z_2}$ 的模长为两个模相除 $\frac{|z_1|}{|z_2|}$，幅角为 $\arg(\frac{z_1}{z_2})=\arg(z_1)-\arg(z_2)$。
+所以复数的除法也可以理解为\textbf{拉伸与旋转}。
+
+\anote
+综上所述，复数的加减法就是向量的加减法，乘除法就是拉伸与旋转变换。
 
 \setcounter{poma}{24}
 \begin{theorem}
