@@ -276,4 +276,5 @@ TSWLatexianTemp*
 *.lpz
 
 # Extra ignore
-Ch1/out
+Ch01/out
+Ch02/out
