@@ -29,27 +29,40 @@
   (The notation $x_1 \ne x_2$ means that $x_1$ and $x_2$ are distinct elements; otherwise we write $x_1=x_2$.)
 \end{definition}
 
+\begin{anote}
+  简单来说：
+  \begin{enumerate}
+    \item $f(E)$ 是集合 $E$ 通过 $f$ 得到的像（image）。
+    \item $f(A)$ 是 $f$ 的范围。
+    \item 如果 $f(A)=B$，那么称 $f$ 将 $A$ 完全映射至（onto）$B$ 。
+    \item 而当 $E \subset B$ 且 $x \in A$ 时，反函数 $f^{-1}(E)$ 是集合 $E$ 通过 $f$ 得到的反像（inverse image）。
+    \item $\forall x \in A$ 通过 $f$ 映射后且满足 $\forall f(x) \in B$ 被称为一一映射（1-1 mapping）。
+  \end{enumerate}
+\end{anote}
+
 \begin{definition}
   If there exists a 1-1 mapping of $A$ \textit{onto} $B$, we say that $A$ and $B$ can be put in 1-1 \textit{correspondence},
   or that $A$ and $B$ have the same \textit{cardinal number}, or, briefly, that $A$ and $B$ are \textit{equivalent},
   and we write $A \sim B$. This relation clearly has the following properties:
   \begin{itemize}
-    \item[] It is relexive: $A \sim A$.
+    \item[] It is reflexive: $A \sim A$.
     \item[] It is symmetric: If $A \sim B$, then $B \sim A$.
     \item[] It is transitive: If $A \sim B$ and $B \sim C$, then $A \sim C$.
   \end{itemize}
   Any relation with these three properties is called an \textit{equivalence relation}.
 \end{definition}
 
+\anote Reflexive 自反性，\href{https://en.wikipedia.org/wiki/Reflexive_relation}{维基百科}。
+
 \begin{definition}
   For any positive integer $n$, let $J_n$ be the set whose elements are the integers $1,2,\dots,n$; let $J$ be
   the set consisting of all positive integers. For any set $A$, we say:
   \begin{enumerate}[label=(\alph*)]
     \item $A$ is \textit{finite} if $A \sim J_n$ for some $n$ (the empty set is also considered to be finnite).
-    \item $A$ is \textit{} if $A$ is not finite.
-    \item $A$ is \textit{} if $A \sim J$.
-    \item $A$ is \textit{} if $A$ is neither finite nor countable.
-    \item $A$ is \textit{} if $A$ is finite or countable.
+    \item $A$ is \textit{infinite} if $A$ is not finite.
+    \item $A$ is \textit{countable} if $A \sim J$.
+    \item $A$ is \textit{uncountable} if $A$ is neither finite nor countable.
+    \item $A$ is \textit{at most countable} if $A$ is finite or countable.
   \end{enumerate}
 
   Countable sets are sometimes called \textit{enumerable}, or \textit{denumerable}.
@@ -58,6 +71,38 @@
   elements. For infinite sets, however, the idea of \say{having the same number of elements} becomes quite vague,
   whereas the notion of 1-1 correspondence retains its clarity.
 \end{definition}
+
+\setcounter{poma}{6}
+
+\begin{definition}
+  By a \textit{sequence}, we mean a function $f$ defined on the set $J$ of all positive integers. If $f(n)=x_n$,
+  for $n \in J$, it is customary to denote the sequence $f$ by the symbol $\{x_n\}$, or sometimes by $x_1,x_2,x_3,\dots$.
+  The values of $f$, that is, the elements $x_n$, are called the \textit{terms} of the sequence. If $A$ is a set and
+  if $x_n \in A$ for all $n \in J$, then $\{x_n\}$ is said to be a \textit{sequence} in $A$, or a \textit{sequnce of elements}
+  of $A$.
+\end{definition}
+
+注意一个序列的 $x_1,x_2,x_3,\dots$ 项不需要是独特的。
+
+由于每个可数集合是一个定义在 $J$ 上一一映射的范围，可将每个可数集合视为一系列不同项的范围。更宽泛来说，任何可数集合中的原始可以被
+“排列在一个序列上”。
+
+有时可以将定义中的 $J$ 替换为所有非负整数集合，这样可能会更加的方便，例如开始于 0 而不是 1。
+
+\begin{theorem}
+  Every infinite subset of a countable set A is coutable.
+\end{theorem}
+
+\begin{proof}
+  假设 $E \subset A$，且 $E$ 为无限的。排列 $A$ 中的元素 $x$ 构建 $\{x_n\}$ 独特序列。构建一个满足如下的序列 $\{n_k\}$：
+
+  令 $n_1$ 为最小的正整数使得 $x_{n_1} \in E$。选择 $n_1,\dots,n_{k-1} \ (k=2,3,4,\dots)$，令 $n_k$ 为最小的大于 $n_{k-1}$
+  的整数使得 $x_{n_k} \in E$。
+
+  令 $f(k)=x_{n_k} \ (k=1,2,3,\dots)$，我们获取一个 $E$ 与 $J$ 的一一映射关系。
+
+  根据定理，粗略的说可数集合表示了\say{最小的}无限性：没有不可数集合可以成为一个可数集合的子集。
+\end{proof}
 
 \subsection*{Metric Spaces}
 
