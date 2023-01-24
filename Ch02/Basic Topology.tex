@@ -72,6 +72,10 @@
   whereas the notion of 1-1 correspondence retains its clarity.
 \end{definition}
 
+\anote
+可数集（countable set），是指每个元素都能与自然数集 $N$ 的每个元素之间能建立一一对应的集合；不可数集顾名思义
+就是无法与自然数集 $N$ 建立一一对应的集合。
+
 \setcounter{poma}{6}
 
 \begin{definition}
@@ -90,7 +94,7 @@
 有时可以将定义中的 $J$ 替换为所有非负整数集合，这样可能会更加的方便，例如开始于 0 而不是 1。
 
 \begin{theorem}
-  Every infinite subset of a countable set A is coutable.
+  Every infinite subset of a countable set $A$ is coutable.
 \end{theorem}
 
 \begin{proof}
@@ -103,6 +107,99 @@
 
   根据定理，粗略的说可数集合表示了\say{最小的}无限性：没有不可数集合可以成为一个可数集合的子集。
 \end{proof}
+
+\anote
+一个可数集合 $A$ 的任意无限子集都是可数的。
+
+\begin{definition}
+  Let $A$ and $\Omega$ be sets, and suppose that with each element $\alpha$ of $A$ there is associated a subset of
+  $\Omega$ which we denote by $E_{\alpha}$.
+
+  The set whose elements are the sets $E_{\alpha}$ will be denoted by $\{E_{\aleph}\}$. Instead of speaking of sets
+  of sets, we shall sometimes speak of a collection of sets, or a family of sets.
+
+  The \textit{union} of the sets $E_{\alpha}$ is defined to be the set $S$ such that $x \in S$ if and only if
+  $x \in E_{\alpha}$ for at least one $\alpha \in A$. We use the notation
+  \begin{equation}
+    S = \bigcup \limits_{\alpha\in A} E_{\alpha}.
+  \end{equation}
+  If $A$ consists of the integers $1,2,\dots,n$, one usually writes
+  \begin{equation}
+    S = \bigcup \limits_{m=1}^n E_m
+  \end{equation}
+  or
+  \begin{equation}
+    S = E_1 \cup E_2 \cup \cdots \cup E_n.
+  \end{equation}
+  If $A$ is the set of all positive integers, the usual notation is
+  \begin{equation}
+    S = \bigcup \limits_{m=1}^{\infty} E_m.
+  \end{equation}
+
+  The symbol $\infty$ in (4) merely indicates that the union of a \textit{countable} collection of sets is taken,
+  and should not be confused with the symbols $+\infty$, $-\infty$, introduced in Definition 1.23.
+
+  The \textit{intersection} of the sets $E_{\alpha}$ is defined to be the set $P$ such that $x \in P$ if and only if
+  $x \in E_{\alpha}$ for every $\alpha \in A$. We use the notation
+  \begin{equation}
+    P = \bigcap \limits_{\alpha \in A} E_{\alpha},
+  \end{equation}
+  or
+  \begin{equation}
+    P = \bigcap \limits_{m=1}^n E_m = E_1 \cap E_2 \cap \cdots \cap E_n,
+  \end{equation}
+  or
+  \begin{equation}
+    P = \bigcap \limits_{m=1}^{\infty} E_m,
+  \end{equation}
+  as for unions. If $A \cap B$ is not empty, we say that $A$ and $B$ \textit{intersect}; otherwise they are \textit{disjoint}.
+\end{definition}
+
+\refstepcounter{poma}
+\begin{remark}
+  Many properties of unions and intersections are quite similar to those of sums and products; in fact,
+  the words sum and product were sometimes used in this connection, and the symbols $\Sigma$ and $\Pi$
+  were written in place of $\bigcup$ and $\bigcap$.
+
+  The commutative and associative laws are trivial:
+  \begin{equation}
+    A \cup B = B \cup A; \quad A \cap B = B \cap A.
+  \end{equation}
+  \begin{equation}
+    (A \cup B) \cup C = A \cup (B \cup C); \quad (A \cap B) \cap C = A \cap (B \cap C).
+  \end{equation}
+  Thus the omission of parenthese in (3) and (6) is justified.
+
+  The distributive law also holds:
+  \begin{equation}
+    A \cap (b \cup C) = (A \cap B) \cup (A \cap C).
+  \end{equation}
+  To prove this, let the left and right members of (10) be denoted by $E$ and $F$, respectively.
+
+  Suppose $x \in E$. Then $x \in A$ and $x \in B \cup C$, that is, $x \in B$ or $x \in C$ (possibly both).
+  Hence $x \in A \cap B$ or $x \in A \cap C$, so that $x \in F$. Thus $E \subset F$.
+
+  Next, suppose $x \in F$. Then $x \in A \cap B$ or $x \in A \cap C$. That is, $x \in A$, and
+  $x \in B \cup C$. Hence $x \in A \cap (B \cup C)$, so that $F \subset E$.
+
+  It follows that $E = F$.
+
+  We list a few more relations which are easily verified:
+  \begin{equation}
+    A \subset A \cup B,
+  \end{equation}
+  \begin{equation}
+    A \cap B \subset A.
+  \end{equation}
+  If 0 denotes the empty set, then
+  \begin{equation}
+    A \cup 0 = A, \quad A \cap 0 = 0.
+  \end{equation}
+  If $A \subset B$, then
+  \begin{equation}
+    A \cup B = B, \quad A \cap B = A.
+  \end{equation}
+\end{remark}
 
 \subsection*{Metric Spaces}
 
