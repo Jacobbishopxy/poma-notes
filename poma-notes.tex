@@ -21,14 +21,16 @@
 
 % math graphics setting
 \pgfplotsset{compat=1.15}
-\usetikzlibrary{arrows}
+\usetikzlibrary{arrows, matrix}
 
 % setting theorem counter & style
 \newtheorem{poma}{PoMA}[section]
 \newtheorem{theorem}[poma]{Theorem}
 \newtheorem*{corollary}{Corollary}
 \newtheorem{proposition}[poma]{proposition}
-\theoremstyle{remark}
+\newtheoremstyle{remboldstyle}
+  {}{}{\itshape}{}{\bfseries}{.}{.5em}{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+\theoremstyle{remboldstyle}
 \newtheorem{remark}[poma]{Remark}
 \newtheorem{example}[poma]{Example}
 \theoremstyle{definition}
