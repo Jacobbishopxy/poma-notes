@@ -86,10 +86,10 @@ $N$ 建立一一对应的集合；至多可数集（at most coutable）是有限
   of $A$.
 \end{definition}
 
-注意一个序列的 $x_1,x_2,x_3,\dots$ 项不需要是独特的。
+注意一个数列的 $x_1,x_2,x_3,\dots$ 项不需要是独特的。
 
 由于每个可数集合是一个定义在 $J$ 上一一映射的范围，可将每个可数集合视为一系列不同项的范围。更宽泛来说，任何可数集合中的原始可以被
-“排列在一个序列上”。
+“排列在一个数列上”。
 
 有时可以将定义中的 $J$ 替换为所有非负整数集合，这样可能会更加的方便，例如开始于 0 而不是 1。
 
@@ -98,7 +98,7 @@ $N$ 建立一一对应的集合；至多可数集（at most coutable）是有限
 \end{theorem}
 
 \begin{proof}
-  假设 $E \subset A$，且 $E$ 为无限的。排列 $A$ 中的元素 $x$ 构建 $\{x_n\}$ 独特序列。构建一个满足如下的序列 $\{n_k\}$：
+  假设 $E \subset A$，且 $E$ 为无限的。排列 $A$ 中的元素 $x$ 构建 $\{x_n\}$ 独特数列。构建一个满足如下的数列 $\{n_k\}$：
 
   令 $n_1$ 为最小的正整数使得 $x_{n_1} \in E$。选择 $n_1,\dots,n_{k-1} \ (k=2,3,4,\dots)$，令 $n_k$ 为最小的大于 $n_{k-1}$
   的整数使得 $x_{n_k} \in E$。
@@ -282,17 +282,73 @@ $T$ 相当于 (15) 的子集。
   Let $A$ be the set of all sequences whose elements are the digits 0 and 1. This set $A$ is uncoutable.
 \end{theorem}
 
-$A$ 集合中的元素序列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
+$A$ 集合中的元素数列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
 
 \begin{proof}
-  令 $E$ 为集合 $A$ 中的一个可数子集，且令 $E$ 由序列 $s_1, s_2, s_3, \dots$ 构成。再构建一个满足以下条件的序列 $s$。
-  如果在 $s_n$ 中的第 $n$ 个小数是 1，令 $s$ 的第 $n$ 个小数为 0，以此类推。那么序列 $s$ 至少有一处是有别于所有 $E$ 中的成员；
+  令 $E$ 为集合 $A$ 中的一个可数子集，且令 $E$ 由数列 $s_1, s_2, s_3, \dots$ 构成。再构建一个满足以下条件的数列 $s$。
+  如果在 $s_n$ 中的第 $n$ 个小数是 1，令 $s$ 的第 $n$ 个小数为 0，以此类推。那么数列 $s$ 至少有一处是有别于所有 $E$ 中的成员；
   因此 $s \notin E$。但是陷入 $s \in A$，因此 $E$ 是 $A$ 的一个合理子集。
 
   我们证明了所有 $A$ 集合的可数子集是合理的子集。对于 $A$ 是不可数的也同理（否则 $A$ 将会是 $A$ 合理的子集，这是荒谬的）。
 \end{proof}
 
 \subsection*{Metric Spaces}
+
+\begin{definition}
+  A set $X$, whose elements we shall call \textit{points}, is said to be a \textit{metirc space} if with any two points
+  $p$ and $q$ of $X$ there is associated a real number $d(p,q)$, called the \textit{distance} from $p$ to $q$, such that
+  \begin{enumerate}[label=(\alph*)]
+    \item $d(p,q)>0$ if $p \ne q; \ d(p, p) = 0$;
+    \item $d(p,q) = d(q,p)$;
+    \item $d(p,q) \le d(p,r) + d(r,q)$, for any $r \in X$.
+  \end{enumerate}
+\end{definition}
+
+任何拥有上述三个性质的函数都被称为\textit{距离函数 distance function}，或者\textit{度规 metric}。
+
+\begin{example}
+  The most important examples of metric spaces, from our standpoint, are the euclidean spaces $R^k$, especially $R^1$
+  (the real line) and $R^2$ (the complex plane); the distance in $R^k$ is defined by
+  \begin{equation}
+    d(\mathbf{x}, \mathbf{y}) = |\mathbf{x} - \mathbf{y}| \quad (\mathbf{x},\mathbf{y} \in R^k).
+  \end{equation}
+\end{example}
+
+\begin{anote}
+  \begin{itemize}
+    \item 欧几里得空间的距离概念抽象化后，即度量空间（Metric Space）。
+    \item (a) 正定性，(b) 对称性，(c) 三角不等式。
+  \end{itemize}
+\end{anote}
+
+\begin{definition}
+  By the \textit{segment} $(a, b)$ we mean the set of all real numbers $x$ such that $a < x < b$.
+
+  By the \textit{interval} $[a, b]$ we mean the set of all real numbers $x$ such that $a \le x \le b$.
+
+  Occasionally we shall also encounter \say{half-open intervals} $[a, b)$ and $(a, b]$; the first consists of all $x$
+  such that $a \le x < b$, the second of all $x$ such that $a < x \le b$.
+
+  If $a_i < b_i$ for $i=1,\dots,k$, the set of all points $\mathbf{x} = (x_1,\dots,x_k)$ in $R^k$ whose coordinates
+  satisfy the inequalities $a_i \le x_i \le b_i \ (1 \le i \le k)$ is called a \textit{k-cell}. Thus a 1-cell is an
+  interval, a 2-cell is a rectangle, etc.
+
+  If $\mathbf{x} \in R^k$ and $r>0$, the \textit{open (or closed) ball} $B$ with center at $\mathbf{x}$ and radius $r$
+  is defined to be the set of all $\mathbf{y} \in R^k$ such that $|\mathbf{y}-\mathbf{x}|<r$ (or
+  $|\mathbf{y}-\mathbf{x}| \le r$).
+
+  We call a set $E \subset R^k$ \textit{convex} if
+  \[\lambda\mathbf{x}+(1-\lambda)\mathbf{y} \in E\]
+  whenever $\mathbf{x} \in E$, $\mathbf{y} \in E$, and $0<\lambda<1$.
+\end{definition}
+
+\begin{anote}
+  \begin{itemize}
+    \item k-方格（$k$-cell）
+    \item $R^k$ 空间定义\textbf{开/闭球（open/closed ball}
+    \item ball 和 $k$-cell 都是凸的（\textbf{convex}）
+  \end{itemize}
+\end{anote}
 
 WIP
 
