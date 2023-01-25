@@ -1,5 +1,7 @@
 \documentclass[../poma-notes.tex]{subfiles}
 
+\graphicspath{\subfix{../images/}}
+
 \begin{document}
 
 \subsection*{Finite, Countable, and Uncoutable Sets}
@@ -342,13 +344,87 @@ $A$ 集合中的元素数列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
   whenever $\mathbf{x} \in E$, $\mathbf{y} \in E$, and $0<\lambda<1$.
 \end{definition}
 
+\newpage % 为下方图片预留空间
 \begin{anote}
   \begin{itemize}
     \item k-方格（$k$-cell）
-    \item $R^k$ 空间定义\textbf{开/闭球（open/closed ball}
+    \item $R^k$ 空间定义\textbf{开/闭球（open/closed ball）}
     \item ball 和 $k$-cell 都是凸的（\textbf{convex}）
   \end{itemize}
 \end{anote}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{\subfix{../images/k-cell.png}}\par
+  k-cell
+\end{figure}
+
+\begin{definition}
+  Let $X$ be a metirc space. All points and sets mentioned below are understood to be elements and subsets of $X$.
+  \begin{enumerate}[label=(\alph*)]
+    \item A \textit{neighborhood} of $p$ is a set $N_r(p)$ consisting of all $q$ such that $d(p,q)<r$, for some $r>0$.
+          The number $r$ is called the \textit{radius} of $N_r(p)$.
+    \item A point $p$ is a \textit{limit point} of the set $E$ if \textit{every} neighborhood of $p$ contains a point
+          $q \ne p$ such that $q \in E$.
+    \item If $p \in E$ and $p$ is not a limit point of $E$, then $p$ is called an \textit{isolated point} of $E$.
+    \item $E$ is \textit{closed} if every limit point of $E$ is a point of $E$.
+    \item A point $p$ is an \textit{interior} point of $E$ if there is a neighborhood $N$ of $p$ such that $N \subset E$.
+    \item $E$ is \textit{open} if every point of $E$ is an interior point of $E$.
+    \item The \textit{complement} of E (denoted by $E^c$) is the set of all points $p \in X$ such that $p \notin E$.
+    \item $E$ is \textit{perfect} if $E$ is closed and if every point of $E$ is a limit point of $E$.
+    \item $E$ is \textit{bounded} if there is a real number $M$ and a point $q \in X$ such that $d(p,q)<M$ for all
+          $p \in E$.
+    \item $E$ is \textit{dense} in $X$ if every point of $X$ is a limit point of $E$, or a point of $E$ (or both).
+  \end{enumerate}
+\end{definition}
+
+注意 $R^1$ 的邻域为线段，而 $R^2$ 的邻域是圆圈的内点们。
+
+\begin{anote}
+  \begin{itemize}
+    \item 邻域 neighborhood：到 $p$ 点距离小于 $r$ 的集合（$r>0$）;
+    \item 极限点 limit point：所有邻域存在一个与 $p$ 不同的点，无论半径多小（例如一维空间的开闭区间 $(a,b],\ a<b, \ a,b \in R$
+          的 $a,b$ 点皆为极限点，$a$ 虽然不属于 $(a,b]$，但是其右侧总是会有一个点 $p$ 使得 $p-a>0$，$b$ 同理。二维空间集合的
+          边间点亦是如此，以此类推所有的边界点皆为极限点）；
+    \item 孤立点 isolated point：例如 $S = \{0\} \cup [1,2]$ 的 0 点为孤立点；
+    \item 闭 closed：如果所有极限点都属于 $E$，那么 $E$ 为闭（例如一维空间 $S=[a,b],\ a<b, \ a,b \in R$，$S$ 为 closed。
+          特例：在孤立点构成的度量空间中，任何子集都是即开又闭）;
+    \item 内点 interior point：用一维空间解释就是 $S=[a,b],\ a<b,\ a,b \in R$ 且 $p \in (a,b)$，那么 $p$ 为 $S$ 的内点；
+    \item 开 open：如果 $E$ 中任意一点都是内点，$E$ 为开；
+    \item 补集 complement：$\forall p \in X$ 且 $\forall p \notin E$ 那么 $X$ 为 $E$ 补集；
+    \item 完全 perfect：一个闭集合中每一个点都是它的极限点，那么该集合为完全；
+    \item 有界的 bounded：如果集合中任意一点都在某个 $r$ 为实数的邻域内，那么该集合为有界的；
+    \item 稠密 dense：$X$ 中任意一点都是 $E$ 的一个极限点或者 $E$ 中的一点（例如有理数在实数上稠密）。
+  \end{itemize}
+\end{anote}
+
+\begin{theorem}
+  Every neighborhood is an open set.
+\end{theorem}
+
+\begin{proof}
+  考虑一个邻域 $E = N_r(p)$，并令 $q$ 为 $E$ 的任意一点。那么则有一个正实数 $h$ 满足
+  \[d(p,q)=r-h.\]
+  对于所有满足 $d(q,s)<h$ 的点 $s$，有
+  \[d(p,s) \le d(p,q) + d(q,s) < r - h + h = r,\]
+  使得 $s \in E$。因此 $q$ 是 $E$ 的一个内点。
+\end{proof}
+
+\begin{theorem}
+  If $p$ is a limit point of a set $E$, then every neighborhood of $p$ contains infinitely many points of $E$.
+\end{theorem}
+
+\begin{proof}
+  假设 $p$ 有一个邻域 $N$，其仅包含了有限点的 $E$。令 $q_1,\dots,q_n$ 为 $N \cap E$ 的这些点，它们有别与点 $p$，且令
+  \[r = \min\limits_{1 \le m \le n} d(p,q_m)\]
+  （我们使用这个记号来表示最小的 $d(p,q_1),\dots,d(p,q_n)$）。一个有限集的最小值很明显是正数，因此 $r>0$。
+
+  邻域 $N_r(p)$ 包含了除了点 $q$ 的 $E$ 即 $q \ne p$，使得 $p$ 不是 $E$ 的一个极限点。这与定理相悖。
+\end{proof}
+
+\begin{corollary}
+  A finite point set has no limit points.
+\end{corollary}
 
 WIP
 
