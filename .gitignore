@@ -276,5 +276,5 @@ TSWLatexianTemp*
 *.lpz
 
 # Extra ignore
-Ch01/out
-Ch02/out
+Ch01 The Real and Complex Number Systems/out
+Ch02 Basic Topology/out
