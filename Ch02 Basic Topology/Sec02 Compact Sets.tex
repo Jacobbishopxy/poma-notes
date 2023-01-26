@@ -1,0 +1,51 @@
+\documentclass[../poma-notes.tex]{subfiles}
+
+\graphicspath{\subfix{../images/}}
+
+\begin{document}
+
+\subsection*{Compact Sets}
+
+\begin{definition}
+  By an \textit{open cover} of a set $E$ in a metric space $X$ we mean a collection $\{G_{\alpha}\}$ of open subsets
+  of $X$ such that $E \subset \cup_{\alpha} G_{\alpha}$.
+\end{definition}
+
+\anote \textit{开覆盖} open cover。
+
+\begin{definition}
+  A subset $K$ of a metric space $X$ is said to be \textit{compact} if every open cover of $K$ contains a $finite$
+  subcover.
+
+  More explicitly, the requirement is that if $\{G_{\alpha}\}$ is an open cover of $K$, then there are finitely many
+  indices $\alpha_1,\dots,\alpha_n$ such that
+  \[K \subset G_{\alpha_1} \cup \cdots \cup G_{\alpha_n}\ .\]
+\end{definition}
+
+紧凑 compactness 这个概念在数学分析中非常的重要，特别是它连接了连续性这个概念（第四章）。
+
+很明显所有的有限集都是紧凑的。$R^k$ 上存在大类无限紧凑集将会在 Theorem 2.14 中提及。
+
+我们之前观察到的（Remark 2.29）如果 $E \subset Y \subset X$，那么 $E$ 有可能相对 $Y$ 是开的，而不需要相对 $X$ 是开的。
+开这个属性因此取决于 $E$ 所嵌入的空间，对于闭这个属性亦是如此。
+
+\begin{anote}
+  \begin{itemize}
+    \item 紧集 compact set：任何开覆盖都存在有限的子覆盖。
+    \item 若一个集合是紧集，就可以说这个集合具有紧性 compacted。
+    \item 紧性实际上是一种拓扑性质。
+  \end{itemize}
+\end{anote}
+
+\begin{theorem}
+  Suppose $K \subset Y \subset X$. Then $K$ is compact relative to $X$ if and only if $K$ is compact relative to $Y$.
+\end{theorem}
+
+凭借这个定理，在许多情况下，我们能够将紧集本身视为度量空间，而无需关注任何嵌入空间。尽管讨论\textit{开}空间，或者\textit{闭}
+空间的意义不大（每个度量空间 $X$ 是其自身的一个开子集，以及一个闭子集），但是讨论\textit{紧}度量空间却是很有意义的。
+
+% TODO
+% \begin{proof}
+% \end{proof}
+
+\end{document}

@@ -10,10 +10,10 @@ This project is written in Chinese and is under long-term construction, check [P
 
 1. Basic Topology
 
-    1. [Finite, Countable, and Uncoutable Sets](./Ch02%20Basic%20Topology/Sc01%20Finite%2C%20Countable%2C%20and%20Uncoutable%20Sets.tex)
+    1. [Finite, Countable, and Uncoutable Sets](./Ch02%20Basic%20Topology/Sec01%20Finite%2C%20Countable%2C%20and%20Uncoutable%20Sets.tex)
 
-    <!-- 1. [Compact Sets](./Ch02%20Basic%20Topology/Sc02%20Compact%20Sets.tex) -->
+    1. [Compact Sets](./Ch02%20Basic%20Topology/Sec02%20Compact%20Sets.tex)
 
-    <!-- 1. [Perfect Sets](./Ch02%20Basic%20Topology/Sc03%20Perfect%20Sets.tex) -->
+    <!-- 1. [Perfect Sets](./Ch02%20Basic%20Topology/Sec03%20Perfect%20Sets.tex) -->
 
-    <!-- 1. [Connected Sets](./Ch02%20Basic%20Topology/Sc04%20Connected%20Sets.tex) -->
+    <!-- 1. [Connected Sets](./Ch02%20Basic%20Topology/Sec04%20Connected%20Sets.tex) -->
