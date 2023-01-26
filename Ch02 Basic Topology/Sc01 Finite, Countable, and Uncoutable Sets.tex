@@ -54,7 +54,14 @@
   Any relation with these three properties is called an \textit{equivalence relation}.
 \end{definition}
 
-\anote Reflexive 自反性，\href{https://en.wikipedia.org/wiki/Reflexive_relation}{维基百科}。
+\begin{anote}
+  \begin{itemize}
+    \item 基数 Cardinal number。
+    \item 自反性 Reflexive，\href{https://en.wikipedia.org/wiki/Reflexive_relation}{维基百科}；
+    \item 对称性 Symmetric；
+    \item 传递性 Transitive。
+  \end{itemize}
+\end{anote}
 
 \begin{definition}
   For any positive integer $n$, let $J_n$ be the set whose elements are the integers $1,2,\dots,n$; let $J$ be
@@ -161,7 +168,7 @@ $N$ 建立一一对应的集合；至多可数集（at most coutable）是有限
 $S$ 代表所有 $E_{\alpha}$ 集合的并集；$P$ 代表所有 $E_{\alpha}$ 集合的交集。
 
 \refstepcounter{poma}
-\begin{remark}
+\begin{remarks}
   Many properties of unions and intersections are quite similar to those of sums and products; in fact,
   the words sum and product were sometimes used in this connection, and the symbols $\Sigma$ and $\Pi$
   were written in place of $\bigcup$ and $\bigcap$.
@@ -204,7 +211,7 @@ $S$ 代表所有 $E_{\alpha}$ 集合的并集；$P$ 代表所有 $E_{\alpha}$ �
   \begin{equation}
     A \cup B = B, \quad A \cap B = A.
   \end{equation}
-\end{remark}
+\end{remarks}
 
 \begin{theorem}
   Let $\{E_n\},\ n=1,2,3,\dots$, be a sequence of countable sets, and put
@@ -308,13 +315,13 @@ $A$ 集合中的元素数列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
 
 任何拥有上述三个性质的函数都被称为\textit{距离函数 distance function}，或者\textit{度规 metric}。
 
-\begin{example}
+\begin{examples}
   The most important examples of metric spaces, from our standpoint, are the euclidean spaces $R^k$, especially $R^1$
   (the real line) and $R^2$ (the complex plane); the distance in $R^k$ is defined by
   \begin{equation}
     d(\mathbf{x}, \mathbf{y}) = |\mathbf{x} - \mathbf{y}| \quad (\mathbf{x},\mathbf{y} \in R^k).
   \end{equation}
-\end{example}
+\end{examples}
 
 \begin{anote}
   \begin{itemize}
@@ -347,7 +354,9 @@ $A$ 集合中的元素数列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
 \newpage % 为下方图片预留空间
 \begin{anote}
   \begin{itemize}
-    \item k-方格（$k$-cell）
+    \item Segment 开区间 $(a,b)$
+    \item Interval 闭区间 $[a,b]$
+    \item $k$-cell k-方格
     \item $R^k$ 空间定义\textbf{开/闭球（open/closed ball）}
     \item ball 和 $k$-cell 都是凸的（\textbf{convex}）
   \end{itemize}
@@ -392,9 +401,9 @@ $A$ 集合中的元素数列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
     \item 内点 interior point：用一维空间解释就是 $S=[a,b],\ a<b,\ a,b \in R$ 且 $p \in (a,b)$，那么 $p$ 为 $S$ 的内点；
     \item 开 open：如果 $E$ 中任意一点都是内点，$E$ 为开；
     \item 补集 complement：$\forall p \in X$ 且 $\forall p \notin E$ 那么 $X$ 为 $E$ 补集；
-    \item 完全 perfect：一个闭集合中每一个点都是它的极限点，那么该集合为完全；
+    \item 完全 perfect：一个闭集中每一个点都是它的极限点，那么该集合为完全；
     \item 有界的 bounded：如果集合中任意一点都在某个 $r$ 为实数的邻域内，那么该集合为有界的；
-    \item 稠密 dense：$X$ 中任意一点都是 $E$ 的一个极限点或者 $E$ 中的一点（例如有理数在实数上稠密）。
+    \item 稠密 dense：$X$ 中任意一点都是 $E$ 的一个极限点或者 $E$ 中的一点（例如有理数在实数上稠密，Theorem 1.20 (b) 中证明了）。
   \end{itemize}
 \end{anote}
 
@@ -410,6 +419,8 @@ $A$ 集合中的元素数列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
   使得 $s \in E$。因此 $q$ 是 $E$ 的一个内点。
 \end{proof}
 
+\anote 所有邻域都是开的。
+
 \begin{theorem}
   If $p$ is a limit point of a set $E$, then every neighborhood of $p$ contains infinitely many points of $E$.
 \end{theorem}
@@ -419,13 +430,213 @@ $A$ 集合中的元素数列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
   \[r = \min\limits_{1 \le m \le n} d(p,q_m)\]
   （我们使用这个记号来表示最小的 $d(p,q_1),\dots,d(p,q_n)$）。一个有限集的最小值很明显是正数，因此 $r>0$。
 
-  邻域 $N_r(p)$ 包含了除了点 $q$ 的 $E$ 即 $q \ne p$，使得 $p$ 不是 $E$ 的一个极限点。这与定理相悖。
+  邻域 $N_r(p)$ 包含了除了点 $q$ 的 $E$ 即 $q \ne p$，使得 $p$ 不是 $E$ 的一个极限点。这与定理自身相悖。
 \end{proof}
+
+\anote 简单来说，假设 $p$ 有一个邻域是有限集合，那么就一定会有 $r$ 满足 $\min\limits_{1 \le m \le n} d(p,q_m)$，也就是
+有最小距离存在；然而这与 Definition 2.18 (b) 相悖，即与\say{无论半径多小}的定义相悖，因此 $p$ 不是一个极限点。因此，
+如果 $p$ 是一个极限点，那么它的任何邻域都有无限个点。
 
 \begin{corollary}
   A finite point set has no limit points.
 \end{corollary}
 
-WIP
+\begin{examples}
+  Let us consider the following subsets of $R^2$:
+  \begin{enumerate}[label=(\alph*)]
+    \item The set of all complex z such that $|z| < 1$.
+    \item The set of all complex z such that $|z| \le 1$.
+    \item A nonempty finite set.
+    \item The set of all integers.
+    \item The set consisting of the numbers $1/n \ (n=1,2,3,\dots)$. Let us note that this set $E$ has a limit point
+          (namely, $z=0$) but that no point of $E$ is a limit point of $E$; we wish to stress the difference between having
+          a limit point and containing one.
+    \item The set of all complex numbers (that is, $R^2$).
+    \item The segment $(a,b)$.
+  \end{enumerate}
+
+  Let us note that (d), (e), (g) can be regarded also as subsets of $R^1$. Some properties of these sets are tabulated
+  below:
+
+  \begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+      \matrix[
+        matrix of math nodes,
+        nodes in empty cells,
+      ]
+      {
+                            & Closed & Open & Perfect & Bounded \\
+        (a) \quad\quad\quad & No     & Yes  & No      & Yes     \\
+        (b) \quad\quad\quad & Yes    & No   & Yes     & Yes     \\
+        (c) \quad\quad\quad & Yes    & No   & No      & Yes     \\
+        (d) \quad\quad\quad & Yes    & No   & No      & No      \\
+        (e) \quad\quad\quad & No     & No   & No      & Yes     \\
+        (f) \quad\quad\quad & Yes    & Yes  & Yes     & No      \\
+        (g) \quad\quad\quad & No     &      & No      & Yes     \\
+      };
+    \end{tikzpicture}
+  \end{center}
+
+  In (g), we left the second entry blank. The reason is that the segment $(a,b)$ is not open if we regard it as a subset
+  of $R^2$, but it is an open subset of $R^1$.
+\end{examples}
+
+\begin{theorem}
+  Let $\{E_{\alpha}\}$ be a (finite or infinite) colllection of sets $E_{\alpha}$. Then
+  \begin{equation}
+    \biggl(\bigcup\limits_{\alpha} E_{\alpha}\biggr)^c = \bigcap\limits_{\alpha} (E_{\alpha}^c).
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  令 $A$ 与 $B$ 分别为 (20) 的左右成员。如果 $x \in A$，那么 $x \notin \bigcup_{\alpha}E_{\alpha}$，因此对于任何 $\alpha$
+  而言 $x \notin E_{\alpha}$，因此对于所有 $\alpha$ 而言 $x \in E_{\alpha}^c$，使得 $x \in \bigcap E_{\alpha}^c$。
+  所以 $A \subset B$。
+
+  相反的，如果 $x \in B$，那么对于所有 $\alpha$ 而言 $x \in E_{\alpha}^c$，因此对于任何 $\alpha$ 而言 $x \notin E$，
+  因此 $x \notin \bigcup_{\alpha} E_{\alpha}$，使得 $x \in (\cup_{\alpha} E_{\alpha})$。所以 $B \subset A$。
+
+  综上所述 $A = B$。
+\end{proof}
+
+\begin{theorem}
+  A set $E$ is open if and only if its complement is closed.
+\end{theorem}
+
+\begin{proof}
+  首先，假设 $E^c$ 是闭的。选 $x \in E$，且 $x \notin E^c$，且 $x$ 不是 $E^c$ 的一个极限点。因此 $x$ 存在一个邻域 $N$ 使得
+  $E^c \cap N$ 是空集，也就是说 $N \subset E$。因此 $x$ 是 $E$ 的一个内点，且 $E$ 是开的。
+
+  接着，假设 $E$ 是开的。令 $x$ 为 $E^c$ 的一个极限点。那么 $x$ 的所有邻域包含 $E^c$ 的一个点，使得 $x$ 不是 $E$ 的一个内点。
+  由于 $E$ 是开的，这意味着 $x \in E^c$。即遵循了 $E^c$ 是闭的。
+\end{proof}
+
+\begin{corollary}
+  A set $F$ is closed if and only if its complement is open.
+\end{corollary}
+
+\begin{theorem}\mbox{}
+  \begin{enumerate}[label=(\alph*)]
+    \item For any collection $\{G_{\alpha}\}$ of open sets, $\cup_{\alpha}G_{\alpha}$ is open.
+    \item For any collection $\{F_{\alpha}\}$ of closed sets, $\cap_{\alpha}F_{\alpha}$ is closed.
+    \item For any finite collection $G_1,\dots,G_n$ of open sets, $\cap_{i=1}^n G_i$ is open.
+    \item For any finite collection $F_1,\dots,F_n$ of closed sets, $\cup_{i=1}^n F_i$ is closed.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  令 $G=\cup_{\alpha}G_{\alpha}$。如果 $x \in G$ 那么对一些 $\alpha$ 而言，有 $x \in G_{\alpha}$。因为 $x$ 是 $G_{\alpha}$
+  的一个内点，同时也是 $G$ 的一个内点，所以 $G$ 是开的。即证明了 (a)。
+
+  根据 Theorem 2.22，
+  \begin{equation}
+    \biggl(\bigcap\limits_{\alpha}F_{\alpha}\biggr)^c = \bigcup\limits_{\alpha}(F_{\alpha}^c)
+  \end{equation}
+  且 $F_{\alpha}^c$ 是开的，根据 Theorem 2.23。因此 (a) 意为 (21) 是开的，因此 $\cap_{\alpha}F_{\alpha}$ 是闭的。
+
+  接着令 $H=\cap_{i=1}^n G_i$。对于任何 $x \in H$，存在 $x$ 半径 $r_i$ 的邻域 $N_i$，使得 $N_i \subset G_i \ (i=1,\dots,n)$。
+  令
+  \[r=\min(r_1,\dots,r_n)\]
+  且令 $N$ 为 $x$ 半径 $r$ 的邻域。那么对于 $i=1,\dots,n$ 而言 $N \subset G_i$ 使得 $N \subset H$，所以 $H$ 是开的。
+
+  通过获取补集，(d) 遵循 (c)：
+  \[\biggl(\bigcup\limits_{i=1}^n F_i\biggr)^c = \bigcap\limits_{i=1}^n(F_i^c)\]
+\end{proof}
+
+\begin{anote}
+  对于 (a) 而言，利用了开集的定义 Definition 2.18 (f)，也就是说 $x$ 可以是 $G$ 的任意一点，且因为 $x \in G_{\alpha}$ 都是内点，
+  满足开集定义。
+
+  对于 (b) 而言，将 Theorem 2.23 应用在 Theorem 2.22 即可得出结论。
+
+  对于 (c) 而言，$H$ 是有限个数开集的交集，那么对于每个构成 $H$ 的 $G_i$ 而言都有一个 $N_i$ 作为 $x$ 的邻域，那么在有限个集合内
+  肯定可以找到最小的邻域（最小半径 $r$），又因为该最小的邻域为所有 $G_i$ 的子集，即 $N \subset G_i, \ i=1,\dots,n$，因此有
+  $N \subset H$。最后因为对于任意 $x \in H$ 而言，上述论证的 $N_x \subset H$ 都成立，即符合开集定义。
+
+  对于 (d) 而言，再次将 Theorem 2.23 应用在 (c) 上 即可得出结论。
+
+  简言之：
+  \begin{itemize}
+    \item 任意多的开集的并集仍然是开的；
+    \item 任意多的闭集的交集仍然是闭的；
+    \item 有限个的开集的交集仍然是开的；
+    \item 有限个的闭集的并集仍然是闭的。
+  \end{itemize}
+\end{anote}
+
+\refstepcounter{poma}
+\begin{definition}
+  If $X$ is a metric space, if $E \subset X$, and if $E$'s denotes the set of all limit points of $E$ in $X$, then the
+  \textit{closure} of $E$ is the set $\overline{E} = E \cup E'$.
+\end{definition}
+
+\anote $E'$ 为所有极限点的集，那么 $\overline{E} = E \cup E'$ 为闭包（例如一维空间 $(a, b), \ a<b, \ a,b \in R$ 有极限点
+$a, \ b$，那么 $\overline{E} = (a,b) \cup {a} \cup {b} = [a,b]$）。
+
+\begin{theorem}
+  If $X$ is a metric space and $E \subset X$, then
+  \begin{enumerate}[label=(\alph*)]
+    \item $\overline{E}$ is closed,
+    \item $E = \overline{E}$ if and only if $E$ is closed,
+    \item $\overline{E} \subset F$ for every closed set $F \subset X$ such that $E \subset F$.
+  \end{enumerate}
+  By (a) and (c), $\overline{E}$ is the \textit{smallest} closed subset of $X$ that contains $E$.
+\end{theorem}
+
+\begin{proof}
+  \begin{enumerate}[label=(\alph*)]
+    \item 如果 $p \in X$ 且 $p \notin \overline{E}$，那么 $p$ 既不是 $E$ 的点也不是 $E$ 的极限点。因此 $p$ 有一个邻域不与
+          $E$ 相交。那么 $\overline{E}$ 的补集是开的。因此 $\overline{E}$ 是闭的。
+    \item 如果 $E = \overline{E}$，那么 (a) 意味着 $E$ 是闭的。如果 $E$ 是开的，那么 $E' \subset E$（根据 Definitions 2.18 (d)
+          与 2.26），因此 $\overline{E} = E$。
+    \item 如果 $F$ 是闭的且 $F \supset E$，那么 $F \supset F'$，因此 $F \supset E'$。所以 $F \supset \overline{E}$。
+  \end{enumerate}
+\end{proof}
+
+\anote
+对于 (c) 而言，如果 $E \subset F$，那么 $E$ 的极限点要么属于 $F$ 的内点，要么属于 $F$ 的极限点；而根据闭集的定义，
+闭集中所有的极限点都属于闭集，所以 $E \cup E' \subset F$，即 $\overline{E} \subset F$。
+
+\begin{theorem}
+  Let $E$ be a nonempty set of real numbers which is bounded above. Let $y = \sup E$. Then $y \in \overline{E}$.
+  Hence $y \in E$ if $E$ is closed.
+\end{theorem}
+
+\begin{proof}
+  如果 $y \in E$ 那么 $y \in \overline{E}$。假设 $y \notin E$。那么对于所有的 $h>0$ 存在一个点 $x \in E$ 使得 $y-h<x<y$，
+  不然的话 $y-h$ 会是 $E$ 的一个上界。因此 $y$ 是 $E$ 的一个极限点，所以 $y \in \overline{E}$。
+\end{proof}
+
+\anote 如果 $E$ 是闭集，而 $y \notin E$ 时，那么总会有 $h>0$ 使得 $y-h$ < $y$ 为 $E$ 的上界，那么与 $y = \sup E$ 相悖。
+
+\begin{remark}
+  Suppose $E \subset Y \subset X$, where $X$ is a metric space. To say that $E$ is an open subset of $X$ means that to
+  each point $p \in E$ there is associated a positive number $r$ such that the conditions $d(p,q)<r,\ q \in X$ imply
+  that $q \in E$. But we have already observed (Examples 2.16) that $Y$ is also a metric space, so that our definitions
+  may equally well be made within $Y$. To be quite explicit, let us say that $E$ is \textit{open relative} to $Y$ if to
+  each $p \in E$ there is associated an $r>0$ such that $q \in E$ whenever $d(p,q)<r$ and $q \in Y$. Examples 2.21(g)
+  showed that a set may be open relative to $Y$ without being an open subset of $X$. However, there is a simple relation
+  between these concepts, which we now state.
+\end{remark}
+
+\begin{theorem}
+  Suppose $Y \subset X$. A subset $E$ of $Y$ is open relative to $Y$ if and only if $E = Y \cap G$ for some open
+  subset $G$ of $X$.
+\end{theorem}
+
+\begin{proof}
+  假设 $E$ 是相对 $Y$ 是开。每个 $p \in E$ 有一个正数 $r_p$ 使得条件 $d(p,q)<r_p$, $q \in Y$ 意味着 $q \in E$。
+  令 $V_p$ 为所有 $q \in X$ 的集，使得 $d(p,q)<r_p$，并且定义
+  \[G = \bigcup\limits_{p \in E} V_p\]
+  那么根据 Theorems 2.19 与 2.24 可知 $G$ 是 $X$ 的一个子开集。
+
+  因为对于所有 $p \in E$ 而言 $p \in V_p$，即 $E \subset G \cap Y$。
+
+  对于 $V_p$ 而言，对于每个 $p \in E$ 有 $V_p \cap Y \subset E$，使得 $G \cap Y \subset E$。因此 $E = G \cap Y$，
+  这样该定理的一半被证明了。
+
+  相反的，如果 $G$ 在 $X$ 中是开的，且对于每个 $x \in E$ 而言 $E = G \cap Y$ 有一个邻域 $V_p \subset G$。那么
+  $V_p \cap Y \subset E$，使得 $E$ 相对 $Y$ 是开的。
+\end{proof}
 
 \end{document}
