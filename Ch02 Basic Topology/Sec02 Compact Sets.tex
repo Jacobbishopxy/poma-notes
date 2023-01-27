@@ -63,28 +63,66 @@
   证明结束。
 \end{proof}
 
-% TODO
+\anote 证明流程与 Theorem 2.30 类似，且使用了其结论。
 
-% \begin{anote}
-%   \begin{itemize}
-%     \item
-%   \end{itemize}
-% \end{anote}
+\begin{theorem}
+  Compact subsets of metric spaces are closed.
+\end{theorem}
 
-% \begin{theorem}
-%   Compact subsets of metric spaces are closed.
-% \end{theorem}
+\begin{proof}
+  令 $K$ 为度量空间 $X$ 的一个紧子集。我们应该证明 $K$ 的补集是 $X$ 上的一个子开集。
 
-% \begin{proof}
-%   %
-% \end{proof}
+  假设 $p \in X,\ p \notin K$。如果 $q \in K$，令 $V_q$ 与 $W_q$ 分别为 $p$ 与 $q$ 的邻域，它们的半径小于 $\frac{1}{2}d(p,q)$
+  （详见 Definition 2.18 (a)）。由于 $K$ 是紧的，那么在 $K$ 中存在有限数量的点 $q_1,\dots,q_n$ 使得
+  \[K \subset W_{q_1} \cup \cdots \cup W_{q_n} = W\ .\]
+  如果 $V = V_{q_1} \cup \cdots \cup V_{q_n}$，那么 $V$ 是 $p$ 的一个邻域，且不与 $W$ 相交。因此 $K \subset K^c$，所以 $p$ 是
+  $K^c$ 的一个内点。
+\end{proof}
 
-% \begin{theorem}
-%   Closed subsets of compact sets are compact.
-% \end{theorem}
+\anote 度量空间的紧子集是闭的；度量空间的紧集都是有界的.
 
-% \begin{proof}
-%   %
-% \end{proof}
+\begin{theorem}
+  Closed subsets of compact sets are compact.
+\end{theorem}
+
+\begin{proof}
+  假设 $F \subset K \subset X$，$F$ 是闭的（相对于 $X$），且 $K$ 是紧的。令 $\{V_{\alpha}\}$ 为 $F$ 的一个开覆盖。如果 $F^c$
+  临近 $\{V_{\alpha}\}$，我们得到一个 $K$ 的开覆盖 $\Omega$。由于 $K$ 是紧的，那么存在一个有限的子类 $\Phi$ 覆盖 $K$，也覆盖了
+  $F$。如果 $F^c$ 是 $\Phi$ 的一个成员，我们将其从 $Phi$ 中移除并保持 $F$ 的一个开覆盖。综上所述，$\{V_{\alpha}\}$ 的一个有限的
+  子类覆盖了 $F$。
+\end{proof}
+
+\anote 紧集的子闭集是紧的。
+
+\begin{corollary}
+  If $F$ is closed and $K$ is compact, then $F \cap K$ is compact
+\end{corollary}
+
+\begin{proof}
+  Theorem 2.24 (b) 以及 2.34 展示了 $F \cap K$ 是闭的；由于 $F \cap K \subset K$。Theorem 2.35 展示了 $F \cap K$ 是紧的。
+\end{proof}
+
+\anote 闭集与紧集的交集是紧的。
+
+\begin{theorem}
+  If $\{K_{\alpha}\}$ is a collection of compact subsets of a metric space $X$ such that the intersection of every finite
+  subcollection of $\{K_{\alpha}\}$ is nonempty, then $\cap K_{\alpha}$ is nonempty.
+\end{theorem}
+
+\begin{proof}
+  从 $\{K_{\alpha}\}$ 中固定一个成员 $K_1$ 并令 $G_{\alpha} = K_{\alpha}^c$。假设 $K_1$ 中没有点属于所有的 $K_{\alpha}$。
+  那么集合 $G_{\alpha}$ 形成了 $K_1$ 的一个开覆盖；又因为 $K_1$ 是紧的，存在有限数量的索引 $\alpha_1,\dots,\alpha_n$ 使得
+  $K_1 \subset G_{\alpha_1} \cup \cdots \cup G_{\alpha_n}$。但是这就意味着
+  \[K_1 \cap K_{\alpha_1} \cap \cdots \cap K_{\alpha_n}\]
+  为空，与假设相悖。
+\end{proof}
+
+\begin{corollary}
+  If $\{K_n\}$ is a sequence of nonempty compact sets such that $K_n \supset K_{n+1} \ (n=1,2,3,\dots)$, then
+  $\cap_1^{\infty} K_n$ is not empty.
+\end{corollary}
+
+\anote
+如果 $\{K_n\}$ 是一个非空紧集的数列，使得 $K_n \supset K_{n+1} \ (n=1,2,3,\dots)$，那么 $\cap_1^{\infty} K_n$ 不为空。
 
 \end{document}
