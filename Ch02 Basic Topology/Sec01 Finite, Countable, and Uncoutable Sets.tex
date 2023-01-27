@@ -164,8 +164,13 @@ $N$ 建立一一对应的集合；至多可数集（at most coutable）是有限
   as for unions. If $A \cap B$ is not empty, we say that $A$ and $B$ \textit{intersect}; otherwise they are \textit{disjoint}.
 \end{definition}
 
-\anote
-$S$ 代表所有 $E_{\alpha}$ 集合的并集；$P$ 代表所有 $E_{\alpha}$ 集合的交集。
+\begin{anote}
+  \begin{itemize}
+    \item 元素为 $E_{\alpha}$ 的集合记为 $\{E_{\alpha}\}$，可以称其为集合群 collection of sets 或是类 family of sets。
+    \item $S$ 代表所有 $E_{\alpha}$ 集合的并集；
+    \item $P$ 代表所有 $E_{\alpha}$ 集合的交集。
+  \end{itemize}
+\end{anote}
 
 \refstepcounter{poma}
 \begin{remarks}
@@ -619,13 +624,16 @@ $a, \ b$，那么 $\overline{E} = (a,b) \cup {a} \cup {b} = [a,b]$）。
   between these concepts, which we now state.
 \end{remark}
 
+\anote
+根据 Examples 2.16 与 2.21 (g) 引入相对开集这个概念，在下面的定理中证明相对开集 $E$ 与 $Y$ 和 $X$ 的关系。
+
 \begin{theorem}
   Suppose $Y \subset X$. A subset $E$ of $Y$ is open relative to $Y$ if and only if $E = Y \cap G$ for some open
   subset $G$ of $X$.
 \end{theorem}
 
 \begin{proof}
-  假设 $E$ 是相对 $Y$ 是开。每个 $p \in E$ 有一个正数 $r_p$ 使得条件 $d(p,q)<r_p$, $q \in Y$ 意味着 $q \in E$。
+  假设 $E$ 是相对 $Y$ 是开。每个 $p \in E$ 都存在一个正数 $r_p$ 满足 $d(p,q)<r_p,\ q \in Y$ 意味着 $q \in E$。
   令 $V_p$ 为所有 $q \in X$ 的集，使得 $d(p,q)<r_p$，并且定义
   \[G = \bigcup\limits_{p \in E} V_p\]
   那么根据 Theorems 2.19 与 2.24 可知 $G$ 是 $X$ 的一个子开集。
@@ -638,5 +646,23 @@ $a, \ b$，那么 $\overline{E} = (a,b) \cup {a} \cup {b} = [a,b]$）。
   相反的，如果 $G$ 在 $X$ 中是开的，且对于每个 $x \in E$ 而言 $E = G \cap Y$ 有一个邻域 $V_p \subset G$。那么
   $V_p \cap Y \subset E$，使得 $E$ 相对 $Y$ 是开的。
 \end{proof}
+
+\begin{anote}
+  证明的一开始\say{假设 $E$ 是相对 $Y$ 是开}利用了 Remark 2.29 的结论（而 Remark 2.29 的前半结论是由 Examples 2.16 所得出的）：
+  \say{to each point $p \in E$ there is associated a positive number $r$ such that the conditions $d(p,q)<r,\ q \in X$
+    imply that $q \in E$}。接下来，Theorem 2.19 说的是\say{所有邻域都是开集}，而证明中 Theorem 2.24 (a) 说的是若干开集的并集
+  也是开集。简言之 $p$ 在 $X$ 上有邻域，且对所有 $p \in E$ 有效，那么 $G=\bigcup\limits_{p \in E} V_p$ 在 $X$ 中是开的。
+
+  又因为对于所有的 $p \in E$ 都有 $p \in Vp$，那么就有 $E \subset G$；同时 $E \subset Y$，所以有 $E \subset G \cap Y$。
+
+  而证明中设定的 $V_p$ 本身就是 $p$ 点的在 $Y$ 上邻域，即 $V_p \cap Y \subset E$；这又对于所有 $p \in E$ 生效，即
+  $G \cap Y \subset E$。结合上面的结论有 $E \subset G \cap Y \subset E$，即 $E = G \cap Y$。
+
+  而 $E$ 相对 $Y$ 为开的证明就简单多了，因为 $p \in E$ 在 $G$ 上的邻域有 $V_p \subset G$，而 $G \cap Y=E$ 且 $V_p \subset G$
+  可知 $V_p \cap Y \subset E$，即 $p \in E$ 在 $Y$ 上的邻域满足 Theorem 2.19，再结合 Theorem 2.24 (a)，可得结论。
+
+  性质：集合的\textbf{开}性质是相对的。相对 $Y$ 的开集 $E$，对于更大的 $X$ 来说不一定是开的。要证明对于更大的 $X$ 是开，就必须要
+  引入 $X$ 的开子集 $G$。
+\end{anote}
 
 \end{document}

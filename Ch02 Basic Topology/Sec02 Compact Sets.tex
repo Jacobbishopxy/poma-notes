@@ -24,7 +24,7 @@
 
 紧凑 compactness 这个概念在数学分析中非常的重要，特别是它连接了连续性这个概念（第四章）。
 
-很明显所有的有限集都是紧凑的。$R^k$ 上存在大类无限紧凑集将会在 Theorem 2.14 中提及。
+很明显所有的有限集都是紧的。$R^k$ 上存在大类无限紧集将会在 Theorem 2.14 中提及。
 
 我们之前观察到的（Remark 2.29）如果 $E \subset Y \subset X$，那么 $E$ 有可能相对 $Y$ 是开的，而不需要相对 $X$ 是开的。
 开这个属性因此取决于 $E$ 所嵌入的空间，对于闭这个属性亦是如此。
@@ -44,8 +44,47 @@
 凭借这个定理，在许多情况下，我们能够将紧集本身视为度量空间，而无需关注任何嵌入空间。尽管讨论\textit{开}空间，或者\textit{闭}
 空间的意义不大（每个度量空间 $X$ 是其自身的一个开子集，以及一个闭子集），但是讨论\textit{紧}度量空间却是很有意义的。
 
+\begin{proof}
+  假设 $K$ 是相对 $X$ 紧的，且令 $\{V_{\alpha}\}$ 为相对 $Y$ 是开的集合类，使得 $K \subset \cup_{\alpha} V_{\alpha}$。
+  根据 Theorem 2.30，存在若干相对 $X$ 是开的集合 $G_{\alpha}$，使得对于所有 $\alpha$ 有 $V_{\alpha} = Y \cap G_{\alpha}$；
+  又因为 $K$ 是相对 $X$ 紧的，我们有
+  \begin{equation}
+    K \subset G_{\alpha_1} \cup \cdots \cup G_{\alpha_n}
+  \end{equation}
+  对于一些有限数量索引 $\alpha_1, \dots, \alpha_n$。因为 $K \subset Y$，(22) 意味着
+  \begin{equation}
+    K \subset V_{\alpha_1} \cup \cdots \cup V_{\alpha_n}
+  \end{equation}
+  这证明了 $K$ 是相对 $Y$ 紧的。
+
+  相反的，假设 $K$ 是相对 $Y$ 紧的，令 $\{G_{\alpha}\}$ 为 $X$ 开子集的类，其覆盖了 $K$，且令 $V_{\alpha}=Y\cap G_{\alpha}$。
+  那么 (23) 将包含一些 $\alpha_1, \dots, \alpha_n$；又因为 $V_{\alpha} \subset G_{\alpha}$，(23) 意味着 (22)。
+
+  证明结束。
+\end{proof}
+
 % TODO
+
+% \begin{anote}
+%   \begin{itemize}
+%     \item
+%   \end{itemize}
+% \end{anote}
+
+% \begin{theorem}
+%   Compact subsets of metric spaces are closed.
+% \end{theorem}
+
 % \begin{proof}
+%   %
+% \end{proof}
+
+% \begin{theorem}
+%   Closed subsets of compact sets are compact.
+% \end{theorem}
+
+% \begin{proof}
+%   %
 % \end{proof}
 
 \end{document}
