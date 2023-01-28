@@ -22,9 +22,9 @@
   \[K \subset G_{\alpha_1} \cup \cdots \cup G_{\alpha_n}\ .\]
 \end{definition}
 
-紧凑 compactness 这个概念在数学分析中非常的重要，特别是它连接了连续性这个概念（第四章）。
+紧性 compactness 这个概念在数学分析中非常的重要，特别是它连接了连续性这个概念（第四章）。
 
-很明显所有的有限集都是紧的。$R^k$ 上存在大类无限紧集将会在 Theorem 2.14 中提及。
+很明显所有的有限集都是紧的。$R^k$ 上存在大类无限紧集将会在 Theorem 2.41 中提及。
 
 我们之前观察到的（Remark 2.29）如果 $E \subset Y \subset X$，那么 $E$ 有可能相对 $Y$ 是开的，而不需要相对 $X$ 是开的。
 开这个属性因此取决于 $E$ 所嵌入的空间，对于闭这个属性亦是如此。
@@ -32,7 +32,7 @@
 \begin{anote}
   \begin{itemize}
     \item 紧集 compact set：任何开覆盖都存在有限的子覆盖。
-    \item 若一个集合是紧集，就可以说这个集合具有紧性 compacted。
+    \item 若一个集合是紧集，可以称这个集合具有紧性 compact。
     \item 紧性实际上是一种拓扑性质。
   \end{itemize}
 \end{anote}
@@ -63,7 +63,24 @@
   证明结束。
 \end{proof}
 
-\anote 证明流程与 Theorem 2.30 类似，且使用了其结论。
+\begin{anote}
+  首先是证明 $K$ 相对 $Y$ 紧：假设 $K$ 相对 $X$ 紧。根据条件 $K \subset Y$ 可以设定 ${V_{\alpha}}$ 为 $K$ 在 $Y$ 上的子覆盖，
+  那么根据开覆盖的定义有 $K \subset \cup_{\alpha}V_{\alpha}$；利用 Theorem 2.30 -- $Y$ 上的子集 $V$ 当且仅当 $V = Y \cap G$
+  且$G$ 为 $X$ 的开集时， $V$ 相对 $Y$ 开，那么对于所有的 $\alpha$ 则有 $V_{\alpha} = Y \cap G_{\alpha}$；根据假设 $K$ 相对
+  $X$ 紧，那么在 $X$ 上存在有限的子覆盖，即 $K \subset G_{\alpha_1} \cup \dots \cup G_{\alpha_n}$；而先前的设定的 $V_{\alpha}$
+  与 $G_{\alpha}$ 因为子覆盖是有限的，那么可以建立 $V_{\alpha_1}=Y\cap G_{\alpha_1},\dots,V_{\alpha_n}=Y\cap G_{\alpha_n}$
+  这样一一对应的关系，对于 $K \subset G_{\alpha_1} \cup \dots \cup G_{\alpha_n}$ 可以在子集符两边做与 $Y$ 的交集，即
+  \begin{align*}
+    \mathcal{} Y \cap K & \subset Y \cap \left(G_{\alpha_1} \cup \dots \cup G_{\alpha_n}\right)                     \\
+                        & \subset \left(Y \cap G_{\alpha_1}\right) \cup \dots \cup \left(Y \cap G_{\alpha_n}\right) \\
+                        & \subset V_{\alpha_1} \cup \dots \cup V_{\alpha_n}
+  \end{align*}
+  又因为 $K \subset Y$ 那么 $Y \cap K = K$，所以上述简化为 $K \subset V_{\alpha_1} \cup \dots \cup V_{\alpha_n}$，也就是说
+  $V_{\alpha}$ 是 $K$ 在 $Y$ 上有限的子覆盖，即证明了 $K$ 是相对 $Y$ 紧的。
+
+  其次是证明 $K$ 相对 $X$ 紧：假设 $K$ 相对 $Y$ 紧。令 $\{G_{\alpha}\}$ 为 $K$ 在 $X$ 上的开覆盖子集的类，利用 Theorem 2.30
+  有 $V_{\alpha} = Y \cap G_{\alpha}$，那么根据 (23) 可以推导出 (22)。即证明了 $K$ 是相对 $X$ 紧的。
+\end{anote}
 
 \begin{theorem}
   Compact subsets of metric spaces are closed.
@@ -124,5 +141,44 @@
 
 \anote
 如果 $\{K_n\}$ 是一个非空紧集的数列，使得 $K_n \supset K_{n+1} \ (n=1,2,3,\dots)$，那么 $\cap_1^{\infty} K_n$ 不为空。
+
+\begin{theorem}
+  If $E$ is an infinite subset of a compact set $K$, then $E$ has a limit point in $K$.
+\end{theorem}
+
+\begin{proof}
+  如果 $K$ 中没有点是 $E$ 的极限点，那么每个 $q \in K$ 将会有一个邻域 $V_{\alpha}$，其包含了 $E$ 中至多一个点（命名 $q$，
+  如果 $q \in E$）。很明显 $\{V_q\}$ 没有有限子类可以覆盖 $E$；对 $K$ 也是同理，因为 $E \subset K$。这与 $K$ 的紧性相悖。
+\end{proof}
+
+\anote
+如果 $E$ 是紧集 $K$ 的无限子集，那么 $E$ 在 $K$ 中存在极限点。
+
+\begin{theorem}
+  If $\{I_n\}$ is a sequence of intervals in $R^1$, such that $I_n \supset I_{n+1} \ (n=1,2,3,\dots)$, then
+  $\cap_1^{\infty} I_n$ is not empty.
+\end{theorem}
+
+\begin{proof}
+  如果 $I_n = [a_n,b_n]$，令 $E$ 为所有 $a_n$ 的集合。那么 $E$ 是非空且有上界的（为 $b_1$）。令 $x$ 称为 $E$ 的上确界。
+  如果 $m$ 与 $n$ 是正整数，那么
+  \[a_n \le a_{m+n} \le b_{m+n} \le b_m \ ,\]
+  使得对每个 $m$ 有 $x \le b_m$。很显然 $a_m \le x$，可知对 $m=1,2,3,\dots$ 有 $x \in I_m$。
+\end{proof}
+
+\begin{theorem}
+  Let $k$ be a positive integer. If $\{I_n\}$ is a sequence of $k$-cells such that $I_n \supset I_{n+1} \ (n=1,2,3,\dots)$,
+  then $\cap_1^{\infty} I_n$ is not empty.
+\end{theorem}
+
+% \begin{proof}
+% \end{proof}
+
+\begin{theorem}
+  Every $k$-cell is compact.
+\end{theorem}
+
+% \begin{proof}
+% \end{proof}
 
 \end{document}
