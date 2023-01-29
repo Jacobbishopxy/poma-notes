@@ -6,6 +6,34 @@
 
 \subsection*{Perfect Sets}
 
-WIP
+\begin{theorem}
+  Let $P$ be a noempty perfect set in $R^k$. Then $P$ is uncountable.
+\end{theorem}
+
+\begin{proof}
+  因为 $P$ 有极限点，$P$ 必须是无限的。假设 $P$ 是可数的，那么通过 $\mathbf{x}_1,\mathbf{x}_2,\mathbf{x}_3,\dots$
+  来表示 $P$。随之可以构建一个数列 $\{V_n\}$ 来表示邻域。
+
+  令 $V_1$ 为 $\mathbf{x}_1$ 的任意邻域，使得 $V_n \cap P$ 不为空。如果 $V_1$ 包含了所有的 $\mathbf{y} \in R^k$ 使得
+  $|\mathbf{y} - \mathbf{x}_1| < r$，$V_1$ 的闭包 $\overline{V}_1$ 则是所有 $\mathbf{y} \in R^k$ 的集合使得
+  $|\mathbf{y} - \mathbf{x}_1| \le r$。
+
+  假设 $V_n$ 被构建了，那么 $V_n \cap P$ 不为空。因为 $P$ 的所有点是 $P$ 的极限点，存在一个邻域 $V_{n+1}$ 使得
+  \begin{enumerate*}[label=(\roman*)]
+    \item $\overline{V}_{n+1} \subset V_n$，
+    \item $\mathbf{x} \notin \overline{V}_{n+1}$，
+    \item $V_{n+1} \cap P$ 非空。
+  \end{enumerate*}
+  根据 (iii)，$V_{n+1}$ 满足我们的归纳假设，同时构建可以进行。
+
+  令 $K_n = \overline{V}_n \cap P$。因为 $\overline{V}_n$ 是闭且有界的，$\overline{V}$ 是紧的。因为
+  $\mathbf{x}_n \notin K_{n+1}$，$P$ 里没有点在 $\cap_1^{\infty} K_n$ 中。因为 $K_n \subset P$，这意为
+  $\cap_1^{\infty} K_n$ 是空的。但是根据 (iii)，每个 $K_n$ 是非空的，且根据 (i)，$K_n \subset K_{n+1}$；这与 Theorem 2.36
+  的 Corollary 相悖。
+\end{proof}
+
+\begin{corollary}
+  Every interval $[a,b]\ (a<b)$ is uncountable. In particular, the set of all real numbers is uncountable.
+\end{corollary}
 
 \end{document}
