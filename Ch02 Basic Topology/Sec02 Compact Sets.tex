@@ -127,12 +127,25 @@
 \end{theorem}
 
 \begin{proof}
-  从 $\{K_{\alpha}\}$ 中固定一个成员 $K_1$ 并令 $G_{\alpha} = K_{\alpha}^c$。假设 $K_1$ 中没有点属于所有的 $K_{\alpha}$。
+  从 $\{K_{\alpha}\}$ 中固定一个成员 $K_1$ 并令 $G_{\alpha} = K_{\alpha}^c$。假设 $K_1$ 中没有点属于任何的 $K_{\alpha}$。
   那么集合 $G_{\alpha}$ 形成了 $K_1$ 的一个开覆盖；又因为 $K_1$ 是紧的，存在有限数量的索引 $\alpha_1,\dots,\alpha_n$ 使得
   $K_1 \subset G_{\alpha_1} \cup \cdots \cup G_{\alpha_n}$。但是这就意味着
   \[K_1 \cap K_{\alpha_1} \cap \cdots \cap K_{\alpha_n}\]
   为空，与假设相悖。
 \end{proof}
+
+\begin{anote}
+  证明中的假设是拿出一个子紧集 $\{K_1\}$ 作为特例，假设其不与任何其他 $\{K_{\alpha}\}$ 相交，那么它则会属于其他 ${K_{\alpha}}$ 并集的
+  补集，也就是说后者成为了前者的开覆盖；又因为紧集的性质，$K_1$ 开覆盖的子集是有限的，这意味后者是有限的，即证明中的
+  \[K_1 \subset G_{\alpha_1} \cup \cdots \cup G_{\alpha_n}\]
+  成立，那么就有
+  \begin{align*}
+    \mathcal{} K_1 & \not\subset K_{\alpha_1} \cap \cdots \cap K_{\alpha_n} \\
+                   & \cap K_{\alpha_1} \cap \cdots \cap K_{\alpha_n}        \\
+                   & = \emptyset
+  \end{align*}
+  与假设相悖。
+\end{anote}
 
 \begin{corollary}
   If $\{K_n\}$ is a sequence of nonempty compact sets such that $K_n \supset K_{n+1} \ (n=1,2,3,\dots)$, then
@@ -152,7 +165,8 @@
 \end{proof}
 
 \anote
-如果 $E$ 是紧集 $K$ 的无限子集，那么 $E$ 在 $K$ 中存在极限点。
+如果 $E$ 是紧集 $K$ 的无限子集，那么 $E$ 在 $K$ 中存在极限点。证明中的\say{$\{V_q\}$ 没有有限子类可以覆盖 $E$}是因为 $E$
+是无限子集。
 
 \begin{theorem}
   If $\{I_n\}$ is a sequence of intervals in $R^1$, such that $I_n \supset I_{n+1} \ (n=1,2,3,\dots)$, then
@@ -166,19 +180,181 @@
   使得对每个 $m$ 有 $x \le b_m$。很显然 $a_m \le x$，可知对 $m=1,2,3,\dots$ 有 $x \in I_m$。
 \end{proof}
 
+\begin{anote}
+  证明中所设置的 $m$ 作为增量，记 $m=1,2,3,\dots$，这是为了满足定理中的 $I_n \supset I_{n+1}$。
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+          xmin=-10, xmax=10,
+          axis x line=center,
+          hide y axis,
+          ymin=-5,ymax=5,
+          xtick=\empty,
+          xticklabels=\empty,
+        ]
+        \draw[color=black] (0,2.5) node {$I_n = [a_n, b_n]$};
+        \begin{scriptsize}
+          \draw [fill=black] (-8,0) circle (2pt);
+          \draw[color=black] (-8,1) node {$a_n$};
+
+          \draw [fill=black] (-5,0) circle (2pt);
+          \draw[color=black] (-5,1) node {$a_{m+n}$};
+
+          \draw [fill=black] (0,0) circle (1pt);
+          \draw[color=black] (0,-1) node {$a_m \le x \le b_m$};
+
+          \draw [fill=black] (5,0) circle (2pt);
+          \draw[color=black] (5,1) node {$b_{m+n}$};
+
+          \draw [fill=black] (8,0) circle (2pt);
+          \draw[color=black] (8,1) node {$b_{m}$};
+        \end{scriptsize}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  集合 $E$ 在最开始有明确的上界，即 $b_1$，随着 $m$ 增加 $a_m \le x \le b_m$ 始终成立。
+\end{anote}
+
 \begin{theorem}
   Let $k$ be a positive integer. If $\{I_n\}$ is a sequence of $k$-cells such that $I_n \supset I_{n+1} \ (n=1,2,3,\dots)$,
   then $\cap_1^{\infty} I_n$ is not empty.
 \end{theorem}
 
-% \begin{proof}
-% \end{proof}
+\begin{proof}
+  令 $I_n$ 包含所有点 $\mathbf{x} = (x_1,\dots,x_k)$ 使得
+  \[a_{n,j} \le x_j \le b_{n,j} \quad (1 \le j \le k; n=1,2,3,...)\]
+  且令 $I_{n,j} = [a_{n,j},b_{n,j}]$。对于每个 $j$，数列 $\{I_{n,j}\}$ 满足 Theorem 2.38 的假设。因此存在实数
+  $x_j^*(1 \le j \le k)$ 使得
+  \[a_{n,j} \le x_j^* \le b_{n,j} \quad (1 \le j \le k; n=1,2,3,...)\]
+  设置 $\mathbf{x^*} = (x_1^*, \dots, x_k^*)$，得 $\mathbf{x^*} \in I_n$ 其中 $n=1,2,3,\dots$。
+\end{proof}
+
+\begin{anote}
+  本定理作为 Theorem 2.38 在更高的度量空间上的延伸，与 2.38 不同的是 $I_n$ 的构成是每个 $k$-cell 中符合条件的中间值，即
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+          xmin=-10, xmax=10,
+          axis x line=center,
+          hide y axis,
+          ymin=-5,ymax=5,
+          xtick=\empty,
+          xticklabels=\empty,
+        ]
+        \draw[color=black] (0,2.5) node {$I_{n,1} = [a_{n,1}, b_{n,1}]$};
+        \begin{scriptsize}
+          \draw [fill=black] (-6,0) circle (2pt);
+          \draw[color=black] (-6,1) node {$a_{n,1}$};
+
+          \draw [fill=black] (0,0) circle (1pt);
+          \draw[color=black] (0,-1) node {$a_{n,1} \le x \le b_{n,1}$};
+
+          \draw [fill=black] (6,0) circle (2pt);
+          \draw[color=black] (6,1) node {$b_{n,1}$};
+        \end{scriptsize}
+      \end{axis}
+    \end{tikzpicture}
+
+    \[\cdots\]
+
+    \begin{tikzpicture}
+      \begin{axis}[
+          xmin=-10, xmax=10,
+          axis x line=center,
+          hide y axis,
+          ymin=-5,ymax=5,
+          xtick=\empty,
+          xticklabels=\empty,
+        ]
+        \draw[color=black] (0,2.5) node {$I_{n,j} = [a_{n,j}, b_{n,j}]$};
+        \begin{scriptsize}
+          \draw [fill=black] (-6,0) circle (2pt);
+          \draw[color=black] (-6,1) node {$a_{n,j}$};
+
+          \draw [fill=black] (0,0) circle (1pt);
+          \draw[color=black] (0,-1) node {$a_{n,j} \le x \le b_{n,j}$};
+
+          \draw [fill=black] (6,0) circle (2pt);
+          \draw[color=black] (6,1) node {$b_{n,j}$};
+        \end{scriptsize}
+      \end{axis}
+    \end{tikzpicture}
+
+    \[\cdots\]
+  \end{center}
+  对于每个 $j$ 而言都满足 Theorem 2.38，因此证明中所给的某实数集 $x_j^*\ (1 \le j \le k)$ 也满足定理。
+\end{anote}
 
 \begin{theorem}
   Every $k$-cell is compact.
 \end{theorem}
 
-% \begin{proof}
-% \end{proof}
+\begin{proof}
+  令 $I$ 为一个 $k$-方格，由所有点 $\mathbf{x}=(x_1,\dots,x_k)$ 构成，使得 $a_j \le x_j \le b_j \ (1 \le j \le k)$。令
+  \[\delta = \{\sum_{1}^{k}(b_j - a_j)^2\}^{1/2}\]
+  那么 $|\mathbf{x} - \mathbf{y}| \le \delta$，如果 $\mathbf{x} \in I,\ \mathbf{y} \in I$。
+
+  假设为了得到一个悖论，存在一个 $I$ 的开覆盖 $\{G_{\alpha}\}$ 不包含 $I$ 的有限子覆盖。令 $c_j = (a_j + b_j) / 2$。
+  那么区间 $[a_j, c_j]$ 以及 $[c_j, b_j]$ 决定了 $2^k$ $k$-方格 $Q_i$ 的并集为 $I$。在 $Q_i$ 中至少有一个称为 $I_1$ 的集合，
+  不能被 $\{G_{\alpha}\}$ 的任何有限子类覆盖（否则 $I$ 就被覆盖了）。接下来再细分 $I_1$ 并继续上述步骤。我们获得一个具有以下属性
+  的数列 $\{I_n\}$ ：
+  \begin{enumerate}[label=(\alph*)]
+    \item $I \supset I_1 \supset I_2 \supset I_3 \supset \cdots$；
+    \item $I_n$ 没有被 $\{G_{\alpha}\}$ 任何的有限子类覆盖；
+    \item 如果 $\mathbf{x} \in I_n$ 且 $\mathbf{y} \in I_n$，那么 $|\mathbf{x} - \mathbf{y}| \le 2^{-n} \delta$。
+  \end{enumerate}
+
+  通过 (a) 与 Theorem 2.39 可知，点 $\mathbf{x}^*$ 存在于每个 $I_n$ 中。对于某些 $\alpha$ 有 $\mathbf{x}^* \in G_{\alpha}$。
+  因为 $\{G_{\alpha}\}$ 是开的，存在 $r>0$ 使得 $|\mathbf{y} - \mathbf{x}^*| < r$ 推导出 $\mathbf{y} \in G_{\alpha}$。
+  如果 $n$ 很大使得 $2^{-n}\delta<r$（这个 $n$ 是存在的，否则对于所有正整数 $n$ 有 $2^{n} \le \delta/r$，这就与有理数 $R$ 的
+  阿基米德性质相悖），那么 (c) 意为 $I_n \subset G_{\alpha}$，即与 (b) 相悖。
+
+  证明完成。
+\end{proof}
+
+下一个定理中的与 (a) 和 (b) 相等部分又被称作海涅－博雷尔定理 Heine–Borel theorem。
+
+\begin{theorem}
+  If a set $E$ in $R^k$ has one of the following three properties, then it has the other two:
+  \begin{enumerate}[label=(\alph*)]
+    \item $E$ is closed and bounded.
+    \item $E$ is compact.
+    \item Every infinite subset of $E$ has a limit point in $E$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  如果 (a) 成立，那么对于一些$k$-方格有 $E \subset I$，那么 (b) 遵循 Theorems 2.40 与 2.34。Theorem 2.37 展示 (b) 推导 (c)。
+  现在剩下 (c) 如何推导 (a)。
+
+  如果 $E$ 没有边界，那么 $E$ 包含了点 $\mathbf{x}_n$ 且
+  \[|\mathbf{x}_n| > n \quad (n=1,2,3,\dots)\]
+  由这些点 $\mathbf{x}_n$ 构成的集合 $S$ 是无限的，且明显在 $R^k$ 中没有极限点，因此在 $E$ 中也不存在极限点。因此 (c) 推导出
+  $E$ 是有界的。
+
+  如果 $E$ 不是闭的，那么存在一个点 $\mathbf{x}_0 \in R^k$ 是 $E$ 的极限点且不在 $E$ 中。 对于 $n=1,2,3,\dots$ 存在点
+  $\mathbf{x}_n \in E$ 使得 $|\mathbf{x}_n - \mathbf{x}_0| < 1/n$。令 $S$ 成为这些点 $\mathbf{x}_n$ 的集合。那么 $S$ 是
+  无限的（否则 $|\mathbf{x}_n - \mathbf{x}_0|$ 将有一个常量正数，对于无限多的 $n$），$S$ 拥有 $\mathbf{x}_0$ 作为一个极限点，
+  且 $S$ 没有其他的极限点在 $R^k$ 中。那么如果 $\mathbf{y} \in R^k, \ \mathbf{y} \ne \mathbf{x}_0$，则
+  \begin{align*}
+    \mathcal{} |\mathbf{x}_n - \mathbf{y}| & \ge |\mathbf{x}_0 - \mathbf{y}| - |\mathbf{x}_n - \mathbf{x}_0| \\
+                                           & \ge |\mathbf{x}_0 - \mathbf{y}| - \frac{1}{n}                   \\
+                                           & \ge \frac{1}{2}|\mathbf{x}_0 - \mathbf{y}|
+  \end{align*}
+  满足所有且有限多的 $n$；这证明 $\mathbf{y}$ 不是 $S$ 的极限点（Theorem 2.20）。
+
+  因此 $S$ 在 $E$ 中没有极限点；因此如果 (c) 成立，那么 $E$ 必须是闭的。
+\end{proof}
+
+值得注意，这里的 (b) 和 (c) 等同于任何度量空间；但是 (a) 不是，通常来说用于推导 (b) 与 (c)。
+
+\begin{theorem}[Weierstrass]
+  Every bounded infinite subset of $R^k$ has a limit point in $R^k$.
+\end{theorem}
+
+\begin{proof}
+  因为有界，集合 $E$ 是 $k$-方格 $I \subset R^k$ 的一个子集。根据 Theorem 2.40，$I$ 是紧的，因此根据 Theorem 2.37， $E$ 在
+  $I$ 中拥有一个极限点。
+\end{proof}
 
 \end{document}
