@@ -291,7 +291,7 @@
 
 \begin{proof}
   令 $I$ 为一个 $k$-方格，由所有点 $\mathbf{x}=(x_1,\dots,x_k)$ 构成，使得 $a_j \le x_j \le b_j \ (1 \le j \le k)$。令
-  \[\delta = \{\sum_{1}^{k}(b_j - a_j)^2\}^{1/2}\]
+  \[\delta = \biggl\{\sum_{1}^{k}(b_j - a_j)^2\biggr\}^{1/2}\]
   那么 $|\mathbf{x} - \mathbf{y}| \le \delta$，如果 $\mathbf{x} \in I,\ \mathbf{y} \in I$。
 
   假设为了得到一个悖论，存在一个 $I$ 的开覆盖 $\{G_{\alpha}\}$ 不包含 $I$ 的有限子覆盖。令 $c_j = (a_j + b_j) / 2$。
@@ -313,6 +313,68 @@
 \end{proof}
 
 下一个定理中的与 (a) 和 (b) 相等部分又被称作海涅－博雷尔定理 Heine–Borel theorem。
+
+\begin{anote}
+  简单来说 $1 \le j \le k$ 的 $j$ 代表着每个维度，那么其所设定的 $a_j \le x_j \le b_j$ 可视为每个维度都有\say{闭区间}对 $x$ 进行约束。
+  那么 $\delta = \Bigl\{\sum\limits_1^k(b_j-a_j)^2\Bigr\}^{1/2}$ 很明显就是一个距离公式（例如二维情况下的
+  $d = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}$）。那么对于任意 $\mathbf{x},\ \mathbf{y}\in I$ 有 $|\mathbf{x}-\mathbf{y}|\le\delta$
+  的意思就是任意两点之间的距离永远小于等于这个最大边界范围 $\delta$。
+
+  那么为了证明 $k$-方格是紧的，可以利用紧性的定理来做悖论的假设，即假设 $I$ 不存在有限个开覆盖。随后的\say{determine $2^k$ $k$-cells}
+  看起来比较抽象，但是从其设定的 $c_j=(a_j + b_j)/2$ 可以看的出来 $c_j$ 是 $a_j$ 与 $b_j$ 的中点。那么 $c_j$ 所分隔的\say{两边} 为
+  $[a_j,c_j]$ 与 $[c_j,b_j]$ 构成了 $2^k$ 个 $k$-方格（带入到一维空间就是分隔成了两个线段，而带入到二维则是被分隔成四个象限，
+  三维则是八个象限）。那么对于 $2^k$ 的 $k$-方格而言，设其为 $Q_i$，而其本质还是 $I$，因此说 $Q_i$ 的并集为 $I$。为了得到悖论，
+  将其中一个称为 $I_1$ 的 $Q_i$，假设为不紧的，即不存在有限的子覆盖。接下来就是对该 $I_1$ 进行分解，利用了 Theorem 2.39 的结论将其转换为
+  数列 $\{I_n\}$ 并附上证明中的三个性质。由 (a) 和 Theorem 2.39 得出总有 $\mathbf{x^*} \in G_{\alpha}$。而因为 $G_{\alpha}$ 是开集，
+  总会有 $r>0$ 使得 $|\mathbf{y}-\mathbf{x}^*|<r$，所以 $\mathbf{y} \in G$。
+
+  这其中 (c) 的 $|\mathbf{x}-\mathbf{y}|\le2^{-n}\delta$ 可视为在 $I_n$ 中的两点，它们之间的距离小于 $\frac{1}{2^n} \delta$。
+  这里最简单的几何理解就是在一维空间下的：
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+          xmin=-10, xmax=10,
+          axis x line*=middle,
+          hide y axis,
+          ymin=-5,ymax=5,
+          xtick=\empty,
+          xticklabels=\empty,
+        ]
+        \draw[color=black] (-5,2.5) node {$I_1 = [a_1, c_1]$};
+        \draw[color=black] (0,2.5) node {or};
+        \draw[color=black] (5,2.5) node {$I_1 = [c_1, b_1]$};
+        \draw[color=black] (0,-1) node {or};
+        \begin{scriptsize}
+          \draw [fill=black] (-8,0) circle (2pt);
+          \draw[color=black] (-8,1) node {$a_1$};
+
+          \draw [fill=black] (-7,0) circle (1pt);
+          \draw[color=black] (-7,-1) node {$\mathbf{x}$};
+
+          \draw [fill=black] (-3,0) circle (1pt);
+          \draw[color=black] (-3,-1) node {$\mathbf{y}$};
+
+          \draw [fill=black] (0,0) circle (2pt);
+          \draw[color=black] (0,1) node {$c_1$};
+
+          \draw [fill=black] (2,0) circle (1pt);
+          \draw[color=black] (2,-1) node {$\mathbf{x}$};
+
+          \draw [fill=black] (5,0) circle (1pt);
+          \draw[color=black] (5,-1) node {$\mathbf{y}$};
+
+          \draw [fill=black] (8,0) circle (2pt);
+          \draw[color=black] (8,1) node {$b_1$};
+        \end{scriptsize}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  也就是说，根据之前 $c_j$ 的分隔动作，将 $I$ 分成了 $2^1$ 个 $1$-方格的 $Q_i$。那么证明中说的至少其中一个不会被 $\{G_{\alpha}\}$ 中任何有限的
+  子类所覆盖，那么如图所示，$I_1$ 要么是在左侧的 $[a_1,c_1]$ 处，要么是在右侧的 $[c_1,b_1]$ 处。因此图示中 $\mathbf{x}$ 与 $\mathbf{y}$
+  的距离要小于等于 $\delta/2$，即小于 $\frac{|b_1-a_1|}{2}$。
+
+  之后根据第一章的阿基米德性质\say{给出任何正数，总能够挑选出一个整数其倒数小过原来的数}，可以很轻松的得出 (c) 与 (b) 相悖。
+\end{anote}
 
 \begin{theorem}
   If a set $E$ in $R^k$ has one of the following three properties, then it has the other two:
