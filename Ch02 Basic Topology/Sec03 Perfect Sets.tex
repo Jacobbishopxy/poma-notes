@@ -32,7 +32,61 @@
   的 Corollary 相悖。
 \end{proof}
 
-\anote $P$ 为 $R^k$ 内的非空完全集，那么 $P$ 是不可数的。
+\begin{anote}
+  \begin{itemize}
+    \item [\textbf{定理}] $P$ 为 $R^k$ 内的非空完全集，那么 $P$ 是不可数的。
+    \item [\textbf{回顾}] 完全性 perfect 在 Definition 2.18 (h) 中提到，\say{$E$ is \textit{perfect} if $E$ is closed and
+            if every point of $E$ is a limit point of $E$}。根据 Wikipedia 对完全集的表述：
+          \begin{quote}
+            In general topology, a subset of a topological space is \textbf{perfect} if it is closed and has no isolated
+            points. Equivalently: the set $S$ is perfect if $S = S'$, where $S'$ denotes the set of all limit points of
+            $S$, also known as the derived set of $S$.
+          \end{quote}
+          相较于闭集，完全集多了一条定义，即集合上的点都是集合的极限点。
+    \item [\textbf{证明}] 完全集也是闭集，因此有极限点；又根据 Theorem 2.20 衍生的 Corollary，\say{A finite point set has no
+            limit points}，即完全集不是有限集合。
+          构建的 $\{V_n\}$ 邻域数列与假设中的可数集 $P$ 的 $\mathbf{x}_1,\mathbf{x}_2,\mathbf{x}_3,\dots$ 一一对应。
+          那么对于 $V_1$ 这个邻域而言，其中包含的 $\mathbf{y} \in R^k$ 点满足 $|\mathbf{y} - \mathbf{x}_1| < r$（用二维空间对
+          $V_1$ 邻域与 $\mathbf{x}_1$ 的关系理解就很简单了：某一点 $x$ 为圆心 $r$ 为半径构成的圆，圆中所有的点构成了 $V$；那么闭包
+          $\overline{V}_1$ 则是包含了圆周长上的所有点）。
+          如果在一维空间来表示 $\mathbf{x}_n, \mathbf{x}_{n+1}$ 与 $V_n, V_{n+1}$ 之间的关系，那么如图所示：
+          \begin{center}
+            \begin{tikzpicture}
+              \begin{axis}[
+                  xmin=-10, xmax=10,
+                  axis x line*=middle,
+                  hide y axis,
+                  ymin=-5,ymax=5,
+                  xtick=\empty,
+                  xticklabels=\empty,
+                ]
+
+                \draw[color=black] (5.1,2.5) node {$\overline{V}_{n+1} \subset V_n $};
+                \draw [line width=.5pt,dash pattern=on 1pt off 2pt](-4,0) ellipse (11 and 3.3);
+                \draw [line width=.5pt,dash pattern=on 1pt off 2pt](4,0) ellipse (2 and 1.5);
+
+                \begin{scriptsize}
+                  \draw [fill=black] (-4,0) circle (1pt);
+                  \draw[color=black] (-4,-0.5) node {$\mathbf{x}_n$};
+                  \draw[color=black] (6.5,-1.5) node {$V_n$};
+
+                  \draw [fill=black] (4,0) circle (1pt);
+                  \draw[color=black] (4,-0.5) node {$\mathbf{x}_{n+1}$};
+                  \draw[color=black] (4,-1.5) node {$V_{n+1}$};
+                \end{scriptsize}
+              \end{axis}
+            \end{tikzpicture}
+          \end{center}
+          即表示出了 $\overline{V}_{n+1} \subset V_n$，且 $\mathbf{x}_n \notin \overline{V}_{n+1}$。
+          当令 $K_n = \overline{V}_n \cap P$，那么有 $K_{n+1} = \overline{V}_{n+1} \cap P$。同时，根据 Theorem 2.41，当一个集合既
+          闭又有界时，该集合为紧集。因此 $\overline{V}_n$ 为紧集。由上面的 $\mathbf{x}_n \notin \overline{V}_{n+1}$ 与
+          $K_{n+1} = \overline{V}_{n+1} \cap P$ 可知 $\mathbf{x}_n \notin K_{n+1}$。那么在一维的图中可知 $K_n\cap K_{n+1}=K_{n+1}$，
+          那么当 $n$ 趋近无穷时，可知 $\mathbf{x} \notin \cap_1^{\infty} K_n$，即证明中的 $P$ 中没有点在 $\cap_1^{\infty}$；而又因
+          $K_n \subset P$，那么 $\cap_1^{\infty} K_n$ 只能为空。然而根据 (iii) 与 (i) 所知 $K_n$ 不是空集，那么根据 Theorem 2.36 的
+          Corollary，\say{如果 $\{K_n\}$ 是非空紧集的数列且 $K_n \supset K_{n+1}\ (n=1,2,3,\dots)$，那么 $\cap_1^{\infty} K_n$
+            不为空}，与推导相悖，因此 $P$ 是不可数的，证明完毕。
+  \end{itemize}
+\end{anote}
 
 \begin{corollary}
   Every interval $[a,b]\ (a<b)$ is uncountable. In particular, the set of all real numbers is uncountable.
@@ -78,6 +132,17 @@
   set of measure zero (the concept of measure will be discussed in Chap. 11).
 \end{namedtheorem}
 
-\anote Cantor 集说明了 $R^1$ 中存在没有区间的完全集。
+\begin{anote}
+  Cantor 集说明了 $R^1$ 中存在没有区间的完全集。Cantor 集在构造的过程中，每次去掉的都是开区间。
+  \href{https://zhuanlan.zhihu.com/p/54711962}{重要性质}（实分析 \& 泛函分析）：
+  \begin{enumerate}
+    \item Cantor 集的 Lebesgue 测定是 0
+    \item Cantor 集是非空有界闭集
+    \item Cantor 集完全集
+    \item Cantor 集是无处稠密集（疏朗集）
+    \item Cantor 集是不可数集
+  \end{enumerate}
+\end{anote}
+
 
 \end{document}
