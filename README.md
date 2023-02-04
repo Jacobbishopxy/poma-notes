@@ -16,4 +16,4 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [Perfect Sets](./Ch02%20Basic%20Topology/Sec03%20Perfect%20Sets.tex)
 
-   <!-- 1. [Connected Sets](./Ch02%20Basic%20Topology/Sec04%20Connected%20Sets.tex) -->
+   1. [Connected Sets](./Ch02%20Basic%20Topology/Sec04%20Connected%20Sets.tex)

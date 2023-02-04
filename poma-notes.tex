@@ -24,10 +24,13 @@
 \usetikzlibrary{arrows,matrix,hobby,shapes}
 
 % setting theorem counter & style
-\newtheoremstyle{remboldstyle}
-  {}{}{\itshape}{}{\bfseries}{.}{.5em}{{\thmnumber{#2 }}{\thmname{#1}}{\thmnote{ (#3)}}}
-\theoremstyle{remboldstyle}
+\newtheoremstyle{thm}{}{}{\itshape}{}{\bfseries}{}{.5em}{{\thmnumber{#2 }}{\thmname{#1}}{\thmnote{ (#3)}}}
+\newtheoremstyle{dfn}{}{}{}{}{\bfseries}{}{.5em}{{\thmnumber{#2 }}{\thmname{#1}}{\thmnote{ (#3)}}}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{}{.5em}{{\thmnumber{#2 }}{\thmnote{#3}}}
+
 \newtheorem{poma}{PoMA}[section]
+
+\theoremstyle{thm}
 \newtheorem{theorem}[poma]{Theorem}
 \newtheorem*{corollary}{Corollary}
 \newtheorem{proposition}[poma]{proposition}
@@ -35,12 +38,12 @@
 \newtheorem{remarks}[poma]{Remarks}
 \newtheorem{example}[poma]{Example}
 \newtheorem{examples}[poma]{Examples}
-\theoremstyle{definition}
+
+\theoremstyle{dfn}
 \newtheorem{definition}[poma]{Definition}
 \newtheorem{definitions}[poma]{Definitions}
 \newtheorem{notation}[poma]{Notation}
-\newtheoremstyle{named}
-  {}{}{\itshape}{}{\bfseries}{.}{.5em}{{\thmnumber{#2 }}{\thmnote{#3}}}
+
 \theoremstyle{named}
 \newtheorem{namedtheorem}[poma]{}
 
