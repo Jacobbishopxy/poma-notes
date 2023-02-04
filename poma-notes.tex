@@ -24,13 +24,13 @@
 \usetikzlibrary{arrows,matrix,hobby,shapes}
 
 % setting theorem counter & style
+\newtheoremstyle{remboldstyle}
+  {}{}{\itshape}{}{\bfseries}{.}{.5em}{{\thmnumber{#2 }}{\thmname{#1}}{\thmnote{ (#3)}}}
+\theoremstyle{remboldstyle}
 \newtheorem{poma}{PoMA}[section]
 \newtheorem{theorem}[poma]{Theorem}
 \newtheorem*{corollary}{Corollary}
 \newtheorem{proposition}[poma]{proposition}
-\newtheoremstyle{remboldstyle}
-  {}{}{\itshape}{}{\bfseries}{.}{.5em}{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
-\theoremstyle{remboldstyle}
 \newtheorem{remark}[poma]{Remark}
 \newtheorem{remarks}[poma]{Remarks}
 \newtheorem{example}[poma]{Example}
@@ -39,6 +39,10 @@
 \newtheorem{definition}[poma]{Definition}
 \newtheorem{definitions}[poma]{Definitions}
 \newtheorem{notation}[poma]{Notation}
+\newtheoremstyle{named}
+  {}{}{\itshape}{}{\bfseries}{.}{.5em}{{\thmnumber{#2 }}{\thmnote{#3}}}
+\theoremstyle{named}
+\newtheorem{namedtheorem}[poma]{}
 
 % import & settings
 \graphicspath{\subfix{./images/}}
@@ -62,7 +66,7 @@
 \newpage
 
 \section{Basic Topology}
-\subfile{Ch02 Basic Topology/Sec01 Finite, Countable, and Uncoutable Sets}
+\subfile{Ch02 Basic Topology/Sec01 Finite, Countable, and Uncountable Sets}
 \subfile{Ch02 Basic Topology/Sec02 Compact Sets}
 \subfile{Ch02 Basic Topology/Sec03 Perfect Sets}
 \subfile{Ch02 Basic Topology/Sec04 Connected Sets}
