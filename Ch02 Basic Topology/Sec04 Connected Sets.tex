@@ -13,7 +13,8 @@
   sets.
 \end{definition}
 
-\anote
+\anote 度量空间 $X$ 的两个子集 $A$ 与 $B$ 被称为\textbf{分离的 separated} 如果 $A \cap \overline{B}$ 与
+$\overline{A} \cap B$ 皆为空集；与分离相反的概念为\textbf{连通的 connected}。
 
 \begin{remark}
   Separated sets are of course disjoint, but disjoint sets need not be separated. For example, the interval $[0,1]$
@@ -21,7 +22,7 @@
   $(0,1)$ and $(1,2)$ \textit{are} separated.
 \end{remark}
 
-\anote
+\anote 分离的两个集是不相交的，但不相交的集合不一定是分离的。例如 $[0,1]$ 与 $(1,2)$ 不是分离的。
 
 线的连通子集拥有一个特殊的简单结构：
 
@@ -29,5 +30,24 @@
   A subset $E$ of the real line $R^1$ is connected if and only if it has the following property: If $x\in E, y\in E$,
   and $x<z<y$, then $z\in E$.
 \end{theorem}
+
+\begin{proof}
+  如果存在 $x \in E,\ y \in E$，以及某些 $z \in (x,y)$ 使得 $z \notin E$，那么有 $E = A_z \cup B_z$ 其中
+  \[A_z = E \cap (-\infty,z), \quad B_z = E \cap (z, \infty)\]
+  因为 $x \in A_z$ 以及 $y \in B_z$，$A$ 与 $B$ 为非空。因为 $A_z \subset (-\infty,z)$ 以及 $B_z \subset (z,\infty)$，
+  它们是分开着的。因此 $E$ 不为连接。
+
+  接下来是反着证明，假设 $E$ 不为连接。那么不存在非空并分开的集合 $A$ 与 $B$ 使得 $A \cup B = E$。令 $x \in A,\ y \in B$，且
+  假设（而不失去普遍性）$x < y$。定义
+  \[z = \sup(A \cap [x, y])\]
+  根据 Theorem 2.28，$z \in \overline{A}$；因此 $z \notin B$。特别是 $x \le z < y$。
+
+  如果 $z \notin A$，它遵循 $x < z < y$ 且 $z \notin E$。
+
+  如果 $z \in A$，那么 $z \notin \overline{B}$，因此存在 $z_1$ 使得 $z < z_1 < y$ 且 $z_1 \notin B$。那么 $x < z_1 < y$
+  且 $z_1 \notin E$。
+\end{proof}
+
+\anote 实数集 $R^1$ 的子集 $E$ 是连通的，当且仅当：如果 $x \in E,\ y \in E$ 且 $x < z < y$，那么 $z \in E$。
 
 \end{document}
