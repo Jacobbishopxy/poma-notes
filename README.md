@@ -20,9 +20,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
 1. Numerical Sequences and Series
 
-   <!-- 1. [Convergent Sequences](./Ch03%20Numerical%20Sequences%20and%20Series/Sec01%20Convergent%20Sequences.tex)
+   1. [Convergent Sequences](./Ch03%20Numerical%20Sequences%20and%20Series/Sec01%20Convergent%20Sequences.tex)
 
-   1. [Subsequences](./Ch03%20Numerical%20Sequences%20and%20Series/Sec02%20Subsequences.tex)
+   <!-- 1. [Subsequences](./Ch03%20Numerical%20Sequences%20and%20Series/Sec02%20Subsequences.tex)
 
    1. [Cauchy Sequences](./Ch03%20Numerical%20Sequences%20and%20Series/Sec03%20Cauchy%20Sequences.tex)
 

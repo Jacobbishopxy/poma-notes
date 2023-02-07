@@ -4,6 +4,88 @@
 
 \subsection*{Convergent Sequences}
 
-WIP
+\begin{definition}
+  A sequence $\{P_n\}$ in a metric space $X$ is said to \textit{converge} if there is a point $p \in X$ with the
+  following property: For every $\epsilon > 0$ there is an integer $N$ such that $n \ge N$ implies that
+  $d(p_n,p) < \epsilon$. (Here $d$ denotes the distance in $X$.)
+
+  In this case we also say that $\{p_n\}$ converges to $p$, or that $p$ is the limit of $\{p_n\}$
+  [see Theorem 3.2(b)], and we write $p_n \to p$, or
+  \[\lim_{n \to \infty} p_n = p.\]
+
+  If $\{P_n\}$ does not converge, it is said to \textit{diverge}.
+
+  It might be well to point out that our definition of \say{convergent sequence} depends not only on $\{p_n\}$
+  but also on $X$; for instance, the sequence ${1/n}$ converges in $R^1$ (to $0$), but fails to converge in the set
+  of all positive real numbers [with $d(x,y)=|x-y|$]. In cases of possible ambiguity, we can be more precise and
+  specify \say{convergent in $X$} rather than \say{convergent}.
+
+  We recall hat the set of all point $p_n (n=1,2,3,\dots)$ is the $\textit{range}$ of $\{p_n\}$. The range of a
+  sequence may be a finite set, or it may be infinite. The sequence $\{p_n\}$ is said to be \textit{bounded} if
+  its range is bounded.
+
+  As examples, consider the following sequences of complex numbers (that is, $X = R^2$):
+  \begin{enumerate}[label=(\alph*)]
+    \item If $s_n = 1/n$, then $\lim_{n \to \infty} s_n = 0$; the range is infinite, and the sequence is bounded.
+    \item If $s_n = n^2$, the sequence $\{s_n\}$ is unbounded, is divergent, and has infinite range.
+    \item If $s_n = 1 + [(-1)^n/n]$, the sequence $\{s_n\}$ converges to 1, is bounded, and has infinite range.
+    \item If $s_n = i^n$, the sequence $\{s_n\}$ is divergent, is bounded, and has finite range.
+    \item If $s_n = 1\ (n=1,2,3,\dots)$, then $\{s_n\}$ converges to 1, is bounded, and has finite range.
+  \end{enumerate}
+
+  We now summarize some important properties of convergent sequences in metric spaces.
+\end{definition}
+
+\begin{anote}
+  度量空间 $X$ 中的序列 $\{p_n\}$ 叫做\textbf{收敛的 converged}，如果有一个下述性质的点 $p \in X$：对每个 $\epsilon>0$，
+  有一个正整数 $N$，使得 $n \ge N$ 时，$d(p_n,p)<\epsilon$。也可以说 $\{p_n\}$ 收敛于 $p$，或者说 $p$ 是 $\{p_n\}$ 的极限，
+  写作 $p_n \to p$ 或 $\lim_{n \to \infty} p_n = p$。如果不收敛，则是\textbf{发散的 diverged}。
+
+  收敛的定义不仅依赖于数列还依赖于 $X$，例如 ${1/n}$ 在 $R^1$ 中收敛与 $0$，但在正实数集合中不收敛。所以要强调\say{在 $X$ 中收敛}。
+
+  一切点 $p_n$ 的集合是 $\{p_n\}$ 的\textbf{值域 range}，序列的值域可以是有限的，也可以使无限的。如果值域是有界的，那么序列是有界的。
+\end{anote}
+
+\begin{theorem}
+  Let $\{p_n\}$ be a sequence in a metric space $X$.
+  \begin{enumerate}[label=(\alph*)]
+    \item $\{p_n\}$ converges to $p \in X$ if and only if every neighborhood of $p$ contains $p_n$ for all but
+          finitely many $n$.
+    \item If $p \in X, p' \in X$, and if $\{p_n\}$ converges to $p$ and to $p'$, then $p' = p$.
+    \item If $\{p_n\}$ converges, then $\{p_n\}$ is bounded.
+    \item If $E \subset X$ and if $p$ is a limit point of E, then there is a sequence ${p_n}$ in $E$ such that
+          $p=\lim_{n \to \infty} p_n$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  \begin{enumerate}[label=(\alph*)]
+    \item 假设 $p_n \to p$ 且令 $V$ 为 $p$ 的一个邻域。对于某些 $\epsilon > 0$ 而言，条件 $d(q,p)<\epsilon,q\in X$ 意味着
+          $q \in V$。与该 $\epsilon$ 关联的，存在 $N$ 使得 $n \ge N$ 满足 $d(p_n,p) < \epsilon$。因此 $n \ge N$ 表明
+          $p_n \in V$。
+
+          相反的，假设 $p$ 的每个邻域包含所有的，且是有限个的 $p_n$。令 $\epsilon > 0$ 且 $V$ 为 $d(p,q)<\epsilon$ 的集合，
+          其中 $q \in X$。根据假设，存在 $N$（与该 $V$ 关联）使得 $n \ge N$ 时有 $p_n \in V$。因此如果 $n \ge N$ 时，有
+          $d(p_n,p) < \epsilon$；因此 $p_n \to p$。
+    \item 令 $\epsilon > 0$。存在整数 $N$，$N'$ 使得
+          \begin{center}
+            $n \ge N $ 表明 $d(p_n,p)<\frac{\epsilon}{2}$
+          \end{center}
+          \begin{center}
+            $n \ge N' $ 表明 $d(p_n,p')<\frac{\epsilon}{2}$
+          \end{center}
+          那么如果 $n \ge \max(N, N')$，我们有
+          \[d(p,p') \le d(p,p_n) + d(p_n,p') < \epsilon\]
+          因为 $\epsilon$ 是随机的，我们得出结论 $d(p,p') = 0$。
+    \item 假设 $p_n \to p$。存在一个整数 $N$ 使得 $n > N$ 表明 $d(p_n,p) < 1$。令
+          \[r = \max \{1, d(p_1,p), \dots, d(p_N,p)\}\]
+          那么对于 $n=1,2,3,\dots$ 有 $d(p_n, p) \le r$。
+    \item 对于每个正整数 $n$，有一个点 $p \in E$ 使得 $d(p_n,p)<1/n$。给定 $\epsilon>0$，选择 $N$ 使得 $N_{\epsilon}>1$。
+          如果 $n > N$，它遵循 $d(p_n,p) < \epsilon$。因此 $p_n \to p$。
+  \end{enumerate}
+  证明完毕。
+\end{proof}
+
+对于在 $R^k$ 中的数列，我们可以学习收敛之间的关系，另一方面，可以学习代数的运算。我们首先考虑复数的数列。
 
 \end{document}
