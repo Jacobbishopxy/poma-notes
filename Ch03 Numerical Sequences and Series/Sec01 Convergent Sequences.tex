@@ -88,4 +88,74 @@
 
 对于在 $R^k$ 中的数列，我们可以学习收敛之间的关系，另一方面，可以学习代数的运算。我们首先考虑复数的数列。
 
+\begin{anote}
+  度量空间 $X$ 中的序列 $\{p_n\}$：
+  \begin{enumerate}[label=(\alph*)]
+    \item $\{p_n\}$ 收敛于 $p \in X$，当且仅当 $p$ 的每个邻域，能包含除了有限项以外的一切项；
+    \item 如果数列同时收敛于 $p,\ p'$，那么 $p' = p$；
+    \item 数列收敛必有界；
+    \item 如果 $E \subset X$，而 $p$ 是 $E$ 的极限点，那么在 $E$ 中有一个序列收敛到 $p$。
+  \end{enumerate}
+\end{anote}
+
+\begin{theorem}
+  Suppose $\{s_n\}$, $\{t_n\}$ are complex sequences, and $\lim_{n \to \infty} s_n = s,\lim_{n \to \infty t_n = t}$.
+  Then
+  \begin{enumerate}[label=(\alph*)]
+    \item $\lim_{n \to \infty}(s_n + t_n) = s + t$;
+    \item $\lim_{n \to \infty} cs_n = cs, \lim_{n \to \infty} (c + s_n) = c + s$, for any number $c$;
+    \item $\lim_{n \to \infty} s_n t_n = st$;
+    \item $\lim_{n \to \infty} \frac{1}{s_n} = \frac{1}{s}$, provided $s_n \ne 0\ (n=1,2,3,\dots)$, and $s \ne 0$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  \begin{enumerate}[label=(\alph*)]
+    \item 给定 $\epsilon > 0$，存在正整数 $N_1$, $N_2$ 使得
+          \begin{center}
+            $n \ge N_1$ implies $|s_n - s| < \frac{\epsilon}{2}$,
+          \end{center}
+          \begin{center}
+            $n \ge N_2$ implies $|t_n - t| < \frac{\epsilon}{2}$.
+          \end{center}
+          如果 $N = \max(N_1, N_2)$，那么 $n \ge N$ 表明
+          \[|(s_n + t_n) - (s + t)| \le |s_n - s| + |t_n - t| < \epsilon\]
+          (a) 证明完毕。
+    \item 很简单，跳过。
+    \item 使用等式
+          \begin{equation}
+            s_n t_n - st = (s_n - s)(t_n - t) + s(t_n - t) + t(s_n - s)
+          \end{equation}
+          给定 $\epsilon > 0$，存在整数 $N_1, N_2$ 使得
+          \begin{center}
+            $n \ge N_1$ 表明 $|s_n - s| < \sqrt{\epsilon}$
+          \end{center}
+          \begin{center}
+            $n \ge N_2$ 表明 $|t_n - t| < \sqrt{\epsilon}$
+          \end{center}
+          如果选取 $N = \max (N_1, N_2), n \ge N$ 表示
+          \[|(s_n = s)(t_n - t)| < \epsilon\]
+          使得
+          \[\lim_{n \to \infty}(s_n - s)(t_n - t) = 0\]
+          现在将 (a) 与 (b) 应用到等式 (1) 上，可以得出结论
+          \[\lim_{n \to \infty}(s_n t_n - st) = 0\]
+    \item 选择 $m$ 使得 $|s_n - s| < \frac{1}{2}|s|$ 如果 $n \ge m$，可以得出
+          \[|s_n| > \frac{1}{2}|s| \quad (n \ge m)\]
+          给定 $\epsilon > 0$，存在一个整数 $N > m$ 使得 $n \ge N$ 表明
+          \[|s_n - s| < \frac{1}{2}|s|^2 \epsilon\]
+          因此，对于 $n \ge N$ 有
+          \[\biggl|\frac{1}{s_n}-\frac{1}{s}\biggr|=\biggl|\frac{s_n-s}{s_n s}\biggr|<\frac{2}{|s|^2}|s_n-s|<\epsilon\]
+  \end{enumerate}
+\end{proof}
+
+\begin{anote}
+  假定 ${s_n}, {t_n}$ 是复序列，且极限为 $s, t$，那么
+  \begin{enumerate*}[label=(\alph*)]
+    \item $\lim_{n \to \infty}(s_n + t_n) = s + t$，
+    \item 对任何数 $c$，$\lim_{n \to \infty} cs_n = cs$，
+    \item $\lim_{n \to \infty} s_n t_n = st$;
+    \item $\lim_{n \to \infty}(c + s_n) = c + s$。
+  \end{enumerate*}
+\end{anote}
+
 \end{document}
