@@ -1,6 +1,10 @@
 \PassOptionsToPackage{quiet}{fontspec}
 \documentclass[UTF8]{ctexart}
 
+% ================================================================================================
+% Dependencies
+% ================================================================================================
+
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{subfiles}
 \usepackage{anyfontsize}
@@ -19,15 +23,23 @@
 \usepackage{mathrsfs}
 \usepackage{dirtytalk}
 
+% ================================================================================================
 % math graphics setting
+% ================================================================================================
+
 \pgfplotsset{compat=1.15}
 \usetikzlibrary{arrows,matrix,hobby,shapes}
 
+% ================================================================================================
 % setting theorem counter & style
+% ================================================================================================
+
+% theorem styles
 \newtheoremstyle{thm}{}{}{\itshape}{}{\bfseries}{}{.5em}{{\thmnumber{#2 }}{\thmname{#1}}{\thmnote{ (#3)}}}
 \newtheoremstyle{dfn}{}{}{}{}{\bfseries}{}{.5em}{{\thmnumber{#2 }}{\thmname{#1}}{\thmnote{ (#3)}}}
 \newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{}{.5em}{{\thmnumber{#2 }}{\thmnote{#3}}}
 
+% theorem counter
 \newtheorem{poma}{PoMA}[section]
 
 \theoremstyle{thm}
@@ -47,13 +59,38 @@
 \theoremstyle{named}
 \newtheorem{namedtheorem}[poma]{}
 
+% ================================================================================================
 % import & settings
+% ================================================================================================
+
+% img folder import
 \graphicspath{\subfix{./images/}}
+% style file import
 \usepackage{./style}
 \lstset{style=mystyle}
+
+% ================================================================================================
+% miscellaneous
+% ================================================================================================
+
+% custom proof style
 \input{commands}
 \renewcommand*{\proofname}{Proof}
 \xapptocmd{\proof}{\mbox{}\par\nobreak}{}{}
+
+% equation number alignment
+\makeatletter % ams classes trick
+\def\fullwidthdisplay{\displayindent\z@ \displaywidth\columnwidth}
+\edef\@tempa{\noexpand\fullwidthdisplay\the\everydisplay}
+\everydisplay\expandafter{\@tempa}
+\makeatother
+
+% reset equation number after each section
+\counterwithin*{equation}{section}
+
+% ================================================================================================
+% content
+% ================================================================================================
 
 \title{Study Notes of Principles of Mathematical Analysis}
 \author{Jacob Xie}
