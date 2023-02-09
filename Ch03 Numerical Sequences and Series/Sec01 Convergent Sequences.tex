@@ -32,8 +32,6 @@
     \item If $s_n = i^n$, the sequence $\{s_n\}$ is divergent, is bounded, and has finite range.
     \item If $s_n = 1\ (n=1,2,3,\dots)$, then $\{s_n\}$ converges to 1, is bounded, and has finite range.
   \end{enumerate}
-
-  We now summarize some important properties of convergent sequences in metric spaces.
 \end{definition}
 
 \begin{anote}
@@ -44,13 +42,85 @@
   收敛的定义不仅依赖于数列还依赖于 $X$，例如 ${1/n}$ 在 $R^1$ 中收敛与 $0$，但在正实数集合中不收敛。所以要强调\say{在 $X$ 中收敛}。
 
   一切点 $p_n$ 的集合是 $\{p_n\}$ 的\textbf{值域 range}，序列的值域可以是有限的，也可以使无限的。如果值域是有界的，那么序列是有界的。
+
+  \begin{enumerate}[label=(\alph*)]
+    \item 值域无限，且数列有界：
+          \begin{center}
+            \begin{tikzpicture}
+              \draw[color=black] (3.5,3) node {$s_n = 1/n,\ \lim_{n \to \infty} s_n = 0$};
+              \begin{axis}[
+                  axis lines=middle,
+                  samples=100,
+                  xtick=\empty,
+                  xticklabels=\empty,
+                  ytick=\empty,
+                  yticklabels=\empty,
+                ]
+                \addplot[blue,domain=0:5] {1/x};
+              \end{axis}
+            \end{tikzpicture}
+          \end{center}
+    \item 值域无限，且数列无界，同时为发散的：
+          \begin{center}
+            \begin{tikzpicture}
+              \draw[color=black] (3.5,3) node {$s_n = n^2$};
+              \begin{axis}[
+                  axis lines=middle,
+                  samples=100,
+                  xtick=\empty,
+                  xticklabels=\empty,
+                  ytick=\empty,
+                  yticklabels=\empty,
+                ]
+                \addplot[blue,domain=0:5] {x^2};
+              \end{axis}
+            \end{tikzpicture}
+          \end{center}
+    \item 值域无限，且数列有界，同时收敛于 $1$：
+          \begin{center}
+            \begin{tikzpicture}
+              \draw[color=black] (3.5,4) node {$s_n = 1 + [(-1)^n/n]$};
+              \begin{axis}[
+                  axis lines=middle,
+                  samples=100,
+                  xtick=\empty,
+                  xticklabels=\empty,
+                  ytick=\empty,
+                  yticklabels=\empty,
+                ]
+                \addplot[blue,domain=0:10] {1 + (-1/x)};
+                \addplot[blue,domain=0:10] {1 + (1/x)};
+              \end{axis}
+            \end{tikzpicture}
+          \end{center}
+    \item 值域有限，且数列有界，同时为发散的：
+          \begin{center}
+            \begin{tikzpicture}
+              \draw[color=black] (3.5,4) node {$s_n = i^n$};
+              \begin{axis}[
+                  axis lines=middle,
+                  samples=100,
+                  xtick=\empty,
+                  xticklabels=\empty,
+                  ytick=\empty,
+                  yticklabels=\empty,
+                ]
+                \addplot[blue,domain=0:5] {1};
+                \addplot[blue,domain=0:5] {-1};
+              \end{axis}
+            \end{tikzpicture}
+          \end{center}
+    \item 值域有限，且数列有界，同时收敛于 $1$。
+  \end{enumerate}
 \end{anote}
+
+我们现在来总结收敛数列在度量空间中的一些重要特性。
 
 \begin{theorem}
   Let $\{p_n\}$ be a sequence in a metric space $X$.
   \begin{enumerate}[label=(\alph*)]
-    \item $\{p_n\}$ converges to $p \in X$ if and only if every neighborhood of $p$ contains $p_n$ for all but
-          finitely many $n$.
+    \item $\{p_n\}$ converges to $p \in X$ if and only if every neighborhood of $p$ contains $p_n$ \textbf{for}
+          all but finitely many $n$.
     \item If $p \in X, p' \in X$, and if $\{p_n\}$ converges to $p$ and to $p'$, then $p' = p$.
     \item If $\{p_n\}$ converges, then $\{p_n\}$ is bounded.
     \item If $E \subset X$ and if $p$ is a limit point of E, then there is a sequence ${p_n}$ in $E$ such that
@@ -157,5 +227,39 @@
     \item $\lim_{n \to \infty}(c + s_n) = c + s$。
   \end{enumerate*}
 \end{anote}
+
+\begin{theorem}
+  \begin{enumerate}[label=(\alph*)]
+    \item Suppose $\mathbf{x}_n \in R^k (n=1,2,3,\dots)$ and
+          \[\mathbf{x}_n = (\alpha_{1,n},\dots,\alpha_{k,n},).\]
+          Then $\{\mathbf{x}_n\}$ converges to $\mathbf{x}=(\alpha_1,\dots,\alpha_k)$ if and only if
+          \begin{center}
+            \begin{equation}
+              \lim_{n \to \infty} \alpha_{j,n} = \alpha_j \qquad (1 \le j \le k).
+            \end{equation}
+          \end{center}
+    \item Suppose $\{\mathbf{x}_n,\mathbf{y}_n\}$ are sequences in $R^k$, $\{\beta_n\}$ is a sequence of real numbers,
+          and $\mathbf{x}_n \to \mathbf{x}, \mathbf{y}_n \to \mathbf{y}, \beta_n \to \beta$. Then
+          \[
+            \lim_{n \to \infty} (\mathbf{x}_n + \mathbf{y}_n) = \mathbf{x} + \mathbf{y}, \qquad
+            \lim_{n \to \infty} (\mathbf{x}_n \cdot \mathbf{y}_n) = \mathbf{x} \cdot \mathbf{y} , \qquad
+            \lim_{n \to \infty} \beta_n \mathbf{x}_n = \beta \mathbf{x}.
+          \]
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  如果 $|\mathbf{x}_n \to \mathbf{x}|$，那么不等式
+  \[|\alpha_{j,n} - \alpha_j| \le |\mathbf{x}_n - \mathbf{x}|\]
+  遵循 $R^k$ 的定理，即 (2) 成立。
+
+  反过来，如果 (2) 成立，那么每个 $\epsilon > 0$ 存在一个关联的整数 $N$ 使得 $n \ge N$ 满足
+  \[|\alpha_{j,n} - \alpha_j| < \frac{\epsilon}{\sqrt{k}} \qquad (1 \le j \le k)\]
+  因此 $n \ge N$ 表明
+  \[|\mathbf{x}_n - \mathbf{x}| = \biggl\{\sum_{j = 1}^{k} |\alpha_{j,n} - \alpha_j|^2\biggr\}^{1/2} < \epsilon\]
+  使得 $\mathbf{x}_n \to \mathbf{x}$。(a) 证明完毕。
+
+  根据 (a) 与 Theorem 3.3 可得 (b)。
+\end{proof}
 
 \end{document}
