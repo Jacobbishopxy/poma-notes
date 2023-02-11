@@ -262,4 +262,36 @@
   根据 (a) 与 Theorem 3.3 可得 (b)。
 \end{proof}
 
+\begin{anote}
+  在通过 (2) 证明 $\{\mathbf{x}_n\}$ 收敛于 $\{\mathbf{x}\}$ 时，不等式 $|\alpha_{j,n} - \alpha_j| < \frac{\epsilon}{\sqrt{k}}$
+  右侧的 $\frac{\epsilon}{\sqrt{k}}$ 用于构建接下来的欧式距离公式。以下为构建过程：
+  \begin{align*}
+    |\alpha_{j,n} - \alpha_j| < \frac{\epsilon}{\sqrt{k}}     \\
+    |\alpha_{j,n} - \alpha_j| \cdot \sqrt{k} < \epsilon       \\
+    (|\alpha_{j,n} - \alpha_j| \cdot \sqrt{k})^2 < \epsilon^2 \\
+    |\alpha_{j,n} - \alpha_j|^2 \cdot k < \epsilon^2          \\
+  \end{align*}
+  那么对于 $1 \le j \le k$ 而言，有：
+  \begin{align*}
+    |\alpha_{1,n} - \alpha_1|^2 \cdot k +
+    |\alpha_{2,n} - \alpha_2|^2 \cdot k +
+    \cdots +
+    |\alpha_{k,n} - \alpha_k|^2 \cdot k <
+    \epsilon^2 + \epsilon^2 + \cdots + \epsilon^2 \\
+  \end{align*}
+  即：
+  \begin{align*}
+    \sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2 \cdot k < k \cdot \epsilon^2 \\
+    k \cdot \sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2 < k \cdot \epsilon^2 \\
+    \sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2 <  \epsilon^2                \\
+    (\sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2)^{1/2} <  \epsilon          \\
+  \end{align*}
+  该不等式左侧即为欧式距离公式，因此有：
+  \[|\mathbf{x}_n - \mathbf{x}| = (\sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2)^{1/2}\]
+  那么根据 Definition 3.1，即收敛的定义：
+  \[|\mathbf{x}_n - \mathbf{x}| < \epsilon \]
+  可得：
+  \[\mathbf{x}_n \to \mathbf{x}\]
+\end{anote}
+
 \end{document}
