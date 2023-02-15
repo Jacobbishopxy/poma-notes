@@ -12,4 +12,48 @@
   It is clear that $\{p_n\}$ converges to $p$ if and only if every subsequence of $\{p_n\}$ converges to $p$.
 \end{definition}
 
+\anote 有序列 $\{p_n\}$ 取正整数序列 $\{n_k\}$ 使 $n_1 < n_2 < \dots$，那么序列 $\{p_{n_i}\}$ 便叫做\textbf{子序列}，
+如果 $\{p_{n_i}\}$ 收敛，那么它的极限叫做 $\{p_n\}$ 的\textbf{部分极限}。序列收敛于 $p$ 当且仅当它的任何子序列收敛于 $p$。
+
+\begin{theorem}
+  \begin{enumerate}[label=(\alph*)]
+    \item If $\{p_n\}$ is a sequence in a compact metric space $X$, then some subsequence of $\{p_n\}$ converges to a
+          point of $X$.
+    \item Every bounded sequence in $R^k$ contains a convergent subsequence.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  \begin{enumerate}[label=(\alph*)]
+    \item 令 $E$ 为 $\{p_n\}$ 的值域。如果 $E$ 是有限的，那么存在一个 $p\in E$ 及一个序列 $\{n_i\}$ 且 $n_1<n_2<n_3<\cdots$
+          满足
+          \[ p_{n_1} = p_{n_2} = \cdots = p \]
+          而子序列 $\{p_{n_i}\}$ 因此收敛于 $p$。
+
+          如果 $E$ 是无限的，根据 Theorem 2.37 所提的 $E$ 拥有一个极限点 $p \in X$。选取 $n_1$ 使得 $d(p,p_{n_1}) < 1$。
+          选取 $n_1, \dots, n_{i-1}$，根据 Theorem 2.20 所提的，存在一个整数 $n_i > n_{i-1}$ 满足 $d(p, p_{n_i}) < 1/i$。
+          那么 $\{p_{n_i}\}$ 收敛于 $p$。
+    \item 遵循 (a)，因为 Theorem 2.41 推导每个有界的 $R^k$ 子集存在于 $R^k$ 的一个紧集中。
+  \end{enumerate}
+\end{proof}
+
+\anote 如果 $\{p_n\}$ 是紧度量空间 $X$ 中的序列，那么 $\{p_n\}$ 有某个子序列收敛到 $X$ 中的某个点；$R^k$ 中的每个有界序列包含
+收敛的子序列。
+
+\begin{theorem}
+  The subsequential limits of a sequence $\{p_n\}$ in a metric space $X$ form a closed subset of $X$.
+\end{theorem}
+
+\begin{proof}
+  令 $E^*$ 为 $\{p_n\}$ 所有子序列极限的集合，同时令 $q$ 为 $E^*$ 的一个极限点。我们需要证明 $q \in E^*$。
+
+  选取 $n_1$ 满足 $p_{n_1} \ne q$。（如果没有这样的 $n_1$ 存在，那么 $E^*$ 只有一个点，这样便没有必要证明了。）
+  令 $\delta = d(q, p_{n_1})$。假设选取了 $n1, \dots, n_{i-1}$。因为 $q$ 是 $E^*$ 的一个极限点，那么存在一个 $x\in E^*$
+  满足 $d(x,q) < 2^{-i} \delta$。因为 $x \in E^*$，存在一个 $n_i > n_{i-1}$ 满足 $d(x,p_{n_i}) < 2^{-i} \delta$。因此
+  \[ d(q, p_{n_i}) \le 2^{1-i} \delta \]
+  对于 $i = 1,2,3,\dots$。这意味着 $\{p_{n_i}\}$ 收敛于 $q$。因此 $q \in E^*$。
+\end{proof}
+
+\anote 度量空间 $X$ 里的序列 $\{p_n\}$ 的部分极限组成 $X$ 的闭子集。
+
 \end{document}
