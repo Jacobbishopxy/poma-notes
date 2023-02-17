@@ -2,8 +2,20 @@
 
 \begin{document}
 
-\subsection*{Convergent Sequences}
+\subsection*{Cauchy Sequences}
 
-WIP
+\begin{definition}
+  A sequnce $\{p_n\}$ in a metric space $X$ is said to be a \textit{Cauchy} sequence if for every $\epsilon > 0$
+  there is an integer $N$ such that $d(p_n, p_m) < \epsilon$ if $n \ge N$ and $m \ge N$.
+\end{definition}
+
+\begin{definition}
+  Let $E$ be a nonempty subset of a metric space $X$, and let $S$ be the set of all real numbers of the form $d(p,q)$,
+  with $p \in E$ and $q \in E$. The sup of $S$ is called the \textit{diameter} of $E$.
+\end{definition}
+
+如果 $\{p_n\}$ 是 $X$ 中的一个序列，且如果 $E_n$ 包含所有点 $p_N, p_{N+1}, p_{N+2}, \dots$，那么从前两个定义中可以清楚的得到
+$\{p_n\}$ 是一个\textbf{柯西序列} 当且仅当
+\[\lim_{N \to \infty} diam\ E_N = 0\]
 
 \end{document}
