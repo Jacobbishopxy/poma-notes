@@ -26,9 +26,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [Cauchy Sequences](./Ch03%20Numerical%20Sequences%20and%20Series/Sec03%20Cauchy%20Sequences.tex)
 
-   <!--    1. [Upper and Lower Limits](./Ch03%20Numerical%20Sequences%20and%20Series/Sec04%20Upper%20and%20Lower%20Limits.tex)
+   1. [Upper and Lower Limits](./Ch03%20Numerical%20Sequences%20and%20Series/Sec04%20Upper%20and%20Lower%20Limits.tex)
 
-   1. [Some Special Sequences](./Ch03%20Numerical%20Sequences%20and%20Series/Sec05%20Some%20Special%20Sequences.tex)
+   <!--    1. [Some Special Sequences](./Ch03%20Numerical%20Sequences%20and%20Series/Sec05%20Some%20Special%20Sequences.tex)
 
    1. [Series](./Ch03%20Numerical%20Sequences%20and%20Series/Sec06%20Series.tex)
 
