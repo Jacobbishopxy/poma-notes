@@ -16,4 +16,64 @@
 
 \anote $s_n \to \pm \infty$ 的定义。
 
+\begin{definition}
+  Let $\{s_n\}$ be a sequence of real numbers. Let $E$ be the set of numbers $x$ (in the extended real number system) such that
+  $s_{n_k} \to x$ for some subsequence $\{s_{n_k}\}$. This set $E$ contains all subsequential limits as defined in Definition 3.5, plus
+  possibly the numbers $+\infty,\ -\infty$.
+\end{definition}
+
+我们现在回忆 Definitions 1.8 与 1.23 且令
+\[ s^* = \sup E \]
+\[ s_* = \inf E \]
+数字 $s^*, s_*$ 分别被称为 $\{s_n\}$ 的 \textit{上极限} 与 \textit{下极限}；使用以下标记
+\[ \lim_{n \to \infty} \sup s_n = s^*, \qquad \lim_{n \to \infty} \inf s_n = s_* \]
+
+\begin{theorem}
+  Let $\{s_n\}$ be a sequence of real numbers. Let $E$ and $s^*$ have the same meaning as in Definition 3.16. Then $s^*$ has the following
+  two properties:
+  \begin{enumerate}[label=(\alph*)]
+    \item $s^* \in E$.
+    \item If $x > s^*$, there is an integer $N$ such that $n \ge N$ implies $s_n < x$.
+  \end{enumerate}
+  Moreover, $s^*$ is the only number with the properties (a) and (b). Of course, an analogous result is true for $s_*$.
+\end{theorem}
+
+\begin{proof}
+  \begin{enumerate}[label=(\alph*)]
+    \item 如果 $s^* = + \infty$，那么 $E$ 则没有上界；因此 $\{s_n\}$ 没有上界，且存在一个子序列 $\{s_{n_k}\}$ 满足 $s_{n_k} \to + \infty$。
+
+          如果 $s^*$ 是实数，那么 $E$ 则有上界，且至少存在一个子序列的极限，因此 (a) 遵循 Theorems 3.7 与 3.8。
+
+          如果 $s^* = - \infty$，那么 $E$ 仅包含一个元素，即 $- \infty$，且没有子序列极限。因此对于任何实数 $M, s_n > M$，至多有一个为 $n$ 的有限数，
+          满足 $s_n \to - \infty$。
+
+          上述构成了 (a) 的所有条件。
+    \item 假设存在一个数 $x > s^*$，对于无限多个的 $n$ 满足 $s_n \ge x$ 。这种情况下，存在一个数 $y \in E$ 满足 $y \ge x > s^*$，与 $s^*$ 的定义相悖。
+
+          因此 $s^*$ 满足 (a) 与 (b)。
+
+          而对于唯一性，假设存在两个数，$p$ 与 $q$，满足 (a) 与 (b)，且假设 $p < q$。选择 $x$ 满足 $p < x < q$。由于 $p$ 满足 (b)，则对于 $n \ge N$，
+          有 $s_n < x$。但是这样 $q$ 就无法满足 (a) 了。
+  \end{enumerate}
+\end{proof}
+
+\begin{examples}\mbox{}
+  \begin{enumerate}[label=(\alph*)]
+    \item Let $\{s_n\}$ be a sequence containing all rationals. Then every real number is a subsequential limit, and
+          \[ \lim_{n \to \infty} \sup s_n = + \infty, \qquad \lim_{n \to \infty} \inf s_n = - \infty \].
+    \item Let $s_n = (-1^n)/[1+(1/n)] = 1$. Then
+          \[ \lim_{n \to \infty} \sup s_n = 1, \qquad \lim_{n \to \infty} \inf s_n = -1 \]
+    \item For a real-valued sequence $\{s_n\},\ \lim_{n \to \infty} s_n = s$ if and only if
+          \[ \lim_{n \to \infty} \sup s_n = \lim_{n \to \infty} \inf s_n = s \]
+  \end{enumerate}
+\end{examples}
+
+本节由一个有用的 theorem 作为完结：
+
+\begin{theorem}
+  If $s_n \le t_n$ for $n \ge N$, where $N$ is fixed, then
+  \[ \lim_{n \to \infty} \inf s_n \le \lim_{n \to \infty} \inf t_n, \]
+  \[ \lim_{n \to \infty} \sup s_n \le \lim_{n \to \infty} \sup t_n. \]
+\end{theorem}
+
 \end{document}
