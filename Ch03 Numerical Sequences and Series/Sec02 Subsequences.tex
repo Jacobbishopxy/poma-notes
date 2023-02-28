@@ -37,8 +37,16 @@
   \end{enumerate}
 \end{proof}
 
-\anote 如果 $\{p_n\}$ 是紧度量空间 $X$ 中的序列，那么 $\{p_n\}$ 有某个子序列收敛到 $X$ 中的某个点；$R^k$ 中的每个有界序列包含
-收敛的子序列。
+\begin{anote}
+  如果 $\{p_n\}$ 是紧度量空间 $X$ 中的序列，那么 $\{p_n\}$ 有某个子序列收敛到 $X$ 中的某个点；$R^k$ 中的每个有界序列包含
+  收敛的子序列。
+
+  \begin{enumerate}[label=(\alph*)]
+    \item 值域是有限的情况下，其某个点 $p$ 可以成为某序列的收敛点；值域是无限的情况下，利用 Theorem 2.37 存在的极限点再加上 Theorem 2.20
+          所描述的极限点的邻域存在无限点可以证明子序列 $\{p_{n_i}\}$ 收敛于该极限点。
+    \item 而 (b) 则是作为 (a) 在 $R^k$ 度量空间上的延伸：$E$ 作为序列的值域，根据 Theorem 2.41 (a) 可知 (c)，即存在极限点。
+  \end{enumerate}
+\end{anote}
 
 \begin{theorem}
   The subsequential limits of a sequence $\{p_n\}$ in a metric space $X$ form a closed subset of $X$.
@@ -48,12 +56,19 @@
   令 $E^*$ 为 $\{p_n\}$ 所有子序列极限的集合，同时令 $q$ 为 $E^*$ 的一个极限点。我们需要证明 $q \in E^*$。
 
   选取 $n_1$ 满足 $p_{n_1} \ne q$。（如果没有这样的 $n_1$ 存在，那么 $E^*$ 只有一个点，这样便没有必要证明了。）
-  令 $\delta = d(q, p_{n_1})$。假设选取了 $n1, \dots, n_{i-1}$。因为 $q$ 是 $E^*$ 的一个极限点，那么存在一个 $x\in E^*$
+  令 $\delta = d(q, p_{n_1})$。假设选取了 $n_1, \dots, n_{i-1}$。因为 $q$ 是 $E^*$ 的一个极限点，那么存在一个 $x\in E^*$
   满足 $d(x,q) < 2^{-i} \delta$。因为 $x \in E^*$，存在一个 $n_i > n_{i-1}$ 满足 $d(x,p_{n_i}) < 2^{-i} \delta$。因此
   \[ d(q, p_{n_i}) \le 2^{1-i} \delta \]
   对于 $i = 1,2,3,\dots$。这意味着 $\{p_{n_i}\}$ 收敛于 $q$。因此 $q \in E^*$。
 \end{proof}
 
-\anote 度量空间 $X$ 里的序列 $\{p_n\}$ 的部分极限组成 $X$ 的闭子集。
+\begin{anote}\mbox{}\par
+  度量空间 $X$ 里的序列 $\{p_n\}$ 的部分极限组成 $X$ 的闭子集。
+
+  证明中所构建的不等式 $d(x, p_{n_i}) < \frac{1}{2^i} \delta$ 与 $d(q, p_{n_i}) < \frac{1}{2^i} \delta$ 两者相加可得
+  \[ d(x, p_{n_i}) + d(q, p_{n_i}) < 2 \cdot \frac{1}{2^i} \delta \]
+  而新的不等式左侧可知 $d(x, p_{n_i}) + d(q, p_{n_i}) \le d(q, p_{n_i})$，即 $d(q, p_{n_i}) \le 2^{1-i} \delta$。
+  随着 $i$ 逐渐增大 $2^{1-i} \delta$ 越小，即证明 $\{p_{n_i}\}$ 收敛于 $q$。
+\end{anote}
 
 \end{document}
