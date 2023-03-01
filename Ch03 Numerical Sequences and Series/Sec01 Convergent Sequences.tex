@@ -6,8 +6,8 @@
 
 \begin{definition}
   A sequence $\{P_n\}$ in a metric space $X$ is said to \textit{converge} if there is a point $p \in X$ with the
-  following property: For every $\epsilon > 0$ there is an integer $N$ such that $n \ge N$ implies that
-  $d(p_n,p) < \epsilon$. (Here $d$ denotes the distance in $X$.)
+  following property: For every $\varepsilon > 0$ there is an integer $N$ such that $n \ge N$ implies that
+  $d(p_n,p) < \varepsilon$. (Here $d$ denotes the distance in $X$.)
 
   In this case we also say that $\{p_n\}$ converges to $p$, or that $p$ is the limit of $\{p_n\}$
   [see Theorem 3.2(b)], and we write $p_n \to p$, or
@@ -35,8 +35,8 @@
 \end{definition}
 
 \begin{anote}
-  度量空间 $X$ 中的序列 $\{p_n\}$ 叫做\textbf{收敛的 converged}，如果有一个下述性质的点 $p \in X$：对每个 $\epsilon>0$，
-  有一个正整数 $N$，使得 $n \ge N$ 时，$d(p_n,p)<\epsilon$。也可以说 $\{p_n\}$ 收敛于 $p$，或者说 $p$ 是 $\{p_n\}$ 的极限，
+  度量空间 $X$ 中的序列 $\{p_n\}$ 叫做\textbf{收敛的 converged}，如果有一个下述性质的点 $p \in X$：对每个 $\varepsilon>0$，
+  有一个正整数 $N$，使得 $n \ge N$ 时，$d(p_n,p)<\varepsilon$。也可以说 $\{p_n\}$ 收敛于 $p$，或者说 $p$ 是 $\{p_n\}$ 的极限，
   写作 $p_n \to p$ 或 $\lim_{n \to \infty} p_n = p$。如果不收敛，则是\textbf{发散的 diverged}。
 
   收敛的定义不仅依赖于数列还依赖于 $X$，例如 ${1/n}$ 在 $R^1$ 中收敛与 $0$，但在正实数集合中不收敛。所以要强调\say{在 $X$ 中收敛}。
@@ -130,28 +130,28 @@
 
 \begin{proof}
   \begin{enumerate}[label=(\alph*)]
-    \item 假设 $p_n \to p$ 且令 $V$ 为 $p$ 的一个邻域。对于某些 $\epsilon > 0$ 而言，条件 $d(q,p)<\epsilon,q\in X$ 意味着
-          $q \in V$。与该 $\epsilon$ 关联的，存在 $N$ 使得 $n \ge N$ 满足 $d(p_n,p) < \epsilon$。因此 $n \ge N$ 表明
+    \item 假设 $p_n \to p$ 且令 $V$ 为 $p$ 的一个邻域。对于某些 $\varepsilon > 0$ 而言，条件 $d(q,p)<\varepsilon,q\in X$ 意味着
+          $q \in V$。与该 $\varepsilon$ 关联的，存在 $N$ 使得 $n \ge N$ 满足 $d(p_n,p) < \varepsilon$。因此 $n \ge N$ 表明
           $p_n \in V$。
 
-          相反的，假设 $p$ 的每个邻域包含所有的，且是有限个的 $p_n$。令 $\epsilon > 0$ 且 $V$ 为 $d(p,q)<\epsilon$ 的集合，
+          相反的，假设 $p$ 的每个邻域包含所有的，且是有限个的 $p_n$。令 $\varepsilon > 0$ 且 $V$ 为 $d(p,q)<\varepsilon$ 的集合，
           其中 $q \in X$。根据假设，存在 $N$（与该 $V$ 关联）使得 $n \ge N$ 时有 $p_n \in V$。因此如果 $n \ge N$ 时，有
-          $d(p_n,p) < \epsilon$；因此 $p_n \to p$。
-    \item 令 $\epsilon > 0$。存在整数 $N$，$N'$ 使得
+          $d(p_n,p) < \varepsilon$；因此 $p_n \to p$。
+    \item 令 $\varepsilon > 0$。存在整数 $N$，$N'$ 使得
           \begin{center}
-            $n \ge N $ 表明 $d(p_n,p)<\frac{\epsilon}{2}$
+            $n \ge N $ 表明 $d(p_n,p)<\frac{\varepsilon}{2}$
           \end{center}
           \begin{center}
-            $n \ge N' $ 表明 $d(p_n,p')<\frac{\epsilon}{2}$
+            $n \ge N' $ 表明 $d(p_n,p')<\frac{\varepsilon}{2}$
           \end{center}
           那么如果 $n \ge \max(N, N')$，我们有
-          \[d(p,p') \le d(p,p_n) + d(p_n,p') < \epsilon\]
-          因为 $\epsilon$ 是随机的，我们得出结论 $d(p,p') = 0$。
+          \[d(p,p') \le d(p,p_n) + d(p_n,p') < \varepsilon\]
+          因为 $\varepsilon$ 是随机的，我们得出结论 $d(p,p') = 0$。
     \item 假设 $p_n \to p$。存在一个整数 $N$ 使得 $n > N$ 表明 $d(p_n,p) < 1$。令
           \[r = \max \{1, d(p_1,p), \dots, d(p_N,p)\}\]
           那么对于 $n=1,2,3,\dots$ 有 $d(p_n, p) \le r$。
-    \item 对于每个正整数 $n$，有一个点 $p \in E$ 使得 $d(p_n,p)<1/n$。给定 $\epsilon>0$，选择 $N$ 使得 $N_{\epsilon}>1$。
-          如果 $n > N$，它遵循 $d(p_n,p) < \epsilon$。因此 $p_n \to p$。
+    \item 对于每个正整数 $n$，有一个点 $p \in E$ 使得 $d(p_n,p)<1/n$。给定 $\varepsilon>0$，选择 $N$ 使得 $N_{\varepsilon}>1$。
+          如果 $n > N$，它遵循 $d(p_n,p) < \varepsilon$。因此 $p_n \to p$。
   \end{enumerate}
   证明完毕。
 \end{proof}
@@ -181,40 +181,40 @@
 
 \begin{proof}
   \begin{enumerate}[label=(\alph*)]
-    \item 给定 $\epsilon > 0$，存在正整数 $N_1$, $N_2$ 使得
+    \item 给定 $\varepsilon > 0$，存在正整数 $N_1$, $N_2$ 使得
           \begin{center}
-            $n \ge N_1$ implies $|s_n - s| < \frac{\epsilon}{2}$,
+            $n \ge N_1$ implies $|s_n - s| < \frac{\varepsilon}{2}$,
           \end{center}
           \begin{center}
-            $n \ge N_2$ implies $|t_n - t| < \frac{\epsilon}{2}$.
+            $n \ge N_2$ implies $|t_n - t| < \frac{\varepsilon}{2}$.
           \end{center}
           如果 $N = \max(N_1, N_2)$，那么 $n \ge N$ 表明
-          \[|(s_n + t_n) - (s + t)| \le |s_n - s| + |t_n - t| < \epsilon\]
+          \[|(s_n + t_n) - (s + t)| \le |s_n - s| + |t_n - t| < \varepsilon\]
           (a) 证明完毕。
     \item 很简单，跳过。
     \item 使用等式
           \begin{equation}
             s_n t_n - st = (s_n - s)(t_n - t) + s(t_n - t) + t(s_n - s)
           \end{equation}
-          给定 $\epsilon > 0$，存在整数 $N_1, N_2$ 使得
+          给定 $\varepsilon > 0$，存在整数 $N_1, N_2$ 使得
           \begin{center}
-            $n \ge N_1$ 表明 $|s_n - s| < \sqrt{\epsilon}$
+            $n \ge N_1$ 表明 $|s_n - s| < \sqrt{\varepsilon}$
           \end{center}
           \begin{center}
-            $n \ge N_2$ 表明 $|t_n - t| < \sqrt{\epsilon}$
+            $n \ge N_2$ 表明 $|t_n - t| < \sqrt{\varepsilon}$
           \end{center}
           如果选取 $N = \max (N_1, N_2), n \ge N$ 表示
-          \[|(s_n = s)(t_n - t)| < \epsilon\]
+          \[|(s_n = s)(t_n - t)| < \varepsilon\]
           使得
           \[\lim_{n \to \infty}(s_n - s)(t_n - t) = 0\]
           现在将 (a) 与 (b) 应用到等式 (1) 上，可以得出结论
           \[\lim_{n \to \infty}(s_n t_n - st) = 0\]
     \item 选择 $m$ 使得 $|s_n - s| < \frac{1}{2}|s|$ 如果 $n \ge m$，可以得出
           \[|s_n| > \frac{1}{2}|s| \quad (n \ge m)\]
-          给定 $\epsilon > 0$，存在一个整数 $N > m$ 使得 $n \ge N$ 表明
-          \[|s_n - s| < \frac{1}{2}|s|^2 \epsilon\]
+          给定 $\varepsilon > 0$，存在一个整数 $N > m$ 使得 $n \ge N$ 表明
+          \[|s_n - s| < \frac{1}{2}|s|^2 \varepsilon\]
           因此，对于 $n \ge N$ 有
-          \[\biggl|\frac{1}{s_n}-\frac{1}{s}\biggr|=\biggl|\frac{s_n-s}{s_n s}\biggr|<\frac{2}{|s|^2}|s_n-s|<\epsilon\]
+          \[\biggl|\frac{1}{s_n}-\frac{1}{s}\biggr|=\biggl|\frac{s_n-s}{s_n s}\biggr|<\frac{2}{|s|^2}|s_n-s|<\varepsilon\]
   \end{enumerate}
 \end{proof}
 
@@ -253,23 +253,23 @@
   \[|\alpha_{j,n} - \alpha_j| \le |\mathbf{x}_n - \mathbf{x}|\]
   遵循 $R^k$ 的定理，即 (2) 成立。
 
-  反过来，如果 (2) 成立，那么每个 $\epsilon > 0$ 存在一个关联的整数 $N$ 使得 $n \ge N$ 满足
-  \[|\alpha_{j,n} - \alpha_j| < \frac{\epsilon}{\sqrt{k}} \qquad (1 \le j \le k)\]
+  反过来，如果 (2) 成立，那么每个 $\varepsilon > 0$ 存在一个关联的整数 $N$ 使得 $n \ge N$ 满足
+  \[|\alpha_{j,n} - \alpha_j| < \frac{\varepsilon}{\sqrt{k}} \qquad (1 \le j \le k)\]
   因此 $n \ge N$ 表明
-  \[|\mathbf{x}_n - \mathbf{x}| = \biggl\{\sum_{j = 1}^{k} |\alpha_{j,n} - \alpha_j|^2\biggr\}^{1/2} < \epsilon\]
+  \[|\mathbf{x}_n - \mathbf{x}| = \biggl\{\sum_{j = 1}^{k} |\alpha_{j,n} - \alpha_j|^2\biggr\}^{1/2} < \varepsilon\]
   使得 $\mathbf{x}_n \to \mathbf{x}$。(a) 证明完毕。
 
   根据 (a) 与 Theorem 3.3 可得 (b)。
 \end{proof}
 
 \begin{anote}
-  在通过 (2) 证明 $\{\mathbf{x}_n\}$ 收敛于 $\{\mathbf{x}\}$ 时，不等式 $|\alpha_{j,n} - \alpha_j| < \frac{\epsilon}{\sqrt{k}}$
-  右侧的 $\frac{\epsilon}{\sqrt{k}}$ 用于构建接下来的欧式距离公式。以下为构建过程：
+  在通过 (2) 证明 $\{\mathbf{x}_n\}$ 收敛于 $\{\mathbf{x}\}$ 时，不等式 $|\alpha_{j,n} - \alpha_j| < \frac{\varepsilon}{\sqrt{k}}$
+  右侧的 $\frac{\varepsilon}{\sqrt{k}}$ 用于构建接下来的欧式距离公式。以下为构建过程：
   \begin{align*}
-    |\alpha_{j,n} - \alpha_j| < \frac{\epsilon}{\sqrt{k}}     \\
-    |\alpha_{j,n} - \alpha_j| \cdot \sqrt{k} < \epsilon       \\
-    (|\alpha_{j,n} - \alpha_j| \cdot \sqrt{k})^2 < \epsilon^2 \\
-    |\alpha_{j,n} - \alpha_j|^2 \cdot k < \epsilon^2          \\
+    |\alpha_{j,n} - \alpha_j| < \frac{\varepsilon}{\sqrt{k}}     \\
+    |\alpha_{j,n} - \alpha_j| \cdot \sqrt{k} < \varepsilon       \\
+    (|\alpha_{j,n} - \alpha_j| \cdot \sqrt{k})^2 < \varepsilon^2 \\
+    |\alpha_{j,n} - \alpha_j|^2 \cdot k < \varepsilon^2          \\
   \end{align*}
   那么对于 $1 \le j \le k$ 而言，有：
   \begin{align*}
@@ -277,19 +277,19 @@
     |\alpha_{2,n} - \alpha_2|^2 \cdot k +
     \cdots +
     |\alpha_{k,n} - \alpha_k|^2 \cdot k <
-    \epsilon^2 + \epsilon^2 + \cdots + \epsilon^2 \\
+    \varepsilon^2 + \varepsilon^2 + \cdots + \varepsilon^2 \\
   \end{align*}
   即：
   \begin{align*}
-    \sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2 \cdot k < k \cdot \epsilon^2 \\
-    k \cdot \sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2 < k \cdot \epsilon^2 \\
-    \sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2 <  \epsilon^2                \\
-    (\sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2)^{1/2} <  \epsilon          \\
+    \sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2 \cdot k < k \cdot \varepsilon^2 \\
+    k \cdot \sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2 < k \cdot \varepsilon^2 \\
+    \sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2 <  \varepsilon^2                \\
+    (\sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2)^{1/2} <  \varepsilon          \\
   \end{align*}
   该不等式左侧即为欧式距离公式，因此有：
   \[|\mathbf{x}_n - \mathbf{x}| = (\sum_{k}^{j=1} |\alpha_{j,n} - \alpha_j|^2)^{1/2}\]
   那么根据 Definition 3.1，即收敛的定义：
-  \[|\mathbf{x}_n - \mathbf{x}| < \epsilon \]
+  \[|\mathbf{x}_n - \mathbf{x}| < \varepsilon \]
   可得：
   \[\mathbf{x}_n \to \mathbf{x}\]
 \end{anote}

@@ -4,7 +4,7 @@
 
 \subsection*{Some Special Sequences}
 
-我们现在可以计算一些常见序列的极限了。这些证明都将基于以下观察：如果对于 $n \ge N$ 有 $0 \le x_n \le s_n$，这里 $N$ 为个固定的数，
+我们现在可以计算一些常见序列的极限了。这些证明都将基于以下观察：如果对于 $n \ge N$ 有 $0 \le x_n \le s_n$，这里 $N$ 为某固定的数，
 那么如果 $s_n \to 0$ 则有 $x_n \to 0$。
 
 \begin{theorem}\mbox{}
@@ -19,7 +19,7 @@
 
 \begin{proof}
   \begin{enumerate}[label=(\alph*)]
-    \item 取 $n > (1/\epsilon)^{1/p}$。（注意这里使用了实数系统的阿基米德性质。）
+    \item 取 $n > (1/\varepsilon)^{1/p}$。（注意这里使用了实数系统的阿基米德性质。）
     \item 如果 $p > 1$，令 $x_n = \sqrt[n]{p} - 1$。那么 $x_n > 0$，且根据二项式定理，
           \[ 1 + nx_n \le (1 + x_n)^n = p \]
           使得

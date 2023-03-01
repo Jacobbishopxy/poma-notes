@@ -5,13 +5,13 @@
 \subsection*{Cauchy Sequences}
 
 \begin{definition}
-  A sequence $\{p_n\}$ in a metric space $X$ is said to be a \textit{Cauchy} sequence if for every $\epsilon > 0$
-  there is an integer $N$ such that $d(p_n, p_m) < \epsilon$ if $n \ge N$ and $m \ge N$.
+  A sequence $\{p_n\}$ in a metric space $X$ is said to be a \textit{Cauchy} sequence if for every $\varepsilon > 0$
+  there is an integer $N$ such that $d(p_n, p_m) < \varepsilon$ if $n \ge N$ and $m \ge N$.
 \end{definition}
 
 \begin{anote}
-  度量空间 $X$ 中的序列 $\{p_n\}$ 叫做 \textbf{柯西序列 Cauchy}，如果对于任何 $\epsilon > 0$ 存在正整数 $N$，
-  只要 $m, n \ge N$ 就有 $d(p_n,p_m) < \epsilon$。根据 Wikipedia：
+  度量空间 $X$ 中的序列 $\{p_n\}$ 叫做 \textbf{柯西序列 Cauchy}，如果对于任何 $\varepsilon > 0$ 存在正整数 $N$，
+  只要 $m, n \ge N$ 就有 $d(p_n,p_m) < \varepsilon$。根据 Wikipedia：
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{\subfix{../images/Cauchy_sequence.png}}\par
@@ -52,16 +52,16 @@ $\{p_n\}$ 是一个\textbf{柯西序列} 当且仅当
     \item 因为 $E \subset \overline{E}$，那么可以清楚的知道
           \[diam\ E \le diam\ \overline{E}\]
 
-          选取 $\epsilon > 0$，$p \in \overline{E}, q \in \overline{E}$。根据 $\overline{E}$ 的定义，$E$ 中存在点 $p'$，$q‘$，
-          满足 $d(p,p') < \epsilon,\ d(q,q') < \epsilon$。因此
+          选取 $\varepsilon > 0$，$p \in \overline{E}, q \in \overline{E}$。根据 $\overline{E}$ 的定义，$E$ 中存在点 $p'$，$q‘$，
+          满足 $d(p,p') < \varepsilon,\ d(q,q') < \varepsilon$。因此
           \begin{align*}
             \mathcal{} d(p,q) & \le d(p,p') + d(p',q') + d(q',q) \\
-                              & < 2\epsilon + d(p',q')           \\
-                              & \le 2\epsilon + diam\ E.
+                              & < 2\varepsilon + d(p',q')        \\
+                              & \le 2\varepsilon + diam\ E.
           \end{align*}
           它遵循
-          \[diam\ \overline{E} \le 2\epsilon + diam\ E,\]
-          且因为 $\epsilon$ 是随机的，(a) 则被证明。
+          \[diam\ \overline{E} \le 2\varepsilon + diam\ E,\]
+          且因为 $\varepsilon$ 是随机的，(a) 则被证明。
     \item 令 $K = \bigcap_1^{\infty} K_n$。根据 Theorem 2.36，$K$ 为非空。如果 $K$ 包含一个以上的点，那么 $diam\ K > 0$。
           但是对于每个 $n$ 而言，$K_n \supset K$，所以 $diam\ K_n \ge diam\ K$。这与假设的 $diam\ K_n \to 0$ 相悖。
   \end{enumerate}
@@ -89,9 +89,9 @@ $\{p_n\}$ 是一个\textbf{柯西序列} 当且仅当
 
 \begin{proof}
   \begin{enumerate}[label=(\alph*)]
-    \item 如果 $p_n \to p$ 且 $\epsilon > 0$，存在一个整数 $N$ 对于所有的 $n \ge N$ 满足 $d(p,p_n) < \epsilon$。因此
+    \item 如果 $p_n \to p$ 且 $\varepsilon > 0$，存在一个整数 $N$ 对于所有的 $n \ge N$ 满足 $d(p,p_n) < \varepsilon$。因此
           只要 $n \ge N$ 同时 $m \ge N$，那么
-          \[ d(p_n, p_m) \le d(p_n, p) + d(p, p_m) < 2\epsilon \]
+          \[ d(p_n, p_m) \le d(p_n, p) + d(p, p_m) < 2\varepsilon \]
           因此 $\{p_n\}$ 是一个柯西序列。
     \item 令 $\{p_n\}$ 为一个在紧空间 $x$ 的柯西序列。对于 $N=1,2,3,\dots$，令 $E_N$ 为一个包含了 $P_N,P_{N+1},P_{N+3},\dots$
           的集合。那么根据 Definition 3.9 与 Theorem 3.10(a)，有
@@ -103,9 +103,9 @@ $\{p_n\}$ 是一个\textbf{柯西序列} 当且仅当
 
           Theorem 3.10(b) 说明存在一个唯一的 $p \in X$ 位于每个 $\overline{E}_N$ 中。
 
-          令 $\epsilon > 0$，根据 (3) 存在一个整数 $N_0$ 当 $N \ge N_0$时，满足 $\overline{E}_N < \epsilon$。又因为
-          $p \in \overline{E}_N$，对于每个 $q \in \overline{E}_N$ 它遵循 $d(p,q) < \epsilon$，所以对于每个 $q \in E_n$
-          也成立。换言之，如果 $n \ge N_0$，那么就有 $d(p,p_n)<\epsilon$。即 $p_n \to p$。
+          令 $\varepsilon > 0$，根据 (3) 存在一个整数 $N_0$ 当 $N \ge N_0$时，满足 $\overline{E}_N < \varepsilon$。又因为
+          $p \in \overline{E}_N$，对于每个 $q \in \overline{E}_N$ 它遵循 $d(p,q) < \varepsilon$，所以对于每个 $q \in E_n$
+          也成立。换言之，如果 $n \ge N_0$，那么就有 $d(p,p_n)<\varepsilon$。即 $p_n \to p$。
     \item 令 $\{\mathbf{x}_n\}$ 为一个在 $R^k$ 上的柯西序列。如同 (b) 那样定义 $E_N$，用 $\mathbf{x}_i$ 替换 $p_i$。对于某些
           $N$ 而言，$diam\ E_N<1$。$\{\mathbf{x}_n\}$ 的值域是 $E_N$ 与有限集 $\{\mathbf{x}_1,\dots,\mathbf{x}_{N-1}\}$
           的并集。因此 $\{\mathbf{x}_n\}$ 是有界的。因为每个 $R^k$ 的有界子集在 $R^k$ 中拥有紧闭包（Theorem 2.41），(c) 遵循了
@@ -143,10 +143,10 @@ Theorem 3.2(c) 与 Definition 3.1 中的 example(d) 说明了收敛的序列是�
 \begin{proof}
   假设 $s_n \le s_{n+1}$（另一方向的证明类似）。令 $E$ 为 $\{s_n\}$ 的值域。如果 $\{s_n\}$ 有界，令 $s$ 为 $E$ 的最小上界。那么有
   \[ s_n \le s \qquad (n=1,2,3,\dots) \]
-  对于每个 $\epsilon > 0$，有一个整数 $N$ 满足
-  \[ s - \epsilon < s_N \le s \]
-  否则 $s - \epsilon$ 将会变为 $E$ 的一个上界。由于 $\{s_n\}$ 递增，$n \ge N$ 因此说明
-  \[ s - \epsilon < s_n \le s \]
+  对于每个 $\varepsilon > 0$，有一个整数 $N$ 满足
+  \[ s - \varepsilon < s_N \le s \]
+  否则 $s - \varepsilon$ 将会变为 $E$ 的一个上界。由于 $\{s_n\}$ 递增，$n \ge N$ 因此说明
+  \[ s - \varepsilon < s_n \le s \]
   即 $\{s_n\}$ 收敛（于 $s$）。
 
   另一方向的证明遵从 Theorem 3.2(c)。
