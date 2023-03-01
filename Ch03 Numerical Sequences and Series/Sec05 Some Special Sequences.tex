@@ -7,7 +7,7 @@
 我们现在可以计算一些常见序列的极限了。这些证明都将基于以下观察：如果对于 $n \ge N$ 有 $0 \le x_n \le s_n$，这里 $N$ 为个固定的数，
 那么如果 $s_n \to 0$ 则有 $x_n \to 0$。
 
-\begin{theorem}
+\begin{theorem}\mbox{}
   \begin{enumerate}[label=(\alph*)]
     \item If $p > 0$, then $\lim_{n \to \infty} \frac{1}{n^p} = 0$.
     \item If $p > 0$, then $\lim_{n \to \infty} \sqrt[n]{p} = 1$.
@@ -17,5 +17,25 @@
   \end{enumerate}
 \end{theorem}
 
+\begin{proof}
+  \begin{enumerate}[label=(\alph*)]
+    \item 取 $n > (1/\epsilon)^{1/p}$。（注意这里使用了实数系统的阿基米德性质。）
+    \item 如果 $p > 1$，令 $x_n = \sqrt[n]{p} - 1$。那么 $x_n > 0$，且根据二项式定理，
+          \[ 1 + nx_n \le (1 + x_n)^n = p \]
+          使得
+          \[ 0 < x_n \le \frac{p-1}{n} \]
+          因此 $x_n \to 0$。如果 $p = 1$，(b) 则无需证明，如果 $0 < p < 1$，则通过倒数可以得出结论。
+    \item 令 $x_n = \sqrt[n]{n} - 1$。那么当 $x_n \ge 0$，且根据二项式定理，
+          \[ n = (1 + x_n)^n \ge \frac{n(n-1)}{2} x_n^2 \]
+          因此
+          \[ 0 \le x_n \le \sqrt{\frac{2}{n-1}} \qquad (n \ge 2) \]
+    \item 令 $k$ 为一个整数，满足 $k > \alpha, k > 0$。对于 $n > 2k$，
+          \[ (1+p)^n>\binom{n}{k}p^k=\frac{n(n-1)\cdots(n-k+1)}{k!}p^k>\frac{n^kp^k}{2^kk!}  \]
+          因此
+          \[ 0 < \frac{n^{\alpha}}{(1+p)^n} < \frac{2^kk!}{p^k} n^{\alpha-k} \qquad (n>2k)\]
+          由于 $\alpha - k < 0$，那么根据 (a) 有 $n^{\alpha-k} \to 0$。
+    \item 在 (d) 中取 $\alpha = 0$。
+  \end{enumerate}
+\end{proof}
 
 \end{document}
