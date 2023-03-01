@@ -4,6 +4,38 @@
 
 \subsection*{Series}
 
-WIP
+在本章的剩余部分中，所有的序列与数列都被视作复数，除了显式的提出不为复数的情况。
+
+\begin{definition}
+  Given a sequence $\{a_n\}$, we use the notation
+  \[ \sum_{n=p}^{q} a_n \qquad (p \le q) \]
+  to denote the sum $ a_p + a_{p+1} + \cdots + a_q$. With $\{a_n\}$ we associate a sequence $\{s_n\}$, where
+  \[ s_n = \sum_{k=1}^{n} a_k. \]
+  For $\{s_n\}$ we also use the symbolic expression
+  \[ a_1 + a_2 + a_3 + \cdots \]
+  or, more concisely,
+  \begin{equation}
+    \sum_{n=1}^{\infty} a_n.
+  \end{equation}
+
+  The symbol (4) we call an \textit{infinite series}, or just a \textit{series}. The numbers $s_n$ are called
+  the \textit{partial sums} of the series. If $\{s_n\}$ converges to $s$, we say that the series $converges$,
+  and write
+  \[ \sum_{n=1}^{\infty} = s. \]
+  The number $s$ is called the sum of the series; but it should be clearly understood that \textit{$s$ is the
+    limit of a sequence of sums}, and is not obtained simply by addition.
+
+  If $\{s_n\}$ diverges, the series is said to diverge.
+
+  Sometimes, for convenience of notation, we shall consider series of the form
+  \begin{equation}
+    \sum_{n=0}^{\infty} a_n.
+  \end{equation}
+  And frequently, when there is no possible ambiguity, or when the distinction is immaterial, we shall simply
+  write $\sum a_n$ in place of (4) or (5).
+
+  It is clear that every theorem about sequences can be stated in terms of series (putting $a_1 = s_1$, and
+  $a_n = s_n - s_{n-1}$ for $n > 1$), and vice versa. But it is nevertheless useful to consider both concepts.
+\end{definition}
 
 \end{document}

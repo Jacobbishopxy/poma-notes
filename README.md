@@ -30,9 +30,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [Some Special Sequences](./Ch03%20Numerical%20Sequences%20and%20Series/Sec05%20Some%20Special%20Sequences.tex)
 
-   <!--    1. [Series](./Ch03%20Numerical%20Sequences%20and%20Series/Sec06%20Series.tex)
+   1. [Series](./Ch03%20Numerical%20Sequences%20and%20Series/Sec06%20Series.tex)
 
-   1. [Series of Nonnegative Terms](./Ch03%20Numerical%20Sequences%20and%20Series/Sec07%20Series%20of%20Nonnegative%20Terms.tex)
+   <!--    1. [Series of Nonnegative Terms](./Ch03%20Numerical%20Sequences%20and%20Series/Sec07%20Series%20of%20Nonnegative%20Terms.tex)
 
    1. [The Number e](./Ch03%20Numerical%20Sequences%20and%20Series/Sec08%20The%20Number%20e.tex)
 
