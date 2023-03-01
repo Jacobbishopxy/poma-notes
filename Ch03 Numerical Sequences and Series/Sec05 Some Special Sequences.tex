@@ -30,12 +30,52 @@
           因此
           \[ 0 \le x_n \le \sqrt{\frac{2}{n-1}} \qquad (n \ge 2) \]
     \item 令 $k$ 为一个整数，满足 $k > \alpha, k > 0$。对于 $n > 2k$，
-          \[ (1+p)^n>\binom{n}{k}p^k=\frac{n(n-1)\cdots(n-k+1)}{k!}p^k>\frac{n^kp^k}{2^kk!}  \]
+          \[ (1+p)^n>\tbinom{n}{k}p^k=\frac{n(n-1)\cdots(n-k+1)}{k!}p^k>\frac{n^kp^k}{2^kk!}  \]
           因此
           \[ 0 < \frac{n^{\alpha}}{(1+p)^n} < \frac{2^kk!}{p^k} n^{\alpha-k} \qquad (n>2k)\]
           由于 $\alpha - k < 0$，那么根据 (a) 有 $n^{\alpha-k} \to 0$。
     \item 在 (d) 中取 $\alpha = 0$。
   \end{enumerate}
 \end{proof}
+
+\begin{anote}\mbox{}\par
+  (b) 中的 $0 < p < 1$ 的情况下，利用倒数即令 $x_n = \frac{1}{\sqrt[n]{p}} - 1$，那么
+  \begin{gather*}
+    (x_n + 1)^n = \frac{1}{p}              \\
+    nx_n + 1 \le (x_n + 1)^n = \frac{1}{p} \\
+    nx_n + 1 \le \frac{1}{p}               \\
+    x_n \le \frac{\frac{1}{p} - 1}{n}      \\
+    x_n \le \frac{1-p}{np}
+  \end{gather*}
+  随着 $n$ 增大 $x_n$ 趋近于 $0$，即 $x_n \to 0$。
+
+  (d) 中的假设 $(1 + p)^n > \tbinom{n}{k} p^k$ 可以分别将 $k=1$ 以及 $k=n$ 带入，对不等式进行验证。当 $k=1$ 时
+  \[ (1 + p)^n > \tbinom{n}{1} p^1 = np \]
+  显然不等式成立；当 $k=n$ 时
+  \[ (1 + p)^n > \tbinom{n}{n} p^n = p^n \]
+  不等式也同样成立。那么在 $\tbinom{n}{k} p^k$ 展开后的分子满足
+  \begin{gather*}
+    n > \frac{n}{2} \\
+    (n-1) > \frac{n}{2} \\
+    \cdots \\
+    (n-k+1) > \frac{n}{2}
+  \end{gather*}
+  其中最后一项可以简化为 $n > 2k - 2$，而证明中给定的假设是 $n > 2k$，因此同样满足不等式。将上述不等式相乘即
+  \[ (n)(n-1)\cdots(n-k+1) > (\frac{n}{2})^k \]
+  即
+  \[ \frac{(n)(n-1)\cdots(n-k+1)}{k!} p^k > \frac{n^kp^k}{2^kk!} \]
+  那么可以得到
+  \begin{gather*}
+    (1+p)^n > \frac{n^kp^k}{2^kk!} \\
+    \frac{2^kk!}{p^k} > \frac{n^k}{(1+p)^n} \\
+  \end{gather*}
+  将不等式右侧的 $n^k$ 转换为 $n^{k + \alpha - \alpha}$，也就是
+  \begin{gather*}
+    \frac{2^kk!}{p^k} > \frac{n^{k + \alpha - \alpha}}{(1+p)^n} \\
+    \frac{2^kk!}{p^k} > \frac{n^{\alpha}}{(1+p)^n} \cdot n^{k - \alpha} \\
+    \frac{n^{\alpha}}{(1+p)^n} < \frac{2^kk!}{p^k} n^{\alpha-k}
+  \end{gather*}
+  又因为假设了 $k > \alpha$，最后通过 (a) 即 $\lim_{n \to \infty} n^{\alpha - k} = 0$。
+\end{anote}
 
 \end{document}
