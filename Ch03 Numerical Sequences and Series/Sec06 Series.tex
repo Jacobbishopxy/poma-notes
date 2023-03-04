@@ -4,7 +4,7 @@
 
 \subsection*{Series}
 
-在本章的剩余部分中，所有的序列与数列都被视作复数，除了显式的声明不为复数的情况。
+在本章的剩余部分中，所有的序列与级数都被视作复数，除了显式的声明不为复数的情况。
 
 \begin{definition}
   Given a sequence $\{a_n\}$, we use the notation
@@ -37,5 +37,78 @@
   It is clear that every theorem about sequences can be stated in terms of series (putting $a_1 = s_1$, and
   $a_n = s_n - s_{n-1}$ for $n > 1$), and vice versa. But it is nevertheless useful to consider both concepts.
 \end{definition}
+
+% TODO
+
+\begin{anote}\mbox{}\par
+  对序列 $a_n$，令 $s_n = \sum_{k=1}^{n} a_k$ 为\textbf{部分和}，$\sum_{n=1}^{\infty} a_n$ 叫做无穷级数
+  （\textit{infinite series}），简称级数（\textit{series}）。
+
+  如果 $s_n$ 收敛，那么级数收敛并记为 $\sum_{n=1}^{\infty} a_n = s$；如果 $s_n$ 发散，那么级数发散。
+\end{anote}
+
+\begin{theorem}
+  $\Sigma a_n$ converges if and only if for every $\varepsilon > 0$ there is an integer $N$ such that
+  \begin{equation}
+    \Bigg| \sum_{k=n}^{m} a_k \Bigg| \le \varepsilon
+  \end{equation}
+  if $m \ge n \ge N$.
+\end{theorem}
+
+\begin{anote}
+  柯西准则 Theorem 3.11 可以重新表述为，$\Sigma a_n$ 收敛，当且仅当，对于任意 $\varepsilon > 0$，存在级数 $N$，使得
+  $m \ge n \ge N$ 时 $\Bigg| \sum_{k=n}^{m} a_k \Bigg| \le \varepsilon$。
+\end{anote}
+
+尤其是在取值 $m = n$ 的时候 (6) 则会变为
+\[|a_n| \le \varepsilon \qquad (n \ge N).\]
+换言之：
+
+\begin{theorem}
+  If $\Sigma a_n$ converges, then $\lim_{n \to \infty} a_n = 0$.
+\end{theorem}
+
+然而其中 $a_n \to 0$ 并不能完全确保 $\Sigma a_n$ 的收敛。例如级数
+
+\[\sum_{n=1}^{\infty} \frac{1}{n}\]
+
+是发散的；我们将在 Theorem 3.28 中进行证明。
+
+Theorem 3.14 中所提出的单调序列，也有着与级数所直接对应的部分。
+
+\anote 如果 $\Sigma a_n$ 收敛，则 $\lim_{n \to \infty} a_n = 0$。
+
+\begin{theorem}
+  A series of nonnegative terms converges if and only if its partial sums form a bounded sequence.
+\end{theorem}
+
+\anote 各项为非负的级数收敛，当且仅当其部分和构成有界数列。
+
+我们现在将收敛测试转向称为\say{比较测试}。
+
+\begin{theorem}
+  \begin{enumerate}[label=(\alph*)]
+    \item If $|a_n| \le c_n$ for $n \ge N_0$, where $N_0$ is some fixed integer, and if $\Sigma c_n$ converges,
+          then $\Sigma a_n$ converges.
+    \item If $a_n \ge d_n \ge 0$ for $n \ge N_0$, and if $\Sigma d_n$ diverges, then $\Sigma a_n$ diverges.
+  \end{enumerate}
+\end{theorem}
+
+注意 (b) 仅作用于级数的非负部分 $a_n$。
+
+\begin{proof}
+  给定 $\varepsilon > 0$，根据柯西准则，存在 $N \ge N_0$ 满足 $m \ge n \ge N$ 使得
+  \[ \sum_{k=n}^{m} c_k \le \varepsilon \]
+  因此
+  \[ \Bigg| \sum_{k=n}^{m} a_k \Bigg| \le \sum_{k=n}^{m} |a_k| \le \sum_{k=n}^{m} c_k \le \varepsilon \]
+  且 (a) 成立。
+
+  接着，(b) 遵循 (a)，如果 $\Sigma a_n$ 收敛，所以 $\Sigma d_n$（注意 (b) 同样遵循 Theorem 3.24）。
+\end{proof}
+
+比较测试是非常有用的；为了更效率的使用，我们需要熟悉一些级数的非负项是否为收敛或者发散。
+
+\anote (a) 如果 $N_0$ 是某个固定的正整数。$n \ge N_0$ 时 $|a_n| \le c_n$ 而且 $\Sigma a_n$ 也收敛；(b) 如果当 $n \ge N_0$ 时
+$a_n \ge d_n \ge 0$ 而且 $\Sigma d_n$ 发散，那么 $\Sigma a_n$ 也发散。
 
 \end{document}
