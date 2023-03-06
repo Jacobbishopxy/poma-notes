@@ -4,6 +4,31 @@
 
 \subsection*{Series of Nonnegative Terms}
 
-WIP
+\begin{theorem}
+  If $0 \le x < 1$, then
+  \[ \sum_{n=0}^{\infty} x^n = \frac{1}{1-x}. \]
+  If $x \ge 1$, the series diverges.
+\end{theorem}
+
+\begin{proof}
+  如果 $x \ne 1$，
+  \[ s_n = \sum_{k=0}^{n} x^k = \frac{1-x^{n+1}}{1-x} \]
+  如果令 $n \to \infty$，对于 $x=1$ 而言，有
+  \[ 1 + 1 + 1 + \cdots \]
+  即明显是发散的。
+\end{proof}
+
+在应用中出现的很多案例，级数部分是单调递减的。下面的柯西定理因此特别有趣。该定理显著的特征是 $\{a_n\}$ 的一个相当 \say{薄} 的子序列决定了 $\Sigma a_n$
+的收敛或发散。
+
+\begin{theorem}
+  Suppose $a_1 \ge a_2 \ge a_3 \ge \cdots \ge 0$. Then the series $\Sigma_{n=1}^{\infty} a_n$ converges if and only if the series
+  \begin{equation}
+    \sum_{k=0}^{\infty} 2^k a_{2^k} = a_1 + 2a_2 + 4a_4 + 8a_8 + \cdots
+  \end{equation}
+  converges.
+\end{theorem}
+
+% TODO
 
 \end{document}
