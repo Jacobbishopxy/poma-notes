@@ -29,6 +29,55 @@
   converges.
 \end{theorem}
 
+\begin{proof}
+  根据 Theorem 3.24，足够考虑部分和的边界。令
+  \begin{gather*}
+    s_n = a_1 + a_2 + \cdots + a_n, \\
+    t_k = a_1 + 2a_2 + \cdots + 2^k a_{2^k}.
+  \end{gather*}
+
+  对于 $n < 2^k$，有
+  \begin{align*}
+    \mathcal{} s_n & \le a_1 + (a_2 + a_3) + \cdots + (a_{2^k} + \cdots + a_{2^{k+1}-1}) \\
+                   & \le a_1 + 2a_2 + \cdots + 2^k a_{2^k}                               \\
+                   & = t_k,
+  \end{align*}
+  因此
+  \begin{equation}
+    s_n \le t_k
+  \end{equation}
+  另一方面，如果 $n > 2^k$，
+  \begin{align*}
+    \mathcal{} s_n & \ge a_1 + a_2 + (a_3 + a_4) + \cdots + (a_{2^{k-1}+1} + \cdots + a_{2^k}) \\
+                   & \ge \frac{1}{2}a_1 + a_2 + 2a_4 + \cdots + 2^{k-1}a_{2^k}                 \\
+                   & = \frac{1}{2} t_k,
+  \end{align*}
+  因此
+  \begin{equation*}
+    2s_n \ge t_k.
+  \end{equation*}
+
+  根据 (8) 与 (9)，序列 $\{s_n\}$ 与 $\{t_k\}$ 要么同时是有界的，要么是同时是无界的。证明完毕。
+\end{proof}
+
+\begin{anote}
+  令 $a_1 \ge a_2 \ge a_3 \ge \cdots \ge 0$，那么 $\Sigma_{n=1}^{\infty} a_n$ 收敛，当且仅当 $\Sigma_{n=0}^{\infty}2^k a_{2^k}$ 收敛。
+\end{anote}
+
+% TODO
+
+\begin{theorem}
+  $\sum \frac{1}{n^p}$ converges if $p > 1$ and diverges if $p \le 1$.
+\end{theorem}
+
+\begin{proof}
+  如果 $p \le 0$，遵循 Theorem 3.23 收敛。如果 $p > 0$，则 Theorem 3.27 是适当的，且将带来级数
+  \[ \sum_{k=0}^{\infty} 2^k \cdot \frac{1}{2^{kp}} = \sum_{k=0}^{\infty} 2^{(1-p)k} \]
+  现在，$2^{1-p} < 1$ 当且仅当 $1-p < 0$，那么该结果咋遵循了几何级数的比较测试（在 Theorem 3.26 中取 $x = 2^{1-p}$）。
+\end{proof}
+
+\anote 若 $p>1$，$\Sigma\frac{1}{n^p}$ 收敛；若 $p\le1$，它就发散。
+
 % TODO
 
 \end{document}
