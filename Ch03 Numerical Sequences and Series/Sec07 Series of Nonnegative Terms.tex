@@ -53,9 +53,9 @@
                    & = \frac{1}{2} t_k,
   \end{align*}
   因此
-  \begin{equation*}
+  \begin{equation}
     2s_n \ge t_k.
-  \end{equation*}
+  \end{equation}
 
   根据 (8) 与 (9)，序列 $\{s_n\}$ 与 $\{t_k\}$ 要么同时是有界的，要么是同时是无界的。证明完毕。
 \end{proof}
@@ -77,6 +77,41 @@
 \end{proof}
 
 \anote 若 $p>1$，$\Sigma\frac{1}{n^p}$ 收敛；若 $p\le1$，它就发散。
+
+% TODO
+
+\begin{theorem}
+  If $p > 1$,
+  \begin{equation}
+    \sum_{n=2}^{\infty} \frac{1}{n(\log n)^p}
+  \end{equation}
+  converges; if $p \le 1$, the series diverges.
+\end{theorem}
+
+\begin{remark}
+  \say{log n} 意味着 $n$ 在基 $e$ 的对数；$e$ 将在后续 Definition 3.30 中进行定义。我们令级数从 $n = 2$ 开始，因为 $\log 1 = 0$。
+\end{remark}
+
+\begin{proof}
+  对数函数的单调性（将会在第八章中做详细的讨论）表明 $\{\log n\}$ 递增。因此 $\{1/n \log n\}$ 递减，可以应用 Theorem 3.27 在 (10)上；
+  这将给我们一个级数
+  \begin{equation}
+    \sum_{k=1}^{\infty} 2^k \cdot \frac{1}{2^k(\log 2^k)} =
+    \sum_{k=1}^{\infty} \frac{1}{(k \log 2)^p} =
+    \frac{1}{(\log 2)^p} \sum_{k=1}^{\infty}\frac{1} {k^p}
+  \end{equation}
+  且 Theorem 3.29 遵循 Theorem 3.28.
+
+  该过程很明显是连续的。例如，
+  \begin{equation}
+    \sum_{n=3}^{\infty} \frac{1}{n \log n \log \log n}
+  \end{equation}
+  是发散的，而
+  \begin{equation}
+    \sum_{n=3}^{\infty} \frac{1}{n \log n(\log \log n)^2}
+  \end{equation}
+  是收敛的。
+\end{proof}
 
 % TODO
 
