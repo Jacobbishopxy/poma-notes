@@ -4,6 +4,71 @@
 
 \subsection*{The Number e}
 
-WIP
+\begin{definition}
+  \[ e = \sum_{n=0}^{\infty} \frac{1}{n!} \]
+  这里 $n! = 1 \cdot 2 \cdot 3 \cdots n$ 如果 $n \ge 1$，且 $0! = 1$。
+
+  因为
+  \begin{align*}
+    \mathcal{} s_n & = 1 + 1 + \frac{1}{1 \cdot 2} + \frac{1}{1 \cdot 2 \cdot 3} + \cdots + \frac{1}{1 \cdot 2 \cdot n} \\
+                   & < 1 + 1 + \frac{1}{2} + \frac{1}{2^2} +  \cdots + \frac{1}{2^{n-1}}                                \\
+                   & < 3
+  \end{align*}
+  级数收敛，因此定理成立。实际上，该级数收敛的非常迅速，使得我们可以计算 $e$ 时获得很大的精确度。
+\end{definition}
+
+同样 $e$ 也可以被其他的极限过程所定义：
+
+\begin{theorem}
+  \[ \lim_{n \to \infty} \Biggl( 1 + \frac{1}{n} \Biggr)^n = e. \]
+\end{theorem}
+
+\begin{proof}
+  令
+  \[ s_n = \sum_{k=0}^{n} \frac{1}{k!}, \qquad t_n = \Biggl( 1 + \frac{1}{n} \Biggr)^n \]
+
+  根据二项式定理，
+  \begin{multline*}
+    t_n = 1+1+\frac{1}{2!}\Biggl(1-\frac{1}{n}\Biggr)+\frac{1}{3!}\Biggl(1-\frac{1}{n}\Biggr)\Biggl(1-\frac{2}{n}\Biggr)+\cdots \\
+    + \frac{1}{n!}\Biggl(1-\frac{1}{n}\Biggr)\Biggl(1-\frac{2}{n}\Biggr)\cdots\Biggl(1-\frac{n-1}{n}\Biggr)
+  \end{multline*}
+
+  因此 $t_n \le s_n$，所以根据 Theorem 3.19 有
+  \begin{equation}
+    \limsup_{n \to \infty} t_n \le e,
+  \end{equation}
+
+  接下来如果 $n \ge m$，
+  \[
+    t_n \ge 1 + 1 + \frac{1}{2!}\Biggl(1-\frac{1}{n}\Biggr) + \cdots
+    + \frac{1}{m!}\Biggl(1-\frac{1}{n}\Biggr) \cdots \Biggl(1-\frac{m-1}{n}\Biggr)
+  \]
+
+  令 $n \to \infty$，保持 $m$ 固定。我们有
+  \[ \liminf_{n \to \infty} t_n \ge 1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{m!} \]
+  使得
+  \[ s_m \le \liminf_{n \to \infty} t_n \]
+
+  令 $m \to \infty$，我们最终可以获得
+  \begin{equation}
+    e \le \liminf_{n \to \infty} t_n
+  \end{equation}
+
+  定理遵循 (14) 以及 (15)。
+
+  那么级数 $\sum \frac{1}{n!}$ 的急速收敛可以被如下估计：如果 $s_n$ 具有上述的意义，则有
+  \begin{align*}
+    \mathcal{} e - s_n & = \frac{1}{(n+1)!} + \frac{1}{(n+2)!} + \frac{1}{(n+3)!} + \cdots                          \\
+                       & < \frac{1}{(n+1)!}\Biggl\{1+\frac{1}{n+1}+\frac{1}{(n+1)^2}+\cdots\Biggr\} = \frac{1}{n!n}
+  \end{align*}
+  使得
+  \begin{equation}
+    0 < e - s_n < \frac{1}{n!n}
+  \end{equation}
+
+  因此比如说 $s_{10}$，近似 $e$ 的错误小于 $10^{-7}$。不等式 (16) 也具有理论上的意义，因为它让我们更容易证明 $e$ 的无理性。
+\end{proof}
+
+% todo
 
 \end{document}

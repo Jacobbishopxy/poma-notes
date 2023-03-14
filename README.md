@@ -34,9 +34,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [Series of Nonnegative Terms](./Ch03%20Numerical%20Sequences%20and%20Series/Sec07%20Series%20of%20Nonnegative%20Terms.tex)
 
-   <!--    1. [The Number e](./Ch03%20Numerical%20Sequences%20and%20Series/Sec08%20The%20Number%20e.tex)
+   1. [The Number e](./Ch03%20Numerical%20Sequences%20and%20Series/Sec08%20The%20Number%20e.tex)
 
-   1. [The Root and Ratio Tests](./Ch03%20Numerical%20Sequences%20and%20Series/Sec09%20The%20Root%20and%20Ratio%20Tests.tex)
+   <!--    1. [The Root and Ratio Tests](./Ch03%20Numerical%20Sequences%20and%20Series/Sec09%20The%20Root%20and%20Ratio%20Tests.tex)
 
    1. [Power Series](./Ch03%20Numerical%20Sequences%20and%20Series/Sec10%20Power%20Series.tex)
 
