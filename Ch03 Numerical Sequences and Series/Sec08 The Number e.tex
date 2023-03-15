@@ -69,6 +69,24 @@
   因此比如说 $s_{10}$，近似 $e$ 的错误小于 $10^{-7}$。不等式 (16) 也具有理论上的意义，因为它让我们更容易证明 $e$ 的无理性。
 \end{proof}
 
-% todo
+% TODO
+
+\begin{theorem}
+  $e$ is irrational.
+\end{theorem}
+
+\begin{proof}
+  假设 $e$ 是有理的。那么有 $e = p/q$，且 $p$ 与 $q$ 是正整数。根据 (16)，
+  \begin{equation}
+    0 < q!(e - s_q) < \frac{1}{q}
+  \end{equation}
+  根据假设，$q!e$ 是一个整数。由于
+  \[ q!s_q = q!(1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{q!}) \]
+  是一个整数，可知 $q!(e-s_q)$ 是一个整数。
+
+  由于 $q \ge 1$，(17) 表明存在一个位于 0 与 1 之间的整数，有此得到了悖论。
+\end{proof}
+
+% TODO
 
 \end{document}
