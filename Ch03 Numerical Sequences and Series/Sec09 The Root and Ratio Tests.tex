@@ -4,6 +4,67 @@
 
 \subsection*{The Root and Ratio Tests}
 
-WIP
+\begin{theorem}[Root Test]
+  Given $\sum_{a_n}$, put $\alpha = \limsup_{n \to \infty} \sqrt[n]{|a_n|}$.
+  Then
+  \begin{enumerate}[label=(\alph*)]
+    \item if $\alpha < 1$, $\Sigma a_n$ converges;
+    \item if $\alpha > 1$, $\Sigma a_n$ diverges;
+    \item if $\alpha = 1$, the test gives no information.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  如果 $\alpha < 1$，我们可以选择 $\beta$ 使得 $\alpha < \beta < 1$，以及一个整数 $N$ 满足
+  \[ \sqrt[n]{|a_n|} < \beta \]
+  其中 $n \ge N$（根据 Theorem 3.17(b)）。即，$n \ge N$ 说明
+  \[ |a_n| < \beta^n \]。
+  因为 $0 < \beta < 1$，$\Sigma \beta^n$ 收敛，其收敛遵循比较测试。
+
+  如果 $\alpha > 1$，那么在此根据 Theorem 3.17，存在一个序列 $\{n_k\}$ 满足
+  \[ \sqrt[n_k]{|a_{n_k}|} \to \alpha \]
+
+  因此 $|a_n| > 1$ 对于无穷的 $n$，条件 $a_n \to 0$ 对于 $\Sigma a_n$ 的收敛而言是必要的，即不成立（Theorem 3.23）。
+
+  证明 (c)，考虑以下级数
+  \[
+    \sum \frac{1}{n}, \ \sum \frac{1}{n^2}
+  \]
+
+  对于这些级数 $\alpha = 1$，但是前者发散，后者收敛。
+\end{proof}
+
+\anote \textbf{根值审敛法}
+
+\begin{theorem}[Ratio Test]
+  The series $\Sigma a_n$
+  \begin{enumerate}[label=(\alph*)]
+    \item converges if $\limsup_{n \to \infty} |\frac{a_{n+1}}{a_n}| < 1$,
+    \item diverges if $|\frac{a_{n+1}}{a_n}| \ge 1$ for all $n \ge n_0$, where $n_0$ is some fixed integer.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  如果条件 (a) 成立，我们可以找到 $\beta < 1$，以及一个整数 $N$，满足
+  \[ \Biggl|\frac{a_{n+1}}{a_n}\Biggr| < \beta \]
+  其中 $n \ge N$。尤其是，
+  \begin{align*}
+     & |a_{N+1}| < \beta|a_n|,                    \\
+     & |a_{N+2}| < \beta|a_{N+1}| < \beta^2|a_n|, \\
+     & \dots                                      \\
+     & |a_{N+p}| < \beta^p |a_N|.
+  \end{align*}
+  即
+  \[ |a_n| < |a_N|\beta^{-N} \cdot \beta^n \]
+  其中 $n \ge N$，且 (a) 遵循比较测试，因为 $\Sigma \beta^n$ 收敛。
+
+  如果 $|a_{n+1}| \ge |a_n|$ 其中 $n \ge n_0$，很容易得出条件 $a_n \to 0$ 并不成立，因此 (b) 成立。
+
+  \textit{注}：$\lim a_{n+1}/a_n = 1$ 说明不了 $\Sigma a_n$ 是收敛的，级数 $\Sigma 1/n$ 与 $\Sigma 1/n^2$ 可以证明。
+\end{proof}
+
+\anote \textbf{比值审敛法}
+
+% TODO
 
 \end{document}
