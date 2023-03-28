@@ -38,9 +38,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [The Root and Ratio Tests](./Ch03%20Numerical%20Sequences%20and%20Series/Sec09%20The%20Root%20and%20Ratio%20Tests.tex)
 
-   <!--    1. [Power Series](./Ch03%20Numerical%20Sequences%20and%20Series/Sec10%20Power%20Series.tex)
+   1. [Power Series](./Ch03%20Numerical%20Sequences%20and%20Series/Sec10%20Power%20Series.tex)
 
-   1. [Summation by Parts](./Ch03%20Numerical%20Sequences%20and%20Series/Sec11%20Summation%20by%20Parts.tex)
+   <!--    1. [Summation by Parts](./Ch03%20Numerical%20Sequences%20and%20Series/Sec11%20Summation%20by%20Parts.tex)
 
    1. [Absolute Convergence](./Ch03%20Numerical%20Sequences%20and%20Series/Sec12%20Absolute%20Convergence.tex)
 

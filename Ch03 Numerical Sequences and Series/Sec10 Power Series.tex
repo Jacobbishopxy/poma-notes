@@ -4,6 +4,59 @@
 
 \subsection*{Power Series}
 
-WIP
+\begin{definition}
+  Given a sequence $\{c_n\}$ of complex numbers, the series
+  \begin{equation}
+    \sum_{n=0}^{\infty} c_n z^n
+  \end{equation}
+  is called a \textit{power series}. The numbers $c_n$ are called the \textit{coefficients} of the series;
+  $z$ is a complex number.
+\end{definition}
+
+通常而言，级数的收敛或发散取决于 $z$ 的选择。更确切的来说，每个幂级数都有一个关联圆，称为\textbf{收敛圆}，如果 $z$ 在圆内，
+幂级数就收敛，如果在圆外则发散（这里把平面看做半径无限大的圆的内部，把一点看作是半径为零的圆）。级数在收敛圆上的性质不能简单的叙述。
+
+\anote 对于复数序列 $\{c_n\}$，级数 $\sum_{n=0}^{\infty}c_n z^n$ 叫做\textbf{幂级数}，$c_n$ 叫做这个级数的\textbf{系数}。
+
+\begin{anote}
+  单变量的幂级数是一个拥有下列形式的无限级数：
+  \[
+    \sum_{n=0}^{\infty} a_n(x-c)^n = a_0 + a_1(x - c) + a_2(x - c)^2 + \cdots
+  \]
+  其中 $a_n$ 代表第 $n$ 项的系数，$c$ 为一个常数。
+\end{anote}
+
+\begin{theorem}
+  Given the power series $\Sigma c_n z^n$, put
+  \[
+    \alpha = \limsup_{n\to\infty} \sqrt[n]{|c_n|}, \qquad R = \frac{1}{\alpha}.
+  \]
+  (If $\alpha=0, R=+\infty$; if $\alpha=+\infty, R=0$.) Then $\Sigma c_n z^n$ converges if $|z| < R$, and
+  diverges if $|z| > R$.
+\end{theorem}
+
+\begin{proof}
+  令 $a_n = c_n z^n$，并且应用根值审敛法：
+  \[
+    \limsup_{n\to\infty}\sqrt[n]{|a_n|} = |z|\limsup_{n\to\infty}\sqrt[n]{|c_n|} = \frac{|z|}{R}
+  \]
+  注意：$R$ 被称为 $\Sigma c_n z^n$ 收敛的半径。
+\end{proof}
+
+\begin{examples}\mbox{}\par
+  \begin{enumerate}[label=(\alph*)]
+    \item The series $\Sigma n^n z^n$ has $R = 0$.
+    \item The series $\sum\frac{z^n}{n!}$ has $R = +\infty$. (In this case the ratio test is easier to apply
+          than the root test.)
+    \item The series $\Sigma z^n$ has $R = 1$. If $|z|=1$, the series diverges, since $\{z^n\}$ does not
+          tend to $0$ as $n\to\infty$.
+    \item The series $\sum\frac{z^n}{n}$ has $R = 1$. It diverges if $z = 1$. It converges for all other $z$
+          with $|z| = 1$. (The last assertion will be proved in Theorem 3.44.)
+    \item The series $\sum\frac{z^n}{n^2}$ has $R = 1$. It converges for all $z$ with $|z|=1$, by the
+          comparison test, since $|z^n/n^2| = 1/n^2$.
+  \end{enumerate}
+\end{examples}
+
+% TODO
 
 \end{document}
