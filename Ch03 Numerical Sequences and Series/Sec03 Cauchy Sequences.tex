@@ -9,21 +9,25 @@
   there is an integer $N$ such that $d(p_n, p_m) < \varepsilon$ if $n \ge N$ and $m \ge N$.
 \end{definition}
 
+\newpage
+
 \begin{anote}
   度量空间 $X$ 中的序列 $\{p_n\}$ 叫做 \textbf{柯西序列 Cauchy}，如果对于任何 $\varepsilon > 0$ 存在正整数 $N$，
-  只要 $m, n \ge N$ 就有 $d(p_n,p_m) < \varepsilon$。根据 Wikipedia：
-  \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{\subfix{../images/Cauchy_sequence.png}}\par
-    一个柯西序列 $\{x_n\}$ 相对于 $n$ 的绘图（蓝色）。如果包含这个序列的空间是完备的，则这个序列的有一个极限。
-  \end{figure}
-
-  \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{\subfix{../images/Non_Cauchy_sequence.png}}\par
-    一个非柯西序列。这个序列的元素不能随着序列前进而相互靠近。
-  \end{figure}
+  只要 $m, n \ge N$ 就有 $d(p_n,p_m) < \varepsilon$。
 \end{anote}
+
+根据 Wikipedia：
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{\subfix{../images/Cauchy_sequence.png}}\par
+  一个柯西序列 $\{x_n\}$ 相对于 $n$ 的绘图（蓝色）。如果包含这个序列的空间是完备的，则这个序列的有一个极限。
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{\subfix{../images/Non_Cauchy_sequence.png}}\par
+  一个非柯西序列。这个序列的元素不能随着序列前进而相互靠近。
+\end{figure}
 
 \begin{definition}
   Let $E$ be a nonempty subset of a metric space $X$, and let $S$ be the set of all real numbers of the form $d(p,q)$,
@@ -34,8 +38,10 @@
 $\{p_n\}$ 是一个\textbf{柯西序列} 当且仅当
 \[\lim_{N \to \infty} diam\ E_N = 0\]
 
-\anote 设 $E$ 是度量空间 $X$ 中的非空子集，又设 $S$ 是一切形式为 $d(p,q)$ 的实数集，$p,q \in E$。$\sup S$ 叫做 $E$ 的直径，
-记为 $diam\ E$。
+\begin{anote}
+  设 $E$ 是度量空间 $X$ 中的非空子集，又设 $S$ 是一切形式为 $d(p,q)$ 的实数集，$p,q \in E$。$\sup S$ 叫做 $E$ 的直径，
+  记为 $diam\ E$。
+\end{anote}
 
 \begin{theorem}\mbox{}
   \begin{enumerate}[label=(\alph*)]
@@ -138,7 +144,9 @@ Theorem 3.2(c) 与 Definition 3.1 中的 example(d) 说明了收敛的序列是�
 
 单调序列的类由递增以及递减序列所构成。
 
-\anote 实数序列的\textbf{单调递增}（$s_n \le s_{n+1}$）和\textbf{单调递减}。
+\begin{anote}
+  实数序列的\textbf{单调递增}（$s_n \le s_{n+1}$）和\textbf{单调递减}。
+\end{anote}
 
 % TODO
 
@@ -158,6 +166,8 @@ Theorem 3.2(c) 与 Definition 3.1 中的 example(d) 说明了收敛的序列是�
   另一方向的证明遵从 Theorem 3.2(c)。
 \end{proof}
 
-\anote 单调序列收敛，当且仅当它是有界的。
+\begin{anote}
+  单调序列收敛，当且仅当它是有界的。
+\end{anote}
 
 \end{document}

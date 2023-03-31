@@ -6,103 +6,105 @@
 
 \setcounter{poma}{6}
 \begin{definition}
-	Suppose $S$ is an ordered set, $E \subset S$, and $E$ is bounded above.
-	Suppose there exists an $\alpha \in S$ with the following properties:
-	\begin{enumerate}[label=(\roman*)]
-		\item $\alpha$ is an upper bound of $E$.
-		\item If $\gamma < \alpha$ the $\gamma$ is not an upper bound of $E$.
-	\end{enumerate}
+  Suppose $S$ is an ordered set, $E \subset S$, and $E$ is bounded above.
+  Suppose there exists an $\alpha \in S$ with the following properties:
+  \begin{enumerate}[label=(\roman*)]
+    \item $\alpha$ is an upper bound of $E$.
+    \item If $\gamma < \alpha$ the $\gamma$ is not an upper bound of $E$.
+  \end{enumerate}
 
-	Then $\alpha$ is called the \textit{least upper bound of E} or the \textit{supremum of E},
-	and we write
-	\[ \alpha = \sup E \]
-	The \textit{greatest lower bound}, or \textit{infimum}, of a set $E$ which is bounded below
-	is defined in the same manner: The statement \[ \alpha = \inf E \] means that $\alpha$ is
-	a lower bound of $E$ and that no $\beta$ with $\beta > \alpha$ is a lower bound of $E$.
+  Then $\alpha$ is called the \textit{least upper bound of E} or the \textit{supremum of E},
+  and we write
+  \[ \alpha = \sup E \]
+  The \textit{greatest lower bound}, or \textit{infimum}, of a set $E$ which is bounded below
+  is defined in the same manner: The statement \[ \alpha = \inf E \] means that $\alpha$ is
+  a lower bound of $E$ and that no $\beta$ with $\beta > \alpha$ is a lower bound of $E$.
 \end{definition}
 
 \begin{anote}
-	\begin{itemize}
-		\item $S$ 是有序集合的情况下，$E$ 又是属于 $S$ 的，并且 $E$ 拥有上界。
-		      那么只会存在一个 $\alpha$ 是 $E$ 的最小上界。
-		      同理如果是 $E$ 拥有下界，只会存在一个 $\alpha$ 是 $E$ 的最大下界。
-		\item 上确界 Supremum [su:$'$pri:məm]；下确界 Infimum [$'$\i nfa\i məm]。
-	\end{itemize}
+  \begin{itemize}
+    \item $S$ 是有序集合的情况下，$E$ 又是属于 $S$ 的，并且 $E$ 拥有上界。
+          那么只会存在一个 $\alpha$ 是 $E$ 的最小上界。
+          同理如果是 $E$ 拥有下界，只会存在一个 $\alpha$ 是 $E$ 的最大下界。
+    \item 上确界 Supremum [su:$'$pri:məm]；下确界 Infimum [$'$\i nfa\i məm]。
+  \end{itemize}
 \end{anote}
 
 \setcounter{poma}{9}
 \begin{definition}
-	An ordered set $S$ is said to have the \textit{least-upper-bound property} if the following
-	is true: If $E \subset S$, $E$ is not empty, and $E$ is bounded above, then $\sup E$ exists in $S$.
+  An ordered set $S$ is said to have the \textit{least-upper-bound property} if the following
+  is true: If $E \subset S$, $E$ is not empty, and $E$ is bounded above, then $\sup E$ exists in $S$.
 \end{definition}
 
-\anote
-$S$ 中存在 $E \subset S$，且 $E$ 具有最小上界，那么 $S$ 就具有最小上界性，反之亦然。
+\begin{anote}
+  $S$ 中存在 $E \subset S$，且 $E$ 具有最小上界，那么 $S$ 就具有最小上界性，反之亦然。
+\end{anote}
 
 \begin{theorem}
-	Suppose $S$ is an ordered set with the least-upper-bound property,
-	$B \subset S$, $B$ is not empty, and $B$ is bounded below.
-	Let $L$ be the set of all lower bounds of $B$. Then $\alpha = \sup L$
-	exists in $S$, and $\alpha = \inf B$.
-	In particular, $\inf B$ exists in $S$.
+  Suppose $S$ is an ordered set with the least-upper-bound property,
+  $B \subset S$, $B$ is not empty, and $B$ is bounded below.
+  Let $L$ be the set of all lower bounds of $B$. Then $\alpha = \sup L$
+  exists in $S$, and $\alpha = \inf B$.
+  In particular, $\inf B$ exists in $S$.
 \end{theorem}
 
 \begin{proof}
-	因为 $B$ 是有下界的，且 $L$ 不为空。由于 $L$ 包含了所有的 $y$（$y \in S$）且满足不等式 $y \leq x$（$x \in B$），
-	那么所有的 $x \in B$ 都是 $L$ 的上界。因此 $L$ 是有上界的。关于 $S$ 的假设意为在 $S$ 中有一个 $L$ 的最小上界，
-	被称为 $\alpha$。
+  因为 $B$ 是有下界的，且 $L$ 不为空。由于 $L$ 包含了所有的 $y$（$y \in S$）且满足不等式 $y \leq x$（$x \in B$），
+  那么所有的 $x \in B$ 都是 $L$ 的上界。因此 $L$ 是有上界的。关于 $S$ 的假设意为在 $S$ 中有一个 $L$ 的最小上界，
+  被称为 $\alpha$。
 
-	如果 $\gamma < \alpha$ 那么（根据 Definition 1.8）$\gamma$ 并不是 $L$ 的一个上界，因此 $\gamma \notin B$。
-	对于所有的 $x \in B$ 都有 $\alpha \le x$。因此 $\alpha \in L$。
+  如果 $\gamma < \alpha$ 那么（根据 Definition 1.8）$\gamma$ 并不是 $L$ 的一个上界，因此 $\gamma \notin B$。
+  对于所有的 $x \in B$ 都有 $\alpha \le x$。因此 $\alpha \in L$。
 
-	如果 $\alpha < \beta$ 那么 $\beta \notin L$，因为 $\alpha$ 是 $L$ 的一个上界。
+  如果 $\alpha < \beta$ 那么 $\beta \notin L$，因为 $\alpha$ 是 $L$ 的一个上界。
 
-	我们展示过了 $\alpha \in L$ 但是 $\beta \notin L$ 而 $\beta > \alpha$ 的情况。也就是说，$\alpha$
-	是 $B$ 的一个下界，但是当 $\beta > \alpha$ 时 $\beta$ 却不是。这就意味着 $\alpha = \inf B$。
+  我们展示过了 $\alpha \in L$ 但是 $\beta \notin L$ 而 $\beta > \alpha$ 的情况。也就是说，$\alpha$
+  是 $B$ 的一个下界，但是当 $\beta > \alpha$ 时 $\beta$ 却不是。这就意味着 $\alpha = \inf B$。
 \end{proof}
 
 \subsection*{Fields}
 
 \begin{definition}
-	A field is a set $F$ with two operations, called \textit{addition} and \textit{multiplication},
-	which satisfy the following so-called "field axioms" (A), (M), and (D):
+  A field is a set $F$ with two operations, called \textit{addition} and \textit{multiplication},
+  which satisfy the following so-called "field axioms" (A), (M), and (D):
 
-	\begin{itemize}
-		\item[] \textbf{(A) Axioms for addition}
-			\begin{itemize}
-				\item[] (A1) If $x \in F$ and $y \in F$, then their sum $x + y$ is in $F$.
-				\item[] (A2) Addition is commutative: $x + y = y + x$ for all $x,y \in F$.
-				\item[] (A3) Addition is associative: $(x+y)+z=x+(y+z)$ for all $x,y,z \in F$.
-				\item[] (A4) $F$ contains an element 0 such that $0+x=x$ for every $x \in F$.
-				\item[] (A5) To every $x \in F$ corresponds an element $-x \in F$ such that $x+(-x)=0$.
-			\end{itemize}
-		\item[] \textbf{(M) Axioms for multiplication}
-			\begin{itemize}
-				\item[] (M1) If $x \in F$ and $y \in F$, then their product $xy$ is in $F$.
-				\item[] (M2) Multiplication is commutative: $xy = yx$ for all $x,y \in F$.
-				\item[] (M3) Multiplication is associative: $(xy)z = x(yz)$ for all $x,y,z \in F$.
-				\item[] (M4) $F$ contains an element $1 \ne 0$ such that $1x = x$ for every $x \in F$.
-				\item[] (M5) If $x \in F$ and $x \ne 0$ then there exists an element $\frac{1}{x} \in F$
-					such that $x \cdot (\frac{1}{x}) = 1$.
-			\end{itemize}
-		\item[] \textbf{(D) The distributive law}
-			\begin{itemize}
-				\item[] $x(y+z) = xy+xz$ holds for all $x,y,z \in F$.
-			\end{itemize}
-	\end{itemize}
+  \begin{itemize}
+    \item[] \textbf{(A) Axioms for addition}
+      \begin{itemize}
+        \item[] (A1) If $x \in F$ and $y \in F$, then their sum $x + y$ is in $F$.
+        \item[] (A2) Addition is commutative: $x + y = y + x$ for all $x,y \in F$.
+        \item[] (A3) Addition is associative: $(x+y)+z=x+(y+z)$ for all $x,y,z \in F$.
+        \item[] (A4) $F$ contains an element 0 such that $0+x=x$ for every $x \in F$.
+        \item[] (A5) To every $x \in F$ corresponds an element $-x \in F$ such that $x+(-x)=0$.
+      \end{itemize}
+    \item[] \textbf{(M) Axioms for multiplication}
+      \begin{itemize}
+        \item[] (M1) If $x \in F$ and $y \in F$, then their product $xy$ is in $F$.
+        \item[] (M2) Multiplication is commutative: $xy = yx$ for all $x,y \in F$.
+        \item[] (M3) Multiplication is associative: $(xy)z = x(yz)$ for all $x,y,z \in F$.
+        \item[] (M4) $F$ contains an element $1 \ne 0$ such that $1x = x$ for every $x \in F$.
+        \item[] (M5) If $x \in F$ and $x \ne 0$ then there exists an element $\frac{1}{x} \in F$
+          such that $x \cdot (\frac{1}{x}) = 1$.
+      \end{itemize}
+    \item[] \textbf{(D) The distributive law}
+      \begin{itemize}
+        \item[] $x(y+z) = xy+xz$ holds for all $x,y,z \in F$.
+      \end{itemize}
+  \end{itemize}
 \end{definition}
 
-\anote
-域的定义：\href{https://en.wikipedia.org/wiki/Field_(mathematics)}{维基百科}。
+\begin{anote}
+  域的定义：\href{https://en.wikipedia.org/wiki/Field_(mathematics)}{维基百科}。
+\end{anote}
 
 \setcounter{poma}{16}
 \begin{definition}
-	An \textit{ordered field} is a field $F$ which is also an ordered set, such that:
+  An \textit{ordered field} is a field $F$ which is also an ordered set, such that:
 
-	\begin{enumerate}
-		\item $x+y<x+z$ if $x,y,z \in F$ and $y<z$,
-		\item $xy>0$ if $x \in F$, $y \in F$, $x>0$, and $y>0$.
-	\end{enumerate}
+  \begin{enumerate}
+    \item $x+y<x+z$ if $x,y,z \in F$ and $y<z$,
+    \item $xy>0$ if $x \in F$, $y \in F$, $x>0$, and $y>0$.
+  \end{enumerate}
 \end{definition}
 
 如果 $x>0$，我们称 $x$ 为 \textit{positive}；如果 $x<0$，$x$ 则为 \textit{negative}。
@@ -111,8 +113,8 @@ $S$ 中存在 $E \subset S$，且 $E$ 具有最小上界，那么 $S$ 就具有�
 
 \setcounter{poma}{18}
 \begin{theorem}
-	There exists an ordered field $R$ which has the least-upper-bound property.
-	Moreover, $R$ contains $Q$ as a subfield.
+  There exists an ordered field $R$ which has the least-upper-bound property.
+  Moreover, $R$ contains $Q$ as a subfield.
 \end{theorem}
 
 第二个声明意味着 $Q \subset R$ 以及加法与乘法在 $R$ 上的运算，当应用于 $Q$ 的成员时，与有理数的通常操作重合；
@@ -125,11 +127,11 @@ R 的成员被称为 \textit{real numbers}，即实数。
 % \end{proof}
 
 \begin{theorem}
-	\leavevmode
-	\begin{enumerate}[label=(\alph*)]
-		\item If $x \in R$, $y \in R$, and $x>0$, then there is a positive integer $n$ such that $nx>y$.
-		\item If $x \in R$, $y \in R$, and $x<y$, then there exists a $p \in Q$ such that $x<p<y$.
-	\end{enumerate}
+  \leavevmode
+  \begin{enumerate}[label=(\alph*)]
+    \item If $x \in R$, $y \in R$, and $x>0$, then there is a positive integer $n$ such that $nx>y$.
+    \item If $x \in R$, $y \in R$, and $x<y$, then there exists a $p \in Q$ such that $x<p<y$.
+  \end{enumerate}
 \end{theorem}
 
 对于 (a) 部分通常认为是 $R$ 具有 \textit{archimedean property}，即阿基米德性质，
@@ -137,114 +139,115 @@ R 的成员被称为 \textit{real numbers}，即实数。
 (b) 部分则表明 $Q$ 是在 $R$ 中 \textit{dense}，即具有稠密性：在任意两个实数之间有一个有理数。
 
 \begin{proof}
-	\begin{enumerate}[label=(\alph*)]
-		\item 令 $A$ 作为所有 $nx$ 的集合，其中 $n$ 为所有的正整数。如果 (a) 是错误的，那么 $y$ 则会是 $A$ 的一个上界。
-		      但是接着 $A$ 会在 $R$ 中拥有一个最小上界，即 $\alpha  = \sup A$。由于 $x>0$，$\alpha - x < \alpha$，
-		      以及 $\alpha - x$ 不是 $A$ 的上界，因此 $\alpha - x < mx$ 对于某些正整数 $m$ 成立。但是这样就会有
-		      $\alpha < (m+1)x \in A$，这是不可能的，因为 $\alpha$ 是 $A$ 的上界。
-		\item 因为 $x<y$，$y-x>0$ 以及由 (a) 所知一个正整数 $n$ 满足
-		      \[n(y-x)>1\]
-		      再次应用 (a)，获取正整数 $m_1$ 与 $m_2$ 满足 $m_1 > nx$，$m_2 > -nx$，那么
-		      \[-m_2 < nx < m_1\]
-		      因此会有一个整数 m（ $-m_2 \le m \le m_1$）满足
-		      \[m-1 \le nx \le m\]
-		      如果我们结合这些不等式，则会得到
-		      \[nx < m \le 1 + nx < ny\]
-		      因为 $n>0$，它遵循
-		      \[x < \frac{m}{n} < y\]
-		      通过 $p=\frac{m}{n}$ 证明了 (b)。
-	\end{enumerate}
+  \begin{enumerate}[label=(\alph*)]
+    \item 令 $A$ 作为所有 $nx$ 的集合，其中 $n$ 为所有的正整数。如果 (a) 是错误的，那么 $y$ 则会是 $A$ 的一个上界。
+          但是接着 $A$ 会在 $R$ 中拥有一个最小上界，即 $\alpha  = \sup A$。由于 $x>0$，$\alpha - x < \alpha$，
+          以及 $\alpha - x$ 不是 $A$ 的上界，因此 $\alpha - x < mx$ 对于某些正整数 $m$ 成立。但是这样就会有
+          $\alpha < (m+1)x \in A$，这是不可能的，因为 $\alpha$ 是 $A$ 的上界。
+    \item 因为 $x<y$，$y-x>0$ 以及由 (a) 所知一个正整数 $n$ 满足
+          \[n(y-x)>1\]
+          再次应用 (a)，获取正整数 $m_1$ 与 $m_2$ 满足 $m_1 > nx$，$m_2 > -nx$，那么
+          \[-m_2 < nx < m_1\]
+          因此会有一个整数 m（ $-m_2 \le m \le m_1$）满足
+          \[m-1 \le nx \le m\]
+          如果我们结合这些不等式，则会得到
+          \[nx < m \le 1 + nx < ny\]
+          因为 $n>0$，它遵循
+          \[x < \frac{m}{n} < y\]
+          通过 $p=\frac{m}{n}$ 证明了 (b)。
+  \end{enumerate}
 \end{proof}
 
-\anote
-(b) 的第一步将 $y-x$ 作为整体，将 (a) $nx > y$ 中的 $x$ 替换为 $y-x$，$y$ 替换为 1。同理对于整数
-$m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y$，而不等式左侧的 $x$ 视为 1，
-那么就有了 $m_1 \cdot 1 > nx$ 与 $m_2 \cdot 1 > -nx$。对于整数 $m$ 的 $-m_2 \le m \le m_1$ 最坏的情况
-可将 $-m_2$ 与 $m_1$ 视为相邻的整数，比如说 1 和 2，那么当 $m$ 取值为 2 时视为 $2 - 1 \le nx < 2$，
-满足 $m - 1 \le nx < m$。最后根据有理数的定义 $p=m/n$ $m,n \in Q$ 可以得出 $x$ 与 $y$ 之间一定存在一个有理数。
+\begin{anote}
+  (b) 的第一步将 $y-x$ 作为整体，将 (a) $nx > y$ 中的 $x$ 替换为 $y-x$，$y$ 替换为 1。同理对于整数
+  $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y$，而不等式左侧的 $x$ 视为 1，
+  那么就有了 $m_1 \cdot 1 > nx$ 与 $m_2 \cdot 1 > -nx$。对于整数 $m$ 的 $-m_2 \le m \le m_1$ 最坏的情况
+  可将 $-m_2$ 与 $m_1$ 视为相邻的整数，比如说 1 和 2，那么当 $m$ 取值为 2 时视为 $2 - 1 \le nx < 2$，
+  满足 $m - 1 \le nx < m$。最后根据有理数的定义 $p=m/n$ $m,n \in Q$ 可以得出 $x$ 与 $y$ 之间一定存在一个有理数。
+\end{anote}
 
 \begin{theorem}
-	For every real $x>0$ and every integer $n>0$ there is one and only one positive real $y$ such that
-	$y^n=x$.
+  For every real $x>0$ and every integer $n>0$ there is one and only one positive real $y$ such that
+  $y^n=x$.
 \end{theorem}
 
 这个 $y$ 数可以被写作 $\sqrt[n]{x}$ 或是 $x^\frac{1}{n}$。
 
 \begin{proof}
-	对于至多存在一个 $y$ 的论证很简单，因为 $0 < y_1 < y_2$ 意味着 $y^n_1 < y^n_2$。
+  对于至多存在一个 $y$ 的论证很简单，因为 $0 < y_1 < y_2$ 意味着 $y^n_1 < y^n_2$。
 
-	令 $E$ 为所有满足 $t^n < x$ 的正实数 $t$ 的集合。
+  令 $E$ 为所有满足 $t^n < x$ 的正实数 $t$ 的集合。
 
-	如果 $t = x/(1+x)$ 那么 $0 \le t < 1$，那么 $t^n \le t < x$。因此 $t \in E$，且 $E$ 不为空。
+  如果 $t = x/(1+x)$ 那么 $0 \le t < 1$，那么 $t^n \le t < x$。因此 $t \in E$，且 $E$ 不为空。
 
-	如果 $t>1+x$ 那么 $t^n \ge t > x$，所以 $t \notin E$。因此 $1+x$ 是 $E$ 的一个上界。
+  如果 $t>1+x$ 那么 $t^n \ge t > x$，所以 $t \notin E$。因此 $1+x$ 是 $E$ 的一个上界。
 
-	所以根据 Theorem 1.19 得出，存在一个
-	\[ y = \sup E\]
+  所以根据 Theorem 1.19 得出，存在一个
+  \[ y = \sup E\]
 
-	而证明 $y^n = x$ 我们需要展示不等式 $y^n < x$ 与 $y^n > x$ 皆会导致矛盾。
+  而证明 $y^n = x$ 我们需要展示不等式 $y^n < x$ 与 $y^n > x$ 皆会导致矛盾。
 
-	当  $0<a<b$ 时，等式 $b^n - a^n = (b-a)(b^{n-1} + b^{n-2}a + \dots + a^{n-1})$ 得出不等式
-	\[b^n - a^n < (b-a)nb^{n-1}\]
+  当  $0<a<b$ 时，等式 $b^n - a^n = (b-a)(b^{n-1} + b^{n-2}a + \dots + a^{n-1})$ 得出不等式
+  \[b^n - a^n < (b-a)nb^{n-1}\]
 
-	假设 $y^n<x$。选择 h 使得 $0<h<1$ 且
-	\[h < \frac{x-y^n}{n(y+1)^{n-1}}\]
+  假设 $y^n<x$。选择 h 使得 $0<h<1$ 且
+  \[h < \frac{x-y^n}{n(y+1)^{n-1}}\]
 
-	令 $a=y$， $b=y+h$，那么就有
-	\[(y+h)^n-y^n < hn(y+h)^{n-1} < hn(y+1)^{n-1} < x-y^n\]
+  令 $a=y$， $b=y+h$，那么就有
+  \[(y+h)^n-y^n < hn(y+h)^{n-1} < hn(y+1)^{n-1} < x-y^n\]
 
-	因此 $(y+h)^n < x$，且 $y+h \in E$。因为 $y+h>y$，这与 $y$ 是 $E$ 的一个上界相矛盾。
+  因此 $(y+h)^n < x$，且 $y+h \in E$。因为 $y+h>y$，这与 $y$ 是 $E$ 的一个上界相矛盾。
 
-	假设 $y^n>x$。令
-	\[k=\frac{y^n-x}{ny^{n-1}}\]
+  假设 $y^n>x$。令
+  \[k=\frac{y^n-x}{ny^{n-1}}\]
 
-	那么 $0<k<y$。如果 $t \ge y-k$，我们得出以下结论：
-	\[y^n - t^n \le y^n - (y - k)^n \le kny^{n-1} = y^n - x\]
+  那么 $0<k<y$。如果 $t \ge y-k$，我们得出以下结论：
+  \[y^n - t^n \le y^n - (y - k)^n \le kny^{n-1} = y^n - x\]
 
-	因此 $t^n > x$，且 $t \notin E$。它遵循 $y - k$ 是 $E$ 的一个上界。
+  因此 $t^n > x$，且 $t \notin E$。它遵循 $y - k$ 是 $E$ 的一个上界。
 
-	但是因为 $y-k<y$，其与 $y$ 是 $E$ 的\textit{最小}上界的事实相矛盾。
+  但是因为 $y-k<y$，其与 $y$ 是 $E$ 的\textit{最小}上界的事实相矛盾。
 
-	因此 $y^n=x$，证明完成。
+  因此 $y^n=x$，证明完成。
 \end{proof}
 
 \begin{anote}
-	至多存在一个 $y$ 换个角度也就是说但凡有第二个 $y$ 使得 $y^n_1 = y^n_2$，那么 $y_1 = y_2$。\\
-	等式
-	\[b^n - a^n = (b-a)(b^{n-1} + b^{n-2}a + \dots + a^{n-1})\]
-	左侧可以视为
-	\[(b-a)(b^{n-1} + b^{n-1}\frac{a}{b} + \dots + b^{n-1}\frac{a}{b^{n-1}})\]
-	提取 $b^{n-1}$ 后得
-	\[(b-a)b^{n-1}(1 + \frac{a}{b} + \dots + \frac{a^{n-1}}{b^{n-1}})\]
-	由于有 $0<a<b$ 这么一个前提，可以将第三项变为
-	\[1 + \frac{a}{b} + \dots + \frac{a^{n-1}}{b^{n-1}} < 1 + 1 + \dots + 1 = n\]
-	因此可得不等式
-	\[b^n - a^n < (b-a)nb^{n-1}\]
-	至于在证明 $y^n < x$ 不成立时，选择 $h$ 的 $h<\frac{x-y^n}{n(y+1)^{n-1}}$ 分母为什么是 $n(y+1)^{n-1}$，
-	是因为这是为了之后处理不等式而特意设置的消除项（这里利用了函数 $f(x)=x^n$ 是连续的事实，也就是说分母一定也是实数，
-	那么就可以将 $h$ 视为小于某实数）；同样的在证明 $y^n > x$ 时的 $k$ 也是如此。
+  至多存在一个 $y$ 换个角度也就是说但凡有第二个 $y$ 使得 $y^n_1 = y^n_2$，那么 $y_1 = y_2$。\\
+  等式
+  \[b^n - a^n = (b-a)(b^{n-1} + b^{n-2}a + \dots + a^{n-1})\]
+  左侧可以视为
+  \[(b-a)(b^{n-1} + b^{n-1}\frac{a}{b} + \dots + b^{n-1}\frac{a}{b^{n-1}})\]
+  提取 $b^{n-1}$ 后得
+  \[(b-a)b^{n-1}(1 + \frac{a}{b} + \dots + \frac{a^{n-1}}{b^{n-1}})\]
+  由于有 $0<a<b$ 这么一个前提，可以将第三项变为
+  \[1 + \frac{a}{b} + \dots + \frac{a^{n-1}}{b^{n-1}} < 1 + 1 + \dots + 1 = n\]
+  因此可得不等式
+  \[b^n - a^n < (b-a)nb^{n-1}\]
+  至于在证明 $y^n < x$ 不成立时，选择 $h$ 的 $h<\frac{x-y^n}{n(y+1)^{n-1}}$ 分母为什么是 $n(y+1)^{n-1}$，
+  是因为这是为了之后处理不等式而特意设置的消除项（这里利用了函数 $f(x)=x^n$ 是连续的事实，也就是说分母一定也是实数，
+  那么就可以将 $h$ 视为小于某实数）；同样的在证明 $y^n > x$ 时的 $k$ 也是如此。
 \end{anote}
 
 \begin{corollary}
-	If $a$ and $b$ are positive real numbers and $n$ is a positive integer, then
-	\[(ab)^{1/n} = a^{1/n}b^{1/n}\]
+  If $a$ and $b$ are positive real numbers and $n$ is a positive integer, then
+  \[(ab)^{1/n} = a^{1/n}b^{1/n}\]
 \end{corollary}
 
 \begin{proof}
-	令 $\alpha = a^{1/n}$，$\beta = b^{1/n}$，那么有
-	\[ab = \alpha^n \beta^n = (\alpha\beta)^n\]
-	而乘法是符合交换律的，因此
-	\[(ab)^{1/n} = \alpha\beta = a^{1/n}b^{1/n}\]
+  令 $\alpha = a^{1/n}$，$\beta = b^{1/n}$，那么有
+  \[ab = \alpha^n \beta^n = (\alpha\beta)^n\]
+  而乘法是符合交换律的，因此
+  \[(ab)^{1/n} = \alpha\beta = a^{1/n}b^{1/n}\]
 \end{proof}
 
 \subsection*{The Extended Real Number System}
 
 \setcounter{poma}{22}
 \begin{definition}
-	The extended real number system consists of the real field $R$ and two symbols, $+\infty$ and $-\infty$.
-	We preserve the original order in $R$, and define
-	\[-\infty < x < +\infty\]
-	for every $x \in R$.
+  The extended real number system consists of the real field $R$ and two symbols, $+\infty$ and $-\infty$.
+  We preserve the original order in $R$, and define
+  \[-\infty < x < +\infty\]
+  for every $x \in R$.
 \end{definition}
 
 可以清楚的知道 $+\infty$ 是所有广义实数系子集的一个上界，且每个非空子集都有一个最小上界。
@@ -255,17 +258,17 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 广义实数系并不形成一个域，但它形成了一下惯例：
 
 \begin{enumerate}[label=(\alph*)]
-	\item 如果 $x$ 是实数则
-	      \[x+\infty=+\infty,\quad x-\infty=-\infty,\quad \frac{x}{+\infty}=\frac{x}{-\infty}=0\]
-	\item 如果 $x>0$ 则 $x \cdot (+\infty) = +\infty,\ x \cdot (-\infty) = -\infty$
-	\item 如果 $x<0$ 则 $x \cdot (+\infty) = -\infty,\ x \cdot (-\infty) = +\infty$
+  \item 如果 $x$ 是实数则
+        \[x+\infty=+\infty,\quad x-\infty=-\infty,\quad \frac{x}{+\infty}=\frac{x}{-\infty}=0\]
+  \item 如果 $x>0$ 则 $x \cdot (+\infty) = +\infty,\ x \cdot (-\infty) = -\infty$
+  \item 如果 $x<0$ 则 $x \cdot (+\infty) = -\infty,\ x \cdot (-\infty) = +\infty$
 \end{enumerate}
 
 \subsection*{The Complex Field}
 
 \begin{definition}
-	A \textit{complex number} is an ordered pair $(a, b)$ of real numbers. "Ordered" means that $(a, b)$ and $(b, a)$
-	are regarded as distinct if $a \neq b$.
+  A \textit{complex number} is an ordered pair $(a, b)$ of real numbers. "Ordered" means that $(a, b)$ and $(b, a)$
+  are regarded as distinct if $a \neq b$.
 \end{definition}
 
 令 $x=(a,b)$，$y=(c,d)$ 为两个复数。当且仅当 $a=c$ 以及 $b=d$ 时有 $x=y$。（注意该定义并非是完全不必要的；
@@ -274,313 +277,313 @@ $m_1$ 与 $m_2$ 而言，可分别将 $nx$ 与 $-nx$ 视为不等式右侧的 $y
 \[xy=(ac-bd,ad+bc)\]
 
 \begin{anote}
-	作为补充（详见\href{https://zhuanlan.zhihu.com/p/68763358}{该篇文章}），
-	对于任意两个复数 $x=(a,b),\ y=(c,d)$ 的四则运算：
-	\begin{enumerate}[label=(\arabic*)]
-		\item $x+y=(a+c)+i(b+d)$
-		\item $x-y=(a-c)+i(b-d)$
-		\item $xy=(a+ib)(c+id)=ac-bd+i(ad+bc)$
-		\item $\frac{x}{y} = \frac{(a+ib)(c-id)}{(c+id)(c-id)} = \frac{(ac+bd)+i(bc-ad)}{c^2+d^2}$
-	\end{enumerate}
+  作为补充（详见\href{https://zhuanlan.zhihu.com/p/68763358}{该篇文章}），
+  对于任意两个复数 $x=(a,b),\ y=(c,d)$ 的四则运算：
+  \begin{enumerate}[label=(\arabic*)]
+    \item $x+y=(a+c)+i(b+d)$
+    \item $x-y=(a-c)+i(b-d)$
+    \item $xy=(a+ib)(c+id)=ac-bd+i(ad+bc)$
+    \item $\frac{x}{y} = \frac{(a+ib)(c-id)}{(c+id)(c-id)} = \frac{(ac+bd)+i(bc-ad)}{c^2+d^2}$
+  \end{enumerate}
 
-	首先，对于任意一个复数 $z=a+ib$，可以用复平面上的一个点来表示，那么复数加减法可以通过向量来理解：
-	\begin{center}
-		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
-			\begin{axis}[
-					x=0.8cm,y=0.8cm,
-					axis lines=middle,
-					ymajorgrids=true,
-					xmajorgrids=true,
-					xlabel=Re,
-					ylabel=Im,
-					xmin=-0.5,
-					xmax=10.5,
-					ymin=-0.5,
-					ymax=10.5,
-					xtick={0,1,...,10},
-					ytick={0,1,...,10},]
-				\draw [->,line width=1.5pt] (0,0) -- (2,5);
-				\draw [->,line width=1.5pt] (0,0) -- (6,2);
-				\draw [->,line width=1.5pt,dash pattern=on 10pt off 10pt] (2,5) -- (7,7);
-				\draw [->,line width=1.5pt,color=red] (0,0) -- (7,7);
-				\begin{scriptsize}
-					\draw [fill=black] (0,0) circle (2pt);
-					\draw [fill=black] (2,5) circle (2.5pt);
-					\draw[color=black] (2.2,5.6) node {\large A};
-					\draw [fill=black] (6,2) circle (2.5pt);
-					\draw[color=black] (6.2,2.6) node {\large B};
-					\draw [fill=black] (7,7) circle (2.5pt);
-					\draw[color=black] (7.2,7.6) node {\large C};
-				\end{scriptsize}
-			\end{axis}
-		\end{tikzpicture}
-	\end{center}
-	\begin{center}
-		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
-			\begin{axis}[
-					x=0.8cm,y=0.8cm,
-					axis lines=middle,
-					ymajorgrids=true,
-					xmajorgrids=true,
-					xlabel=Re,
-					ylabel=Im,
-					xmin=-0.5,
-					xmax=10.5,
-					ymin=-0.5,
-					ymax=10.5,
-					xtick={0,1,...,10},
-					ytick={0,1,...,10},]
-				\draw [->,line width=1.5pt] (0,0) -- (2,8);
-				\draw [->,line width=1.5pt,color=brown] (0,0) -- (8,6);
-				\draw [->,line width=1.5pt,color=red] (8,6) -- (2,8);
-				\draw (4,2.7) node[anchor=north west] {Reverse B's direction};
-				\begin{scriptsize}
-					\draw [fill=black] (0,0) circle (2pt);
-					\draw[color=black] (2.2,8.7) node {\large A};
-					\draw[color=black] (8.2,6.7) node {\large B};
-				\end{scriptsize}
-			\end{axis}
-		\end{tikzpicture}
-	\end{center}
+  首先，对于任意一个复数 $z=a+ib$，可以用复平面上的一个点来表示，那么复数加减法可以通过向量来理解：
+  \begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+      \begin{axis}[
+          x=0.8cm,y=0.8cm,
+          axis lines=middle,
+          ymajorgrids=true,
+          xmajorgrids=true,
+          xlabel=Re,
+          ylabel=Im,
+          xmin=-0.5,
+          xmax=10.5,
+          ymin=-0.5,
+          ymax=10.5,
+          xtick={0,1,...,10},
+          ytick={0,1,...,10},]
+        \draw [->,line width=1.5pt] (0,0) -- (2,5);
+        \draw [->,line width=1.5pt] (0,0) -- (6,2);
+        \draw [->,line width=1.5pt,dash pattern=on 10pt off 10pt] (2,5) -- (7,7);
+        \draw [->,line width=1.5pt,color=red] (0,0) -- (7,7);
+        \begin{scriptsize}
+          \draw [fill=black] (0,0) circle (2pt);
+          \draw [fill=black] (2,5) circle (2.5pt);
+          \draw[color=black] (2.2,5.6) node {\large A};
+          \draw [fill=black] (6,2) circle (2.5pt);
+          \draw[color=black] (6.2,2.6) node {\large B};
+          \draw [fill=black] (7,7) circle (2.5pt);
+          \draw[color=black] (7.2,7.6) node {\large C};
+        \end{scriptsize}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+      \begin{axis}[
+          x=0.8cm,y=0.8cm,
+          axis lines=middle,
+          ymajorgrids=true,
+          xmajorgrids=true,
+          xlabel=Re,
+          ylabel=Im,
+          xmin=-0.5,
+          xmax=10.5,
+          ymin=-0.5,
+          ymax=10.5,
+          xtick={0,1,...,10},
+          ytick={0,1,...,10},]
+        \draw [->,line width=1.5pt] (0,0) -- (2,8);
+        \draw [->,line width=1.5pt,color=brown] (0,0) -- (8,6);
+        \draw [->,line width=1.5pt,color=red] (8,6) -- (2,8);
+        \draw (4,2.7) node[anchor=north west] {Reverse B's direction};
+        \begin{scriptsize}
+          \draw [fill=black] (0,0) circle (2pt);
+          \draw[color=black] (2.2,8.7) node {\large A};
+          \draw[color=black] (8.2,6.7) node {\large B};
+        \end{scriptsize}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
 
-	而对于复数的乘除法，需要先引入复数在极坐标上的几何意义 -- 对于任意一个复数 $z=a+ib$ 用极坐标来表示：
-	\begin{center}
-		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
-			\begin{axis}[
-					x=0.8cm,y=0.8cm,
-					axis lines=middle,
-					ymajorgrids=true,
-					xmajorgrids=true,
-					xlabel=Re,
-					ylabel=Im,
-					xmin=-0.5,
-					xmax=10.5,
-					ymin=-0.5,
-					ymax=10.5,
-					xtick={0,1,...,10},
-					ytick={0,1,...,10},]
-				\draw [line width=1.5pt,fill opacity=0.1] (0,0) -- (0:3) arc (0:26.565:3) -- cycle;
-				\draw (0.3,6) node[anchor=north west] {Imaginary part as YAxis};
-				\draw (4,0.7) node[anchor=north west] {Real part as XAxis};
-				\draw [line width=1.5pt] (0,0)-- (8,4);
-				\draw (8.7,4.45) node[anchor=north west] {\large(x,y)};
-				\begin{scriptsize}
-					\draw [fill=black] (0,0) circle (3pt);
-					\draw[color=black] (0.35,0.55) node {\large O};
-					\draw [fill=black] (8,4) circle (2.5pt);
-					\draw[color=black] (8.5,4) node {\large P};
-					\draw[color=black] (3.2,1) node {\large $\theta$};
-				\end{scriptsize}
-			\end{axis}
-		\end{tikzpicture}
-	\end{center}
-	那么复数的三角表示为：
-	\begin{center}
-		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
-			\begin{axis}[
-					x=0.8cm,y=0.8cm,
-					axis lines=middle,
-					ymajorgrids=true,
-					xmajorgrids=true,
-					xlabel=Re,
-					ylabel=Im,
-					xmin=-0.5,
-					xmax=10.5,
-					ymin=-0.5,
-					ymax=10.5,
-					xtick={0,1,...,10},
-					ytick={0,1,...,10},]
-				\draw [line width=1.5pt,fill opacity=0.1] (0,0) -- (0:3) arc (0:26.565:3) -- cycle;
-				\draw [line width=1.5pt] (0,0)-- (8,4);
-				\draw (8.7,4.45) node[anchor=north west] {\large(x,y)};
-				\draw [line width=1pt ] (8,0)-- (8,4);
-				\draw [line width=1pt ] (7.5,0)-- (7.5,0.5);
-				\draw [line width=1pt ] (7.5,0.5)-- (8,0.5);
-				\draw (8.1,2) node[anchor=north west] {\large y};
-				\draw (5,0.6) node[anchor=north west] {\large x};
-				\begin{scriptsize}
-					\draw [fill=black] (0,0) circle (3pt);
-					\draw[color=black] (0.35,0.55) node {\large O};
-					\draw [fill=black] (8,4) circle (2.5pt);
-					\draw[color=black] (8.5,4) node {\large P};
-					\draw[color=black] (3.2,1) node {\large $\theta$};
-				\end{scriptsize}
-			\end{axis}
-		\end{tikzpicture}
-	\end{center}
-	这里将 $OP$ 的长度作为复数 $z$ 的\textbf{模（Modulus）}，用 $|z|$ 表示；而角 $\theta$ 为复数 $z$ 的\textbf{幅角（Argument）}，
-	用 $\arg(z)$ 表示。那么复数的三角表示为：
-	\[z = x+iy = r(\cos\theta + i\sin\theta), \quad r = \sqrt{x^2+y^2}, \quad \tan\theta = \frac{y}{x} \]
-	接下来是复数乘法的几何意义，使用复数的三角形式计算下列两个复数的乘积：
-	\begin{align*}
-		z_1 = r_1(\cos\theta_1 + i\sin\theta_1) \\
-		z_2 = r_2(\cos\theta_2 + i\sin\theta_2)
-	\end{align*}
-	那么有：
-	\begin{align*}
-		\mathcal{} z_1 z_2 & = r_1 r_2(\cos\theta_1 + i\sin\theta_1)(\cos\theta_2 + i\sin\theta_2)                                                                  \\
-		                   & = r_1 r_2 \big( \cos\theta_1 \cos\theta_2 - \sin\theta_1 \sin\theta_2 + i(\sin\theta_1 \cos\theta_2 + \cos\theta_1 \sin\theta_2) \big)
-	\end{align*}
-	那么根据三角和差公式：
-	\[z_1 z_2 = r_1 r_2 \big( \cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2) \big)\]
-	可以发现 $z_1 \cdot z_2$ 计算后模为两个复数模的乘积 $|z_1||z_2|$，幅角为两个复数幅角之和 $\arg(z_1z_2)=\arg(z_1)+\arg(z_2)$。
-	因此复数的乘积可以理解为\textbf{拉伸与旋转}。例如：
-	\begin{center}
-		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
-			\begin{axis}[
-					x=0.8cm,y=0.8cm,
-					axis lines=middle,
-					ymajorgrids=true,
-					xmajorgrids=true,
-					xmin=-7.5,
-					xmax=7.5,
-					ymin=-1.5,
-					ymax=7.5,
-					xtick={-8,-7,...,7},
-					ytick={-1,0,...,8},]
-				\draw [line width=2pt] (0,0)-- (6,6);
-				\draw [line width=2pt,color=red] (0,0)-- (-6,6);
-				\draw [->,line width=2pt,dash pattern=on 10pt off 10pt,color=blue] (6,6) -- (-6,6);
-				\draw (3.5,3.7) node[anchor=north west] {\large $z_1 = 1 + i$};
-				\draw [line width=2pt] (0,0)-- (0,6);
-				\draw (0.1,4) node[anchor=north west] {\large $z_2 = i$};
-				\draw (-6.8,4.7) node[anchor=north west] {\large $z_1z_2 = (1+i)\cdot i = -1 + i$};
-				\begin{scriptsize}
-					\draw [fill=black] (0,0) circle (2pt);
-					\draw [fill=black] (6,6) circle (2.5pt);
-					\draw [fill=red] (-6,6) circle (2.5pt);
-					\draw [fill=black] (0,6) circle (2.5pt);
-				\end{scriptsize}
-			\end{axis}
-		\end{tikzpicture}
-	\end{center}
-	因为
-	\[z_1=\sqrt{2}(\cos\frac{\pi}{4}+i\sin\frac{\pi}{4}),\quad z_2=1(\cos\frac{\pi}{2}+i\sin\frac{\pi}{2})\]
-	所以 $z_1z_2$ 的模长为 $\sqrt{2}$ 且幅角为 $\frac{3\pi}{4}$。
-	而复数的除法只需要将除法写成乘法形式即可
-	\begin{align*}
-		\mathcal{} z^{-1} & = \big(r(\cos\theta+i\sin\theta)\big)^{-1}                                             \\
-		                  & = r^{-1}\frac{1}{\cos\theta+i\sin\theta}                                               \\
-		                  & =r^{-1}\frac{\cos\theta-i\sin\theta}{(\cos\theta+i\sin\theta)(\cos\theta-i\sin\theta)} \\
-		                  & =r^{-1}(\cos\theta-i\sin\theta)
-	\end{align*}
-	那么两个复数
-	\begin{align*}
-		z_1 = r_1(\cos\theta_1 + i\sin\theta_1) \\
-		z_2 = r_2(\cos\theta_2 + i\sin\theta_2)
-	\end{align*}
-	的除法便是
-	\begin{align*}
-		\mathcal{} \frac{z_1}{z_2} & = z_1{z_2}^{-1}                                                           \\
-		                           & = \frac{r_1}{r_2}(\cos\theta_1+i\sin\theta_2)(\cos\theta_1-i\sin\theta_2) \\
-		                           & = \frac{r_1}{r_2}(\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2))
-	\end{align*}
-	因此，$\frac{z_1}{z_2}$ 的模长为两个模相除 $\frac{|z_1|}{|z_2|}$，幅角为 $\arg(\frac{z_1}{z_2})=\arg(z_1)-\arg(z_2)$。
-	所以复数的除法也可以理解为\textbf{拉伸与旋转}。
+  而对于复数的乘除法，需要先引入复数在极坐标上的几何意义 -- 对于任意一个复数 $z=a+ib$ 用极坐标来表示：
+  \begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+      \begin{axis}[
+          x=0.8cm,y=0.8cm,
+          axis lines=middle,
+          ymajorgrids=true,
+          xmajorgrids=true,
+          xlabel=Re,
+          ylabel=Im,
+          xmin=-0.5,
+          xmax=10.5,
+          ymin=-0.5,
+          ymax=10.5,
+          xtick={0,1,...,10},
+          ytick={0,1,...,10},]
+        \draw [line width=1.5pt,fill opacity=0.1] (0,0) -- (0:3) arc (0:26.565:3) -- cycle;
+        \draw (0.3,6) node[anchor=north west] {Imaginary part as YAxis};
+        \draw (4,0.7) node[anchor=north west] {Real part as XAxis};
+        \draw [line width=1.5pt] (0,0)-- (8,4);
+        \draw (8.7,4.45) node[anchor=north west] {\large(x,y)};
+        \begin{scriptsize}
+          \draw [fill=black] (0,0) circle (3pt);
+          \draw[color=black] (0.35,0.55) node {\large O};
+          \draw [fill=black] (8,4) circle (2.5pt);
+          \draw[color=black] (8.5,4) node {\large P};
+          \draw[color=black] (3.2,1) node {\large $\theta$};
+        \end{scriptsize}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  那么复数的三角表示为：
+  \begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+      \begin{axis}[
+          x=0.8cm,y=0.8cm,
+          axis lines=middle,
+          ymajorgrids=true,
+          xmajorgrids=true,
+          xlabel=Re,
+          ylabel=Im,
+          xmin=-0.5,
+          xmax=10.5,
+          ymin=-0.5,
+          ymax=10.5,
+          xtick={0,1,...,10},
+          ytick={0,1,...,10},]
+        \draw [line width=1.5pt,fill opacity=0.1] (0,0) -- (0:3) arc (0:26.565:3) -- cycle;
+        \draw [line width=1.5pt] (0,0)-- (8,4);
+        \draw (8.7,4.45) node[anchor=north west] {\large(x,y)};
+        \draw [line width=1pt ] (8,0)-- (8,4);
+        \draw [line width=1pt ] (7.5,0)-- (7.5,0.5);
+        \draw [line width=1pt ] (7.5,0.5)-- (8,0.5);
+        \draw (8.1,2) node[anchor=north west] {\large y};
+        \draw (5,0.6) node[anchor=north west] {\large x};
+        \begin{scriptsize}
+          \draw [fill=black] (0,0) circle (3pt);
+          \draw[color=black] (0.35,0.55) node {\large O};
+          \draw [fill=black] (8,4) circle (2.5pt);
+          \draw[color=black] (8.5,4) node {\large P};
+          \draw[color=black] (3.2,1) node {\large $\theta$};
+        \end{scriptsize}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  这里将 $OP$ 的长度作为复数 $z$ 的\textbf{模（Modulus）}，用 $|z|$ 表示；而角 $\theta$ 为复数 $z$ 的\textbf{幅角（Argument）}，
+  用 $\arg(z)$ 表示。那么复数的三角表示为：
+  \[z = x+iy = r(\cos\theta + i\sin\theta), \quad r = \sqrt{x^2+y^2}, \quad \tan\theta = \frac{y}{x} \]
+  接下来是复数乘法的几何意义，使用复数的三角形式计算下列两个复数的乘积：
+  \begin{align*}
+    z_1 = r_1(\cos\theta_1 + i\sin\theta_1) \\
+    z_2 = r_2(\cos\theta_2 + i\sin\theta_2)
+  \end{align*}
+  那么有：
+  \begin{align*}
+    \mathcal{} z_1 z_2 & = r_1 r_2(\cos\theta_1 + i\sin\theta_1)(\cos\theta_2 + i\sin\theta_2)                                                                  \\
+                       & = r_1 r_2 \big( \cos\theta_1 \cos\theta_2 - \sin\theta_1 \sin\theta_2 + i(\sin\theta_1 \cos\theta_2 + \cos\theta_1 \sin\theta_2) \big)
+  \end{align*}
+  那么根据三角和差公式：
+  \[z_1 z_2 = r_1 r_2 \big( \cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2) \big)\]
+  可以发现 $z_1 \cdot z_2$ 计算后模为两个复数模的乘积 $|z_1||z_2|$，幅角为两个复数幅角之和 $\arg(z_1z_2)=\arg(z_1)+\arg(z_2)$。
+  因此复数的乘积可以理解为\textbf{拉伸与旋转}。例如：
+  \begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+      \begin{axis}[
+          x=0.8cm,y=0.8cm,
+          axis lines=middle,
+          ymajorgrids=true,
+          xmajorgrids=true,
+          xmin=-7.5,
+          xmax=7.5,
+          ymin=-1.5,
+          ymax=7.5,
+          xtick={-8,-7,...,7},
+          ytick={-1,0,...,8},]
+        \draw [line width=2pt] (0,0)-- (6,6);
+        \draw [line width=2pt,color=red] (0,0)-- (-6,6);
+        \draw [->,line width=2pt,dash pattern=on 10pt off 10pt,color=blue] (6,6) -- (-6,6);
+        \draw (3.5,3.7) node[anchor=north west] {\large $z_1 = 1 + i$};
+        \draw [line width=2pt] (0,0)-- (0,6);
+        \draw (0.1,4) node[anchor=north west] {\large $z_2 = i$};
+        \draw (-6.8,4.7) node[anchor=north west] {\large $z_1z_2 = (1+i)\cdot i = -1 + i$};
+        \begin{scriptsize}
+          \draw [fill=black] (0,0) circle (2pt);
+          \draw [fill=black] (6,6) circle (2.5pt);
+          \draw [fill=red] (-6,6) circle (2.5pt);
+          \draw [fill=black] (0,6) circle (2.5pt);
+        \end{scriptsize}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  因为
+  \[z_1=\sqrt{2}(\cos\frac{\pi}{4}+i\sin\frac{\pi}{4}),\quad z_2=1(\cos\frac{\pi}{2}+i\sin\frac{\pi}{2})\]
+  所以 $z_1z_2$ 的模长为 $\sqrt{2}$ 且幅角为 $\frac{3\pi}{4}$。
+  而复数的除法只需要将除法写成乘法形式即可
+  \begin{align*}
+    \mathcal{} z^{-1} & = \big(r(\cos\theta+i\sin\theta)\big)^{-1}                                             \\
+                      & = r^{-1}\frac{1}{\cos\theta+i\sin\theta}                                               \\
+                      & =r^{-1}\frac{\cos\theta-i\sin\theta}{(\cos\theta+i\sin\theta)(\cos\theta-i\sin\theta)} \\
+                      & =r^{-1}(\cos\theta-i\sin\theta)
+  \end{align*}
+  那么两个复数
+  \begin{align*}
+    z_1 = r_1(\cos\theta_1 + i\sin\theta_1) \\
+    z_2 = r_2(\cos\theta_2 + i\sin\theta_2)
+  \end{align*}
+  的除法便是
+  \begin{align*}
+    \mathcal{} \frac{z_1}{z_2} & = z_1{z_2}^{-1}                                                           \\
+                               & = \frac{r_1}{r_2}(\cos\theta_1+i\sin\theta_2)(\cos\theta_1-i\sin\theta_2) \\
+                               & = \frac{r_1}{r_2}(\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2))
+  \end{align*}
+  因此，$\frac{z_1}{z_2}$ 的模长为两个模相除 $\frac{|z_1|}{|z_2|}$，幅角为 $\arg(\frac{z_1}{z_2})=\arg(z_1)-\arg(z_2)$。
+  所以复数的除法也可以理解为\textbf{拉伸与旋转}。
 
-	综上所述，复数的加减法就是向量的加减法，乘除法就是拉伸与旋转变换。
+  综上所述，复数的加减法就是向量的加减法，乘除法就是拉伸与旋转变换。
 \end{anote}
 
 \setcounter{poma}{24}
 \begin{theorem}
-	These definitions of addition and multiplication turn the set of all complex numbers into a field,
-	with (0, 0) and (1, 0) in the role of 0 and 1.
+  These definitions of addition and multiplication turn the set of all complex numbers into a field,
+  with (0, 0) and (1, 0) in the role of 0 and 1.
 \end{theorem}
 
 \begin{proof}
-	我们简单的验证一下域的公理（Definition 1.12），使用 $R$ 的域结构。
-	令 $x=(a,b), y=(c,d), z=(e,f)$。
-	\begin{itemize}
-		\item[] (A1) 很清楚。
-		\item[] (A2) $x+y = (a+c,b+d) = (c+a,d+b) = y+x$
-		\item[] (A3)
-			\vspace{-26pt}
-			\begin{align*}
-				\mathcal (x+y)+z & = (a+c,b+d) + (e,f) \\
-				                 & = (a+c+e, b+d+f)    \\
-				                 & = (a,b) + (c+e,d+f) \\
-				                 & = x+(y+z)
-			\end{align*}
-		\item[] (A4) $x+0 = (a,b) + (0,0) = (a,b) = x$
-		\item[] (A5) 令 $-x = (-a,-b)$，那么 $x+(-x) = (0,0) = 0$
-		\item[] (M1) 很清楚。
-		\item[] (M2) $xy = (ac-bd,ad+bc) = (ca-db,da+cb) = yx$
-		\item[] (M3)
-			\vspace{-26pt}
-			\begin{align*}
-				\mathcal (xy)z & = (ac-db,ad+bc)(e,f)                \\
-				               & = (ace-bde-adf-bef,acf-bdf+ade+bce) \\
-				               & = (a,b)(ce-df,cf+de)                \\
-				               & = x(yz)
-			\end{align*}
-		\item[] (M4) $1x  =(1,0)(a,b) = (a,b) = x$
-		\item[] (M5) 如果 $x \ne 0$ 那么 $(a,b) \ne (0,0)$，也就是说 $a$ 和 $b$ 至少有一个实数不等于 0。
-			因此 $a^2+b^2>0$，根据 Proposition 1.18(d)，我们可以定义
-			\[\frac{1}{x} = \bigl(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2}\bigr)\]
-			那么
-			\[x \cdot \frac{1}{x} = (a,b)\bigl(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2}\bigr) = (1,0) = 1\]
-		\item[] (D)
-			\vspace{-26pt}
-			\begin{align*}
-				\mathcal{} x(y+z) & = (a,b)(c+e,d+f)                \\
-				                  & = (ac+ae-bd-bf,ad+af+bc+be)     \\
-				                  & = (ac-bd,ad+bc) + (ae-bf,af+be) \\
-				                  & = xy + yz
-			\end{align*}
-	\end{itemize}
+  我们简单的验证一下域的公理（Definition 1.12），使用 $R$ 的域结构。
+  令 $x=(a,b), y=(c,d), z=(e,f)$。
+  \begin{itemize}
+    \item[] (A1) 很清楚。
+    \item[] (A2) $x+y = (a+c,b+d) = (c+a,d+b) = y+x$
+    \item[] (A3)
+      \vspace{-26pt}
+      \begin{align*}
+        \mathcal (x+y)+z & = (a+c,b+d) + (e,f) \\
+                         & = (a+c+e, b+d+f)    \\
+                         & = (a,b) + (c+e,d+f) \\
+                         & = x+(y+z)
+      \end{align*}
+    \item[] (A4) $x+0 = (a,b) + (0,0) = (a,b) = x$
+    \item[] (A5) 令 $-x = (-a,-b)$，那么 $x+(-x) = (0,0) = 0$
+    \item[] (M1) 很清楚。
+    \item[] (M2) $xy = (ac-bd,ad+bc) = (ca-db,da+cb) = yx$
+    \item[] (M3)
+      \vspace{-26pt}
+      \begin{align*}
+        \mathcal (xy)z & = (ac-db,ad+bc)(e,f)                \\
+                       & = (ace-bde-adf-bef,acf-bdf+ade+bce) \\
+                       & = (a,b)(ce-df,cf+de)                \\
+                       & = x(yz)
+      \end{align*}
+    \item[] (M4) $1x  =(1,0)(a,b) = (a,b) = x$
+    \item[] (M5) 如果 $x \ne 0$ 那么 $(a,b) \ne (0,0)$，也就是说 $a$ 和 $b$ 至少有一个实数不等于 0。
+      因此 $a^2+b^2>0$，根据 Proposition 1.18(d)，我们可以定义
+      \[\frac{1}{x} = \bigl(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2}\bigr)\]
+      那么
+      \[x \cdot \frac{1}{x} = (a,b)\bigl(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2}\bigr) = (1,0) = 1\]
+    \item[] (D)
+      \vspace{-26pt}
+      \begin{align*}
+        \mathcal{} x(y+z) & = (a,b)(c+e,d+f)                \\
+                          & = (ac+ae-bd-bf,ad+af+bc+be)     \\
+                          & = (ac-bd,ad+bc) + (ae-bf,af+be) \\
+                          & = xy + yz
+      \end{align*}
+  \end{itemize}
 \end{proof}
 
 \begin{theorem}
-	For any real numbers $a$ and $b$ we have
-	\[(a,0) + (b,0) = (a+b,0), \quad (a,0)(b,0) = (ab,0)\]
+  For any real numbers $a$ and $b$ we have
+  \[(a,0) + (b,0) = (a+b,0), \quad (a,0)(b,0) = (ab,0)\]
 \end{theorem}
 
 \begin{definition}
-	$i=(0,1)$
+  $i=(0,1)$
 \end{definition}
 
 \setcounter{poma}{27}
 \begin{theorem}
-	$i^2=-1$
+  $i^2=-1$
 \end{theorem}
 
 \begin{proof}
-	$i^2 = (0,1)(0,1) = (-1,0) = -1$
+  $i^2 = (0,1)(0,1) = (-1,0) = -1$
 \end{proof}
 
 \begin{theorem}
-	If a and b are real, then $(a,b)=a+bi$
+  If a and b are real, then $(a,b)=a+bi$
 \end{theorem}
 
 \begin{proof}
-	\vspace{-26pt}
-	\begin{align*}
-		\mathcal{} a+bi & = (a,0) + (b,0)(0,1) \\
-		                & = (a,0) + (0,b)      \\
-		                & = (a,b)
-	\end{align*}
+  \vspace{-26pt}
+  \begin{align*}
+    \mathcal{} a+bi & = (a,0) + (b,0)(0,1) \\
+                    & = (a,0) + (0,b)      \\
+                    & = (a,b)
+  \end{align*}
 \end{proof}
 
 \begin{definition}
-	If $a$, $b$ are real and $z=a+bi$, then the complex number $\overline{z}=a-bi$ is called the \textit{conjugate} of $z$.
-	The numbers $a$ and $b$ are the \textit{real part} and the \textit{imaginary part} of $z$, respectively.
-	We shall occasionally write
-	\[ a = Re(z),\quad b=Im(z)\]
+  If $a$, $b$ are real and $z=a+bi$, then the complex number $\overline{z}=a-bi$ is called the \textit{conjugate} of $z$.
+  The numbers $a$ and $b$ are the \textit{real part} and the \textit{imaginary part} of $z$, respectively.
+  We shall occasionally write
+  \[ a = Re(z),\quad b=Im(z)\]
 \end{definition}
 
 \begin{theorem}
-	If $z$ and $w$ are complex, then
-	\begin{enumerate}[label=(\alph*)]
-		\item $\overline{z + w} = \overline{z} + \overline{w}$
-		\item $\overline{zw} = \overline{z} \cdot \overline{w}$
-		\item $z + \overline{z} = 2 \, Re(z), \, z - \overline{z} = 2i \, Im(z)$
-		\item $z\overline{z}$ is real and positive (except when $z=0$)
-	\end{enumerate}
+  If $z$ and $w$ are complex, then
+  \begin{enumerate}[label=(\alph*)]
+    \item $\overline{z + w} = \overline{z} + \overline{w}$
+    \item $\overline{zw} = \overline{z} \cdot \overline{w}$
+    \item $z + \overline{z} = 2 \, Re(z), \, z - \overline{z} = 2i \, Im(z)$
+    \item $z\overline{z}$ is real and positive (except when $z=0$)
+  \end{enumerate}
 \end{theorem}
 
 \begin{definition}
-	If $z$ is a complex number, its absolute value $|z|$ is the non-negative square root of $z\overline{z}$;
-	that is, $|z| = (z\overline{z})^{1/2}$.
+  If $z$ is a complex number, its absolute value $|z|$ is the non-negative square root of $z\overline{z}$;
+  that is, $|z| = (z\overline{z})^{1/2}$.
 \end{definition}
 
 $|z|$ 的存在（以及唯一性）遵循 Theorem 1.12 以及 Theorem 1.31 (d)。
@@ -589,132 +592,134 @@ $|z|$ 的存在（以及唯一性）遵循 Theorem 1.12 以及 Theorem 1.31 (d)�
 所以如果 $x \ge 0$ 时 $|x| = x$，如果 $x<0$ 时 $|x| = -x$。
 
 \begin{theorem}
-	Let $z$ and $w$ be complex numbers. Then
-	\begin{enumerate}[label=(\alph*)]
-		\item $|z|>0$ unless $z=0,\,|0|=0$
-		\item $|\overline{z}|=|z|$
-		\item $|zw|=|z||w|$
-		\item $|Re \, z| \le |z|$
-		\item $|z+w| \le |z|+|w|$
-	\end{enumerate}
+  Let $z$ and $w$ be complex numbers. Then
+  \begin{enumerate}[label=(\alph*)]
+    \item $|z|>0$ unless $z=0,\,|0|=0$
+    \item $|\overline{z}|=|z|$
+    \item $|zw|=|z||w|$
+    \item $|Re \, z| \le |z|$
+    \item $|z+w| \le |z|+|w|$
+  \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-	(a) 与 (b) 不足为道。令 $z=a+bi,\,w=c+di$，其 $a,\,b,\,c,\,d$ 皆为实数。那么
-	\[|zw|^2 = (ac-bd)^2 + (ad+bc)^2 = (a^2+b^2)(c^2+d^2) = |z|^2|w|^2\]
-	即 $|zw|^2 = (|z||w|)^2$。(c) 遵循 Theorem 1.21 所声明的唯一性。
+  (a) 与 (b) 不足为道。令 $z=a+bi,\,w=c+di$，其 $a,\,b,\,c,\,d$ 皆为实数。那么
+  \[|zw|^2 = (ac-bd)^2 + (ad+bc)^2 = (a^2+b^2)(c^2+d^2) = |z|^2|w|^2\]
+  即 $|zw|^2 = (|z||w|)^2$。(c) 遵循 Theorem 1.21 所声明的唯一性。
 
-	证明 (d)，有 $a^2 \le a^2 + b^2$，因此
-	\[|a| = \sqrt{a^2} \le \sqrt{a^2 + b^2}\]
+  证明 (d)，有 $a^2 \le a^2 + b^2$，因此
+  \[|a| = \sqrt{a^2} \le \sqrt{a^2 + b^2}\]
 
-	证明 (e)，有 $\overline{z}w$ 与 $z\overline{w}$ 是共轭的，因此 $\overline{z}w + z\overline{w} = 2\, Re\,(z\overline{w})$。
-	因此
-	\begin{align*}
-		\mathcal |z+w|^2 & = (z+w)(\overline{z}+\overline{w})                              \\
-		                 & = z\overline{z} + z\overline{w} + \overline{z}w + w\overline{w} \\
-		                 & = |z|^2 + 2\,Re\,(z\overline{w}) + |w|^2                        \\
-		                 & \le |z|^2 + 2|z\overline{w}| + |w|^2                            \\
-		                 & = |z|^2 + 2|z||w| + |w|^2                                       \\
-		                 & = (|z|+|w|)^2
-	\end{align*}
+  证明 (e)，有 $\overline{z}w$ 与 $z\overline{w}$ 是共轭的，因此 $\overline{z}w + z\overline{w} = 2\, Re\,(z\overline{w})$。
+  因此
+  \begin{align*}
+    \mathcal |z+w|^2 & = (z+w)(\overline{z}+\overline{w})                              \\
+                     & = z\overline{z} + z\overline{w} + \overline{z}w + w\overline{w} \\
+                     & = |z|^2 + 2\,Re\,(z\overline{w}) + |w|^2                        \\
+                     & \le |z|^2 + 2|z\overline{w}| + |w|^2                            \\
+                     & = |z|^2 + 2|z||w| + |w|^2                                       \\
+                     & = (|z|+|w|)^2
+  \end{align*}
 
-	两边开根号后即可得 (e)。
+  两边开根号后即可得 (e)。
 \end{proof}
 
-\anote
-计算中第一步的 $|z+w|^2 = (z+w)(\overline{z}+\overline{w})$ 是将 $z+w$ 视为整体，并使用了 Definition 1.32 中的
-$|z|=(z\overline{z})^{1/2}$ 转换为 $(z+w)(\overline{z+w})$，而又因为 Theorem 1.31 (a) 可将第二项变为
-$(\overline{z}+\overline{w})$；而第三步到第四步的不等式则利用了 Theorem 1.33 (d)，即 $|Re z| \le |z|$；
-第四步到第五步则使用了 Theorem 1.33 (c)，即 $|zw|=|z||w|$。
+\begin{anote}
+  计算中第一步的 $|z+w|^2 = (z+w)(\overline{z}+\overline{w})$ 是将 $z+w$ 视为整体，并使用了 Definition 1.32 中的
+  $|z|=(z\overline{z})^{1/2}$ 转换为 $(z+w)(\overline{z+w})$，而又因为 Theorem 1.31 (a) 可将第二项变为
+  $(\overline{z}+\overline{w})$；而第三步到第四步的不等式则利用了 Theorem 1.33 (d)，即 $|Re z| \le |z|$；
+  第四步到第五步则使用了 Theorem 1.33 (c)，即 $|zw|=|z||w|$。
+\end{anote}
 
 \begin{notation}
-	If $x_1,\dots,x_n$ are complex numbers, we write
-	\[x_1 + x_2 + \cdots + x_n = \sum_{j=1}^{n} x_j\]
+  If $x_1,\dots,x_n$ are complex numbers, we write
+  \[x_1 + x_2 + \cdots + x_n = \sum_{j=1}^{n} x_j\]
 \end{notation}
 
 我们用一个重要的不等式来结束本节，它通常被称为 \textit{Schwarz inequality}。
 
 \begin{theorem}
-	If $a_1,\dots,a_n$ and $b_1,\dots,b_n$ are complex numbers, then
-	\[\left|\sum_{j=1}^{n} a_j \overline{b}_j\right|^2 \le \sum_{j=1}^{n}|a_j|^2\sum_{j=1}^{n}|b_j|^2\]
+  If $a_1,\dots,a_n$ and $b_1,\dots,b_n$ are complex numbers, then
+  \[\left|\sum_{j=1}^{n} a_j \overline{b}_j\right|^2 \le \sum_{j=1}^{n}|a_j|^2\sum_{j=1}^{n}|b_j|^2\]
 \end{theorem}
 
 \begin{proof}
-	令 $A=\sum|a_j|^2, \, B=\sum|b_j|^2, \, C=\sum a_j\overline{b}_j$，本证明中 j 取值 $1,\dots,n$。
-	如果 $B=0$，那么就有 $b_1=\cdots=b_n=0$，那么结论很清楚。因此假设 $B>0$。根据 Theorem 1.31 有
-	\begin{align*}
-		\mathcal{} \sum|Ba_j - Cb_j|^2 & = \sum (Ba_j - Cb_j)(B\overline{a}_j - \overline{CB_j})                                              \\
-		                               & = B^2\sum|a_j|^2 - B\overline{C}\sum a_j\overline{b}_j - BC\sum\overline{a}_j b_j + |C|^2\sum|b_j|^2 \\
-		                               & = B^2A - B|C|^2                                                                                      \\
-		                               & = B(AB - |C|^2)
-	\end{align*}
-	因为在首次求和的每个项都是非负的，可以知道
-	\[B(AB-|C|^2)\ge0\]
-	又因为 $B>0$，它遵循 $AB-|C|^2\ge0$。它便是预期的不等式。
+  令 $A=\sum|a_j|^2, \, B=\sum|b_j|^2, \, C=\sum a_j\overline{b}_j$，本证明中 j 取值 $1,\dots,n$。
+  如果 $B=0$，那么就有 $b_1=\cdots=b_n=0$，那么结论很清楚。因此假设 $B>0$。根据 Theorem 1.31 有
+  \begin{align*}
+    \mathcal{} \sum|Ba_j - Cb_j|^2 & = \sum (Ba_j - Cb_j)(B\overline{a}_j - \overline{CB_j})                                              \\
+                                   & = B^2\sum|a_j|^2 - B\overline{C}\sum a_j\overline{b}_j - BC\sum\overline{a}_j b_j + |C|^2\sum|b_j|^2 \\
+                                   & = B^2A - B|C|^2                                                                                      \\
+                                   & = B(AB - |C|^2)
+  \end{align*}
+  因为在首次求和的每个项都是非负的，可以知道
+  \[B(AB-|C|^2)\ge0\]
+  又因为 $B>0$，它遵循 $AB-|C|^2\ge0$。它便是预期的不等式。
 \end{proof}
 
-\anote
-$|Ba_j - Cb_j|^2$ 为构造项，将其中 $Ba_j - Cb_j$ 视为整体根据 Definition 1.32，可转换为 $(Ba_j - Cb_j)(\overline{Ba_j - Cb_j})$，
-而后者根据 Theorem 1.31 即可写为 $B\overline{a}_j - \overline{Cb_j}$（这里 $B=\sum|b_j|^2$ 的共轭还是其本身）；
-根据乘法分配律得出第二步后，将之前设定的 $A, B, C$ 带入即可得出 $B(AB - |C|^2)$；最后根据起始的构造项 $|Ba_j - Cb_j|^2$
-必然非负以及之前假设的 $B>0$ 可以得出 $AB-|C|^2 \ge 0$；将 $A, B, C$ 原本代表的值带入，
-即 $\sum|a_j|^2\sum|b_j|^2-|\sum a_j\overline{b}_j|\ge0$。
+\begin{anote}
+  $|Ba_j - Cb_j|^2$ 为构造项，将其中 $Ba_j - Cb_j$ 视为整体根据 Definition 1.32，可转换为 $(Ba_j - Cb_j)(\overline{Ba_j - Cb_j})$，
+  而后者根据 Theorem 1.31 即可写为 $B\overline{a}_j - \overline{Cb_j}$（这里 $B=\sum|b_j|^2$ 的共轭还是其本身）；
+  根据乘法分配律得出第二步后，将之前设定的 $A, B, C$ 带入即可得出 $B(AB - |C|^2)$；最后根据起始的构造项 $|Ba_j - Cb_j|^2$
+  必然非负以及之前假设的 $B>0$ 可以得出 $AB-|C|^2 \ge 0$；将 $A, B, C$ 原本代表的值带入，
+  即 $\sum|a_j|^2\sum|b_j|^2-|\sum a_j\overline{b}_j|\ge0$。
+\end{anote}
 
 \subsection*{Euclidean Spaces}
 
 \begin{definitions}
-	For each positive integer $k$, let $R^k$ be the set of all ordered $k$-tuples
-	\[\mathbf{x}=(x_1,x_2,\dots,x_k)\]
-	where $x_1,\dots,x_k$ are real numbers, called the \textit{coordintates} of $\mathbf{x}$. The elements of $R^k$
-	are called points, or vectors, especially when $k>1$. We shall denote vectors by boldfaced letters.
-	If $\mathbf{y}=(y_1,\dots,y_k)$ and if $\alpha$ is a real number, put
-	\[\mathbf{x}+\mathbf{y}=(x_1+y_1,\dots,x_k+y_k)\]
-	\[\alpha\mathbf{x}=(\alpha x_1,\dots,\alpha x_k)\]
-	so that $\mathbf{x}+\mathbf{y} \in R^k$ and $\alpha\mathbf{x} \in R^k$. This defines addition of vectors,
-	as well as multiplication of a vector by a real number (a scalar). These two operations satisfy the commutative,
-	associative, and distributive laws (the proof is trivial, in view of the analogous for the real numbers) and
-	make $R^k$ into a \textit{vector space over the real field}. The zero element of $R^k$ (sometimes called the
-	\textit{origin} or the \textit{null vector}) is the point $\mathbf{0}$, all of whose coordintates are 0.
+  For each positive integer $k$, let $R^k$ be the set of all ordered $k$-tuples
+  \[\mathbf{x}=(x_1,x_2,\dots,x_k)\]
+  where $x_1,\dots,x_k$ are real numbers, called the \textit{coordintates} of $\mathbf{x}$. The elements of $R^k$
+  are called points, or vectors, especially when $k>1$. We shall denote vectors by boldfaced letters.
+  If $\mathbf{y}=(y_1,\dots,y_k)$ and if $\alpha$ is a real number, put
+  \[\mathbf{x}+\mathbf{y}=(x_1+y_1,\dots,x_k+y_k)\]
+  \[\alpha\mathbf{x}=(\alpha x_1,\dots,\alpha x_k)\]
+  so that $\mathbf{x}+\mathbf{y} \in R^k$ and $\alpha\mathbf{x} \in R^k$. This defines addition of vectors,
+  as well as multiplication of a vector by a real number (a scalar). These two operations satisfy the commutative,
+  associative, and distributive laws (the proof is trivial, in view of the analogous for the real numbers) and
+  make $R^k$ into a \textit{vector space over the real field}. The zero element of $R^k$ (sometimes called the
+  \textit{origin} or the \textit{null vector}) is the point $\mathbf{0}$, all of whose coordintates are 0.
 
-	We also define the so-called \say{inner product} (or scalar product) of $\mathbf{x}$ and $\mathbf{y}$ by
-	\[\mathbf{x}\cdot\mathbf{y}=\sum_{i=1}^{k}x_i y_i\]
-	and the \textit{norm} of $\mathbf{x}$ by
-	\[|\mathbf{x}| = (\mathbf{x}\cdot\mathbf{x})^{1/2} = \left(\sum_{1}^{k}x^2_i\right)^{1/2}\]
+  We also define the so-called \say{inner product} (or scalar product) of $\mathbf{x}$ and $\mathbf{y}$ by
+  \[\mathbf{x}\cdot\mathbf{y}=\sum_{i=1}^{k}x_i y_i\]
+  and the \textit{norm} of $\mathbf{x}$ by
+  \[|\mathbf{x}| = (\mathbf{x}\cdot\mathbf{x})^{1/2} = \left(\sum_{1}^{k}x^2_i\right)^{1/2}\]
 
-	The structure now defined (the vector space $R^k$ with the above inner product and norm) is called
-	euclidean $k$-space.
+  The structure now defined (the vector space $R^k$ with the above inner product and norm) is called
+  euclidean $k$-space.
 \end{definitions}
 
 \begin{theorem}
-	Suppose $\mathbf{x},\mathbf{y},\mathbf{z}\in R^k$, and $\alpha$ is real. Then
-	\begin{enumerate}[label=(\alph*)]
-		\item $|\mathbf{x}| \ge 0$;
-		\item $|\mathbf{x}| = 0$ if and only if $\mathbf{x} = \mathbf{0}$;
-		\item $|\alpha\mathbf{x}| = |\alpha||\mathbf{x}|$;
-		\item $|\mathbf{x}\cdot\mathbf{y}|\le|\mathbf{x}||\mathbf{y}|$;
-		\item $|\mathbf{x}+\mathbf{y}|\le|\mathbf{x}|+|\mathbf{y}|$;
-		\item $|\mathbf{x}-\mathbf{z}|\le|\mathbf{x}-\mathbf{y}|+|\mathbf{y}-\mathbf{z}|$
-	\end{enumerate}
+  Suppose $\mathbf{x},\mathbf{y},\mathbf{z}\in R^k$, and $\alpha$ is real. Then
+  \begin{enumerate}[label=(\alph*)]
+    \item $|\mathbf{x}| \ge 0$;
+    \item $|\mathbf{x}| = 0$ if and only if $\mathbf{x} = \mathbf{0}$;
+    \item $|\alpha\mathbf{x}| = |\alpha||\mathbf{x}|$;
+    \item $|\mathbf{x}\cdot\mathbf{y}|\le|\mathbf{x}||\mathbf{y}|$;
+    \item $|\mathbf{x}+\mathbf{y}|\le|\mathbf{x}|+|\mathbf{y}|$;
+    \item $|\mathbf{x}-\mathbf{z}|\le|\mathbf{x}-\mathbf{y}|+|\mathbf{y}-\mathbf{z}|$
+  \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-	前三项不必赘述，而 (d) 是 Schwarz 不等式的间接结论。通过 (d) 可以有
-	\begin{align*}
-		\mathcal{} |\mathbf{x}+\mathbf{y}|^2 & = (\mathbf{x}+\mathbf{y})\cdot(\mathbf{x}+\mathbf{y})                               \\
-		                                     & =\mathbf{x}\cdot\mathbf{x} + 2\mathbf{x}\cdot\mathbf{y} + \mathbf{y}\cdot\mathbf{y} \\
-		                                     & \le |\mathbf{x}|^2 + 2|\mathbf{x}||\mathbf{y}| + |\mathbf{y}|^2                     \\
-		                                     & = (|\mathbf{x}|+|\mathbf{y}|)^2
-	\end{align*}
-	这样 (e) 就被证明了。最后替换 (e) 中的 $\mathbf{x}$ 为 $\mathbf{x}-\mathbf{y}$ 以及 $\mathbf{y}$ 为 $\mathbf{y}-\mathbf{z}$ (f)
-	可以得出 (f)。
+  前三项不必赘述，而 (d) 是 Schwarz 不等式的间接结论。通过 (d) 可以有
+  \begin{align*}
+    \mathcal{} |\mathbf{x}+\mathbf{y}|^2 & = (\mathbf{x}+\mathbf{y})\cdot(\mathbf{x}+\mathbf{y})                               \\
+                                         & =\mathbf{x}\cdot\mathbf{x} + 2\mathbf{x}\cdot\mathbf{y} + \mathbf{y}\cdot\mathbf{y} \\
+                                         & \le |\mathbf{x}|^2 + 2|\mathbf{x}||\mathbf{y}| + |\mathbf{y}|^2                     \\
+                                         & = (|\mathbf{x}|+|\mathbf{y}|)^2
+  \end{align*}
+  这样 (e) 就被证明了。最后替换 (e) 中的 $\mathbf{x}$ 为 $\mathbf{x}-\mathbf{y}$ 以及 $\mathbf{y}$ 为 $\mathbf{y}-\mathbf{z}$ (f)
+  可以得出 (f)。
 \end{proof}
 
 \begin{remarks}
-	Theorem 1.37 (a), (b), and (f) will allow us (see Chap. 2) to regard $R^k$ as a metric space.
+  Theorem 1.37 (a), (b), and (f) will allow us (see Chap. 2) to regard $R^k$ as a metric space.
 
-	$R^1$ (the set of all real numbers) is usually called the line, or the real line. Likewise,
-	$R^2$ is called the plane, or the complex plane (compare Definitions 1.24 and 1.36).
-	In these two cases the norm is just the absolute value of the corresponding real or complex number.
+  $R^1$ (the set of all real numbers) is usually called the line, or the real line. Likewise,
+  $R^2$ is called the plane, or the complex plane (compare Definitions 1.24 and 1.36).
+  In these two cases the norm is just the absolute value of the corresponding real or complex number.
 \end{remarks}
 
 \end{document}

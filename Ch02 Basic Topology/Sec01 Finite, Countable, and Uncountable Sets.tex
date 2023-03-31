@@ -81,9 +81,10 @@
   whereas the notion of 1-1 correspondence retains its clarity.
 \end{definition}
 
-\anote
-可数集（countable set），是指每个元素都能与自然数集 $N$ 的每个元素之间能建立一一对应的集合；不可数集顾名思义就是无法与自然数集
-$N$ 建立一一对应的集合；至多可数集（at most coutable）是有限集（finite）与可数集（coutable）的统称。
+\begin{anote}
+  可数集（countable set），是指每个元素都能与自然数集 $N$ 的每个元素之间能建立一一对应的集合；不可数集顾名思义就是无法与自然数集
+  $N$ 建立一一对应的集合；至多可数集（at most coutable）是有限集（finite）与可数集（coutable）的统称。
+\end{anote}
 
 \setcounter{poma}{6}
 
@@ -117,8 +118,9 @@ $N$ 建立一一对应的集合；至多可数集（at most coutable）是有限
   根据定理，粗略的说可数集合表示了\say{最小的}无限性：没有不可数集合可以成为一个可数集合的子集。
 \end{proof}
 
-\anote
-一个可数集合 $A$ 的任意无限子集都是可数的。
+\begin{anote}
+  一个可数集合 $A$ 的任意无限子集都是可数的。
+\end{anote}
 
 \begin{definition}
   Let $A$ and $\Omega$ be sets, and suppose that with each element $\alpha$ of $A$ there is associated a subset of
@@ -424,7 +426,9 @@ $A$ 集合中的元素数列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
   使得 $s \in E$。因此 $q$ 是 $E$ 的一个内点。
 \end{proof}
 
-\anote 所有邻域都是开的。
+\begin{anote}
+  所有邻域都是开的。
+\end{anote}
 
 \begin{theorem}
   If $p$ is a limit point of a set $E$, then every neighborhood of $p$ contains infinitely many points of $E$.
@@ -438,9 +442,11 @@ $A$ 集合中的元素数列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
   邻域 $N_r(p)$ 包含了除了点 $q$ 的 $E$ 即 $q \ne p$，使得 $p$ 不是 $E$ 的一个极限点。这与定理自身相悖。
 \end{proof}
 
-\anote 简单来说，假设 $p$ 有一个邻域是有限集合，那么就一定会有 $r$ 满足 $\min\limits_{1 \le m \le n} d(p,q_m)$，也就是
-有最小距离存在；然而这与 Definition 2.18 (b) 相悖，即与\say{无论半径多小}的定义相悖，因此 $p$ 不是一个极限点。因此，
-如果 $p$ 是一个极限点，那么它的任何邻域都有无限个点。
+\begin{anote}
+  简单来说，假设 $p$ 有一个邻域是有限集合，那么就一定会有 $r$ 满足 $\min\limits_{1 \le m \le n} d(p,q_m)$，也就是
+  有最小距离存在；然而这与 Definition 2.18 (b) 相悖，即与\say{无论半径多小}的定义相悖，因此 $p$ 不是一个极限点。因此，
+  如果 $p$ 是一个极限点，那么它的任何邻域都有无限个点。
+\end{anote}
 
 \begin{corollary}
   A finite point set has no limit points.
@@ -575,8 +581,10 @@ $A$ 集合中的元素数列类似于 $1, 0, 0, 1, 0, 1, 1, 1, \dots$。
   \textit{closure} of $E$ is the set $\overline{E} = E \cup E'$.
 \end{definition}
 
-\anote $E'$ 为所有极限点的集，那么 $\overline{E} = E \cup E'$ 为闭包（例如一维空间 $(a, b), \ a<b, \ a,b \in R$ 有极限点
-$a, \ b$，那么 $\overline{E} = (a,b) \cup {a} \cup {b} = [a,b]$）。
+\begin{anote}
+  $E'$ 为所有极限点的集，那么 $\overline{E} = E \cup E'$ 为闭包（例如一维空间 $(a, b), \ a<b, \ a,b \in R$ 有极限点
+  $a, \ b$，那么 $\overline{E} = (a,b) \cup {a} \cup {b} = [a,b]$）。
+\end{anote}
 
 \begin{theorem}
   If $X$ is a metric space and $E \subset X$, then
@@ -598,9 +606,10 @@ $a, \ b$，那么 $\overline{E} = (a,b) \cup {a} \cup {b} = [a,b]$）。
   \end{enumerate}
 \end{proof}
 
-\anote
-对于 (c) 而言，如果 $E \subset F$，那么 $E$ 的极限点要么属于 $F$ 的内点，要么属于 $F$ 的极限点；而根据闭集的定义，
-闭集中所有的极限点都属于闭集，所以 $E \cup E' \subset F$，即 $\overline{E} \subset F$。
+\begin{anote}
+  对于 (c) 而言，如果 $E \subset F$，那么 $E$ 的极限点要么属于 $F$ 的内点，要么属于 $F$ 的极限点；而根据闭集的定义，
+  闭集中所有的极限点都属于闭集，所以 $E \cup E' \subset F$，即 $\overline{E} \subset F$。
+\end{anote}
 
 \begin{theorem}
   Let $E$ be a nonempty set of real numbers which is bounded above. Let $y = \sup E$. Then $y \in \overline{E}$.
@@ -612,7 +621,10 @@ $a, \ b$，那么 $\overline{E} = (a,b) \cup {a} \cup {b} = [a,b]$）。
   不然的话 $y-h$ 会是 $E$ 的一个上界。因此 $y$ 是 $E$ 的一个极限点，所以 $y \in \overline{E}$。
 \end{proof}
 
-\anote 如果 $E$ 是闭集，而 $y \notin E$ 时，那么总会有 $h>0$ 使得 $y-h$ < $y$ 为 $E$ 的上界，那么与 $y = \sup E$ 相悖。
+\begin{anote}
+  如果 $E$ 是闭集，而 $y \notin E$ 时，那么总会有 $h>0$ 使得 $y-h$ < $y$ 为 $E$ 的上界，那么与 $y = \sup E$ 相悖。
+\end{anote}
+
 
 \begin{remark}
   Suppose $E \subset Y \subset X$, where $X$ is a metric space. To say that $E$ is an open subset of $X$ means that to
@@ -624,8 +636,9 @@ $a, \ b$，那么 $\overline{E} = (a,b) \cup {a} \cup {b} = [a,b]$）。
   between these concepts, which we now state.
 \end{remark}
 
-\anote
-根据 Examples 2.16 与 2.21 (g) 引入相对开集这个概念，在下面的定理中证明相对开集 $E$ 与 $Y$ 和 $X$ 的关系。
+\begin{anote}
+  根据 Examples 2.16 与 2.21 (g) 引入相对开集这个概念，在下面的定理中证明相对开集 $E$ 与 $Y$ 和 $X$ 的关系。
+\end{anote}
 
 \begin{theorem}
   Suppose $Y \subset X$. A subset $E$ of $Y$ is open relative to $Y$ if and only if $E = Y \cap G$ for some open
