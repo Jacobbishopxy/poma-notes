@@ -44,6 +44,33 @@
   收敛现在遵循柯西准则。注意第一个不等式中依赖了 $b_n - b_{n+1} \ge 0$。
 \end{proof}
 
-% TODO
+\begin{theorem}
+  Suppose
+  \begin{enumerate}[label=(\alph*)]
+    \item $|c_1| \ge |c_2| \ge |c_3| \ge \cdots$;
+    \item $c_{2m-1} \ge 0,\ c_{2m} \le 0 \qquad (m=1,2,3,\cdots)$;
+    \item $\lim_{n\to\infty} c_n = 0$.
+  \end{enumerate}
+  Then $\Sigma c_n$ converges.
+
+  满足 (b) 的级数也被称为\say{交错级数 alternating series}；该定理也熟知为莱布尼兹定理。
+\end{theorem}
+
+\begin{proof}
+  应用 Theorem 3.42，以及 $a_n = (-1)^{n+1},\ b_n = |c_n|$。
+\end{proof}
+
+\begin{theorem} Suppose the radius of convergence of $\Sigma c_n z^n$ is $1$, and suppose $c_0\ge c_1\ge c_2\ge\cdots,
+    \lim_{n\to\infty}c_n = 0$. Then $\Sigma c_n z^n$ converges at every point on the circle $|z|=1$,
+  except possibly at $z=1$.
+\end{theorem}
+
+\begin{proof}
+  令 $a_n = z^n,\ b_n = c_n$。Theorem 3.42 的假设满足了，因为
+  \[
+    |A_n| = \Biggl|\sum_{m=0}^{n}z^m\Biggr| = \Biggl|\frac{1-z^{n+1}}{1-z}\Biggr| \le \frac{2}{|1-z|}
+  \]
+  如果 $|z| = 1,\ z \ne 1$
+\end{proof}
 
 \end{document}
