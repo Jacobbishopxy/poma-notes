@@ -4,6 +4,46 @@
 
 \subsection*{Summation by Parts}
 
-WIP
+\begin{theorem}
+  Given two sequences $\{a_n\},\ \{b_n\}$, put
+  \[ A_n = \sum_{k=0}^{n} a_k \]
+  if $n \ge 0$; put $A_{-1} = 0$. Then, if $0 \ge p \ge q$, we have
+  \begin{equation}
+    \sum_{n=p}^{q} a_n b_n = \sum_{n=p}^{q-1} A_n(b_n-b_{n+1}) + A_q b_q - A_{p-1}b_p
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  \[
+    \sum_{n=p}^{q} a_n b_n = \sum_{n=p}^{q}(A_n - A_{n-1})b_n = \sum_{n=p}^{q} A_n b_n - \sum_{n=p-1}^{q-1}A_n b_{n+1}
+  \]
+  式(20)，被称为\say{部分和式 partial summation formula}，在探索带有 $\Sigma a_n b_n$ 项的级数时非常有用，特别是当 $\{b_n\}$
+  是单调的情况下。
+\end{proof}
+
+\begin{theorem}
+  Suppose
+  \begin{enumerate}[label=(\alph*)]
+    \item the partial sums $A_n$ of $\Sigma a_n$ form a bounded sequence;
+    \item $b_0 \ge b_1 \ge b_2 \ge \cdots$ ;
+    \item $\lim_{n\to\infty} b_n = 0$.
+  \end{enumerate}
+  Then $\Sigma a_n b_n$ converges.
+\end{theorem}
+
+\begin{proof}
+  选取 $M$ 对所有 $n$ 满足 $|A_n| \le M$。给定 $\varepsilon > 0$，存在一个整数 $N$ 使得 $b_N \le (\varepsilon/2M)$。
+  对于 $N \le p \le q$，有
+  \begin{align*}
+    \begin{split}
+      \Biggl|\sum_{n=p}^{q} a_n b_n\Biggr| & = \Biggl|\sum_{n=p}^{q-1} A_n(b_n - b_{n+1}) + A_q b_q - A_{p-q} b_p\Biggr| \\
+      & \le M \Biggl|\sum_{n=p}^{q-1}(b_n-b_{n+1}) + b_q + b_p\Biggr| \\
+      & = 2M b_p \le 2M b_N \le \varepsilon
+    \end{split}
+  \end{align*}
+  收敛现在遵循柯西准则。注意第一个不等式中依赖了 $b_n - b_{n+1} \ge 0$。
+\end{proof}
+
+% TODO
 
 \end{document}

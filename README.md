@@ -40,9 +40,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [Power Series](./Ch03%20Numerical%20Sequences%20and%20Series/Sec10%20Power%20Series.tex)
 
-   <!--    1. [Summation by Parts](./Ch03%20Numerical%20Sequences%20and%20Series/Sec11%20Summation%20by%20Parts.tex)
+   1. [Summation by Parts](./Ch03%20Numerical%20Sequences%20and%20Series/Sec11%20Summation%20by%20Parts.tex)
 
-   1. [Absolute Convergence](./Ch03%20Numerical%20Sequences%20and%20Series/Sec12%20Absolute%20Convergence.tex)
+   <!--    1. [Absolute Convergence](./Ch03%20Numerical%20Sequences%20and%20Series/Sec12%20Absolute%20Convergence.tex)
 
    1. [Addition and Multiplication of Series](./Ch03%20Numerical%20Sequences%20and%20Series/Sec13%20Addition%20and%20Multiplication%20of%20Series.tex)
 
