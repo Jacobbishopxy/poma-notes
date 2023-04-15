@@ -4,6 +4,28 @@
 
 \subsection*{Absolute Convergence}
 
-WIP
+当级数 $\Sigma |a_n|$ 收敛，那么级数 $\Sigma a_n$ 则被称为绝对收敛。
+
+\begin{theorem}
+  If $\Sigma a_n$ converges absolutely, then $\Sigma a_n$ converges.
+\end{theorem}
+
+\begin{proof}
+  该声明遵循不等式
+  \[
+    \Biggl| \sum_{k=n}^{m} a_k \Biggr| \le \sum_{k=n}^{m} |a_k|
+  \]
+  再加上柯西准则。
+\end{proof}
+
+\begin{anote}
+  绝对收敛必收敛。
+\end{anote}
+
+\begin{remarks}
+  For series of positive terms, absolute convergence is the same as convergence.
+
+  If $\Sigma a_n$ converges, but $\Sigma |a_n|$ diverges, we say that $\Sigma a_n$ converges \textit{non-absolutely}.
+\end{remarks}
 
 \end{document}

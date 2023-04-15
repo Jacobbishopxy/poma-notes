@@ -9,7 +9,7 @@
   \[ A_n = \sum_{k=0}^{n} a_k \]
   if $n \ge 0$; put $A_{-1} = 0$. Then, if $0 \le p \le q$, we have
   \begin{equation}
-    \sum_{n=p}^{q} a_n b_n = \sum_{n=p}^{q-1} A_n(b_n-b_{n+1}) + A_q b_q - A_{q-1}b_p
+    \sum_{n=p}^{q} a_n b_n = \sum_{n=p}^{q-1} A_n(b_n-b_{n+1}) + A_q b_q - A_{p-1}b_p
   \end{equation}
 \end{theorem}
 
@@ -20,6 +20,27 @@
   式(20)，被称为\say{部分和式 partial summation formula}，在探索带有 $\Sigma a_n b_n$ 项的级数时非常有用，特别是当 $\{b_n\}$
   是单调的情况下。
 \end{proof}
+
+\begin{anote}
+  \begin{align*}
+    \begin{split}
+      \sum_{n=p}^{q} a_n b_n & = \sum_{n=p}^{q} (A_n - A_{n-1}) b_n \\
+      & = \sum_{n=p}^{q} A_n b_n - \sum_{n=p}^{q} A_{n-1} b_n \\
+      & = \sum_{n=p}^{q-1} A_n b_n + A_q b_q - \sum_{n=p}^{q} A_{n-1} b_n \\
+      & = \sum_{n=p}^{q-1} A_n b_n + A_q b_q - \sum_{n=p-1}^{q-1} A_n b_{n+1} \\
+      & = \sum_{n=p}^{q-1} A_n b_n + A_q b_q - \sum_{n=p}^{q-1} A_n b_{n+1} - A_{p-1} b_p \\
+      & = \sum_{n=p}^{q-1} A_n (b_n + b_{n+1}) + A_q b_q - A_{p-1} b_p \\
+    \end{split}
+  \end{align*}
+
+  其中第 3 步的第三项 $\sum_{n=p}^{q} A_{n-1} b_n$ 转换至第四步的过程中，可将 $n$ 视为 $m+1$，那么就有
+  \begin{align*}
+    \begin{split}
+      \sum_{n=p}^{q} A_{n-1} b_n & = \sum_{m+1=p}^{q} A_{m+1-1} b_{m+1} \\
+      & = \sum_{m=p-1}^{q-1} A_m b_{m+1}
+    \end{split}
+  \end{align*}
+\end{anote}
 
 \begin{theorem}
   Suppose
