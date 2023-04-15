@@ -4,6 +4,49 @@
 
 \subsection*{Addition and Multiplication of Series}
 
-WIP
+\begin{theorem}
+  If $\Sigma a_n = A$, and $\Sigma b_n = B$, then $\Sigma(a_n + b_n) = A + B$, and $\Sigma c a_n = c A$,
+  for any fixed c.
+\end{theorem}
+
+\begin{proof}
+  令
+  \[
+    A_n = \sum_{k=0}^{n} a_k, \qquad B_n = \sum_{k=0}^{n} b_k.
+  \]
+  那么有
+  \[
+    A_n + B_n = \sum_{k=0}^{n}(a_k + b_k).
+  \]
+  又因为 $\lim_{n\to\infty} A_n = A$ 以及 $\lim_{n\to\infty} B_n = B$，可得
+  \[
+    \lim_{n\to\infty} (A_n + B_n) = A + B
+  \]
+  而第二个声明更简单，此处省略。
+
+  因此两个收敛的级数或许可以逐项相加，而得到的级数收敛于两个级数之和。当考虑级数相乘时的情况，则会变得更复杂。这可以有几种方法完成；
+  我们应该考虑\say{柯西乘法 Cauchy product}。
+\end{proof}
+
+\begin{definition}
+  Given $\Sigma a_n$ and $\Sigma b_n$, we put
+  \[
+    c_n = \sum_{k=0}^{n} a_k b_{n-k} \qquad (n=0,1,2,\dots)
+  \]
+  and call $\Sigma c_n$ the \textit{product} of the two given series.
+
+  This definition may be motivated as follows. If we take two power series $\Sigma a_n z^n$ and $\Sigma b_n z^n$,
+  multiply them term by term, and collect terms containing the same power of $z$, we get
+  \begin{align*}
+    \begin{split}
+      \sum_{n=0}^{\infty} a_n z^n \cdot \sum_{n=0}^{\infty} b_n z^n & = (a_0+a_1z+a_2z^2+\cdots)(b_0+b_1z+b_2z^2+\cdots) \\
+      & = a_0b_0 + (a_0b_1 + a_1b_0)z + (a_0b_2+a_1b_1+a_2b_0)z^2 + \cdots \\
+      & = c_0 + c_1z + c_2z^2 + \cdots
+    \end{split}
+  \end{align*}
+  Setting $z=1$, we arrive at the above definition.
+\end{definition}
+
+% TODO
 
 \end{document}

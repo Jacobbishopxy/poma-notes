@@ -44,6 +44,24 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [Absolute Convergence](./Ch03%20Numerical%20Sequences%20and%20Series/Sec12%20Absolute%20Convergence.tex)
 
-   <!--    1. [Addition and Multiplication of Series](./Ch03%20Numerical%20Sequences%20and%20Series/Sec13%20Addition%20and%20Multiplication%20of%20Series.tex)
+   1. [Addition and Multiplication of Series](./Ch03%20Numerical%20Sequences%20and%20Series/Sec13%20Addition%20and%20Multiplication%20of%20Series.tex)
 
-   1. [Rearrangements](./Ch03%20Numerical%20Sequences%20and%20Series/Sec14%20Rearrangements.tex) -->
+      <!--    1. [Rearrangements](./Ch03%20Numerical%20Sequences%20and%20Series/Sec14%20Rearrangements.tex) -->
+
+1. Continuity
+
+   <!-- 1. [Limits of Functions](./Ch04%20Continuity/Sec01%20Limits%20of%20Functions.tex)
+
+   1. [Continuous Functions](./Ch04%20Continuity/Sec02%20Continuous%20Functions.tex)
+
+   1. [Continuity and Compactness](./Ch04%20Continuity/Sec03%20Continuity%20and%20Compactness.tex)
+
+   1. [Continuity and Connectedness](./Ch04%20Continuity/Sec04%20Continuity%20and%20Connectedness.tex)
+
+   1. [Discontinuities](./Ch04%20Continuity/Sec05%20Discontinuities.tex)
+
+   1. [Monotonic Functions](./Ch04%20Continuity/Sec06%20Monotonic%20Functions.tex)
+
+   1. [Infinite Limits and Limits at Infinity](./Ch04%20Continuity/Sec07%20Infinite%20Limits%20and%20Limits%20at%20Infinity.tex) -->
+
+1. Differentiation
