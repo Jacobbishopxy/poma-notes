@@ -47,6 +47,103 @@
   Setting $z=1$, we arrive at the above definition.
 \end{definition}
 
-% TODO
+\begin{example}
+  If
+  \[
+    A_n = \sum_{k=0}^{n} a_k, \qquad B_n = \sum_{k=0}^{n} b_k, \qquad C_n = \sum_{k=0}^{n} c_k,
+  \]
+  and $A_n \to A,\ B_n \to B$, then it is not at all clear that $\{C_n\}$ will converge to $AB$, since we dot not
+  have $C_n = A_n B_n$. The dependence of $\{C_n\}$ on $\{A_n\}$ and $\{B_n\}$ is quite a complicated one (see
+  the proof of Theorem 3.50). We shall now show that the product of two convergent series may actually diverge.
+
+  The series
+  \[
+    \sum_{n=0}^{\infty}\frac{(-1)^n}{\sqrt{n+1}} = 1-\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{3}}-\frac{1}{\sqrt{4}}+\cdots
+  \]
+  converges (Theorem 3.43). We form the product of this series with itself and obtain
+  \begin{multline*}
+    \qquad \sum_{n=0}^{\infty} c_n = 1-(\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}})+
+    (\frac{1}{\sqrt{3}}+\frac{1}{\sqrt{2}\sqrt{2}}+\frac{1}{\sqrt{3}}) \\
+    -(\frac{1}{\sqrt{4}}+\frac{1}{\sqrt{3}\sqrt{2}}+\frac{1}{\sqrt{2}\sqrt{3}}+\frac{1}{\sqrt{4}})+\cdots
+    \qquad
+  \end{multline*}
+  so that
+  \[
+    c_n = (-1)^n \sum_{k=0}^{n} \frac{1}{\sqrt{(n-k+1)(k+1)}}
+  \]
+  Since
+  \[
+    (n-k+1)(k+1) = \biggl(\frac{n}{2}+1\biggr)^2 - \Biggl(\frac{n}{2}-k\Biggr)^2 \le \Biggl(\frac{n}{2}+1\Biggr)^2
+  \]
+  we have
+  \[
+    |c_n| \ge \sum_{k=0}^{n} \frac{2}{n+2} = \frac{2(n+1)}{n+2}
+  \]
+  so that the condition $c_n \to 0$, which is necessary for the convergence of $\Sigma c_n$, is not satisfied.
+\end{example}
+
+\begin{theorem}
+  Suppose
+  \begin{enumerate}[label=(\alph*)]
+    \item $\sum_{n=0}^{\infty} a_n$ converges absolutely,
+    \item $\sum_{n=0}^{\infty} a_n = A$,
+    \item $\sum_{n=0}^{\infty} b_n = B$,
+    \item $c_n = \sum_{n=0}^{\infty} a_k b_{n-k} \qquad (n=0,1,2,\dots)$.
+  \end{enumerate}
+  Then
+  \[
+    \sum_{n=0}^{\infty} c_n = AB.
+  \]
+
+  That is, the product of two convergent series converges, and to the right value, if at least one of the two series converges absolutely.
+\end{theorem}
+
+\begin{proof}
+  令
+  \[
+    A_n = \sum_{k=0}^{n} a_k,\qquad B_n = \sum_{k=0}^{n} b_k,\qquad C_n = \sum_{k=0}^{n} c_k,\qquad \beta_n = B_n - B
+  \]
+  那么有
+  \begin{equation*}
+    \begin{split}
+      C_n & = a_0 b_0 + (a_0 b_1 + a_1 b_0) + \cdots + (a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0) \\
+      & = a_0 B_n + a_1 B_{n-1} + \cdots + a_n B_0 \\
+      & = a_0 (B + \beta_n) + a_1 (B + \beta_{n-1}) + \cdots + a_n {B + \beta_0} \\
+      & = A_n B + a_0 \beta_n + a_1 \beta_{n-1} + \cdots + a_n \beta_0
+    \end{split}
+  \end{equation*}
+  令
+  \[
+    \gamma_n = a_0 \beta_n + a_1 \beta_{n-1} + \cdots + a_n \beta_0
+  \]
+
+  我们希望得到 $C_n \to AB$。由于 $A_n B \to AB$，它足够得到
+  \begin{equation}
+    \lim_{n\to\infty} \gamma_n = 0
+  \end{equation}
+  令
+  \[
+    \alpha = \sum_{n=0}^{\infty} |a_n|
+  \]
+  【这里用到了 (a)。】给定 $\varepsilon > 0$。根据(c)，$\beta_n \to 0$。因此我们可以选择 $N$ 使得对于 $n \ge N$ 满足
+  $|\beta_n| \le \varepsilon$，其中
+  \begin{align*}
+    \begin{split}
+      |\gamma_n| & \le |\beta_0 a_n + \cdots + \beta_N a_{n-N}| + |\beta_{N+1} a_{n-N-1} + \cdots + \beta_n a_0| \\
+      & \le |\beta_0 a_n + \cdots + \beta_N a_{n-N}| + \varepsilon\alpha
+    \end{split}
+  \end{align*}
+  保持 $N$ 固定，令 $n \to \infty$，得到
+  \[
+    \limsup_{n\to\infty} |\gamma_n| \le \varepsilon\alpha
+  \]
+  因为 $k \to \infty$ 时有 $a_k \to 0$。而 $\varepsilon$ 是随机的，式(21)成立。
+\end{proof}
+
+\begin{theorem}
+  If the series $\Sigma a_n, \Sigma b_n, \Sigma c_n$ converge to $A, B, C$, and $c_n = a_0 b_n + \cdots + a_n b_0$, then $C = AB$.
+\end{theorem}
+
+这里没有关于绝对收敛的假设。我们将在 Theorem 8.2 完成之后给到一个简单的证明（其依赖于幂级数的连续性）。
 
 \end{document}
