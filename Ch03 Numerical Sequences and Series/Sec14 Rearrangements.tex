@@ -4,6 +4,56 @@
 
 \subsection*{Rearrangements}
 
-WIP
+\begin{definition}
+  Let $\{k_n\},\ n=1,2,3,\dots$, be a sequence in which every positive integer appears once and only once
+  (that is, $\{k_n\}$ is a 1-1 function from $\pmb{J}$ onto $\pmb{J}$, in the notation of Definition 2.2).
+  Putting
+  \[
+    a'_n = a_{k_n} \qquad (n=1,2,3,\dots)
+  \]
+  we say that $\Sigma a'_n$ is a \textbf{rearrangement} of $\Sigma a_n$.
+\end{definition}
+
+如果 $\{s_n\},\ \{s'_n\}$ 分别为 $\Sigma a_n,\ \Sigma a'_n$ 部分和的序列，那么很容易知道这两个序列有完全不同的成员
+所组成。因此问题就被引导到：在什么条件下，一个收敛级数的所有重排会收敛，以及总和是否一定相同。
+
+\begin{example}
+  Consider the convergent series
+  \begin{equation}
+    1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \cdots
+  \end{equation}
+  and one of its rearrangements
+  \begin{equation}
+    1 + \frac{1}{3} - \frac{1}{2} + \frac{1}{5} + \frac{1}{7} - \frac{1}{4} + \frac{1}{9} + \frac{1}{11} -
+    \frac{1}{6} + \cdots
+  \end{equation}
+  in which two positive terms are always followed by one negative. If $s$ is the sum of (22), then
+  \[
+    s < 1 - \frac{1}{2} + \frac{1}{3} = \frac{5}{6}
+  \]
+  Since
+  \[
+    \frac{1}{4k - 3} + \frac{1}{4k - 1} - \frac{1}{2k} > 0
+  \]
+  for $k \ge 1$, we see that $s'_3 < s'_6 < s'_9 < \cdots$, where $s'_n$ is $n$th partial sum of (23).
+  Hence
+  \[
+    \limsup_{n\to\infty} s'_n > s'_3 = \frac{5}{6}
+  \]
+  so that (23) certainly does not converge to $s$.
+\end{example}
+
+\begin{theorem}
+  Let $\Sigma a_n$ be a series of real numbers which converges, but not absolutely. Suppose
+  \[
+    -\infty \le \alpha \le \beta \le \infty
+  \]
+  Then there exists a rearrangement $\Sigma a'_n$ with partial sums $s'_n$ such that
+  \begin{equation}
+    \liminf_{n\to\infty} s'_n = \alpha, \qquad \limsup_{n\to\infty} s'_n = \beta.
+  \end{equation}
+\end{theorem}
+
+% TODO
 
 \end{document}
