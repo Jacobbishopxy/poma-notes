@@ -54,6 +54,75 @@
   \end{equation}
 \end{theorem}
 
+\begin{proof}
+  令
+  \[
+    p_n = \frac{|a_n|+a_n}{2},\qquad q_n = \frac{|a_n|-a_n}{2} \qquad (n=1,2,3,\dots)
+  \]
+  那么 $p_n - q_n = a_n,\ p_n + q_n = |a_n|,\ p_n \ge 0,\ q_n \ge 0$。级数 $\Sigma p_n,\ \Sigma q_n$ 必须皆为
+  发散。
+
+  如果皆为收敛，那么
+  \[
+    \Sigma(p_n + q_n) = \Sigma |a_n|
+  \]
+  将会收敛，这与假设相悖。又因为
+  \[
+    \sum_{n=1}^{N} a_n = \sum_{n=1}^{N} (p_n - q_n) = \sum_{n=1}^{N} p_n - \sum_{n=1}^{N} q_n
+  \]
+  若 $\Sigma p_n$ 发散而 $\Sigma q_n$ 收敛（或者反过来）说明 $\Sigma a_n$ 发散，同样与假设相悖。
+
+  现在令 $P_1,P_2,P_3,\dots$ 顺序代表 $\Sigma a_n$ 的非负项，令 $Q_1,Q_2,Q_3,\dots$ 顺序代表 $\Sigma a_N$
+  负数项的绝对值。
+
+  级数 $\Sigma P_n, \Sigma Q_n$ 与 $\Sigma p_n, \Sigma q_n$ 仅不同于为零的项，因此是发散的。
+
+  接着构建序列 $\{m_n\}, \{k_n\}$ 满足级数
+  \begin{multline}
+    \qquad P_1 + \cdots + P_{m_1} - Q_1 - \cdots - Q_{k_1} + P_{m_1 + 1} + \cdots \\
+    + P_{m_2} - Q_{k_1 + 1} - \cdots - Q_{k_2} + \cdots \qquad
+  \end{multline}
+  即显然是 $\Sigma a_n$ 的重排，满足 (24)。
+
+  选择实数序列 $\{\alpha_n\},\{\beta_n\}$ 满足 $\alpha_n\to\alpha, \beta_n\to\beta, \alpha_n<\beta, \beta_1>0$。
+
+  令 $m_1, k_1$ 为最小的整数满足
+  \begin{gather*}
+    P_1 + \cdots + P_{m_1} > \beta_1, \\
+    P_1 + \cdots + P_{m_1} - Q_1 - \cdots - Q_{k_1} < \alpha_1;
+  \end{gather*}
+  令 $m_2, k_2$ 为最小的整数满足
+  \begin{gather*}
+    P_1 + \cdots + P_{m_1} - Q_1 - \cdots - Q_{k_1} + P_{m_1+1} + \cdots + P_{m_2} > \beta_2, \\
+    P_1 + \cdots + P_{m_1} - Q_1 - \cdots - Q_{k_1} + P_{m_1+1} + \cdots + P_{m_2} - Q_{k_1+1} -
+    \cdots - Q_{k_2} < \alpha_2;
+  \end{gather*}
+  并持续这个过程。由于 $\Sigma P_n$ 与 $\Sigma Q_n$ 是发散的，因此上述过程成立。
+
+  如果 $x_n, y_n$ 代表 (25) 的部分和，其最终项为 $P_{m_n}, -Q_{k_n}$，那么
+  \[
+    |x_n - \beta_n| \le P_{m_n},\qquad |y_n - \alpha_n| \le Q_{k_n}
+  \]
+  由于在 $n \to 0$ 时有 $P_n \to 0$ 以及 $Q_n \to 0$，可得 $x_n \to \beta, y_n \to \alpha$。
+
+  最后，很明显没有小于 $\alpha$ 或是大于 $\beta$ 的数可以成为 (25) 部分和子序列的极限。
+\end{proof}
+
 % TODO
+
+\begin{theorem}
+  If $\Sigma a_n$ is a series of complex numbers which converges absolutely, then every rearrangement of
+  $\Sigma a_n$ converges, and they all converge to the same sum.
+\end{theorem}
+
+\begin{proof}
+  令 $\Sigma a'_n$ 作为重排，其部分和为 $s'_n$。给定 $\varepsilon > 0$，存在一个整数 $N$ 使得 $m \ge n \ge N$ 满足
+  \begin{equation}
+    \sum_{i=n}^{m} |a_i| \le \varepsilon
+  \end{equation}
+  选择 $p$ 使得整数 $1,2,\dots,N$ 都包含在 $k_1,k_2,\dots,k_p$ 集中（使用 Definition 3.52）。那么如果 $n > p$，
+  那么 $a_1,\dots,a_N$ 将取消差值 $s_n - s'_n$，根据 (26) 满足 $|s_n - s'_n| \le \varepsilon$。因此 $\{s'_n\}$
+  与 $\{s_n\}$ 一样收敛。
+\end{proof}
 
 \end{document}
