@@ -52,7 +52,7 @@
   \[
     A_n = \sum_{k=0}^{n} a_k, \qquad B_n = \sum_{k=0}^{n} b_k, \qquad C_n = \sum_{k=0}^{n} c_k,
   \]
-  and $A_n \to A,\ B_n \to B$, then it is not at all clear that $\{C_n\}$ will converge to $AB$, since we dot not
+  and $A_n \to A,\ B_n \to B$, then it is not at all clear that $\{C_n\}$ will converge to $AB$, since we do not
   have $C_n = A_n B_n$. The dependence of $\{C_n\}$ on $\{A_n\}$ and $\{B_n\}$ is quite a complicated one (see
   the proof of Theorem 3.50). We shall now show that the product of two convergent series may actually diverge.
 
@@ -73,7 +73,7 @@
   \]
   Since
   \[
-    (n-k+1)(k+1) = \biggl(\frac{n}{2}+1\biggr)^2 - \Biggl(\frac{n}{2}-k\Biggr)^2 \le \Biggl(\frac{n}{2}+1\Biggr)^2
+    (n-k+1)(k+1) = \biggl(\frac{n}{2}+1\biggr)^2 - \biggl(\frac{n}{2}-k\biggr)^2 \le \biggl(\frac{n}{2}+1\biggr)^2
   \]
   we have
   \[
@@ -81,6 +81,46 @@
   \]
   so that the condition $c_n \to 0$, which is necessary for the convergence of $\Sigma c_n$, is not satisfied.
 \end{example}
+\newpage
+
+\begin{anote}
+  级数 $\Sigma \frac{(-1)^n}{\sqrt{n+1}}$ 与自身的乘积，以下 $a_n$ 与 $b_n$ 皆为 $\Sigma \frac{(-1)^n}{\sqrt{n+1}}$：
+  \begin{align*}
+    \begin{split}
+      \sum_{n=0}^{\infty} c_n & = \sum_{n=0}^{\infty} a_n \cdot \sum_{n=0}^{\infty} b_n \\
+      & = a_0b_0 + (a_0b_1 + a_1b_0)z + (a_0b_2+a_1b_1+a_2b_0)z^2 + \cdots \\
+      & = \sum_{n=0}^{\infty} \frac{(-1)^n}{\sqrt{n+1}} \cdot \sum_{n=0}^{\infty} \frac{(-1)^n}{\sqrt{n+1}} \\
+      & = \frac{(-1)^0}{\sqrt{0+1}} \cdot \frac{(-1)^0}{\sqrt{0+1}} + (\frac{(-1)^0}{\sqrt{0+1}}
+      \cdot \frac{(-1)^1}{\sqrt{1+1}} + \frac{(-1)^1}{\sqrt{1+1}} \cdot \frac{(-1)^0}{\sqrt{0+1}}) + \\
+      & \qquad (\frac{(-1)^0}{\sqrt{0+1}} \cdot \frac{(-1)^2}{\sqrt{2+1}} + \frac{(-1)^1}{\sqrt{1+1}} \cdot
+      \frac{(-1)^1}{\sqrt{1+1}} + \frac{(-1)^2}{\sqrt{2+1}} \cdot \frac{(-1)^0}{\sqrt{0+1}}) + \cdots \\
+      & = 1 - (\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}) + (\frac{1}{\sqrt{3}} + \frac{1}{\sqrt{2}\sqrt{2}} +
+      \frac{1}{\sqrt{3}}) - (\frac{1}{\sqrt{4}} + \frac{1}{\sqrt{3}\sqrt{2}} + \frac{1}{\sqrt{2}\sqrt{3}} +
+      \frac{1}{\sqrt{4}}) \\ & \qquad + \cdots
+    \end{split}
+  \end{align*}
+
+  那么根据 Definition 3.48，
+  \begin{align*}
+    \begin{split}
+      c_n & = \sum_{k=0}^{n} a_k b_{n-k} \\
+      & = \sum_{k=0}^{n} \frac{(-1)^k}{\sqrt{k+1}} \cdot \frac{(-1)^{n-k}}{\sqrt{n-k+1}} \\
+      & = \sum_{k=0}^{n} \frac{(-1)^n}{\sqrt{(k+1)(n-k+1)}} \\
+      & \ge (-1)^n \sum_{k=0}^{n} \frac{2}{n+2} \qquad \text{(注)}
+    \end{split}
+  \end{align*}
+
+  那么取绝对值后有
+  \begin{align*}
+    \begin{split}
+      |c_n| & \ge \sum_{k=0}^{n} \frac{2}{n+2}
+    \end{split}
+  \end{align*}
+
+  显然 $c_n \to 0$ 不成立，那么 $\Sigma c_n$ 则无法收敛。
+
+  (注)：根据 $(n-k+1)(k+1) = (\frac{n}{2}+1)^2 - (\frac{n}{2}-k)^2 \le (\frac{n}{2}+1)^2$
+\end{anote}
 
 \begin{theorem}
   Suppose
