@@ -88,7 +88,7 @@
   \begin{align*}
     \begin{split}
       \sum_{n=0}^{\infty} c_n & = \sum_{n=0}^{\infty} a_n \cdot \sum_{n=0}^{\infty} b_n \\
-      & = a_0b_0 + (a_0b_1 + a_1b_0)z + (a_0b_2+a_1b_1+a_2b_0)z^2 + \cdots \\
+      & = a_0b_0 + (a_0b_1 + a_1b_0) + (a_0b_2+a_1b_1+a_2b_0) + \cdots \qquad \text{(a)} \\
       & = \sum_{n=0}^{\infty} \frac{(-1)^n}{\sqrt{n+1}} \cdot \sum_{n=0}^{\infty} \frac{(-1)^n}{\sqrt{n+1}} \\
       & = \frac{(-1)^0}{\sqrt{0+1}} \cdot \frac{(-1)^0}{\sqrt{0+1}} + (\frac{(-1)^0}{\sqrt{0+1}}
       \cdot \frac{(-1)^1}{\sqrt{1+1}} + \frac{(-1)^1}{\sqrt{1+1}} \cdot \frac{(-1)^0}{\sqrt{0+1}}) + \\
@@ -106,7 +106,7 @@
       c_n & = \sum_{k=0}^{n} a_k b_{n-k} \\
       & = \sum_{k=0}^{n} \frac{(-1)^k}{\sqrt{k+1}} \cdot \frac{(-1)^{n-k}}{\sqrt{n-k+1}} \\
       & = \sum_{k=0}^{n} \frac{(-1)^n}{\sqrt{(k+1)(n-k+1)}} \\
-      & \ge (-1)^n \sum_{k=0}^{n} \frac{2}{n+2} \qquad \text{(注)}
+      & \ge (-1)^n \sum_{k=0}^{n} \frac{2}{n+2} \qquad \text{(b)}
     \end{split}
   \end{align*}
 
@@ -117,9 +117,11 @@
     \end{split}
   \end{align*}
 
-  显然 $c_n \to 0$ 不成立，那么 $\Sigma c_n$ 则无法收敛。
+  显然 $c_n \to 0$ 不成立，那么 $\Sigma c_n$ 则无法收敛（Theorem 3.23）。
 
-  (注)：根据 $(n-k+1)(k+1) = (\frac{n}{2}+1)^2 - (\frac{n}{2}-k)^2 \le (\frac{n}{2}+1)^2$
+  注：
+  (a)：Definition 3.48 中，$z = 1$ 的情况；
+  (b)：根据 $(n-k+1)(k+1) = (\frac{n}{2}+1)^2 - (\frac{n}{2}-k)^2 \le (\frac{n}{2}+1)^2$。
 \end{anote}
 
 \begin{theorem}
