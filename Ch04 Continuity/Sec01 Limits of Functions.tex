@@ -67,4 +67,42 @@ $f(p) \ne \lim_{x \to p} f(x)$。
   If $f$ has a limit at $p$, this limit is unique.
 \end{corollary}
 
+\begin{definition}
+  Suppose we have two complex functions, $f$ and $g$, both defined on $E$. By $f + g$ we mean the function which
+  assigns to each point $x$ of $E$ the number $f(x) + g(x)$. Similarly we define the difference $f - g$, the
+  product $fg$, and the quotient $f/g$ of the two functions, with the understanding that the quotient is defined
+  only at those points $x$ of $E$ at which $g(x) \ne 0$. If $f$ assigns to each point $x$ of $E$ the same number
+  $c$, then $f$ is said to be a constant functions, and if $f(x) \ge g(x)$ for every $x \in E$, we shall sometimes
+  write $f \ge g$, for brevity.
+
+  Similarly, if $\pmb{f}$ and $\pmb{g}$ map $E$ into $R^k$, we define $\pmb{f}+\pmb{g}$ and $\pmb{f}\cdot\pmb{g}$
+  by
+  \[
+    (\pmb{f}+\pmb{g})(x)=\pmb{f}(x)+\pmb{g}(x),\qquad (\pmb{f}\cdot\pmb{g})(x)=\pmb{f}(x)\cdot\pmb{g}(x);
+  \]
+  and if $\lambda$ is a real number, $(\lambda\pmb{f}(x))=\lambda\pmb{f}(x)$.
+\end{definition}
+
+\begin{theorem}
+  Suppose $E \subset X$, a metric space, $p$ is a limit point of $E$, $f$ and $g$ are complex functions on $E$, and
+  \[
+    \lim_{x \to p} f(x) = A, \qquad \lim_{x \to p} g(x) = B.
+  \]
+  Then
+  \begin{enumerate}[label=(\alph*)]
+    \item $\lim_{x \to p} (f+g)(x) = A + B$;
+    \item $\lim_{x \to p} (fg)(x) = AB$
+    \item $\lim_{x \to p} \Bigl(\frac{f}{g}\Bigr)(x) = \frac{A}{B}, \text{if } B \ne 0$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  根据 Theorem 4.2，上述声明遵循了类似序列的属性（Theorem 3.3）。
+\end{proof}
+
+\begin{remark*}
+  如果 $f$ 与 $g$ 映射 $E$ 至 $R^k$，那么 (a) 仍然为真，而 (b) 则变为
+  (b$'$) $\ \lim_{x \to p}(\pmb{f}\cdot\pmb{g})(x) = \pmb{A}\cdot\pmb{B}$。
+\end{remark*}
+
 \end{document}
