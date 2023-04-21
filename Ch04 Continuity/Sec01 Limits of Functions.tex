@@ -2,8 +2,69 @@
 
 \begin{document}
 
+函数与其相关的术语在 Definition 2.1 与 2.2 中有过介绍。尽管我们更应该（在之后的章节中）关注实数与复数函数（例如函数中
+值为实数或复数），同样讨论向量化值的函数（例如函数的值在 $R^k$ 中）以及在任意的度量空间中的函数。在这些范畴内讨论的定理
+并不会比仅约束在实数函数中讨论更容易，这例如实际上简化了以及区分了场景，以抛弃不必要的假设并在更适当且普遍的上下文中陈述
+以及证明定理。
+
+函数定义的领域同样是在度量空间上，适用于不同特化的实例。
+
 \subsection*{Limits of Functions}
 
-WIP
+\begin{definition}
+  Let $X$ and $Y$ be metric spaces; suppose $E \subset X$, $f$ maps $E$ into $Y$, and $p$ is a limit
+  point of $E$. We write $f(x) \to q$ as $x \to p$, or
+  \begin{equation}
+    \lim_{x \to p} f(x) = q
+  \end{equation}
+  if there is a point $q \in Y$ with the following property: For every $\varepsilon > 0$ there exists a
+  $\delta > 0$ such that
+  \begin{equation}
+    d_Y(f(x),q) < \varepsilon
+  \end{equation}
+  for all points $x \in E$ for which
+  \begin{equation}
+    0 < d_X(x,p) < \delta
+  \end{equation}
+\end{definition}
+
+此处的 $d_X$ 与 $d_Y$ 分别代表 $X$ 与 $Y$ 中的距离。
+
+如果 $X$ 以及/或者 $Y$ 被替换成实数线，复数平面，或者是欧式空间 $R^k$，那么距离 $d_X, d_Y$ 也被替换为绝对值，或者是距离
+（详见 Sec 2.16）。
+
+需要注意的是 $p \in X$，这里的 $p$ 需要是上述定义中，非 $E$ 上的任何一点。除此之外，即使如果 $p \in E$，我们很容易得到
+$f(p) \ne \lim_{x \to p} f(x)$。
+
+我们可以将上述定义重新表现为序列的极限形式：
+
+\begin{theorem}
+  Let $X, Y, E, f$, and $p$ be as in Definition 4.1. Then
+  \begin{equation}
+    \lim_{x \to p} f(x) = q
+  \end{equation}
+  if and only if
+  \begin{equation}
+    \lim_{n \to \infty} f(p_n) = q
+  \end{equation}
+  for every sequence $\{p_n\}$ in $E$ such that
+  \begin{equation}
+    p_n \ne p, \qquad \lim_{n \to \infty} p_n = p
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  假设 (4) 成立。在 $E$ 中选择 $\{p_n\}$ 满足 (6)。令 $\varepsilon > 0$，那么如果 $x\in E$ 以及 $0<d_X(x,p)<\varepsilon$
+  存在 $\delta > 0$ 使得 $d_Y(f(x),q)<\varepsilon$。同样的，存在 $N$ 使得 $n > N$ 有 $0<d_X(p_n,p)<\delta$。因此，
+  对于 $n > N$ 有 $d_Y(f(p_n),q) < \varepsilon$，即证明了 (5) 成立。
+
+  相反的，假设 (4) 不成立。那么存在某些 $\varepsilon > 0$，对于每个 $\delta > 0$ 存在一个点 $x \in E$（依赖 $\delta$），
+  满足 $d_Y(f(x),q)\ge\varepsilon$ 但是 $0<d_X(x,p)<\varepsilon$。选取 $\delta_n = 1/n\ (n=1,2,3,\dots)$，因此
+  找到一个在 $E$ 中的序列满足 (6) 而 (5) 却不成立。
+\end{proof}
+
+\begin{corollary}
+  If $f$ has a limit at $p$, this limit is unique.
+\end{corollary}
 
 \end{document}

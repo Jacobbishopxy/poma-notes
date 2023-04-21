@@ -50,9 +50,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
 1. Continuity
 
-   <!-- 1. [Limits of Functions](./Ch04%20Continuity/Sec01%20Limits%20of%20Functions.tex)
+   1. [Limits of Functions](./Ch04%20Continuity/Sec01%20Limits%20of%20Functions.tex)
 
-   1. [Continuous Functions](./Ch04%20Continuity/Sec02%20Continuous%20Functions.tex)
+   <!-- 1. [Continuous Functions](./Ch04%20Continuity/Sec02%20Continuous%20Functions.tex)
 
    1. [Continuity and Compactness](./Ch04%20Continuity/Sec03%20Continuity%20and%20Compactness.tex)
 
