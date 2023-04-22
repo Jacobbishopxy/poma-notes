@@ -4,7 +4,71 @@
 
 \subsection*{Continuous Functions}
 
-WIP
+\begin{definition}
+  Suppose $X$ and $Y$ are metric spaces, $E \subset X,\ p \in E$, and $f$ maps $E$ into $Y$. Then $f$ is said
+  to be \textit{continuous at $p$} if for every $\varepsilon > 0$ there exists a $\delta > 0$ such that
+  \[
+    d_Y(f(x),f(p)) < \varepsilon
+  \]
+  for all points $x \in E$ for which $d_X(x,p) < \delta$.
+
+  If $f$ is continuous at every point of $E$, then $f$ is said to be \textit{continuous on $E$}.
+\end{definition}
+
+需要注意的是 $f$ 必须定义在点 $p$ 上才可在 $p$ 上连续（将此与 Definition 4.1 后的 remark 进行比较）。
+
+如果 $p$ 是 $E$ 上的独立点，那么通过上述定义可得：所有拥有 $E$ 作为其领域的函数 $f$ 在点 $p$ 上连续。无论选取何值 $\varepsilon>0$，
+可以选取 $\delta > 0$ 使得 $x \in E$ 对于 $d_X(x,p) < \delta$ 而言有 $x = p$；那么
+\[
+  d_Y(f(x),f(p)) = 0 < \delta
+\]
+
+\begin{theorem}
+  In the situation given in Definition 4.5, assume also that $p$ is a limit point of $E$. Then $f$ is continuous
+  at $p$ if and only if $\lim_{x \to p} f(x) = f(p)$.
+\end{theorem}
+
+\begin{proof}
+  将 Definition 4.1 与 4.5 相比较即可得出结论。
+\end{proof}
+
+\begin{anote}
+  \textbf{连续性}：$\lim_{x \to p} f(x) = f(p)$
+\end{anote}
+
+现在开始函数组合的部分。以下定理的一个简单声明：一个连续函数的函数若是连续的，那么该函数仍然是连续的。
+
+\begin{theorem}
+  Suppose $X, Y, Z$ are metric spaces, $E \subset X$, $f$ maps $E$ into $Y$, $g$ maps the range of $f, f(E)$,
+  into $Z$, and $h$ is the mapping of $E$ into $Z$ defined by
+  \[
+    h(x) = g(f(x)) \qquad (x \in E).
+  \]
+  If $f$ is continuous at a point $p \in E$ and if $g$ is continuous at the point $f(p)$, then $h$ is continuous
+  at $p$.
+
+  This function $h$ is called the \textit{composition} or the \textit{composite} of $f$ and $g$. The notation
+  \[
+    h = g \circ f
+  \]
+  is frequently used in this context.
+\end{theorem}
+
+\begin{proof}
+  给定 $\varepsilon > 0$。因为 $g$ 在 $f(p)$ 上连续，存在 $\eta > 0$ 使得
+  \[
+    d_Z(g(y),g(f(p))) < \varepsilon \text{ if } d_Y(y,f(p)) < \eta \text{ and } y \in f(E).
+  \]
+  因为 $f$ 在 $p$ 上连续，存在 $\delta > 0$ 使得
+  \[
+    d_Y(f(x),f(p)) < \eta \text{ if } d_X(x,p) < \delta \text{ and } x \in E.
+  \]
+  如果 $d_X(x,p) < \varepsilon$ 以及 $x \in E$，那么就有
+  \[
+    d_Z(h(x),h(p)) = d_Z(g(f(x)), g(f(p))) < \varepsilon
+  \]
+  因此 $h$ 在 $p$ 上连续。
+\end{proof}
 
 \end{document}
 
