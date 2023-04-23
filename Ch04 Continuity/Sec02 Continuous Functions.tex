@@ -70,5 +70,82 @@
   因此 $h$ 在 $p$ 上连续。
 \end{proof}
 
+\begin{theorem}
+  A mapping $f$ of a metric space $X$ into a metric space $Y$ is continuous on $X$ if and only if $f^{-1}(V)$
+  is open in $X$ for every open set $V$ in $Y$.
+\end{theorem}
+
+(相反的镜像定义于 Definition 2.2)对于连续性而言，这是一个非常有用的特性。
+
+\begin{proof}
+  假设 $f$ 在 $X$ 上连续，同时 $V$ 是 $Y$ 上的一个开集。我们需要展示 $f^{-1}(V)$ 的每个点都是 $f^{-1}(V)$ 的一个内点。
+  假设 $p \in X$ 以及 $f(p) \in V$。由于 $V$ 为开，存在 $\varepsilon > 0$ 满足 $y \in V$ 如果 $d_Y(f(p),y)<\varepsilon$；
+  又因为 $f$ 在 $p$ 上连续，存在 $\delta > 0$ 满足 $d_Y(f(x),f(p))<\varepsilon$ 如果 $d_X(x,p)<\delta$。因此一旦
+  $d_X(x,p)<\delta$ 则有 $x \in f^{-1}(V)$。
+
+  相反的，假设对于在 $Y$ 上的每个开集 $V$ 有 $f^{-1}(V)$ 在 $X$ 上为开。固定 $p \in X$ 以及 $\varepsilon > 0$，令 $V$
+  为所有 $y \in Y$ 的集合，满足 $d_Y(y,f(p))<\varepsilon$。那么 $V$ 为开；因此 $f^{-1}(V)$ 为开；因此存在 $\delta > 0$
+  一旦 $d_X(p,x) < \delta$ 则有 $x \in f^{-1}(V)$。但是若 $x \in f^{-1}(V)$，那么 $f(x) \in V$，使得
+  $d_Y(f(x),f(p))<\varepsilon$。
+
+  证明完成。
+\end{proof}
+
+\begin{anote}
+  度量空间 $X, Y$ 的函数 $f: X \to Y$ 连续，当且仅当对 $Y$ 的每个开集 $V$，$f^{-1}(V)$ 是 $X$ 中的开集。
+  这个是连续性的一个极为有用的特征。
+\end{anote}
+
+\begin{corollary}
+  A mapping $f$ of a metric space $X$ into a metric space $Y$ is continuous if and only if $f^{-1}(C)$ is closed
+  in $X$ for every closed set $C$ in $Y$.
+\end{corollary}
+
+此条推论遵循了上述定理，因为一个集为闭，当且仅当其补集为开，且因为对于每个 $E \subset Y$ 有 $f^{-1}(E^c) = [f^{-1}(E)]^c$。
+
+\begin{anote}
+  \textbf{推论}：度量空间 $X, Y$ 的函数 $f: X \to Y$ 连续，当且仅当对 $Y$ 的每个闭集 $C$，$f^{-1}(C)$ 是 $X$ 中的闭集。
+\end{anote}
+
+现在更进一步到复数与向量函数，以及定义在 $R^k$ 上的子集。
+
+\begin{theorem}
+  Let $f$ and $g$ be complex continuous functions on a metric space $X$. Then $f + g$, $fg$, and $f/g$ are
+  continuous on $X$.
+\end{theorem}
+
+最后一个情况，需要假设 $g(x) \ne 0$，对于所有 $x \in X$。
+
+\begin{proof}
+  若是 $X$ 的独立点，则无需进行证明。对于极限点，此声明遵循 Theorems 4.4 与 4.6。
+\end{proof}
+
+\begin{theorem}\mbox{}\par
+  \begin{enumerate}[label=(\alph*)]
+    \item Let $f_1, \dots, f_k$ be real functions on a metric space $X$, and let $\pmb{f}$ be the mapping of
+          $X$ into $R^k$ defined by
+          \begin{equation}
+            \mathbf{f}(x) = (f_1(x),\dots,f_k(x)) \qquad (x \in X);
+          \end{equation}
+          then $\mathbf{f}$ is continuous if and only if each of the functions $f_1,\dots,f_k$ is continuous.
+    \item If $\mathbf{f}$ and $\mathbf{g}$ are continuous mappings of $X$ into $R^k$, then $\mathbf{f + g}$
+          and $\mathbf{f \cdot g}$ are continuous on $X$.
+  \end{enumerate}
+\end{theorem}
+
+函数 $f_1,\dots,f_k$ 被称为 $\mathbf{f}$ 的 \textit{分量 components} 函数。注意 $\mathbf{f + g}$ 是一个至 $R^k$ 的映射，
+而 $\mathbf{f \cdot g}$ 则是在 $X$ 上的 \textit{实 real} 函数。
+
+\begin{proof}
+  对于 $j = 1,\dots,k$ 而言，(a) 遵循不等式
+  \[
+    |f_j(x) - f_j(y)| \le |\mathbf{f}(x) - \mathbf{f}(y)| =
+    \biggl\{ \sum_{i=1}^k |f_i(x) - f_i(y)|^2 \biggr\}^{\frac{1}{2}}
+  \]
+  而 (b) 遵循 (a) 以及 Theorem 4.9。
+\end{proof}
+
+% TODO
+
 \end{document}
 
