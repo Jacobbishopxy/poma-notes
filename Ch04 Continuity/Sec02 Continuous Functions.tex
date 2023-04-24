@@ -145,7 +145,50 @@
   而 (b) 遵循 (a) 以及 Theorem 4.9。
 \end{proof}
 
-% TODO
+\begin{examples}
+  If $x_1, \dots, x_k$ are the coordinates of the point $\mathbf{x} \in R^k$, the functions $\phi_i$ defined by
+  \begin{equation}
+    \phi_i(\mathbf{x}) = x_i \qquad (\mathbf{x} \in R^k)
+  \end{equation}
+  are continuous on $R^k$, since the inequality
+  \[
+    |\phi_i(\mathbf{x}) - \phi_i(\mathbf{y})| \le |\mathbf{x} - \mathbf{y}|
+  \]
+  shows that we way take $\delta = \varepsilon$ in Definition 4.5. The functions $\phi_i$ are sometimes called
+  the \textit{coordinate functions}.
+
+  Repeated application of Theorem 4.9 then shows that every monomial
+  \begin{equation}
+    x_1^{n_1} x_2^{n_2} \cdots x_k^{n_k}
+  \end{equation}
+  where $n_1, \dots, n_k$ are nonnegative integers, is continuous on $R^k$. The same is true of constant multiples
+  of (9), since constants are evidently continuous. It follows that every polynomial $P$, given by
+  \begin{equation}
+    P(\mathbf{x}) = \Sigma c_{n_1 \cdots n_k} x_1^{n_1} \cdots x_k^{n_k} \qquad (\mathbf{x} \in R^k),
+  \end{equation}
+  is continuous on $R^k$. Here the coefficients $c_{n_1 \cdots n_k}$ are complex numbers, $n_1, \dots, n_k$ are
+  nonnegative integers, and the sum in (10) has finitely many terms.
+
+  Furthermore, every rational function in $x_1, \dots, x_k$, that is, every quotient of two polynomials of the
+  form (10), is continuous on $R^k$ wherever the denominator is different from zero.
+
+  From the triangle inequality one sees easily that
+  \begin{equation}
+    \bigl||\mathbf{x}| - |\mathbf{y}|\bigr| \le |\mathbf{x} - \mathbf{y}|\qquad (\mathbf{x}, \mathbf{y} \in R^k).
+  \end{equation}
+  Hence the mapping $\mathbf{x} \to |\mathbf{x}|$ is a continuous real function on $R^k$.
+
+  If now $\mathbf{f}$ is a continuous mapping from a metric space $X$ into $R^k$, and if $\phi$ is defined on
+  $X$ by setting $\phi(p) = |\mathbf{f}(p)|$, it follows, by Theorem 4.7, that $\phi$ is a continuous real
+  function on $X$.
+\end{examples}
+
+\begin{remark}
+  我们定义了在一个度量空间 $X$ 中\textit{子集} $E$ 上的函数连续性这个概念。然而在 $X$ 上 $E$ 的补集并没有定义（注意该情况
+  与函数的极限稍有不同）。因此，通过丢弃 $f$ 域的补集，我们并不会丢失关注点。这意味着我们仅需关心一个度量空间到另一个度量空间的
+  连续映射，而不是子集的映射。这件花了声明以及一些定理的证明。实际上我们已经在 Theorems 4.8 至 4.10 上利用了这个原理，同样也
+  将在后面关于紧 compactness 的小节中运用上。
+\end{remark}
 
 \end{document}
 
