@@ -9,6 +9,53 @@
   $M$ such that $|\mathbf{f}(x)| \le M$ for all $x \in E$.
 \end{definition}
 
+\begin{anote}
+  \textbf{有界}：$\mathbf{f}(x) \le M$。
+\end{anote}
+
+\begin{theorem}
+  Suppose $f$ is a continuous mapping of a compact metric space $X$ into a metric space $Y$. Then $f(X)$ is
+  compact.
+\end{theorem}
+
+\begin{proof}
+  令 $\{V_\alpha\}$ 为 $f(X)$ 的一个开覆盖。由于 $f$ 是连续的，Theorem 4.8 展示了每个 $f^{-1}(V_\alpha)$ 集合皆为开。
+  由于 $X$ 是紧的，拥有有限个索引，假设 $\alpha_1,\dots,\alpha_n$ 满足
+  \begin{equation}
+    X \subset f^{-1}(V_{\alpha_1}) \cup \cdots \cup f^{-1}(V_{\alpha_n})
+  \end{equation}
+  又因为对于任何 $E \subset Y$ 有 $f(f^{-1}(E)) \subset E$，(12) 说明
+  \begin{equation}
+    f(X) \subset V_{\alpha_1} \cup \cdots \cup V_{\alpha_n}
+  \end{equation}
+
+  证明完毕。
+\end{proof}
+
+注意：这里使用了 $f(f^{-1}(E)) \subset E$ 的关系，对于 $E \subset Y$ 有效。如果是 $E \subset X$，那么则是
+$f^{-1}(f(E)) \supset E$；等式在任何一种情况下都不需要相等。
+
+\begin{anote}
+  若紧度量空间 $X$ 到度量空间 $Y$ 的函数 $f: X \to Y$ 是连续的，那么 $f(X)$ 是紧的。
+\end{anote}
+
+现在来推导一下 Theorem 4.14 的某些结果。
+
+\begin{theorem}
+  If $\mathbf{f}$ is a continuous mapping of a compact metric space $X$ into $R^k$, then $\mathbf{f}(X)$
+  is closed and bounded. Thus, $\mathbf{f}$ is bounded.
+\end{theorem}
+
+上述定理遵循了 Theorem 2.41。当 $f$ 为实（real）时，其结果特别重要：
+
+\begin{theorem}
+  Suppose $f$ is a continuous real function on a compact metric space $X$, and
+  \begin{equation}
+    M = \sup_{p \in X} f(p), \qquad m = \inf_{p \in X} f(p).
+  \end{equation}
+  Then there exist points $p, q \in X$ such that $f(p) = M$ and $f(q) = m$.
+\end{theorem}
+
 % TODO
 
 \end{document}

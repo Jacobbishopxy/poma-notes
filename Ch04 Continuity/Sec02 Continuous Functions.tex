@@ -88,7 +88,7 @@
   一旦 $d_X(p,x) < \delta$ 则有 $x \in f^{-1}(V)$。但是若 $x \in f^{-1}(V)$，那么 $f(x) \in V$，使得
   $d_Y(f(x),f(p))<\varepsilon$。
 
-  证明完成。
+  证明完毕。
 \end{proof}
 
 \begin{anote}
@@ -120,9 +120,14 @@
   若是 $X$ 的独立点，则无需进行证明。对于极限点，此声明遵循 Theorems 4.4 与 4.6。
 \end{proof}
 
+\begin{anote}
+  设 $f, g$ 为度量空间 $X$ 上的复连续函数，那么 $f + g$，$fg$ 与 $f/g$ 在 $X$ 上连续。
+\end{anote}
+\newpage
+
 \begin{theorem}\mbox{}\par
   \begin{enumerate}[label=(\alph*)]
-    \item Let $f_1, \dots, f_k$ be real functions on a metric space $X$, and let $\pmb{f}$ be the mapping of
+    \item Let $f_1, \dots, f_k$ be real functions on a metric space $X$, and let $\mathbf{f}$ be the mapping of
           $X$ into $R^k$ defined by
           \begin{equation}
             \mathbf{f}(x) = (f_1(x),\dots,f_k(x)) \qquad (x \in X);
@@ -144,6 +149,17 @@
   \]
   而 (b) 遵循 (a) 以及 Theorem 4.9。
 \end{proof}
+
+\begin{anote}
+  $\mathbf{f}$ 将一个度量空间映射至实数多维空间。
+
+  对于 (a) 而言，$|\mathbf{f}(x) - \mathbf{f}(y)|$ 可视为 $x$ 与 $y$ 之间的距离，那么有：
+  \begin{align*}
+    |\mathbf{f}(x) - \mathbf{f}(y)| & = \sqrt{[f_1(x) - f_1(y)]^2 + [f_2(x) - f_2(y)]^2 + \cdots +
+    [f_k(x) - f_k(y)]^2}                                                                                   \\
+                                    & = \biggl\{ \sum_{i=1}^{k} |f_i(x) - f_i(y)|^2 \biggr\}^{\frac{1}{2}}
+  \end{align*}
+\end{anote}
 
 \begin{examples}
   If $x_1, \dots, x_k$ are the coordinates of the point $\mathbf{x} \in R^k$, the functions $\phi_i$ defined by
@@ -182,6 +198,8 @@
   $X$ by setting $\phi(p) = |\mathbf{f}(p)|$, it follows, by Theorem 4.7, that $\phi$ is a continuous real
   function on $X$.
 \end{examples}
+
+% TODO
 
 \begin{remark}
   我们定义了在一个度量空间 $X$ 中\textit{子集} $E$ 上的函数连续性这个概念。然而在 $X$ 上 $E$ 的补集并没有定义（注意该情况
