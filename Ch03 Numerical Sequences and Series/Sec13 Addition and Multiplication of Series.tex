@@ -124,6 +124,7 @@
   (b)：根据 $(n-k+1)(k+1) = (\frac{n}{2}+1)^2 - (\frac{n}{2}-k)^2 \le (\frac{n}{2}+1)^2$。
 \end{anote}
 
+\newpage
 \begin{theorem}
   Suppose
   \begin{enumerate}[label=(\alph*)]
@@ -181,6 +182,36 @@
   \]
   因为 $k \to \infty$ 时有 $a_k \to 0$。而 $\varepsilon$ 是随机的，式(21)成立。
 \end{proof}
+
+\begin{anote}
+  \textbf{重点}：$AB$ 至少一个绝对收敛。
+
+  关于 $C_n$ 的计算：
+  \begin{align*}
+    \begin{split}
+      C_n & = \aul[red]{a_0} b_0 + (\aul[red]{a_0} b_1 + \aul[blue]{a_1} b_0) + \cdots +
+      (\aul[red]{a_0} b_n + \aul[blue]{a_1} b_{n-1} + \cdots + a_n b_0) \\
+      & = \aul[red]{a_0}(b_0 + b_1 + \cdots + b_n) + \aul[blue]{a_1}(b_0 + \cdots + b_{n-1}) +
+      \cdots + a_n (b_0) \\
+      & = a_0 B_n + a_1 B_{n-1} + \cdots + a_n B_0 \\
+      & = \aul[teal]{a_0} (B + \beta_n) + \aul[teal]{a_1} (B + \beta_{n-1}) + \cdots +
+      \aul[teal]{a_n} {B + \beta_0} \\
+      & = \aul[teal]{A_n} B + a_0 \beta_n + a_1 \beta_{n-1} + \cdots + a_n \beta_0
+    \end{split}
+  \end{align*}
+
+  关于 $\gamma_n$ 的计算：
+  \begin{align*}
+    \begin{split}
+      \gamma_n & = a_0 \beta_n + a_1 \beta_{n-1} + \cdots + a_n \beta_0 \\
+      & = \beta_0 a_n + \beta_1 a_{n-1} + \cdots + \beta_N a_{n-N} + \beta_{N-1} a_{n-(N+1)} +
+      \cdots + \beta_n a_0 \\
+      |\gamma_n| & = |\beta_0 a_n + \beta_1 a_{n-1} + \cdots + \beta_N a_{n-N}| +
+      |\beta_{N-1} a_{n-(N+1)} + \cdots + \beta_n a_0| \\
+      & \le |\beta_0 a_n + \beta_1 a_{n-1} + \cdots + \beta_N a_{n-N}| + \varepsilon\alpha
+    \end{split}
+  \end{align*}
+\end{anote}
 
 \begin{theorem}
   If the series $\Sigma a_n, \Sigma b_n, \Sigma c_n$ converge to $A, B, C$, and $c_n = a_0 b_n + \cdots + a_n b_0$, then $C = AB$.

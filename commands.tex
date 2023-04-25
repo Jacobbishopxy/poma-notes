@@ -11,3 +11,16 @@
   \lstinline[basicstyle=\ttfamily]{#1}
 }
 
+% colored underline
+\newsavebox\MBox
+\newcommand\aul[2][red]{
+  {
+      \sbox\MBox{$#2$}
+      \rlap{\usebox\MBox}\color{#1}\rule[-2.5\dp\MBox]{\wd\MBox}{1pt}
+    }
+}
+
+% circled text
+\newcommand*\acircled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=1.5pt] (char) {#1};}
+}

@@ -82,7 +82,7 @@
     \qquad P_1 + \cdots + P_{m_1} - Q_1 - \cdots - Q_{k_1} + P_{m_1 + 1} + \cdots \\
     + P_{m_2} - Q_{k_1 + 1} - \cdots - Q_{k_2} + \cdots \qquad
   \end{multline}
-  即显然是 $\Sigma a_n$ 的重排，满足 (24)。
+  即显然是 $\Sigma a_n$ 的重排，满足式 (24)。
 
   选择实数序列 $\{\alpha_n\},\{\beta_n\}$ 满足 $\alpha_n\to\alpha, \beta_n\to\beta, \alpha_n<\beta, \beta_1>0$。
 
@@ -99,16 +99,54 @@
   \end{gather*}
   并持续这个过程。由于 $\Sigma P_n$ 与 $\Sigma Q_n$ 是发散的，因此上述过程成立。
 
-  如果 $x_n, y_n$ 代表 (25) 的部分和，其最终项为 $P_{m_n}, -Q_{k_n}$，那么
+  如果 $x_n, y_n$ 代表式 (25) 的部分和，其最终项为 $P_{m_n}, -Q_{k_n}$，那么
   \[
     |x_n - \beta_n| \le P_{m_n},\qquad |y_n - \alpha_n| \le Q_{k_n}
   \]
   由于在 $n \to 0$ 时有 $P_n \to 0$ 以及 $Q_n \to 0$，可得 $x_n \to \beta, y_n \to \alpha$。
 
-  最后，很明显没有小于 $\alpha$ 或是大于 $\beta$ 的数可以成为 (25) 部分和子序列的极限。
+  最后，很明显没有小于 $\alpha$ 或是大于 $\beta$ 的数可以成为式 (25) 部分和子序列的极限。
 \end{proof}
 
-% TODO
+\begin{anote}
+  论证关键：
+  \begin{enumerate}
+    \item 证明 $\Sigma p_n,\ \Sigma q_n$ 皆为发散；
+    \item 证明式 (25) 为 $\Sigma a_n$ 的重排；
+    \item 不断取 $m,\ k$ 最小整数，重复步骤证明式 (25) 被约束在 $(\alpha, \beta)$ 之内。
+  \end{enumerate}
+
+  关于式 (25)：
+  \begin{align*}
+    \begin{split}
+      [(P_1 + \cdots) + \aul[red]{P_{m_1}} + (P_{m_1 + 1} + \cdots) + \aul[red]{P_{m_2}} +
+        (P_{m_2 + 1} + \cdots) + \cdots] \makebox[2em][l]{\quad{\acircled{1}}} \\
+      - [(Q_1 + \cdots) + \aul[blue]{Q_{k_1}} + (Q_{k_1 + 1} + \cdots) + \aul[blue]{Q_{k_2}} +
+      (Q_{k_2 + 1} + \cdots) + \cdots] \makebox[2em][l]{\quad{\acircled{2}}}
+    \end{split}
+  \end{align*}
+
+  显然 $\acircled{1} - \acircled{2}$ 为 $\Sigma a_n$ 的重排。
+
+  那么对于 $m_1,\ k_1$ 而言：
+  \begin{align*}
+    \aul[red]{(P_1 + \cdots) + P_{m_1}} > \beta_1
+  \end{align*}
+  \begin{align*}
+    [\aul[red]{(P_1 + \cdots) + P_{m_1}}] - [\aul[blue]{(Q_1 + \cdots) + Q_{k_1}}] < \alpha_1
+  \end{align*}
+
+  对于 $m_2,\ k_2$ 而言：
+  \begin{align*}
+    \aul[red]{(P_1 + \cdots) + P_{m_1}} + \aul[red]{(P_{m_1 + 1} + \cdots) + P_{m_2}} > \beta_2
+  \end{align*}
+  \begin{multline*}
+    \qquad [\aul[red]{(P_1 + \cdots) + P_{m_1}} + \aul[red]{(P_{m_1 + 1} + \cdots) + P_{m_2}}] - \\
+    [\aul[blue]{(Q_1 + \cdots) + Q_{k_1}} + \aul[blue]{(Q_{k_1+1} + \cdots) + Q_{k_2}}] < \alpha_2 \qquad
+  \end{multline*}
+
+  $\Sigma P_n$ 与 $\Sigma Q_n$ 发散，上述过程可一直重复。
+\end{anote}
 
 \begin{theorem}
   If $\Sigma a_n$ is a series of complex numbers which converges absolutely, then every rearrangement of
