@@ -48,6 +48,11 @@ $f^{-1}(f(E)) \supset E$；等式在任何一种情况下都不需要相等。
 
 上述定理遵循了 Theorem 2.41。当 $f$ 为实（real）时，其结果特别重要：
 
+\begin{anote}
+  如果 $\mathbf{f}$ 是把紧度量空间 $X$ 映入 $R^k$ 内的连续映射，那么 $\mathbf{f}(X)$ 是闭合有界的。因此 $\mathbf{f}$
+  是有界的。
+\end{anote}
+
 \begin{theorem}
   Suppose $f$ is a continuous real function on a compact metric space $X$, and
   \begin{equation}
@@ -55,6 +60,43 @@ $f^{-1}(f(E)) \supset E$；等式在任何一种情况下都不需要相等。
   \end{equation}
   Then there exist points $p, q \in X$ such that $f(p) = M$ and $f(q) = m$.
 \end{theorem}
+
+式 (14) 意味着 $M$ 是集合中所有数 $f(p)$ 的最小上界，而 $p$ 的范围超过 $X$，而 $m$ 则是这些数的最大下界。
+
+该结论同样也可以这样表述：\textit{在 $X$ 中存在点 $p$ 与 $q$ 对所有 $x \in X$ 有 $f(q) \le f(x) \le f(p)$}；即，$f$
+(在 $p$) 达到最大，（在 $q$）达到最小。
+
+\begin{proof}
+  根据 Theorem 4.15，$f(X)$ 是一个闭且有界的实数集合；因此根据 Theorem 2.28，$f(X)$ 包含
+  \[
+    M = \sup f(X) \qquad \text{and} \qquad m = \inf f(X)
+  \]
+\end{proof}
+
+\begin{anote}
+  如果 $\mathbf{f}$ 是紧度量空间 $X$ 上的连续实函数，且 $M = \sup_{p \in X} f(p),\ m = \inf_{p \in X} f(p)$，
+  那么一定存在 $r,\ s \in X$ 使 $f(r) = M$ 以及 $f(x) = m$。
+\end{anote}
+
+\begin{theorem}
+  Suppose $f$ is a continuous 1-1 mapping of a compact metric space $X$ onto a metric space $Y$. Then the
+  inverse mapping $f^{-1}$ defined on $Y$ by
+  \[
+    f^{-1}(f(x)) = x \qquad (x \in X)
+  \]
+  is a continuous mapping of $Y$ onto $X$.
+\end{theorem}
+
+\begin{proof}
+  将 Theorem 4.8 应用至 $f^{-1}$ 代替 $f$，足够证明对于每个在 $X$ 中的开集 $V$ 而言，$f(V)$ 在 $Y$ 上是一个开集。
+
+  $V$ 的补集 $V^c$ 在 $X$ 中为闭，因此是紧的（Theorem 2.35）；因此 $f(V^c)$ 是一个 $Y$ 上的紧子集（Theorem 4.14）
+  并在 $Y$ 上为闭（Theorem 2.34）。因为 $f$ 是一对一的映射，$f(V)$ 是 $f(V^c)$ 的补集。因此 $f(V)$ 是开的。
+\end{proof}
+
+\begin{anote}
+  设 $f$ 是把紧度量空间 $X$ 映满度量空间 $Y$ 的连续 1-1 映射，那么逆映射 $f^{-1}$ 是 $Y$ 映满 $X$ 的连续映射。
+\end{anote}
 
 % TODO
 
