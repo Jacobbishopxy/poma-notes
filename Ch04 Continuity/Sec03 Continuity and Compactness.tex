@@ -98,6 +98,86 @@ $f^{-1}(f(E)) \supset E$；等式在任何一种情况下都不需要相等。
   设 $f$ 是把紧度量空间 $X$ 映满度量空间 $Y$ 的连续 1-1 映射，那么逆映射 $f^{-1}$ 是 $Y$ 映满 $X$ 的连续映射。
 \end{anote}
 
+\begin{definition}
+  Let $f$ be a mapping of a metric space $X$ into a metric space $Y$. We say that $f$ is \textit{uniformly
+    continuous} on $X$ if for every $\varepsilon > 0$ there exists $\delta > 0$ such that
+  \begin{equation}
+    f_Y(f(p),f(q)) < \varepsilon
+  \end{equation}
+  for all $p$ and $q$ in $X$ for which $d_X(p,q) < \delta$.
+\end{definition}
+
+\begin{anote}
+  对度量空间 $X, Y$ 的函数 $f: X \to Y$，称 $f$ 在 $X$ 上一致连续，若对每个 $\varepsilon > 0$ 总存在 $\delta > 0$
+  对一切满足 $d_X(p,q) < \delta$ 的 $p, q \in X$ 都能使 $d_Y(f(p), f(q)) < \varepsilon$。
+\end{anote}
+
+让我们来讨论一下连续性与一致连续性概念的区别。首先，一致连续性是函数在集合上的属性，且连续性可以被定义在单一一个点上。在某个
+点上讨论一致连续性是无意义的。其次，如果 $f$ 在 $X$ 上连续，那么可以找到，对于每个 $\varepsilon > 0$ 以及对于每个 $X$
+上的 $p$，具有 Definition 4.5 所定义的 $\delta > 0$。该 $\delta$ 依赖 $\varepsilon$ 与 $p$。而如果 $f$ 在 $X$
+上一致连续，那么对于每个 $\varepsilon > 0$，找到\textit{一个} $\delta > 0$ 满足\textit{所有} $X$ 的点 $p$ 是可能的。
+
+显然的，每个一致连续函数都是连续的。而根据下面的定理，可知这两个概念在紧集上是相等的。
+
+\begin{theorem}
+  Let $f$ be a continuous mapping of a compact metric space $X$ into a metric space $Y$. Then $f$ is
+  uniformly continuous on $X$.
+\end{theorem}
+
+\begin{proof}
+  给定 $\varepsilon > 0$。由于 $f$ 是连续的，我们可以为每个点 $p \in X$ 关联一个正数 $\phi(p)$ 满足
+  \begin{equation}
+    q \in X, d_X(p,q) < \phi(p) \quad \text{implies} \quad d_Y(f(p),f(q)) < \frac{\varepsilon}{2}
+  \end{equation}
+  令 $J(p)$ 为所有 $q \in X$ 的集合，有
+  \begin{equation}
+    d_X(p,q) < \frac{1}{2} \phi(p)
+  \end{equation}
+  因为 $p \in J(p)$，所有 $J(p)$ 集合的集合群是 $X$ 的一个开覆盖；而又因为 $X$ 是紧的，在 $X$ 中存在点 $p_1, \dots, p_n$
+  的一个有限集合满足
+  \begin{equation}
+    X \subset J(p_1) \cup \cdots \cup J(p_n)
+  \end{equation}
+
+  令
+  \begin{equation}
+    \delta = \frac{1}{2} \min [\phi(p_1),\dots,\phi(p_n)]
+  \end{equation}
+  那么有 $\delta > 0$。（这是从紧凑性定义中继承的重要一点：覆盖的有限性。有限正数集的最小值是正数，而无限正数集的 inf 很可能为 0。）
+
+  现在领 $q$ 与 $p$ 为 $X$ 上的点，满足 $d_X(p,q)<\delta$。根据 (18)，存在一个整数 $m, 1 \le m \le n$，满足 $p \in J(p_n)$；
+  因此
+  \begin{equation}
+    d_X(p, p_m) < \frac{1}{2} \phi(p_m)
+  \end{equation}
+  同样有
+  \[
+    d_X(q, p_m) \le d_X(p,q) + d_X(p,p_m) < \delta + \frac{1}{2} \phi(p_m) \le \phi(p_m)
+  \]
+  最后，(16) 可得
+  \[
+    d_Y(f(p),f(q)) \le d_Y(f(p),f(p_m)) + d_Y(f(q),f(p_m)) < \varepsilon
+  \]
+  证明完毕。
+\end{proof}
+
+\begin{anote}
+  设 $f$ 是把紧度量空间 $X$ 映入度量空间 $Y$ 的连续映射，那么 $f$ 在 $X$ 上一致连续。
+\end{anote}
+
+\begin{theorem}
+  Let $E$ be a non-compact set in $R^1$. Then
+  \begin{enumerate}[label=(\alph*)]
+    \item there exists a continuous function on $E$ which is not bounded;
+    \item there exists a continuous and bounded function on $E$ which has no maximum.
+  \end{enumerate}
+
+  If, in addition, $E$ is bounded, then
+  \begin{enumerate}
+    \item [(c)] there exists a continuous function on $E$ which is not uniformly continuous.
+  \end{enumerate}
+\end{theorem}
+
 % TODO
 
 \end{document}
