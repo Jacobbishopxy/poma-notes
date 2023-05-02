@@ -4,7 +4,39 @@
 
 \subsection*{Continuity and Connectedness}
 
-WIP
+\begin{theorem}
+  If $f$ is a continuous mapping of a metric space $X$ into a metric space $Y$, and if $E$ is a connected subset of
+  $X$, then $f(E)$ is connected.
+\end{theorem}
+
+\begin{proof}
+  按照相反的来假设，$f(E) = A \cup B$，且 $A$ 与 $B$ 为 $Y$ 的非空分离子集。令 $G = E \cap f^{-1}(A),H = E \cap f^{-1}(B)$。
+
+  那么 $E = G \cup H$，且 $G$ 与 $H$ 皆不为空。
+
+  因为 $A \subset \overline{A}$（即 $A$ 的闭包），有 $G \subset f^{-1}(\overline{A})$；后者为闭集，因为 $f$ 是连续的；因此
+  $\overline{G} \subset f^{-1}(\overline{A})$。其遵循 $f(\overline{G}) \subset \overline{A}$。因为 $f(H) = B$ 与
+  $\overline{A} \cap B$ 皆为空，可得 $\overline{G} \cap H$ 为空。
+
+  同样的论证可得 $G \cap \overline{H}$ 为空。因此 $G$ 与 $H$ 是分离的。这样是不可能的，如果 $E$ 是连接着的，
+\end{proof}
+
+\begin{anote}
+  设 $f$ 是把连通的度量空间 $X$ 映入度量空间 $Y$ 内的连续映射，$E$ 是 $X$ 的连通子集，那么 $f(E)$ 是连通的。
+\end{anote}
+
+\begin{theorem}
+  Let $f$ be a continuous real function on the interval $[a, b]$. If $f(a) < f(b)$ and if $c$ is a number such that
+  $f(a) < c < f(b)$, then there exists a point $x \in (a,b)$ such that $f(x) = c$.
+\end{theorem}
+
+当然如果 $f(a) > f(b)$ 也有同样一个结果。粗略而言，该定理说明了一个连续的实函数假设了一个区间中的所有中间值。
+
+\begin{proof}
+  根据 Theorem 2.47，$[a, b]$ 是连接着的；因此 Theorem 4.22 可得 $f([a,b])$ 是 $R^1$ 的一个连接子集。如果再次应用 Theorem 2.47，
+  该声明成立。
+\end{proof}
+
+% TODO
 
 \end{document}
-
