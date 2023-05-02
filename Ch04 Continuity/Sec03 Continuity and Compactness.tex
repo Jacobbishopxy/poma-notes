@@ -178,7 +178,57 @@ $f^{-1}(f(E)) \supset E$；等式在任何一种情况下都不需要相等。
   \end{enumerate}
 \end{theorem}
 
-% TODO
+\begin{proof}
+  首先假设 $E$ 是有界的，那么 $E$ 存在一个不属于 $E$ 的极限点 $x_0$。假设
+  \begin{equation}
+    f(x) = \frac{1}{x - x_0} \qquad (x \in E)
+  \end{equation}
+  该函数在 $E$ 上连续（Theorem 4.9），且显然无界的。为了验证 (21) 不是一致连续的，令 $\varepsilon > 0$ 且 $\delta >0$ 为
+  任意数，且选择一个点 $x \in E$ 满足 $|x - x_0| < \delta$。取 $t$ 趋近于 $x_0$，那么可以使差值 $|f(t) - f(x)|$ 大于
+  $\varepsilon$，即使 $|t - x| < \delta$。由于对所有 $\delta > 0$ 都成立，$f$ 在 $E$ 上不为一致连续。
+
+  给定函数 $g$
+  \begin{equation}
+    g(x) = \frac{1}{1+(x-x_0)^2} \qquad (x \in E)
+  \end{equation}
+  在 $E$ 上连续，且有界，因为 $0 < g(x) < 1$。那么很明显
+  \[
+    \sup_{x \in E} g(x) = 1
+  \]
+  且对于所有 $x \in E$ 有 $g(x) < 1$。因此 $g$ 在 $E$ 上没有最大值。
+
+  为有界集 $E$ 证明了定理，现在假设 $E$ 是无界的。那么 $f(x) = x$ 构建 (a)，而
+  \begin{equation}
+    h(x) = \frac{x^2}{1+x^2} \qquad (x \in E)
+  \end{equation}
+  构建 (b)，因为
+  \[
+    \sup_{x \in E} h(x) = 1
+  \]
+  且对于所有 $x \in E$ 有 $h(x) < 1$。
+
+  如果界不在假设中，(c) 则不成立。令 $E$ 为包含了所有正数的集，那么每个在 $E$ 上定义的函数都在 $E$ 上一致连续。验证上述仅需要
+  Definition 4.18 中令 $\delta < 1$。
+\end{proof}
+
+\begin{anote}
+  设 $E$ 为 $R^1$ 中的非紧集，那么 (a) 有在 $E$ 上连续却无界的函数，(b) 有在 $E$ 上连续且有界，却没有最大值的函数，(c) 如果
+  $E$ 是有界的，有在 $E$ 上连续却不一致连续的函数。
+\end{anote}
+
+\begin{example}
+  Let $X$ be the half-open interval $[0, 2\pi)$ on the real line, and let $\mathbf{f}$ be the mapping of $X$ onto
+  the circle $Y$ consisting of all points whose distance from the origin is $1$, given by
+  \begin{equation}
+    \mathbf{f}(t) = (\cos t, \sin t) \qquad (0 \le t \le 2\pi).
+  \end{equation}
+  The continuity of the trigonometric function cosine and sine, as well as their periodicity properties, will be
+  established in Chap. 8. These results show that $\mathbf{f}$ is a continuous 1-1 mapping of $X$ onto $Y$.
+
+  However, the inverse mapping (which exists, since $\mathbf{f}$ is one-to-one and onto) fails to be continuous
+  at the point $(1, 0) = \mathbf{f}(0)$. Of course, $X$ is not compact in this example. (It may be of interest to
+  observe the $\mathbf{f}^{-1}$ fails to be continuous in spite of the fact that $Y$ is compact!)
+\end{example}
 
 \end{document}
 

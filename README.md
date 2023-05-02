@@ -56,9 +56,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [Continuity and Compactness](./Ch04%20Continuity/Sec03%20Continuity%20and%20Compactness.tex)
 
-   <!-- 1. [Continuity and Connectedness](./Ch04%20Continuity/Sec04%20Continuity%20and%20Connectedness.tex)
+   1. [Continuity and Connectedness](./Ch04%20Continuity/Sec04%20Continuity%20and%20Connectedness.tex)
 
-   1. [Discontinuities](./Ch04%20Continuity/Sec05%20Discontinuities.tex)
+   <!-- 1. [Discontinuities](./Ch04%20Continuity/Sec05%20Discontinuities.tex)
 
    1. [Monotonic Functions](./Ch04%20Continuity/Sec06%20Monotonic%20Functions.tex)
 
