@@ -18,7 +18,116 @@
   若有 $f(x) \le f(y)$ 就是 \textbf{单调递减}。两者统称为 \textbf{单调函数}。
 \end{anote}
 
-% TODO
+\begin{theorem}
+  Let $f$ be monotonically increasing on (a, b). Then $f(x+)$ and $f(x-)$ exist at every point of $x$ of $(a, b)$.
+  More precisely,
+  \begin{equation}
+    \sup_{a<t<x} f(t) = f(x-) \le f(x) \le f(x+) = \inf_{x<t<b} f(t).
+  \end{equation}
+  Furthermore, if $a < x < y < b$, then
+  \begin{equation}
+    f(x+) \le f(y-).
+  \end{equation}
+  Analogous results evidently hold for monotonically decreasing functions.
+\end{theorem}
+
+\begin{proof}
+  根据假设，$f(t)$ 的集合有 $a < t < x$，其上界为 $f(x)$，因此有一个最小上界 $A$。显然 $A \le f(x)$，现在需要证明 $A = f(x-)$。
+
+  给定 $\varepsilon > 0$。遵循 $A$ 的最小上界定义，存在 $\delta > 0$ 满足 $a < x - \delta < x$ 且
+  \begin{equation}
+    A - \varepsilon < f(x - \delta) \le A
+  \end{equation}
+
+  由于 $f$ 是单调的，有
+  \begin{equation}
+    f(x - \delta) \le f(t) \le A \qquad (x - \delta < t < x)
+  \end{equation}
+
+  结合 (27) 与 (28)，可得
+  \[
+    |f(t) - A| < \varepsilon \qquad (x - \delta < t < x)
+  \]
+  因此 $f(x-) = A$。
+
+  同理可得 (25) 的另一部分。
+
+  接着，如果 $a < x < y < b$，从 (25) 可得
+  \begin{equation}
+    f(x+) = \inf_{x<t<b} f(t) = \inf_{x<t<y} f(t)
+  \end{equation}
+
+  最后将 (25) 应用在 $(a, y)$ 替换 $(a, b)$。同样的，
+  \begin{equation}
+    f(y-) = \sup_{a<t<y} f(t) = \sum_{x<t<y} f(t)
+  \end{equation}
+
+  比较 (29) 与 (30)，得 (26)。
+\end{proof}
+
+\begin{corollary}
+  Monotonic functions have no discontinuities of the second kind.
+\end{corollary}
+
+\begin{anote}
+  单调函数没有第二类间断。
+\end{anote}
+
+\begin{theorem}
+  Let $f$ be monotonic on $(a, b)$. Then the set of points of $(a, b)$ at which $f$ is discontinuous is at most countable.
+\end{theorem}
+
+\begin{proof}
+  假设为了定义的目的，令 $f$ 递增，同时令 $E$ 为 $f$ 所有不连续点的集合。
+
+  将 $E$ 的每个 $x$ 点关联一个实数 $r(x)$ 满足
+  \[
+    f(x-) < r(x) < f(x+)
+  \]
+  由于 $x_1 < x_2$ 得 $f(x_1+) \le f(x_2-)$，可得 $r(x_1) \ne r(x_2)$ 如果 $x_1 \ne x_2$。
+
+  由此为 $E$ 与实数的子集建立了一对一关系，即得 $E$ 可数。
+\end{proof}
+
+\begin{anote}
+  设 $f$ 在 $(a, b)$ 上单调，那么 $(a, b)$ 中使 $f$ 间断的点最多是可数的。
+\end{anote}
+
+\begin{remark}
+  It should be noted that the discontinuities of a monotonic function need not be isolated. In fact, given any countable
+  subset $E$ of $(a, b)$, which may even be dense, we can construct a function $f$, monotonic on $(a, b)$, discontinuous at
+  every point of $E$, and at no other point of $(a, b)$.
+
+  To show this, let the points of $E$ be arranged in a sequence $\{x_n\},\ n=1,2,3,\dots$. Let $\{c_n\}$ be a sequence of
+  positive numbers such that $\Sigma c_n$ converges. Define
+  \begin{equation}
+    f(x) = \sum_{x_n < x} c_n \qquad (a<x<b)
+  \end{equation}
+
+  The summation is to be understood as follows: Sum over those indices $n$ for which $x_n < x$. If there are no points $x_n$
+  to the left of $x$, the sum is empty; following the usual convention, we define it to be zero. Since (31) converges
+  absolutely, the order in which the terms are arranged is immaterial.
+
+  We leave the verification of the following properties of $f$ to the reader:
+  \begin{enumerate}[label=(\alph*)]
+    \item $f$ is monotonically increasing on $(a, b)$;
+    \item $f$ is discontinuous at every point of $E$; in fact,
+          \[
+            f(x_n+) - f(x_n-) = c_n.
+          \]
+    \item $f$ is continuous at every other point of $(a, b)$.
+  \end{enumerate}
+
+  Moreover, it is not hard to see that $f(x-) = f(x)$ at all points of $(a, b)$. If a function satisfies this condition, we say
+  that $f$ is \textit{continuous from the left}. If the summation in $(31)$ were taken over all indices $n$ for which $x_n \le x$,
+  we would have $f(x+) = f(x)$ at every point of $(a, b)$; that is, $f$ would be \textit{continuous from the right}.
+
+  Functions of this sort can also be defined by another method; for an example we refer to Theorem 6.16.
+\end{remark}
+
+\begin{anote}
+  间断点不一定是孤立点。
+\end{anote}
 
 \end{document}
 
