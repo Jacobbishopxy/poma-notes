@@ -4,7 +4,34 @@
 
 \subsection*{The Derivative of a Real Function}
 
-WIP
+本章我们将着重于定义在区间或者线段上的\textit{实}函数（除了最后一节）。这不仅只是便利的缘故，因为当从实函数传递到向量值函数时，
+真正的差异就会出现。定义在 $R^k$ 上的函数微分将在第九章进行讨论。
+
+\begin{definition}
+  Let $f$ be defined (and real-valued) on $[a, b]$. For any $x \in [a,b]$ form the quotient
+  \begin{equation}
+    \phi(t) = \frac{f(t) - f(x)}{t - x} \qquad (a<t<b, t \ne x),
+  \end{equation}
+  and define
+  \begin{equation}
+    f'(x) = \lim_{t \to x} \phi(t),
+  \end{equation}
+  provided this limit exists in accordance with Definition 4.1.
+
+  We thus associate with the function $f$ a function $f'$ whose domain is the set of points $x$ at which the
+  limit (2) exists; $f'$ is called the \textit{derivative} of $f$.
+
+  If $f'$ is defined at a point $x$, we say that $f$ is \textit{differentiable} at $x$. If $f'$ is defined at
+  every point of a set $E \subset [a,b]$, we say that $f$ is differentiable on $E$.
+
+  It is possible to consider right-hand and left-hand limits in (2); this leads to the definition of right-hand
+  and left-hand derivatives. In particular, at the endpoints $a$ and $b$, the derivative, if it exists, is a
+  right-hand of left-hand derivative, respectively. We shall not, however, discuss one-sided derivatives in
+  any detail.
+
+  If $f$ is defined on a segment $(a, b)$ and if $a<x<b$, then $f'(x)$ is defined by (1) and (2), as above.
+  But $f'(a)$ and $f'(b)$ are not defined in this case.
+\end{definition}
 
 \end{document}
 

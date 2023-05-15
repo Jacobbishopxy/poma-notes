@@ -4,7 +4,52 @@
 
 \subsection*{Infinite Limits and Limits at Infinity}
 
-WIP
+为了能够在广义实数系中进行操作，现在将通过重新表述邻域来扩大 Definition 4.1 的范围。
+
+对于任何实数 $x$，已有的定义是 $x$ 的领域为任何线段 $(x - \delta, x + \delta)$。
+
+\begin{definition}
+  For any real $c$, the set of real numbers $x$ such that $x > c$ is called a neighborhood of $+\infty$ and is
+  written $(c, +\infty)$. Similarly, the set $(-\infty,c)$ is a neighborhood of $-\infty$.
+\end{definition}
+
+\begin{anote}
+  对任意 $c \in R$，集合 $x | x > c$ 叫做 $+\infty$ 的一个邻域，记为 $(c, +\infty)$；类似的，$(-\infty,c)$ 是 $-\infty$
+  的一个邻域。
+\end{anote}
+
+\begin{definition}
+  Let $f$ be a real function defined on $E \subset R$. We say that
+  \[
+    f(t) \to A \text{ as } t \to x,
+  \]
+  where $A$ and $x$ are in the extended real number system, if for every neighborhood $U$ of $A$ there is a
+  neighborhood $V$ of $x$ such that $V \cap E$ is not empty, and such that $f(t) \in U$ for all $t\in V\cap E,\
+    t \ne x$.
+\end{definition}
+
+\begin{anote}
+  将函数的极限运用领域的语言拓展到了广义实数系。
+\end{anote}
+
+类似的 Theorem 4.4 也仍然为真，其证明同理可得。这里提及它是为了完整性。
+
+\begin{theorem}
+  Let $f$ and $g$ be defined on $E \subset R$. Suppose
+  \[
+    f(t) \to A, \quad, g(t) \to B \quad \text{as } t \to x.
+  \]
+  Then,
+  \begin{enumerate}[label=(\alph*)]
+    \item $f(t) \to A' \quad \text{implies} \quad A' = A$.
+    \item $(f + g)(t) \to A + B$,
+    \item $(fg)(t) \to AB$,
+    \item $(f|g)(t) \to A|B$,
+  \end{enumerate}
+  provided the right members of (b), (c), and (d) are defined.
+\end{theorem}
+
+注意 $\infty - \infty,\ 0 \cdot \infty,\ \infty/\infty,\ A/0$ 未定义（见 Definition 1.23）。
 
 \end{document}
 

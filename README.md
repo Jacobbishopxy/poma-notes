@@ -62,13 +62,13 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [Monotonic Functions](./Ch04%20Continuity/Sec06%20Monotonic%20Functions.tex)
 
-   <!-- 1. [Infinite Limits and Limits at Infinity](./Ch04%20Continuity/Sec07%20Infinite%20Limits%20and%20Limits%20at%20Infinity.tex) -->
+   1. [Infinite Limits and Limits at Infinity](./Ch04%20Continuity/Sec07%20Infinite%20Limits%20and%20Limits%20at%20Infinity.tex)
 
 1. Differentiation
 
-   <!-- 1. [The Derivative of a Real Function](./Ch05%20Differentiation/Sec01%20The%20Derivative%20of%20a%20Real%20Function.tex)
+   1. [The Derivative of a Real Function](./Ch05%20Differentiation/Sec01%20The%20Derivative%20of%20a%20Real%20Function.tex)
 
-   1. [Mean Value Theorems](/Ch05%20Differentiation/Sec02%20Mean%20Value%20Theorems.tex)
+   <!-- 1. [Mean Value Theorems](/Ch05%20Differentiation/Sec02%20Mean%20Value%20Theorems.tex)
 
    1. [The Continuity of Derivatives](./Ch05%20Differentiation/Sec03%20The%20Continuity%20of%20Derivatives.tex)
 
