@@ -70,9 +70,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [Mean Value Theorems](/Ch05%20Differentiation/Sec02%20Mean%20Value%20Theorems.tex)
 
-   <!-- 1. [The Continuity of Derivatives](./Ch05%20Differentiation/Sec03%20The%20Continuity%20of%20Derivatives.tex)
+   1. [The Continuity of Derivatives](./Ch05%20Differentiation/Sec03%20The%20Continuity%20of%20Derivatives.tex)
 
-   1. [L'Hospital's Rule](./Ch05%20Differentiation/Sec04%20L'Hospital's%20Rule.tex)
+   <!-- 1. [L'Hospital's Rule](./Ch05%20Differentiation/Sec04%20L'Hospital's%20Rule.tex)
 
    1. [Derivatives of Higher Order](./Ch05%20Differentiation/Sec05%20Derivatives%20of%20Higher%20Order.tex)
 
