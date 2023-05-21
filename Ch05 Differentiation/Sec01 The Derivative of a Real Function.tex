@@ -10,7 +10,7 @@
 \begin{definition}
   Let $f$ be defined (and real-valued) on $[a, b]$. For any $x \in [a,b]$ form the quotient
   \begin{equation}
-    \phi(t) = \frac{f(t) - f(x)}{t - x} \qquad (a<t<b, t \ne x),
+    \phi(t) = \frac{f(t) - f(x)}{t - x} \qquad (a<t<b,\ t \ne x),
   \end{equation}
   and define
   \begin{equation}
@@ -32,6 +32,136 @@
   If $f$ is defined on a segment $(a, b)$ and if $a<x<b$, then $f'(x)$ is defined by (1) and (2), as above.
   But $f'(a)$ and $f'(b)$ are not defined in this case.
 \end{definition}
+
+\begin{anote}
+  \textbf{导数（导函数）}：定义在 $[a, b]$ 上的实值函数，任何 $x \in [a, b]$ 其商形式 $\phi(t)=\frac{f(t)-f(x)}{t-x}
+    \ (a < t < b,\ t \ne x)$，且 $f'$ 在点 $x$ 满足定义 $f'(x) = \lim_{t \to x} \phi(t)$，那么 $f$ 在 $x$ 上
+  \textbf{可微} 或 \textbf{可导}。
+\end{anote}
+
+\begin{theorem}
+  Let $f$ be defined on $[a, b]$. If $f$ is differentiable at a point $x \in [a, b]$, then $f$ is continuous
+  at $x$.
+\end{theorem}
+
+\begin{proof}
+  根据 Theorem 4.4，在 $t \to x$ 时，有
+  \[
+    f(t) - f(x) = \frac{f(t) - f(x)}{t - x} \cdot (t - x) \to f'(x) \cdot 0 = 0
+  \]
+\end{proof}
+
+\begin{anote}
+  若 $f$ 在 $x \in [a, b]$ 可微（可导），那么它在 $x$ 点连续。
+\end{anote}
+
+本定理反过来并不成立。构建一个连续函数在其独立点上不可微是很容易的。在第七章节中，我们应该会更加熟悉一个函数在整条线是连续的，但是
+在任意一点上皆不可微！
+
+\begin{theorem}
+  Suppose $f$ and $g$ are defined on $[a, b]$ and are differentiable at a point $x \in [a,b]$. Then $f + g$,
+  $fg$, and $f/g$ are differentiable at $x$, and
+  \begin{enumerate}[label=(\alph*)]
+    \item $(f+g)'(x) = f'(x) + g'(x)$;
+    \item $(fg)'(x) = f'(x)g(x) + f(x)g'(x)$;
+    \item $(\frac{f}{g})'(x) = \frac{g(x)f'(x) - g'(x)f(x)}{g^2(x)}$.
+  \end{enumerate}
+  In (c), we assume of course that $g(x) \ne 0$.
+\end{theorem}
+
+\begin{proof}\mbox{}\par
+  根据 Theorem 4.4 可证 (a)。令 $h = fg$，那么
+  \[
+    h(t) - h(x) = f(t)[g(t) - g(x)] + g(x)[f(t) - f(x)]
+  \]
+  如果将上式除以 $t - x$，且根据 Theorem 5.2，$t \to x$ 时有 $f(t) \to f(x)$ ，可得 (b)。接下来就是另 $h = f/g$。那么
+  \[
+    \frac{h(t) - h(x)}{t - x} = \frac{1}{g(t)g(x)} [g(x)\frac{f(t)-f(x)}{t-x} - f(x)\frac{g(t)-g(x)}{t-x}]
+  \]
+  令 $t \to x$，并应用 Theorems 4.4 与 5.2，可得 (c)。
+\end{proof}
+
+\stepcounter{poma}
+
+\begin{theorem}
+  Suppose $f$ is continuous on $[a, b]$, $f'(x)$ exists at some point $x \in [a, b]$, $g$ is defined on an
+  interval $I$ which contains the range of $f$, and $g$ is differentiable at the point $f(x)$. If
+  \[
+    h(t) = g(f(t)) \qquad (a \le t \le b),
+  \]
+  then $h$ is differentiable at $x$, and
+  \begin{equation}
+    h'(x) = g'(f(x)) f'(x).
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  令 $y = f(x)$，根据微分的定义有
+  \begin{align}
+    f(t) - f(x) = (t - x)[f'(x) + u(t)] \\
+    g(s) - g(y) = (s - y)[g'(y) + y(s)]
+  \end{align}
+  其中 $t \in [a,b],\ s \in I$，且 $t \to x$ 有 $u(t) \to 0$，$s \to y$ 有 $v(s) \to 0$。令 $s = f(t)$，通过 (5)
+  再 (4)，可得
+  \begin{align*}
+    \begin{split}
+      h(t) - h(x) & = g(f(t)) - g(f(x)) \\
+      & = [f(t) - f(x)] \cdot [g'(y) + v(s)] \\
+      & = (t - x) \cdot [f'(x) + u(t)] \cdot [g'(y) + v(s)]
+    \end{split}
+  \end{align*}
+  或者如果 $t \ne x$，
+  \begin{equation}
+    \frac{h(t) - h(x)}{t - x} = [g'(y) + v(s)] \cdot [f'(x) + u(t)]
+  \end{equation}
+  当 $t \to x$，可知 $s \to y$，根据 $f$ 的连续性，(6) 等式右侧趋向于 $g'(y) f'(x)$，即得 (3)。
+\end{proof}
+
+\begin{examples}
+  \begin{enumerate}[label=(\alph*)]
+    \item 令 $f$ 的定义如下
+          \begin{equation}
+            f(x) =
+            \begin{cases}
+              x \sin \frac{1}{x} & (x \ne 0), \\
+              0                  & (x = 0).
+            \end{cases}
+          \end{equation}
+
+          理所当然的 $\sin x$ 的导数是 $\cos x$ （我们将在第八章对三角函数进行讨论），将 Theorems 5.3 与 5.5 应用在 $f$ 非零部分，有
+          \begin{equation}
+            f'(x) = \sin\frac{1}{x} - \frac{1}{x}\cos\frac{1}{x} \qquad (x \ne 0)
+          \end{equation}
+          在 $x = 0$ 时，这些定理不再适用，因为 $1/x$ 在零时没有定义。直接给出定义：对于 $t \ne 0$，
+          \[
+            \frac{f(t) - f(0)}{t - 0} = \sin\frac{1}{5}
+          \]
+          当 $x \to 0$ 时，它没有趋向任何极限，因此 $f'(0)$ 不存在。
+    \item 令 $f$ 的定义如下
+          \begin{equation}
+            f(x) =
+            \begin{cases}
+              x^2 \sin\frac{1}{x} & (x \ne 0), \\
+              0                   & (x = 0)
+            \end{cases}
+          \end{equation}
+
+          与 (a) 类似，有
+          \begin{equation}
+            f'(x) = 2x \sin\frac{1}{x} - \cos\frac{1}{x} \qquad (x \ne 0)
+          \end{equation}
+          在 $x = 0$ 时，给出定义
+          \[
+            \biggl| \frac{f(t) - f(0)}{t - 0} \biggr| = \biggl| t \sin\frac{1}{t} \biggr| \le |t| \qquad (t \ne 0)
+          \]
+          令 $t \to 0$，可得
+          \begin{equation}
+            f'(0) = 0
+          \end{equation}
+  \end{enumerate}
+
+  因此 $f$ 在所有点 $x$ 上可导，但是 $f'$ 并不是一个连续函数，因为 $\cos(1/x)$ 在 (10) 中 $x \to 0$ 时，并没有趋向与一个极限。
+\end{examples}
 
 \end{document}
 
