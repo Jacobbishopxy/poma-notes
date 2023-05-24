@@ -4,6 +4,73 @@
 
 \subsection*{L'Hospital's Rule}
 
-WIP
+以下的定理在极限的计算中使用非常频繁。
+
+\begin{theorem}
+  Suppose $f$ and $g$ are real and differentiable in $(a, b)$, and $g'(x) \ne 0$ for all $x \in (a,b)$, where
+  $-\infty \le a < b \le +\infty$. Suppose
+  \begin{equation}
+    \frac{f'(x)}{g'(x)} \to A \ \text{as} \ x \to a.
+  \end{equation}
+  If
+  \begin{equation}
+    f(x) \to 0 \ \text{and} \ g(x) \to 0 \ \text{as} \ x \to a,
+  \end{equation}
+  or if
+  \begin{equation}
+    g(x) \to +\infty \ \text{as} \ x \to a,
+  \end{equation}
+  then
+  \begin{equation}
+    \frac{f(x)}{g(x)} \to A \ \text{as} \ x \to a.
+  \end{equation}
+\end{theorem}
+
+类似的声明当然也是成立的，如果 $x \to b$，或是 (15) 的 $g(x) \to -\infty$。注意我们现在使用的极限概念是 Definition 4.33 中的
+派生理念。
+
+\begin{proof}
+  我们首先考虑 $-\infty \le A < +\infty$ 的情况。选择一个实数 $q$ 满足 $A < q$，接着选择 $r$ 满足 $A < r < q$。根据 (13)
+  存在一个点 $c \in (a,b)$ 满足 $a < x < c$ 得
+  \begin{equation}
+    \frac{f'(x)}{g'(x)} < r
+  \end{equation}
+  如果 $a < x < y < c$，那么 Theorem 5.9 可知存在一个点 $t \in (x,y)$ 满足
+  \begin{equation}
+    \frac{f(x) - f(y)}{g(x) - g(y)} = \frac{f'(t)}{g'(t)} < r
+  \end{equation}
+
+  假设 (14) 成立。令 $x \to a$ 如 (18)，可得
+  \begin{equation}
+    \frac{f(y)}{g(y)} \le r < q \qquad (a<y<c)
+  \end{equation}
+
+  接着，假设 (15) 成立。保持如 (18) 中的 $y$ 固定，我们选择一个点 $c_1 \in (a,y)$ 满足 $g(x) > g(y)$ 以及如果 $a<x<c_1$ 有
+  $g(x)$。将 (18) 乘以 $[g(x) - g(y)]/g(x)$，可得
+  \begin{equation}
+    \frac{f(x)}{g(x)} < r - r \frac{g(y)}{g(x)} + \frac{f(y)}{g(x)} \qquad (a<x<c_1)
+  \end{equation}
+
+  如果如 (20) 令 $x \to a$，(15) 可知存在一个点 $c_2 \in (a, c_1)$ 满足
+  \begin{equation}
+    \frac{f(x)}{g(x)} < q \qquad (a < x < c_2)
+  \end{equation}
+
+  总结，(19) 与 (21) 可知对于任何 $q$，仅售条件限制 $A < q$，存在一个点 $c_2$ 如果 $a < x < c_2$ 满足 $f(x)/g(x) < q$。
+
+  以同样的方式，如果 $-\infty < A \le +\infty$，已经选定 $p$ 满足 $p < A$，我们可以找到一个点 $c_3$ 满足
+  \begin{equation}
+    p < \frac{f(x)}{g(x)} \qquad (a<x<c_3)
+  \end{equation}
+  同时 (16) 遵循上述两个声明。
+\end{proof}
+
+\begin{anote}
+  洛必达法则：假设实函数 $f,\ g$ 在 $(a, b)$ 内可微，而且对所有 $x \in (a,b),\ g'(x) \ne 0$，其中 $-\infty\le a<b \le+\infty$。
+  已知 $\lim_{x\to a}f'(x)/g'(x)=A$，如果 $\lim_{x\to a}f(x)=\lim_{x\to a} g(x) = 0$，或者 $\lim_{x\to a}g(x)=+\infty$，
+  那么 $\lim_{x\to a} f(x)/g(x) = A$。
+\end{anote}
+
+% TODO: note
 
 \end{document}

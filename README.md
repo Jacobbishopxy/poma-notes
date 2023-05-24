@@ -74,9 +74,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
    1. [L'Hospital's Rule](./Ch05%20Differentiation/Sec04%20L'Hospital's%20Rule.tex)
 
-   <!-- 1. [Derivatives of Higher Order](./Ch05%20Differentiation/Sec05%20Derivatives%20of%20Higher%20Order.tex)
+   1. [Derivatives of Higher Order](./Ch05%20Differentiation/Sec05%20Derivatives%20of%20Higher%20Order.tex)
 
-   1. [Taylor's Theorem](./Ch05%20Differentiation/Sec06%20Taylor's%20Theorem.tex)
+   <!-- 1. [Taylor's Theorem](./Ch05%20Differentiation/Sec06%20Taylor's%20Theorem.tex)
 
    1. [Differentiation of Vector-valued Functions](./Ch05%20Differentiation/Sec07%20Differentiation%20of%20Vector-valued%20Functions.tex) -->
 
