@@ -4,6 +4,31 @@
 
 \subsection*{The Continuity of Derivatives}
 
-WIP
+我们已经见到了 [Example 5.6 (b)] 中一个函数 $f$ 可能有一个导数 $f'$ 存在于任何点，但是在某些点并不连续。然而，并不是所有函数都有导数。
+特别是，存在于区间中每一点的导数与区间上连续的函数有一个重要的共同性质：假定的中间值（相较于 Theorem 4.23）。准确的称述如下：
+
+\begin{theorem}
+  Suppose $f$ is a real differentiable function on $[a, b]$ and suppose $f'(a) < \lambda < f'(b)$. Then there is a
+  point $x \in (a, b)$ such that $f'(x) = \lambda$.
+\end{theorem}
+
+同样的结果对 $f'(a) > f'(b)$ 也成立。
+
+\begin{proof}
+  令 $g(t) = f(t) - \lambda t$。那么 $g'(a) < 0$，那么对于某些 $t_1 \in (a,b)$ 有 $g(t_1) < g(a)$，且 $g'(b) > 0$。因此
+  $g$ 在 $[a, b]$ 上某点 $x,\ a<x<b$ 可达极小值（Theorem 4.16）。根据 Theorem 5.8，$g'(x) = 0$。因此 $f'(x) = \lambda$。
+\end{proof}
+
+\begin{anote}
+  设 $f$ 是 $[a, b]$ 上实值可微函数，设 $f'(a) < \lambda < f'(b)$，那么必有一点 $x \in (a, b)$ 使 $f'(x) = \lambda$。
+\end{anote}
+
+\begin{corollary}
+  If $f$ is differentiable on $[a, b]$, then $f'$ cannot have any simple discontinuities on $[a, b]$.
+\end{corollary}
+
+\begin{anote}
+  如果 $f$ 在 $[a, b]$ 上可微，那么 $f'$ 在 $[a, b]$ 上不能有简单间断。但是 $f'$ 可能有用第二类间断。
+\end{anote}
 
 \end{document}
