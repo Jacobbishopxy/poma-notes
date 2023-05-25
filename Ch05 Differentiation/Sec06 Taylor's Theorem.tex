@@ -2,8 +2,51 @@
 
 \begin{document}
 
-\subsection*{}
+\subsection*{Taylor's Theorem}
 
-WIP
+\begin{theorem}
+  Suppose $f$ is a real function on $[a, b]$, $n$ is a positive integer, $f^(n-1)$ is continuous on $[a, b]$,
+  $f^(n)(t)$ exists for every $t \in (a, b)$. Let $\alpha,\ \beta$ be distinct points of $[a, b]$, and define
+  \begin{equation}
+    P(t) = \sum_{k=0}^{n-1} \frac{f^(k)(\alpha)}{k!} (t-\alpha)^k.
+  \end{equation}
+  Then there exists a point $x$ between $\alpha$ anf $\beta$ such that
+  \begin{equation}
+    f(\beta) = P(\beta) + \frac{f^(n)(x)}{n!} (\beta - \alpha)^n.
+  \end{equation}
+
+  For $n = 1$, this is just the mean value theorem. In general, the theorem shows that $f$ can be approximated
+  by a polynomial of degree $n-1$, and that (24) allows us to estimate the error, if we know bounds on $|f^(n)(x)|$.
+\end{theorem}
+
+\begin{proof}
+  令 $M$ 为一个被以下定义的数
+  \begin{equation}
+    f(\beta) = P(\beta) + M(\beta - \alpha)^n
+  \end{equation}
+  同时令
+  \begin{equation}
+    g(t) = f(t) - P(t) - M(t - \alpha)^n \qquad (a\le t \le b)
+  \end{equation}
+  我们需要证明对某些介于 $\alpha$ 与 $\beta$ 之间的 $x$ 有 $n! M = f^(n)(x)$。根据 (23) 与 (26)，
+  \begin{equation}
+    g^(n)(t) = f^(n)(t) - n!M \qquad (a<t<b)
+  \end{equation}
+  因此如果我们可以展示对于某些介于 $\alpha$ 与 $\beta$ 之间的 $x$ 满足 $g^(n)(x) = 0$，那么证明即可完成。
+
+  由于对于 $k = 0,\dots,n-1$ 有 $P^(k)(\alpha) = f^(k)(\alpha)$，那么
+  \begin{equation}
+    g(\alpha) = g'(\alpha) = \cdots = g^(n-1)(\alpha) = 0
+  \end{equation}
+  我们选取的 $M$ 可知 $g(\beta) = 0$，根据中值定理，对于某些介于 $\alpha$ 与 $\beta$ 之间的 $x_1$ 有 $g'(x) = 0$。又因为
+  $g'(\alpha) = 0$，可以类似的得出 $\alpha$ 与 $x_1$ 之间的 $x_2$ 有 $g''(x_2) = 0$。以此类推 $n$ 步之后得出 $\alpha$ 与
+  $x_{n-1}$ 之间的 $x_n$ 有 $g^(n)(x_n) = 0$，即介于 $\alpha$ 与 $\beta$ 之间.
+\end{proof}
+
+\begin{anote}
+  \textbf{泰勒定理}：设 $f$ 是 $[a,b]$ 上的实函数，$n$ 是正整数，$f^(n-1)$ 在 $[a,b]$ 上连续，$f^(n)(t)$ 对每个 $t\in (a,b)$
+  存在。设 $\alpha,\beta$ 是 $[a,b]$ 中的不同的两点，再规定 $P(t)=\sum_{k=0}^{n-1}\frac{f^(k)(\alpha)}{k!}(t-\alpha)^k$。
+  那么，在 $\alpha$ 与 $\beta$ 之间一定存在着一点 $x$ 使得 $f(\beta)=P(\beta)+\frac{f^(n)(x)}{n!}(\beta-\alpha)^n$。
+\end{anote}
 
 \end{document}

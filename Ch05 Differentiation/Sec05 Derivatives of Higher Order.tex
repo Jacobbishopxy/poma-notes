@@ -4,6 +4,24 @@
 
 \subsection*{Derivatives of Higher Order}
 
-WIP
+\begin{definition}
+  If $f$ has a derivative $f'$ on an interval, and if $f'$ is itself differentiable, we denote the derivative of
+  $f'$ by $f''$ and cal $f''$ the second derivative of $f$. Continuing in this manner, we obtain functions
+  \[
+    f,f',f'',f^(3),\cdots,f^(n),
+  \]
+  each of which is the derivative of the preceding one. $f^(n)$ is called the $n$th derivative, or the derivative
+  of order $n$, of $f$.
+
+  In order for $f^(n)(x)$ to exist at a point $x$, $f^(n-1)(t)$ must exist in a neighborhood of $x$ (or in a
+  one-sided neighborhood, if $x$ is an endpoint of the interval on which $f$ is defined), and $f^(n-1)$ must be
+  differentiable at $x$. Since $f^(n-1)$ must exist in a neighborhood of $x$, $f^(n-2)$ must be differentiable
+  in that neighborhood.
+\end{definition}
+
+\begin{anote}
+  如果 $f$ 在一个区间由导数 $f'$，而 $f'$ 自身又是可微的，把 $f'$ 的导数记为 $f''$，叫做\textbf{二阶导数}。这样继续下去得到
+  $f, f', f'', f^(3), \cdots, f^(n)$，其中 $f^(n)$ 叫做 $n$ 阶导数。
+\end{anote}
 
 \end{document}

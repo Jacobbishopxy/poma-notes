@@ -2,8 +2,44 @@
 
 \begin{document}
 
-\subsection*{}
+\subsection*{Differentiation of Vector-valued Functions}
 
-WIP
+\begin{remarks}
+  Definition 5.1 applies without any change to complex functions $f$ defined on $[a,b]$, and Theorems 5.2 and 5.3,
+  as well as their proofs, remain valid. If $f_1$ and $f_2$ are the real and imaginary parts of $f$, that is, if
+  \[
+    f(t) = f_1(t) + i f_2(t)
+  \]
+  for $a \le t \le b$, where $f_1(t)$ and $f_2(t)$ are real, then we clearly have
+  \begin{equation}
+    f'(x) = f_1'(x) + i f_2'(x);
+  \end{equation}
+  also, $f$ is differentiable at $x$ if and only if both $f_1$ and $f_2$ are differentiable at $x$.
+
+  Passing to vector-valued functions in general, i.e., to functions $\mathbf{f}$ which map $[a,b]$ into some $R^k$,
+  we may still apply Definition 5.1 to define $\mathbf{f}'(x)$. The term $\phi(t)$ in (1) is now, for each $t$,
+  a point in $R^k$, and the limit in (2) is taken with respect to the norm of $R^k$. In other words, $\mathbf{f}'(x)$
+  is that point of $R^k$ (if there is one) for which
+  \begin{equation}
+    \lim_{t\to x} \biggl| \frac{\mathbf{f}(t) - \mathbf{f}(x)}{t - x} - \mathbf{f}'(x) \biggr| = 0
+  \end{equation}
+  and $\mathbf{f}'$ is again a function with values in $R^k$.
+
+  If $f_1,\dots,f_k$ are the components of $\mathbf{f}$, as defined in Theorem 4.10, then
+  \begin{equation}
+    \mathbf{f}' = (f_1',\cdots,f_k'),
+  \end{equation}
+  and $\mathbf{f}$ is differentiable at a point $x$ if and only if each of the functions $f_1,\cdots,f_k$ is
+  differentiable at $x$.
+
+  Theorem 5.2 is true in this context as well, and so is Theorem 5.3(a) and (b), if $fg$ is replaced by the inner
+  product $\mathbf{f \cdot g}$ (see Definition 4.3).
+
+  When we turn to the mean value theorem, however, and to one of its consequences, namely, L'Hospital's rule,
+  the situation changes. The next two examples will show that each of these results fails to be true for
+  complex-valued functions.
+\end{remarks}
+
+% TODO
 
 \end{document}

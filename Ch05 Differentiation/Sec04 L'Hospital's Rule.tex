@@ -69,8 +69,16 @@
   洛必达法则：假设实函数 $f,\ g$ 在 $(a, b)$ 内可微，而且对所有 $x \in (a,b),\ g'(x) \ne 0$，其中 $-\infty\le a<b \le+\infty$。
   已知 $\lim_{x\to a}f'(x)/g'(x)=A$，如果 $\lim_{x\to a}f(x)=\lim_{x\to a} g(x) = 0$，或者 $\lim_{x\to a}g(x)=+\infty$，
   那么 $\lim_{x\to a} f(x)/g(x) = A$。
-\end{anote}
 
-% TODO: note
+  下列四个条件对于洛必达法则是必须的：
+  \begin{enumerate}
+    \item 形式的不正确（Indeterminacy of form）: $\lim_{x\to c} f(x) = \lim_{x\to c} g(x) = 0$ 或 $\pm\infty$；以及
+    \item 函数的可导性（Differentiability of functions）：$f(x)$ 与 $g(x)$ 在开区间 $\mathcal{I}$ 是可微的，除了其中的点 $c$；以及
+    \item 分母导数非零：$g'(x) \ne 0$ 对于所有在 $\mathcal{I}$ 的 $x$ 且 $x \ne c$；以及
+    \item 导数之商存在极限：$\lim_{x\to c} \frac{f'(x)}{g'(x)}$ 存在。
+  \end{enumerate}
+
+  上述任意一个条件不成立，那么洛必达法则通常而言就不成立。
+\end{anote}
 
 \end{document}
