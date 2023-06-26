@@ -82,19 +82,15 @@ This project is written in Chinese and is under long-term construction, check [P
 
 1. The Riemann-Stieltjes Integral
 
-   <!-- 1. [Discussion of Main Problem](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec01%20Discussion%20of%20Main%20Problem.tex)
+   <!-- 1. [Definition and Existence of the Integral](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec01%20Definition%20and%20Existence%20of%20the%20Integral.tex)
 
-   1. [Uniform Convergence](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec02%20Uniform%20Convergence.tex)
+   1. [Properties of the Integral](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec02%20Properties%20of%20the%20Integral.tex)
 
-   1. [Uniform Convergence and Continuity](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec03%20Uniform%20Convergence%20and%20Continuity.tex)
+   1. [Integration and Differentiation](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec03%20Integration%20and%20Differentiation.tex)
 
-   1. [Uniform Convergence and Integration](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec04%20Uniform%20Convergence%20and%20Integration.tex)
+   1. [Integration of Vector-valued Functions](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec04%20Integration%20of%20Vector-valued%20Functions.tex)
 
-   1. [Uniform Convergence and Differentiation](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec05%20Uniform%20Convergence%20and%20Differentiation.tex)
-
-   1. [Equicontinuous Families of Functions](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec06%20Equicontinuous%20Families%20of%20Functions.tex)
-
-   1. [The Stone-Weierstrass Theorem](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec07%20The%20Stone-Weierstrass%20Theorem.tex) -->
+   1. [Rectifiable Curves](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec05%20Rectifiable%20Curves.tex) -->
 
 1. Sequences and Series of Functions
 
