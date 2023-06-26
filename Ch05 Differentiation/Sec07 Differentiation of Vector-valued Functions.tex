@@ -40,6 +40,91 @@
   complex-valued functions.
 \end{remarks}
 
-% TODO
+\begin{example}
+  Define, for real $x$,
+  \begin{equation}
+    f(x) = e^{ix} = \cos x + i \sin x.
+  \end{equation}
+  (The last expression may be taken as the definition of the complex exponential $e^{ix}$; see Chap. 8 for a full
+  discussion of these functions.) Then
+  \begin{equation}
+    f(2\pi) - f(0) = 1 - 1 = 0
+  \end{equation}
+  but
+  \begin{equation}
+    f'(x) = i e^{ix},
+  \end{equation}
+  so that $|f'(x)| = 1$ for all real $x$.
+
+  Thus Theorem 5.10 fails to hold in this case.
+\end{example}
+
+\begin{example}
+  On the segment $(0,1)$, define $f(x) = x$ and
+  \begin{equation}
+    g(x) = x + x^2 e^{i/x^2}.
+  \end{equation}
+  Since $|e^{it}| = 1$ for all real $t$, we see that
+  \begin{equation}
+    \lim_{x\to 0} \frac{f(x)}{g(x)} = 1.
+  \end{equation}
+  Next,
+  \begin{equation}
+    g'(x) = 1 + \biggl\{ 2x - \frac{2i}{x} \biggr\}^{i/x^2} \qquad (0<x<1),
+  \end{equation}
+  so that
+  \begin{equation}
+    |g'(x)| \ge \biggl\| 2x - \frac{2i}{x} \biggr\| - 1 \ge \frac{2}{x} - 1.
+  \end{equation}
+  Hence
+  \begin{equation}
+    \biggl| \frac{f'(x)}{g'(x)} \biggr| = \frac{1}{|g'(x)|} \le \frac{x}{2-x}
+  \end{equation}
+  and so
+  \begin{equation}
+    \lim_{x\to 0} \frac{f'(x)}{g'(x)} = 0.
+  \end{equation}
+  By (36) and (40), L'Hospital's rule fails in this case. Note also that $g'(x) \ne 0$ on $(0,1)$, by (38).
+
+  However, there is a consequence of the mean value theorem which, for purposes of applications, is almost as useful
+  as Theorem 5.10, and which remains true for vector-valued functions: From Theorem 5.10 it follows that
+  \begin{equation}
+    |f(b) - f(a)| \le (b-a) \sup_{a<x<b} |f'(x)|.
+  \end{equation}
+\end{example}
+
+\begin{theorem}
+  Suppose $\mathbf{f}$ is a continuous mapping of $[a, b]$ into $R^k$ and $\mathbf{f}$ is differentiable in $(a, b)$. Then
+  there exists $x \in (a, b)$ such that
+  \[
+    |\mathbf{f}(b) - \mathbf{f}(a)| \le (b - a) |\mathbf{f}'(x)|.
+  \]
+\end{theorem}
+
+\begin{proof}
+  令 $\mathbf{z} = \mathbf{f}(b) - \mathbf{f}(a) - \mathbf{f}'(b)$，同时定义
+  \[
+    \phi(t) = \mathbf{z} \cdot \mathbf{f}(t) \qquad (a \le t \le b)
+  \]
+  那么 $\phi$ 在区间 $[a, b]$ 上为一个实值连续函数，且在 $(a, b)$ 上可微。根据中值定理有
+  \[
+    \phi(b) - \phi(a) = (b - a) \phi'(x) = (b - a) \mathbf{z} \cdot \mathbf{f}'(x)
+  \]
+  其中 $x \in (a, b)$。另一方面，
+  \[
+    \phi(b) - \phi(a) = \mathbf{z} \cdot \mathbf{f}(b) - \mathbf{z} \cdot \mathbf{f}(a) = \mathbf{z} \cdot \mathbf{z} = |\mathbf{z}|^2
+  \]
+
+  根据 Schwarz 不等式可得
+  \[
+    |\mathbf{z}|^2 = (b-a) |\mathbf{z} \cdot \mathbf{f}'(x)| \le (b - a)|\mathbf{z}||\mathbf{f}'(x)|
+  \]
+  因此 $|\mathbf{z}| \le (b-a)|\mathbf{f}'(x)|$，即期望的结论。
+\end{proof}
+
+\begin{anote}
+  设 $\mathbf{f}$ 是把 $[a, b]$ 映入 $R^k$ 内的连续映射，并且 $\mathbf{f}$ 在 $(a, b)$ 内可微。那么必有 $x \in (a,b)$ 使得
+  $|\mathbf{f}(b) - \mathbf{f}(a)| \le (b-a)|\mathbf{f}'(x)|$。
+\end{anote}
 
 \end{document}
