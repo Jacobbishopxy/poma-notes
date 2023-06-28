@@ -37,6 +37,8 @@
   \textbf{导数（导函数）}：定义在 $[a, b]$ 上的实值函数，任何 $x \in [a, b]$ 其商形式 $\phi(t)=\frac{f(t)-f(x)}{t-x}
     \ (a < t < b,\ t \ne x)$，且 $f'$ 在点 $x$ 满足定义 $f'(x) = \lim_{t \to x} \phi(t)$，那么 $f$ 在 $x$ 上
   \textbf{可微} 或 \textbf{可导}。
+
+  这里提到了左侧和右侧可微，即在两个 $a$ 与 $b$ 端点可微，在任何情况下单独讨论一侧可微是没有意义的。
 \end{anote}
 
 \begin{theorem}
@@ -53,6 +55,8 @@
 
 \begin{anote}
   若 $f$ 在 $x \in [a, b]$ 可微（可导），那么它在 $x$ 点连续。
+
+  这里运用了 $f'(x) = \frac{f(t) - f(x)}{t - x}$，即 Definition 5.1。在 Theorem 5.3 中也将运用到此定义。
 \end{anote}
 
 本定理反过来并不成立。构建一个连续函数在其独立点上不可微是很容易的。在第七章节中，我们应该会更加熟悉一个函数在整条线是连续的，但是
@@ -81,6 +85,59 @@
   令 $t \to x$，并应用 Theorems 4.4 与 5.2，可得 (c)。
 \end{proof}
 
+\begin{anote}
+  \begin{enumerate}
+    \item [(b)] 令 $h = fg$，那么对于 $h$ 而言取一个满足 $x \to t$ 的 $t$ 值则有
+          \begin{align*}
+            \begin{split}
+              h(t) - h(x) &= f(t)g(t) - f(x)g(x) \\
+              &= f(t)g(t) - f(x)g(x) + f(t)g(x) - f(t)g(x) \\
+              &= f(t)[g(t) - g(x)] + g(x)[f(t) - f(x)]
+            \end{split}
+          \end{align*}
+          等式两边除以 $t - x$ 则有
+          \begin{align*}
+            \begin{split}
+              \frac{h(t) - h(x)}{t - x} &= \frac{f(t)[g(t) - g(x)] + g(x)[f(t) - f(x)]}{t - x} \\
+              h'(x) &= f(t) \frac{g(t) - g(x)}{t - x} + g(x) \frac{f(t) - f(x)}{t - x} \\
+              (fg)'(x) &= f(t) g'(x) + g(x) f'(x)
+            \end{split}
+          \end{align*}
+          根据 Theorem 5.2，当 $t \to x$ 时有 $f(t) \to f(x)$，那么
+          \begin{align*}
+            \begin{split}
+              (fg)'(x) &= f(t) g'(x) + g(x) f'(x) \\
+              &= f(x)g'(x) + g(x)f'(x)
+            \end{split}
+          \end{align*}
+    \item [(c)] 令 $h = f/g$，那么对于 $h$ 而言去一个满足 $x \to t$ 的 $t$ 值则有
+          \begin{align*}
+            \begin{split}
+              h(t) - h(x) &= \frac{f(t)}{g(t)} - \frac{f(x)}{g(x)} \\
+              &= \frac{f(t)g(x)}{g(t)g(x)} - \frac{f(x)g(t)}{g(x)g(t)} \\
+              &= \frac{1}{g(t)g(x)}\Bigl[ f(t)g(x) - f(x)g(t) \Bigr]
+            \end{split}
+          \end{align*}
+          等式两边除以 $t - x$ 则有
+          \begin{align*}
+            \begin{split}
+              \frac{h(t) - h(x)}{t - x} &= \frac{1}{g(t)g(x)} \Bigl[ \frac{f(t)g(x) - f(x)g(t)}{t - x} \Bigr] \\
+              &= \frac{1}{g(t)g(x)} \Bigl[\frac{f(t)g(x) - f(x)g(t) + g(x)f(x) - g(x)f(x)}{t-x}\Bigr] \\
+              &= \frac{1}{g(t)g(x)} \Bigl[\frac{f(t)g(x) - g(x)f(x)}{t-x} - \frac{f(x)g(t) - g(x)f(x)}{t-x}\Bigr] \\
+              h'(x) &= \frac{1}{g(t)g(x)} \Bigl[g(x)\frac{f(t) - f(x)}{t-x} - f(x)\frac{g(t) - g(x)}{t-x}\Bigr] \\
+              (\frac{f}{g})'(x) &= \frac{1}{g(t)g(x)} \Bigl[g(x)f'(x) - f(x)g'(x)\Bigr]
+            \end{split}
+          \end{align*}
+          根据 Theorem 5.2，当 $t \to x$ 时有 $f(t) \to f(x)$，那么
+          \begin{align*}
+            \begin{split}
+              (\frac{f}{g})'(x) &= \frac{1}{g(t)g(x)} \Bigl[g(x)f'(x) - f(x)g'(x)\Bigr] \\
+              &= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}
+            \end{split}
+          \end{align*}
+  \end{enumerate}
+\end{anote}
+
 \stepcounter{poma}
 
 \begin{theorem}
@@ -99,7 +156,7 @@
   令 $y = f(x)$，根据微分的定义有
   \begin{align}
     f(t) - f(x) = (t - x)[f'(x) + u(t)] \\
-    g(s) - g(y) = (s - y)[g'(y) + y(s)]
+    g(s) - g(y) = (s - y)[g'(y) + v(s)]
   \end{align}
   其中 $t \in [a,b],\ s \in I$，且 $t \to x$ 有 $u(t) \to 0$，$s \to y$ 有 $v(s) \to 0$。令 $s = f(t)$，通过 (5)
   再 (4)，可得
@@ -112,10 +169,27 @@
   \end{align*}
   或者如果 $t \ne x$，
   \begin{equation}
-    \frac{h(t) - h(x)}{t - x} = [g'(y) + v(s)] \cdot [f'(x) + u(t)]
+    \frac{h(t) - h(x)}{t - x} = [g'(y) + u(s)] \cdot [f'(x) + v(t)]
   \end{equation}
   当 $t \to x$，可知 $s \to y$，根据 $f$ 的连续性，(6) 等式右侧趋向于 $g'(y) f'(x)$，即得 (3)。
 \end{proof}
+
+\begin{anote}
+  \textbf{链式法则}
+
+  与 Theorem 5.2 与 5.3 做法一致，令 $h(t) - h(x)$：
+  \begin{align*}
+    \begin{split}
+      h(t) - h(x) &= g(f(t)) - g(f(x)) \\
+      &= g(s) - g(y) \qquad \text{其中 $s$ 为 $f(t)$，$y$ 为 $f(x)$} \\
+      &= (s - y)[g'(y) + v(s)] \qquad \text{式 (5) 代入} \\
+      &= (f(t) - f(x))[g'(f(x)) + v(f(t))] \qquad \text{此时再将式 (4) 代入} \\
+      &= (t - x)[f'(x) + u(t)][g'(f(x)) + v(f(t))] \\
+      \frac{h(t) - h(x)}{t - x} &= [f'(x) + u(t)][g'(f(x)) + v(f(t))] \qquad \text{假设 $t \ne x$} \\
+      &\to g'(f(x)) \cdot f'(x)
+    \end{split}
+  \end{align*}
+\end{anote}
 
 \begin{examples}
   \begin{enumerate}[label=(\alph*)]
