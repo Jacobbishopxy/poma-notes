@@ -82,9 +82,9 @@ This project is written in Chinese and is under long-term construction, check [P
 
 1. The Riemann-Stieltjes Integral
 
-   <!-- 1. [Definition and Existence of the Integral](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec01%20Definition%20and%20Existence%20of%20the%20Integral.tex)
+   1. [Definition and Existence of the Integral](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec01%20Definition%20and%20Existence%20of%20the%20Integral.tex)
 
-   1. [Properties of the Integral](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec02%20Properties%20of%20the%20Integral.tex)
+   <!-- 1. [Properties of the Integral](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec02%20Properties%20of%20the%20Integral.tex)
 
    1. [Integration and Differentiation](./Ch06%20The%20Riemann-Stieltjes%20Integral/Sec03%20Integration%20and%20Differentiation.tex)
 

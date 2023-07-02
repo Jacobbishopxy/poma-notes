@@ -24,3 +24,25 @@
 \newcommand*\acircled[1]{\tikz[baseline=(char.base)]{
     \node[shape=circle,draw,inner sep=1.5pt] (char) {#1};}
 }
+
+% bar over/under integral symbol
+% https://tex.stackexchange.com/a/211132/288574
+\makeatletter
+\newcommand\tint{\mathop{\mathpalette\tb@int{t}}\!\int}
+\newcommand\bint{\mathop{\mathpalette\tb@int{b}}\!\int}
+\newcommand\tb@int[2]{%
+  \sbox\z@{$\m@th#1\int$}%
+  \if#2t%
+    \rlap{\hbox to\wd\z@{%
+        \hfil
+        \vrule width .30em height \dimexpr\ht\z@+1.4pt\relax depth -\dimexpr\ht\z@+1pt\relax
+        \kern.05em % a small correction on the top
+      }}
+  \else
+    \rlap{\hbox to\wd\z@{%
+        \vrule width .30em height -\dimexpr\dp\z@+1pt\relax depth \dimexpr\dp\z@+1.4pt\relax
+        \hfil
+      }}
+  \fi
+}
+\makeatother

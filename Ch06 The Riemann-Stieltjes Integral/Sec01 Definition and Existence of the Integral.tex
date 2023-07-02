@@ -2,8 +2,66 @@
 
 \begin{document}
 
-\subsection*{}
+本章基于黎曼积分的定义，该定义明确的取决于实线的层次结构。因此首先我们将探讨区间内实值函数的积分，然后再是复数与向量函数的积分，
+而非区间积分将会在第十与十一章进行探讨。
 
-WIP
+\subsection*{Definition and Existence of the Integral}
+
+\begin{definition}
+  Let $[a,b]$ be a given interval. By a \textit{partition} $P$ of $[a,b]$ we mean a finite set of points
+  $x_0, x_1, \dots, x_n$, where
+  \[
+    a = x_0 \le x_1 \le \cdots \le x_{n-1} \le x_n = b.
+  \]
+
+  We write
+  \[
+    \delta x_i = x_i - x_{i-1} \qquad (i=1,\dots,n).
+  \]
+  Now suppose $f$ is a bounded real function defined on $[a,b]$. Corresponding to each partition $P$ of
+  $[a,b]$ we put
+  \begin{align*}
+    \begin{split}
+      M_i &= \sup f(x) \qquad (x_{i-1} \le x \le x_i), \\
+      m_i &= \inf f(x) \qquad (x_{i-1} \le x \le x_i), \\
+      U(P,f) &= \sum_{i=1}^{n} M_i \delta x_i, \\
+      L(P,f) &= \sum_{i=1}^{n} m_i \delta x_i,
+    \end{split}
+  \end{align*}
+  and finally
+  \begin{equation}
+    \tint_{a}^{b} f \,dx = \inf\, U(P, f),
+  \end{equation}
+  \begin{equation}
+    \bint_{a}^{b} f \,dx = \sup\, L(P, f),
+  \end{equation}
+  where the inf and the sup are taken over all partitions $P$ of $[a,b]$. The left members of (1) and (2)
+  are called the \textit{upper} and \textit{lower Riemann integrals} of $f$ over $[a,b]$, respectively.
+
+  If the upper and lower integrals are equal, we say that $f$ is \textit{Riemann-integrable} on $[a,b]$,
+  we write $f \in \mathscr{R}$ (that is, $\mathscr{R}$ denotes the set of Riemann-integrable functions),
+  and we denote the common value of (1) and (2) by
+  \begin{equation}
+    \int_{a}^{b}f\,dx,
+  \end{equation}
+  or by
+  \begin{equation}
+    \int_{a}^{b}f(x)\,dx.
+  \end{equation}
+
+  This is the \textit{Riemann integral} of $f$ over $[a,b]$. Since $f$ is bounded, there exist two numbers,
+  $m$ and $M$, such that
+  \[
+    m \le f(x) \le M \qquad (a \le x \le b).
+  \]
+  Hence, for every $P$,
+  \[
+    m(b-a) \le L(P, f) \le U(P, f) \le M(b-a),
+  \]
+  so that the numbers $L(P, f)$ and $U(P, f)$ form a bounded set. This shows that \textit{the upper and lower
+    integrals are defined for every} bounded function $f$. The question of their equality, and hence the question
+  of the integrability of $f$, is a more delicate one. Instead of investigating it separately for the Riemann
+  integral, we shall immediately consider a more general situation.
+\end{definition}
 
 \end{document}
