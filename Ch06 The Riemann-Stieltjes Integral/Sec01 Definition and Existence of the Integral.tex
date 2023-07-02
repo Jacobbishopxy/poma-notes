@@ -96,7 +96,6 @@
   \end{enumerate}
 \end{anote}
 
-
 \begin{figure}[htp]
   \centering
   \subfloat[$n=10$]{
@@ -108,6 +107,67 @@
   }
   \caption*{Upper and lower Riemann sums}
 \end{figure}
+
+\begin{definition}
+  Let $\alpha$ be a monotonically increasing function on $[a,b]$ (since $\alpha(a)$ and $\alpha(b)$ are finite,
+  it follows that $\alpha$ is bounded on $[a,b]$). Corresponding to each partition $P$ of $[a,b]$, we write
+  \[
+    \Delta\alpha_i = \alpha(x_i) - \alpha(x_{i-1}).
+  \]
+  It is clear that $\Delta\alpha_i \ge 0$. For any real function $f$ which is bounded on $[a,b]$ we put
+  \begin{align*}
+    \begin{split}
+      U(P,f,\alpha) &= \sum_{i=1}^{n} M_i \delta\alpha_i, \\
+      L(P,f,\alpha) &= \sum_{i=1}^{n} m_i \delta\alpha_i,
+    \end{split}
+  \end{align*}
+  where $M_i, m_i$ have the same meaning as in Definition 6.1, and we define
+  \begin{equation}
+    \tint_a^b f\,d\alpha = \inf U(P,f,\alpha),
+  \end{equation}
+  \begin{equation}
+    \bint_a^b f\,d\alpha = \sup L(P,f,\alpha),
+  \end{equation}
+  the inf and sup again being taken over all partitions.
+
+  If the left members of (5) and (6) are equal, we denote their common value by
+  \begin{equation}
+    \int_a^b f\,d\alpha
+  \end{equation}
+  or sometimes by
+  \begin{equation}
+    \int_a^b f(x)\,d\alpha(x).
+  \end{equation}
+
+  This is the \textit{Riemann-Stieltjes integral} (or simply the \textit{Stieltjes integral}) of $f$ with respect to
+  $\alpha$, over $[a,b]$.
+
+  If (7) exists, i.e., if (5) and (6) are equal, we say that $f$ is integrable with respect to $\alpha$, in the Riemann
+  sense, and write $f\in\mathscr{R}(\alpha)$.
+
+  By taking $\alpha(x)=x$, the Riemann integral is seen to be a special case of the Riemann-Stieltjes integral. Let us
+  mention explicitly, however, that in the general case $\alpha$ need not even be continuous.
+
+  A few words should be said about the notation. We prefer (7) to (8), since the letter $x$ which appears in (8) adds nothing
+  to the content of (7). It is immaterial which letter we use to represent the so-called \say{variable of integration.}
+  For instance, (8) is the same as
+  \[
+    \int_a^b f(y)\,d\alpha(y).
+  \]
+  The integral depends on $f, \alpha, a$ and $b$, but not on the variable of integration, which may as well be omitted.
+
+  The role played by the variable of integration is quite analogous to that of the index of summation: The two symbols
+  \[
+    \sum_{i=1}^{n} c_i, \qquad \sum_{k=1}^{n} c_k
+  \]
+  mean the same thing, since each means $c_1 + c_2 + \cdots + c_n$.
+
+  Of course, no harm is done by inserting the variable of integration, and in many cases it is actually convenient to do so.
+
+  We shall now investigate the existence of the integral (7). Without saying so every time, $f$ will be assumed real and
+  bounded, and $\alpha$ monotonically increasing on $[a,b]$; and, when there can be no misunderstanding, we shall write $\int$
+  in place of $\int_a^b$.
+\end{definition}
 
 % TODO
 
