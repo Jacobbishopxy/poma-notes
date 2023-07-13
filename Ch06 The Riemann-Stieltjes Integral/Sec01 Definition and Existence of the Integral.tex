@@ -177,9 +177,7 @@
 \newpage
 
 \begin{anote}
-  \textbf{几何解释}
-
-  在一个 $x,\ f(x)\ \text{以及}\ g(x)$ 三维的正交坐标系中，如果 $g-x$ 面是水平方向的，且 $f$ 的是正向上的，那么 $(x,f,g)$ 的表面可以视为一个
+  \textbf{几何解释}：在一个 $x,\ f(x)\ \text{以及}\ g(x)$ 三维的正交坐标系中，如果 $g-x$ 面是水平方向的，且 $f$ 的是正向上的，那么 $(x,f,g)$ 的表面可以视为一个
   弯曲的栅栏（下图紫色部分）。栅栏的的弯曲方向取决于 $g(x)$ 的走向，而其高度则是取决于给定的 $f(x)$。该栅栏是 $g$-sheet 的一部分（例如，$g$ 曲线在
   $f$ 轴方向延伸），其被 $g-x$ 平面与 $f$-sheet 所界限。而 Riemann-Stieltjes 积分则是该栅栏投影到 $f-g$ 平面上的面积 -- 实际上就是其
   \say{影子}（$x=0,f,g$ 平面，即最左侧平面）。
@@ -190,17 +188,39 @@
   \includegraphics[width=0.9\textwidth]{\subfix{../images/Basic_geometry_of_riemann-stieljes_integral_f_g_x.png}}
 \end{figure}
 
-% TODO
+\newpage
 
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=0.4\textwidth]{\subfix{../images/Curvature_effects_on_geometry_of_riemann-stieljes_integral_f_g_x.png}}
-% \end{figure}
+\begin{anote}
+  $g(x)$ 的斜率加权了映射的区域，当 $x$ 取值使得 $g(x)$ 有最大的斜率时，即 $g'(x)$ 所对应的栅格区域有较大的投影，因此在积分中具有最大的权重。
+\end{anote}
 
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=0.4\textwidth]{\subfix{../images/Step_function_effect_on_geometry_of_riemann-stieljes_integral_f_g_x.png}}
-% \end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{\subfix{../images/Curvature_effects_on_geometry_of_riemann-stieljes_integral_f_g_x.png}}
+\end{figure}
+
+\newpage
+
+\begin{anote}
+  当 $g$ 是一个阶梯函数
+  \begin{align*}
+    g(x) =
+    \begin{cases}
+      0 & \text{if $x \le s$} \\
+      1 & \text{if $x > s$}
+    \end{cases}
+  \end{align*}
+  那么这时栅格就有一个长方体的“门”，其宽为 $1$ 其高等于 $f(s)$。因此该门与其投影的面积等于 $f(s)$，即 Riemann-Stieljes 积分。
+\end{anote}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{\subfix{../images/Step_function_effect_on_geometry_of_riemann-stieljes_integral_f_g_x.png}}
+\end{figure}
+
+引用：
+
+\href{https://en.wikipedia.org/wiki/Riemann%E2%80%93Stieltjes_integral}{Wikipedia Stieltjes-integral}。
 
 \newpage
 
